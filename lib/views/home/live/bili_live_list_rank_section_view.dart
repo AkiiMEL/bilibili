@@ -60,7 +60,7 @@ class BiliLiveRankSectionView extends StatelessWidget {
         ),
         Text(
           rank.areaV2ParentName ?? "",
-          style: Theme.of(context).textTheme.subtitle,
+          style: Theme.of(context).textTheme.display4,
         ),
       ],
     );

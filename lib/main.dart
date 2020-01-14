@@ -20,7 +20,11 @@ class MyApp extends StatelessWidget {
         indicatorColor: Color.fromARGB(255, 248, 116, 153),
         dividerColor: Color.fromARGB(255, 246, 245, 246),
         textTheme: TextTheme(
-          headline: TextStyle(color: Colors.black, fontSize: 15.0, fontWeight: FontWeight.bold,),
+          headline: TextStyle(
+            color: Colors.black,
+            fontSize: 15.0,
+            fontWeight: FontWeight.bold,
+          ),
           title: TextStyle(
             color: Color.fromARGB(255, 90, 90, 90),
             fontSize: 14.0,
@@ -28,6 +32,10 @@ class MyApp extends StatelessWidget {
           subtitle: TextStyle(
             color: Color.fromARGB(255, 183, 183, 182),
             fontSize: 12.0,
+          ),
+          display4: TextStyle(
+            fontSize: 10.0,
+            color: Color.fromARGB(255, 183, 183, 182),
           ),
         ),
       ),
@@ -41,7 +49,11 @@ class MyApp extends StatelessWidget {
         indicatorColor: Color.fromARGB(255, 248, 116, 153),
         dividerColor: Color.fromARGB(255, 246, 245, 246),
         textTheme: TextTheme(
-          headline: TextStyle(color: Color.fromARGB(255, 92, 93, 94), fontSize: 15.0, fontWeight: FontWeight.bold,),
+          headline: TextStyle(
+            color: Color.fromARGB(255, 92, 93, 94),
+            fontSize: 15.0,
+            fontWeight: FontWeight.bold,
+          ),
           title: TextStyle(
             color: Color.fromARGB(255, 60, 61, 62),
             fontSize: 14.0,
@@ -49,6 +61,10 @@ class MyApp extends StatelessWidget {
           subtitle: TextStyle(
             color: Color.fromARGB(255, 183, 183, 182),
             fontSize: 12.0,
+          ),
+          display4: TextStyle(
+            fontSize: 10.0,
+            color: Color.fromARGB(255, 183, 183, 182),
           ),
         ),
       ),
