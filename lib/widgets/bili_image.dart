@@ -17,6 +17,7 @@ class BiliImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (imageURL == null || imageURL.isEmpty) return SizedBox.shrink();
     CachedNetworkImage child = CachedNetworkImage(
       imageUrl: imageURL,
       placeholder: ((context, url) =>
@@ -27,7 +28,7 @@ class BiliImage extends StatelessWidget {
       height: radius != null ? radius * 2 : (size?.height == double.infinity ? null : size?.height),
       fit: fit ?? BoxFit.cover,
     );
-    return this.radius != null
+    return radius != null
         ? ClipOval(
             child: child,
           )

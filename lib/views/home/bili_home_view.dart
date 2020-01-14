@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/views/home/live/bili_live_list_view.dart';
-import 'package:bilibili/views/home/features/bili_features_list_view.dart';
+import 'package:bilibili/views/home/featured/bili_featured_list_view.dart';
 import 'package:bilibili/views/home/popular/bili_popular_list_view.dart';
 import 'package:bilibili/views/home/bangumi/bili_bangumi_list_view.dart';
 
@@ -33,7 +33,7 @@ class _BiliHomeViewState extends State<BiliHomeView>
 
     views = [
       BiliLiveListView(),
-      BiliFeaturesListView(),
+      BiliFeaturedListView(),
       BiliPopularListView(),
       BiliBangumiListView(),
       Scaffold(),
