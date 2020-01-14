@@ -1,7 +1,6 @@
 import 'dart:math';
 
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bilibili/widgets/bili_image.dart';
 import 'package:flutter/material.dart';
 import 'package:bilibili/models/bili_live_models.dart';
 import 'package:bilibili/utils/bili_args.dart';
@@ -27,15 +26,12 @@ class BiliLiveListSectionHeaderView extends StatelessWidget {
             children: <Widget>[
               Text(
                 title ?? "",
-                style: TextStyle(
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.headline,
               ),
               SizedBox(width: spacing),
               Text(
                 subtitle ?? "",
-                style: TextStyle(color: Colors.grey[600], fontSize: 12.0),
+                style: Theme.of(context).textTheme.subtitle,
               ),
             ],
           ),
@@ -45,11 +41,10 @@ class BiliLiveListSectionHeaderView extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       "查看更多",
-                      style: TextStyle(
-                        fontSize: 14.0,
-                      ),
+                      style: Theme.of(context).textTheme.title,
                     ),
-                    Icon(Icons.arrow_forward_ios, size: 14.0),
+                    Icon(Icons.arrow_forward_ios,
+                        size: Theme.of(context).textTheme.subtitle.fontSize),
                   ],
                 ),
             onTap: () {
@@ -149,15 +144,12 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
               children: <Widget>[
                 Text(
                   item.title ?? "",
-                  style: TextStyle(fontSize: 14),
+                  style: Theme.of(context).textTheme.title,
                   maxLines: 1,
                 ),
                 Text(
                   item.areaV2Name ?? "",
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  style: Theme.of(context).textTheme.subtitle,
                 ),
               ],
             ),
@@ -166,7 +158,6 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
       ),
     );
   }
-
 
 // Display prize up have owned.
   Widget _getTopView(LiveRoom item) {
@@ -179,11 +170,11 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: Container(
-              margin: EdgeInsets.only(top: 2.0),// Move down 2 pixel to align with cover image.
-              child: CachedNetworkImage(
-                imageUrl: pendent.pic,
-                errorWidget: (context, url, e) => SizedBox.shrink(),
-                height: 20.0,
+              margin: EdgeInsets.only(
+                  top: 2.0), // Move down 2 pixel to align with cover image.
+              child: BiliImage(
+                pendent.pic,
+                size: Size.fromHeight(20.0),
               ),
             ),
           ),
@@ -194,10 +185,9 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: Stack(
               children: <Widget>[
-                CachedNetworkImage(
-                  imageUrl: pendent.pic,
-                  errorWidget: (context, url, e) => SizedBox.shrink(),
-                  height: 20.0,
+                BiliImage(
+                  pendent.pic,
+                  size: Size.fromHeight(20.0),
                 ),
                 Positioned(
                   top: 3.0,
@@ -219,19 +209,15 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
     return children.isEmpty ? SizedBox.shrink() : Stack(children: children);
   }
 
-  // Dispaly image up uname and online. 
+  // Dispaly image up uname and online.
   Widget _getBottomView(LiveRoom item) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(spacing / 2),
       child: Stack(
         children: <Widget>[
-          CachedNetworkImage(
-            imageUrl: item.cover,
-            placeholder: (context, url) =>
-                Image.asset("assets/images/bgm_category_placeholder30x30.png"),
-            errorWidget: (context, url, e) =>
-                Image.asset("assets/images/bgm_category_placeholder30x30.png"),
-                fit: BoxFit.cover,
+          BiliImage(
+            item.cover,
+            placeholder: "assets/images/bgm_category_placeholder30x30.png",
           ),
           Positioned(
             left: 0,

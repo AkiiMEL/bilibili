@@ -19,6 +19,17 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         indicatorColor: Color.fromARGB(255, 248, 116, 153),
         dividerColor: Color.fromARGB(255, 246, 245, 246),
+        textTheme: TextTheme(
+          headline: TextStyle(color: Colors.black, fontSize: 15.0, fontWeight: FontWeight.bold,),
+          title: TextStyle(
+            color: Color.fromARGB(255, 90, 90, 90),
+            fontSize: 14.0,
+          ),
+          subtitle: TextStyle(
+            color: Color.fromARGB(255, 183, 183, 182),
+            fontSize: 12.0,
+          ),
+        ),
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
@@ -26,14 +37,20 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           color: Color.fromARGB(255, 44, 45, 46),
         ),
-        textTheme: TextTheme(
-          headline: TextStyle(
-            color: Color.fromARGB(255, 141, 141, 141),
-          ),
-        ),
         scaffoldBackgroundColor: Color.fromARGB(255, 26, 27, 28),
         indicatorColor: Color.fromARGB(255, 248, 116, 153),
         dividerColor: Color.fromARGB(255, 246, 245, 246),
+        textTheme: TextTheme(
+          headline: TextStyle(color: Color.fromARGB(255, 92, 93, 94), fontSize: 15.0, fontWeight: FontWeight.bold,),
+          title: TextStyle(
+            color: Color.fromARGB(255, 60, 61, 62),
+            fontSize: 14.0,
+          ),
+          subtitle: TextStyle(
+            color: Color.fromARGB(255, 183, 183, 182),
+            fontSize: 12.0,
+          ),
+        ),
       ),
       home: BiliInitialView(),
       debugShowCheckedModeBanner: false,

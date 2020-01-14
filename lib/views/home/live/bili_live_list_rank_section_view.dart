@@ -1,3 +1,4 @@
+import 'package:bilibili/widgets/bili_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/models/bili_live_models.dart';
@@ -11,9 +12,12 @@ class BiliLiveRankSectionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Fix sort order with 2 1 3;
-    LiveRank goldMedal = section.list?.firstWhere((e) => e.rank == 1, orElse: () => null);
-    LiveRank silverMedal = section.list?.firstWhere((e) => e.rank == 2, orElse: () => null);
-    LiveRank bronzeMedal = section.list?.firstWhere((e) => e.rank == 3, orElse: () => null);
+    LiveRank goldMedal =
+        section.list?.firstWhere((e) => e.rank == 1, orElse: () => null);
+    LiveRank silverMedal =
+        section.list?.firstWhere((e) => e.rank == 2, orElse: () => null);
+    LiveRank bronzeMedal =
+        section.list?.firstWhere((e) => e.rank == 3, orElse: () => null);
 
     List<LiveRank> models = [];
     if (silverMedal != null) {
@@ -26,63 +30,82 @@ class BiliLiveRankSectionView extends StatelessWidget {
       models.add(bronzeMedal);
     }
 
-    return models == null ? SizedBox.shrink() : Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0),
-      child: Center(
-        child: Wrap(
-          spacing: 44.0,
-          crossAxisAlignment: WrapCrossAlignment.end,
-          // mainAxisAlignment: MainAxisAlignment.center,
-          //   crossAxisAlignment: CrossAxisAlignment.end,
-          children: models.map((e) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Stack(
-                  children: <Widget>[
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(e.face ?? ""),
-                      radius: e.rank == 1 ? 34.0 : 28.0,
-                    ),
-                    Positioned(
-                      left: e.rank == 1 ? 35.0 : 29.0,
-                      bottom: 0.0,
-                      child: Container(
-                        height: 28.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.pink[300],),
-                          borderRadius: BorderRadius.circular(9.0),
-                        ),
-                        child: Text(e.liveStatus == 1 ? "直播中" : "", textAlign: TextAlign.center,),
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: spacing / 2,
-                ),
-                Text(
-                  e.uname ?? "",
-                  style: TextStyle(fontSize: 14.0),
-                ),
-                Text(
-                  e.areaV2ParentName ?? "",
-                  style: TextStyle(color: Colors.grey[600], fontSize: 12.0),
-                ),
-              ],
-            );
-          }).toList(),
+    return models.isEmpty
+        ? SizedBox.shrink()
+        : Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+            child: Center(
+              child: Wrap(
+                spacing: 24.0,
+                crossAxisAlignment: WrapCrossAlignment.end,
+                children: models.map((e) {
+                  return _getRakItem(context, e);
+                }).toList(),
+              ),
+            ),
+          );
+  }
+
+  Widget _getRakItem(BuildContext context, LiveRank rank) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        _getRankAvatarView(context, rank),
+        SizedBox(
+          height: spacing / 2,
         ),
-      ),
+        Text(
+          rank.uname ?? "",
+          style: Theme.of(context).textTheme.title,
+        ),
+        Text(
+          rank.areaV2ParentName ?? "",
+          style: Theme.of(context).textTheme.subtitle,
+        ),
+      ],
     );
   }
 
-  Widget _rankImage() {
-    return Stack(
-      children: <Widget>[
-// live_home_ranking_{1, 2, 3}32x32
-      ],
-    );
+  // Rank title (e.g. crown).
+  Widget _getRankAvatarView(BuildContext context, LiveRank rank) {
+    double horizontal = 10.0;
+    EdgeInsets edgeInsets =
+        EdgeInsets.only(top: 16.0, left: horizontal, right: horizontal);
+    double radius = rank.rank == 1 ? 35.0 : 30.0;
+
+    return [1, 2, 3].contains(rank.rank)
+        ? Stack(
+            children: [
+              Image.asset(
+                  "assets/images/live_home_ranking_${rank.rank}32x32.png"),
+              Container(
+                margin: edgeInsets,
+                child: Stack(
+                  children: <Widget>[
+                    Image.asset(
+                      "assets/images/misc_battery_rank${rank.rank}_bg48x48.png",
+                      width: radius * 2,
+                      height: radius * 2,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(2),
+                      child: BiliImage(rank.face, radius: radius - 2),
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                bottom: 0,
+                left: radius + edgeInsets.left,
+                child: rank.liveStatus == 1
+                    ? Image.asset(
+                        "assets/images/live_home_ranking_living${Theme.of(context).brightness == Brightness.light ? "" : "night"}38x14.png",
+                      )
+                    : SizedBox.shrink(),
+              ),
+            ],
+          )
+        : SizedBox.shrink();
   }
 }

@@ -10,6 +10,7 @@ import 'package:bilibili/views/home/live/bili_live_list_rank_section_view.dart';
 import 'package:bilibili/views/home/live/bili_live_list_activity_section_view.dart';
 import 'package:bilibili/views/home/live/bili_live_list_ad_section.dart';
 import 'package:bilibili/views/home/live/bili_live_list_area_section_view.dart';
+import 'package:bilibili/widgets/bili_pull_down_indicator_view.dart';
 
 class BiliLiveListView extends StatefulWidget {
   BiliLiveListView({Key key}) : super(key: key);
@@ -24,14 +25,34 @@ class _BiliLiveListViewState extends State<BiliLiveListView> {
 
   @override
   void initState() {
+    _refreshController = RefreshController();
     super.initState();
-    _onRefresh();
   }
 
   @override
   void dispose() {
-    super.dispose();
     _refreshController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Image.asset("assets/images/live_shoot58x58.png"),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Container()));
+        },
+      ),
+      body: SmartRefresher(
+        header: BiliRefreshHeader(),
+        controller: _refreshController,
+        onRefresh: _onRefresh,
+        child: _getListView(),
+      ),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+    );
   }
 
   Future<void> _onRefresh() async {
@@ -52,33 +73,14 @@ class _BiliLiveListViewState extends State<BiliLiveListView> {
         .sort((lhs, rhs) => lhs.moduleInfo.sort.compareTo(rhs.moduleInfo.sort));
 
     if (this.mounted) {
+      Future.delayed(Duration(seconds: 1), () {
       _refreshController.refreshCompleted();
-      setState(() {});
+        setState(() {});
+      });
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: Image.asset("assets/images/live_shoot58x58.png"),
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Container()));
-        },
-      ),
-      body: SmartRefresher(
-        controller: _refreshController,
-        onRefresh: _onRefresh,
-        child: _initListView(),
-        // header: Container(),
-        onOffsetChange: ((a, b) {}),
-      ),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-    );
-  }
-
-  Widget _initListView() {
+  Widget _getListView() {
     return ListView.builder(
       physics: AlwaysScrollableScrollPhysics(),
       // Add all live button with a item appended to list end.
@@ -110,13 +112,13 @@ class _BiliLiveListViewState extends State<BiliLiveListView> {
                     ),
                   ),
                 )
-              : _initListItemView(_sections[index]),
+              : _getListItemView(_sections[index]),
         );
       },
     );
   }
 
-  Widget _initListItemView(LiveSection section) {
+  Widget _getListItemView(LiveSection section) {
     ModuleInfo module = section.moduleInfo;
 
     if (section is LiveSection<LiveAd>) {

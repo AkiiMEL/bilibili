@@ -1,8 +1,7 @@
 import 'package:bilibili/utils/bili_args.dart';
+import 'package:bilibili/widgets/bili_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'package:cached_network_image/cached_network_image.dart';
 
 import 'package:bilibili/views/home/live/bili_live_list_view.dart';
 import 'package:bilibili/views/home/features/bili_features_list_view.dart';
@@ -63,25 +62,10 @@ class _BiliHomeViewState extends State<BiliHomeView>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      ClipOval(
-                        child: CachedNetworkImage(
-                          // TODO: Repace with actual user avatar url.
-                          imageUrl:
-                              "http://i1.hdslb.com/bfs/face/27317040707b3034f73402f6b83b6897caffc299.jpg",
-                          placeholder: ((context, url) => Image(
-                                image: AssetImage(
-                                  'assets/images/ad_avator24x24.png',
-                                ),
-                              )),
-                          errorWidget: ((context, url, e) => Image(
-                                image: AssetImage(
-                                  'assets/images/ad_avator24x24.png',
-                                ),
-                              )),
-                          width: 36.0,
-                          height: 36.0,
-                          fit: BoxFit.cover,
-                        ),
+                      BiliImage(
+                        "http://i1.hdslb.com/bfs/face/27317040707b3034f73402f6b83b6897caffc299.jpg",
+                        placeholder: "assets/images/ad_avator24x24.png",
+                        radius: 18.0,
                       ),
                       SizedBox(
                         width: spacing * 2.5,
@@ -117,7 +101,7 @@ class _BiliHomeViewState extends State<BiliHomeView>
                         width: spacing * 2.5,
                       ),
                       Image.asset(
-                            'assets/images/top_btn_game_centerhome_icon22x22.png'),
+                          'assets/images/top_btn_game_centerhome_icon22x22.png'),
                       SizedBox(
                         width: spacing * 2.5,
                       ),

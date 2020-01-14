@@ -1,5 +1,6 @@
 import 'package:bilibili/models/bili_live_models.dart';
 import 'package:bilibili/utils/bili_args.dart';
+import 'package:bilibili/widgets/bili_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -33,8 +34,7 @@ class BiliLiveListActivitySectionView extends StatelessWidget {
                             topLeft: Radius.circular(5.0),
                             bottomLeft: Radius.circular(5.0),
                           ),
-                          child: Image.network(
-                              activities.list[index].logoUrl ?? ""),
+                          child: BiliImage(activities.list[index].logoUrl),
                         ),
                       ),
                       SizedBox(

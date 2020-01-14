@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class BiliFeaturesListView extends StatefulWidget {
-  BiliFeaturesListView({Key key}) : super(key: key);
-
   @override
   _BiliFeaturesListViewState createState() => _BiliFeaturesListViewState();
 }
@@ -26,24 +24,33 @@ class _BiliFeaturesListViewState extends State<BiliFeaturesListView> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: StaggeredGridView.builder(
-        padding: EdgeInsets.all(spacing),
-        gridDelegate: SliverStaggeredGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          staggeredTileBuilder: _staggeredTileBuilder,
-        ),
+    return Scaffold(
+      body: StaggeredGridView.countBuilder(
+        crossAxisCount: 2,
+        staggeredTileBuilder: _staggeredTileBuilder,
         itemBuilder: _itemBuilder,
         itemCount: bangumis.length,
+        mainAxisSpacing: spacing,
+        crossAxisSpacing: spacing,
+      ),
+    );
+  }
+
+  Widget _itemBuilder(BuildContext context, int index) {
+    return Container(
+      height: 64.0,
+      color: Colors.black45,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text("${index}"),
+        ],
       ),
     );
   }
 
   StaggeredTile _staggeredTileBuilder(int index) {
-    return StaggeredTile.count(2, 2);
-  }
-
-  Widget _itemBuilder(BuildContext context, int index) {
-    return Container();
+    return index % 2 == 1 ? StaggeredTile.fit(2) : StaggeredTile.fit(1);
   }
 }
