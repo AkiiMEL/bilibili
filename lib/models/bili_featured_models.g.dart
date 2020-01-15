@@ -446,8 +446,12 @@ AdTagStyle _$AdTagStyleFromJson(Map<String, dynamic> json) {
     type: json['type'] as int,
     text: json['text'] as String,
     textColor: json['text_color'] as String,
-    bgBorderColor: json['bg_border_color'] as String,
-  );
+    borderColor: json['bg_border_color'] as String,
+  )
+    ..backgroundColor = json['backgroundColor'] as String
+    ..darkModeBackgroundColor = json['darkModeBackgroundColor'] as String
+    ..darkModeBorderColor = json['darkModeBorderColor'] as String
+    ..darkModeTextColor = json['darkModeTextColor'] as String;
 }
 
 Map<String, dynamic> _$AdTagStyleToJson(AdTagStyle instance) =>
@@ -455,7 +459,11 @@ Map<String, dynamic> _$AdTagStyleToJson(AdTagStyle instance) =>
       'type': instance.type,
       'text': instance.text,
       'text_color': instance.textColor,
-      'bg_border_color': instance.bgBorderColor,
+      'bg_border_color': instance.borderColor,
+      'backgroundColor': instance.backgroundColor,
+      'darkModeBackgroundColor': instance.darkModeBackgroundColor,
+      'darkModeBorderColor': instance.darkModeBorderColor,
+      'darkModeTextColor': instance.darkModeTextColor,
     };
 
 FeedbackPanel _$FeedbackPanelFromJson(Map<String, dynamic> json) {
@@ -532,23 +540,23 @@ TextAttributes _$TextAttributesFromJson(Map<String, dynamic> json) {
   return TextAttributes(
     text: json['text'] as String,
     textColor: json['text_color'] as String,
-    bgColor: json['bg_color'] as String,
+    darkModeTextColor: json['text_color_night'] as String,
+    backgroundColor: json['bg_color'] as String,
+    darkModeBackgroundColor: json['bg_color_night'] as String,
     borderColor: json['border_color'] as String,
-    textColorNight: json['text_color_night'] as String,
-    bgColorNight: json['bg_color_night'] as String,
-    borderColorNight: json['border_color_night'] as String,
+    darkModeBorderColor: json['border_color_night'] as String,
     bgStyle: json['bg_style'] as int,
   );
 }
 
 Map<String, dynamic> _$TextAttributesToJson(TextAttributes instance) =>
     <String, dynamic>{
-      'text_color_night': instance.textColorNight,
-      'bg_color': instance.bgColor,
-      'bg_color_night': instance.bgColorNight,
+      'text_color_night': instance.darkModeTextColor,
+      'bg_color': instance.backgroundColor,
+      'bg_color_night': instance.darkModeBackgroundColor,
       'text_color': instance.textColor,
       'border_color': instance.borderColor,
-      'border_color_night': instance.borderColorNight,
+      'border_color_night': instance.darkModeBorderColor,
       'bg_style': instance.bgStyle,
       'text': instance.text,
     };

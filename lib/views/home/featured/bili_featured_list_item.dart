@@ -40,11 +40,13 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
   // Media preview contains image, tag and other extra message
   // like number of visited and danmuku.
   Widget _getPreviewView(BuildContext context, Media media) {
+    bool isAdView = media.cardType == "cm_v2";
     return Stack(
       children: <Widget>[
         AspectRatio(
           aspectRatio: 16 / 9.0,
-          child: BiliImage(media.cover),
+          child: BiliImage(
+              isAdView ? media.adInfo?.creativeContent?.imageUrl : media.cover),
         ),
         Positioned(
           bottom: 0,
@@ -57,7 +59,8 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
   }
 
   // Media tag.
-  Widget _getTagView(BuildContext context, TextAttributes textAttributes) {
+  Widget _getTagView(
+      BuildContext context, TextAttributesDefinitions textAttributes) {
     return textAttributes == null ||
             textAttributes.text == null ||
             textAttributes.text.isEmpty
@@ -67,16 +70,16 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
             decoration: BoxDecoration(
               color: BiliColor.from(
                   Theme.of(context).brightness == Brightness.light
-                      ? textAttributes?.bgColor
-                      : media.rcmdReasonStyle?.bgColorNight),
+                      ? textAttributes?.backgroundColor
+                      : textAttributes?.darkModeBackgroundColor),
               border: Border.all(
                 color: BiliColor.from(
                         Theme.of(context).brightness == Brightness.light
                             ? textAttributes.borderColor
-                            : textAttributes.borderColorNight) ??
+                            : textAttributes.darkModeBorderColor) ??
                     Colors.transparent,
               ),
-              borderRadius: BorderRadius.circular(2),
+              borderRadius: BorderRadius.circular(3.0),
             ),
             padding: EdgeInsets.symmetric(horizontal: 1),
             child: Center(
@@ -84,10 +87,9 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
                 textAttributes.text,
                 style: Theme.of(context).textTheme.display4.copyWith(
                       color: BiliColor.from(
-                              Theme.of(context).brightness == Brightness.light
-                                  ? textAttributes.textColor
-                                  : textAttributes.textColorNight) ??
-                          Colors.white,
+                          Theme.of(context).brightness == Brightness.light
+                              ? textAttributes.textColor
+                              : textAttributes.darkModeTextColor),
                     ),
               ),
             ),
@@ -119,7 +121,8 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
                     context, media.coverLeftText2, media.coverLeftIcon2),
               ],
             ),
-            _getPreviewExtraMsgIndicatorView(context, media.coverRightText, null),
+            _getPreviewExtraMsgIndicatorView(
+                context, media.coverRightText, null),
           ],
         ),
       ),
@@ -167,6 +170,7 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
   }
 
   Widget _getPreviewDescriptionView(BuildContext context, Media media) {
+    bool isAdView = media.cardType == "cm_v2";
     return Container(
       height: 70.0,
       margin: defaultMargin,
@@ -175,7 +179,9 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            media.title ?? "",
+            isAdView
+                ? (media.adInfo?.creativeContent?.title ?? "")
+                : media.title ?? "",
             maxLines: 2,
             style: Theme.of(context).textTheme.title,
           ),
@@ -183,10 +189,18 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               _getTagView(context, media.rcmdReasonStyle),
-              _getTagView(context, media.badgeStyle),
+              _getTagView(
+                  context,
+                  isAdView
+                      ? media.adInfo?.extra?.card?.adTagStyle
+                      : media.badgeStyle),
               Expanded(
-                child: Text(media.descButton?.text ?? "",
-                    maxLines: 1, style: Theme.of(context).textTheme.subtitle),
+                child: Text(
+                    isAdView
+                        ? media.adInfo?.creativeContent?.description ?? ""
+                        : media.descButton?.text ?? "",
+                    maxLines: 1,
+                    style: Theme.of(context).textTheme.subtitle),
               ),
               SizedBox(
                 width: defaultMargin.left / 2,
@@ -210,6 +224,15 @@ class BiliFeaturedListMultipleColumCollectionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    return _BiliFeaturedBoxItem(
+      child: Container(),
+    );
+  }
+}
+
+class BiliFeaturedListMultipleColumAdItem extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return _BiliFeaturedBoxItem(
       child: Container(),
     );

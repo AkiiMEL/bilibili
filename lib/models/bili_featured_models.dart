@@ -465,20 +465,32 @@ class Cover extends Object {
 }
 
 @JsonSerializable()
-class AdTagStyle extends Object {
+class AdTagStyle extends Object implements TextAttributesDefinitions {
   int type;
   String text;
   @JsonKey(name: "text_color")
   String textColor;
   @JsonKey(name: "bg_border_color")
-  String bgBorderColor;
+  String borderColor;
 
-  AdTagStyle({this.type, this.text, this.textColor, this.bgBorderColor});
+  AdTagStyle({this.type, this.text, this.textColor, this.borderColor});
 
   factory AdTagStyle.fromJson(Map<String, dynamic> srcJson) =>
       _$AdTagStyleFromJson(srcJson);
 
   Map<String, dynamic> toJson() => _$AdTagStyleToJson(this);
+
+  @override
+  String backgroundColor;
+
+  @override
+  String darkModeBackgroundColor;
+
+  @override
+  String darkModeBorderColor;
+
+  @override
+  String darkModeTextColor;
 }
 
 @JsonSerializable()
@@ -554,15 +566,15 @@ class ShareInfo extends Object {
 }
 
 @JsonSerializable()
-class TextAttributes extends Object {
+class TextAttributes extends Object implements TextAttributesDefinitions {
   @JsonKey(name: "text_color_night")
-  String textColorNight;
+  String darkModeTextColor;
 
   @JsonKey(name: "bg_color")
-  String bgColor;
+  String backgroundColor;
 
   @JsonKey(name: "bg_color_night")
-  String bgColorNight;
+  String darkModeBackgroundColor;
 
   @JsonKey(name: "text_color")
   String textColor;
@@ -571,7 +583,7 @@ class TextAttributes extends Object {
   String borderColor;
 
   @JsonKey(name: "border_color_night")
-  String borderColorNight;
+  String darkModeBorderColor;
 
   @JsonKey(name: "bg_style")
   int bgStyle;
@@ -580,15 +592,25 @@ class TextAttributes extends Object {
   TextAttributes(
       {this.text,
       this.textColor,
-      this.bgColor,
+      this.darkModeTextColor,
+      this.backgroundColor,
+      this.darkModeBackgroundColor,
       this.borderColor,
-      this.textColorNight,
-      this.bgColorNight,
-      this.borderColorNight,
+      this.darkModeBorderColor,
       this.bgStyle});
 
   factory TextAttributes.fromJson(Map<String, dynamic> srcJson) =>
       _$TextAttributesFromJson(srcJson);
 
   Map<String, dynamic> toJson() => _$TextAttributesToJson(this);
+}
+
+class TextAttributesDefinitions {
+  String text;
+  String textColor;
+  String darkModeTextColor;
+  String backgroundColor;
+  String darkModeBackgroundColor;
+  String borderColor;
+  String darkModeBorderColor;
 }
