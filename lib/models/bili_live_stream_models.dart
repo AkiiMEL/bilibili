@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'bili_live_models.g.dart';
+part 'bili_live_stream_models.g.dart';
 
 @JsonSerializable(createToJson: false)
-class LiveStreamBody extends Object {
+class LiveStreamHttpBody extends Object {
   @JsonKey(name: 'code')
   int code;
 
@@ -13,26 +13,25 @@ class LiveStreamBody extends Object {
   int ttl;
 
   @JsonKey(name: 'data')
-  LiveStreamData data;
+  LiveStreamBody data;
 
-  LiveStreamBody(
+  LiveStreamHttpBody({
     this.code,
     this.message,
     this.ttl,
     this.data,
-  );
+  });
 
-  factory LiveStreamBody.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveStreamBodyFromJson(srcJson);
+  factory LiveStreamHttpBody.fromJson(Map<String, dynamic> srcJson) =>
+      _$LiveStreamHttpBodyFromJson(srcJson);
 
-  // Map<String, dynamic> toJson() => _$LiveStreamBodyToJson(this);
+  // Map<String, dynamic> toJson() => _$LiveStreamHttpBodyToJson(this);
 }
 
 @JsonSerializable(createToJson: false)
-class LiveStreamData extends Object {
-
+class LiveStreamBody extends Object {
   @JsonKey(name: 'hour_rank', fromJson: _rankFromJson)
-  List<LiveSection<LiveRank>> hourRank;
+  List<LiveStreamSection<LiveStreamRank>> hourRank;
 
   @JsonKey(name: 'sea_patrol')
   List<dynamic> seaPatrol;
@@ -41,33 +40,32 @@ class LiveStreamData extends Object {
   List<dynamic> myTag;
 
   @JsonKey(name: 'my_idol', fromJson: _idolFromJson)
-  List<LiveSection<LiveIdol>> myIdol;
+  List<LiveStreamSection<LiveStreamIdol>> myIdol;
 
   @JsonKey(name: 'room_list', fromJson: _roomFromJson)
-  List<LiveSection<LiveRoom>> roomList;
+  List<LiveStreamSection<LiveStreamRoom>> roomList;
 
   @JsonKey(name: 'activity_card')
   List<dynamic> activityCard;
 
-  @JsonKey(name: 'interval')
   int interval;
 
   @JsonKey(name: 'area_entrance_v2', fromJson: _areaFromJson)
-  List<LiveSection<LiveAreaEntrance>> areaEntranceV2;
+  List<LiveStreamSection<LiveStreamAreaEntrance>> areaEntranceV2;
 
   @JsonKey(name: 'area_entrance')
   List<dynamic> areaEntrance;
 
   @JsonKey(name: 'banner', fromJson: _adFromJson)
-  List<LiveSection<LiveAd>> banner;
+  List<LiveStreamSection<LiveStreamAd>> banner;
 
   @JsonKey(name: 'activity_card_v2', fromJson: _activityFromJson)
-  List<LiveSection<LiveActivity>> activityCardV2;
+  List<LiveStreamSection<LiveStreamActivity>> activityCardV2;
 
   @JsonKey(name: 'is_sky_horse_gray')
   int isSkyHorseGray;
 
-  LiveStreamData(
+  LiveStreamBody({
     this.hourRank,
     this.seaPatrol,
     this.myTag,
@@ -80,113 +78,112 @@ class LiveStreamData extends Object {
     this.banner,
     this.activityCardV2,
     this.isSkyHorseGray,
-  );
+  });
 
-  factory LiveStreamData.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveStreamDataFromJson(srcJson);
+  factory LiveStreamBody.fromJson(Map<String, dynamic> srcJson) =>
+      _$LiveStreamBodyFromJson(srcJson);
 
-  // Map<String, dynamic> toJson() => _$LiveStreamDataToJson(this);
+  // Map<String, dynamic> toJson() => _$LiveStreamBodyToJson(this);
 
-  static List<LiveSection<LiveAd>> _adFromJson(List json) {
+  static List<LiveStreamSection<LiveStreamAd>> _adFromJson(List json) {
     return json
         ?.map((e) => e == null
             ? null
-            : LiveSection(
+            : LiveStreamSection(
                 ModuleInfo.fromJson(e["module_info"] as Map<String, dynamic>),
                 null,
                 (e["list"] as List)
                     ?.map((f) => f == null
                         ? null
-                        : LiveAd.fromJson(f as Map<String, dynamic>))
+                        : LiveStreamAd.fromJson(f as Map<String, dynamic>))
                     ?.toList(),
               ))
         ?.toList();
   }
 
-  static List<LiveSection<LiveRank>> _rankFromJson(List json) {
+  static List<LiveStreamSection<LiveStreamRank>> _rankFromJson(List json) {
     return json
         ?.map((e) => e == null
             ? null
-            : LiveSection(
+            : LiveStreamSection(
                 ModuleInfo.fromJson(e["module_info"] as Map<String, dynamic>),
                 ExtraInfo.fromJson(e["extra_info"] as Map<String, dynamic>),
                 (e["list"] as List)
                     ?.map((f) => f == null
                         ? null
-                        : LiveRank.fromJson(f as Map<String, dynamic>))
+                        : LiveStreamRank.fromJson(f as Map<String, dynamic>))
                     ?.toList(),
               ))
         ?.toList();
   }
 
-  static List<LiveSection<LiveRoom>> _roomFromJson(List json) {
+  static List<LiveStreamSection<LiveStreamRoom>> _roomFromJson(List json) {
     return json
         ?.map((e) => e == null
             ? null
-            : LiveSection(
+            : LiveStreamSection(
                 ModuleInfo.fromJson(e["module_info"] as Map<String, dynamic>),
                 null,
                 (e["list"] as List)
                     ?.map((f) => f == null
                         ? null
-                        : LiveRoom.fromJson(f as Map<String, dynamic>))
+                        : LiveStreamRoom.fromJson(f as Map<String, dynamic>))
                     ?.toList(),
               ))
         ?.toList();
   }
 
-  static List<LiveSection<LiveAreaEntrance>> _areaFromJson(List json) {
+  static List<LiveStreamSection<LiveStreamAreaEntrance>> _areaFromJson(List json) {
     return json
         ?.map((e) => e == null
             ? null
-            : LiveSection(
+            : LiveStreamSection(
                 ModuleInfo.fromJson(e["module_info"] as Map<String, dynamic>),
                 null,
                 (e["list"] as List)
                     ?.map((f) => f == null
                         ? null
-                        : LiveAreaEntrance.fromJson(f as Map<String, dynamic>))
+                        : LiveStreamAreaEntrance.fromJson(f as Map<String, dynamic>))
                     ?.toList(),
               ))
         ?.toList();
   }
 
-  static List<LiveSection<LiveIdol>> _idolFromJson(List json) {
+  static List<LiveStreamSection<LiveStreamIdol>> _idolFromJson(List json) {
     return json
         ?.map((e) => e == null
             ? null
-            : LiveSection(
+            : LiveStreamSection(
                 ModuleInfo.fromJson(e["module_info"] as Map<String, dynamic>),
                 null,
                 (e["list"] as List)
                     ?.map((f) => f == null
                         ? null
-                        : LiveIdol.fromJson(f as Map<String, dynamic>))
+                        : LiveStreamIdol.fromJson(f as Map<String, dynamic>))
                     ?.toList(),
               ))
         ?.toList();
   }
 
-    static List<LiveSection<LiveActivity>> _activityFromJson(List json) {
+  static List<LiveStreamSection<LiveStreamActivity>> _activityFromJson(List json) {
     return json
         ?.map((e) => e == null
             ? null
-            : LiveSection(
+            : LiveStreamSection(
                 ModuleInfo.fromJson(e["module_info"] as Map<String, dynamic>),
                 null,
                 (e["list"] as List)
                     ?.map((f) => f == null
                         ? null
-                        : LiveActivity.fromJson(f as Map<String, dynamic>))
+                        : LiveStreamActivity.fromJson(f as Map<String, dynamic>))
                     ?.toList(),
               ))
         ?.toList();
   }
-  
 }
 
 // @JsonSerializable()
-class LiveSection<E> {
+class LiveStreamSection<E> {
   // @JsonKey(name: 'module_info')
   ModuleInfo moduleInfo;
 
@@ -197,41 +194,16 @@ class LiveSection<E> {
   // @_Converter()
   List<E> list;
 
-  LiveSection(this.moduleInfo, this.extraInfo, this.list);
+  LiveStreamSection(this.moduleInfo, this.extraInfo, this.list);
 
-  // factory LiveSection.fromJson(Map<String, dynamic> json) =>
-  //     _$LiveSectionFromJson<E>(json);
+  // factory LiveStreamSection.fromJson(Map<String, dynamic> json) =>
+  //     _$LiveStreamSectionFromJson<E>(json);
 
-  // Map<String, dynamic> toJson() => _$LiveSectionToJson(this);
+  // Map<String, dynamic> toJson() => _$LiveStreamSectionToJson(this);
 }
 
-/*
 @JsonSerializable()
-class LiveAreaEntranceSection extends Object {
-  @JsonKey(name: 'module_info')
-  ModuleInfo moduleInfo;
-
-  @JsonKey(name: 'extra_info')
-  ExtraInfo extraInfo;
-
-  @JsonKey(name: 'list')
-  List<LiveAreaEntrance> list;
-
-  LiveAreaEntranceSection(
-    this.moduleInfo,
-    this.extraInfo,
-    this.list,
-  );
-
-  factory LiveAreaEntranceSection.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveAreaEntranceSectionFromJson(srcJson);
-
-  Map<String, dynamic> toJson() => _$LiveAreaEntranceSectionToJson(this);
-}
-*/
-
-@JsonSerializable()
-class LiveAreaEntrance {
+class LiveStreamAreaEntrance {
   @JsonKey(name: 'id')
   int id;
 
@@ -253,7 +225,7 @@ class LiveAreaEntrance {
   @JsonKey(name: 'tag_type')
   int tagType;
 
-  LiveAreaEntrance(
+  LiveStreamAreaEntrance({
     this.id,
     this.link,
     this.pic,
@@ -261,37 +233,16 @@ class LiveAreaEntrance {
     this.areaV2Id,
     this.areaV2ParentId,
     this.tagType,
-  );
+  });
 
-  factory LiveAreaEntrance.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveAreaEntranceFromJson(srcJson);
+  factory LiveStreamAreaEntrance.fromJson(Map<String, dynamic> srcJson) =>
+      _$LiveStreamAreaEntranceFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$LiveAreaEntranceToJson(this);
+  Map<String, dynamic> toJson() => _$LiveStreamAreaEntranceToJson(this);
 }
 
-/*
 @JsonSerializable()
-class LiveActivitySection extends Object {
-  @JsonKey(name: 'module_info')
-  ModuleInfo moduleInfo;
-
-  @JsonKey(name: 'list')
-  List<LiveActivity> list;
-
-  LiveActivitySection(
-    this.moduleInfo,
-    this.list,
-  );
-
-  factory LiveActivitySection.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveActivitySectionFromJson(srcJson);
-
-  Map<String, dynamic> toJson() => _$LiveActivitySectionToJson(this);
-}
-*/
-
-@JsonSerializable()
-class LiveActivity {
+class LiveStreamActivity {
   @JsonKey(name: 'aid')
   int aid;
 
@@ -328,7 +279,7 @@ class LiveActivity {
   @JsonKey(name: 'on_live')
   int onLive;
 
-  LiveActivity(
+  LiveStreamActivity({
     this.aid,
     this.type,
     this.title,
@@ -341,41 +292,16 @@ class LiveActivity {
     this.activityUrl,
     this.status,
     this.onLive,
-  );
+  });
 
-  factory LiveActivity.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveActivityFromJson(srcJson);
+  factory LiveStreamActivity.fromJson(Map<String, dynamic> srcJson) =>
+      _$LiveStreamActivityFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$LiveActivityToJson(this);
+  Map<String, dynamic> toJson() => _$LiveStreamActivityToJson(this);
 }
 
-/*
 @JsonSerializable()
-class LiveIdolSection extends Object {
-  @JsonKey(name: 'module_info')
-  ModuleInfo moduleInfo;
-
-  @JsonKey(name: 'extra_info')
-  ExtraInfo extraInfo;
-
-  @JsonKey(name: 'list')
-  List<dynamic> list;
-
-  LiveIdolSection(
-    this.moduleInfo,
-    this.extraInfo,
-    this.list,
-  );
-
-  factory LiveIdolSection.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveIdolSectionFromJson(srcJson);
-
-  Map<String, dynamic> toJson() => _$LiveIdolSectionToJson(this);
-}
-*/
-
-@JsonSerializable()
-class LiveIdol {
+class LiveStreamIdol {
   @JsonKey(name: 'total_count')
   int totalCount;
 
@@ -397,7 +323,7 @@ class LiveIdol {
   @JsonKey(name: 'show_type')
   int showType;
 
-  LiveIdol(
+  LiveStreamIdol({
     this.totalCount,
     this.timeDesc,
     this.unameDesc,
@@ -405,37 +331,16 @@ class LiveIdol {
     this.cardType,
     this.relationPage,
     this.showType,
-  );
+  });
 
-  factory LiveIdol.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveIdolFromJson(srcJson);
+  factory LiveStreamIdol.fromJson(Map<String, dynamic> srcJson) =>
+      _$LiveStreamIdolFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$LiveIdolToJson(this);
+  Map<String, dynamic> toJson() => _$LiveStreamIdolToJson(this);
 }
 
-/*
 @JsonSerializable()
-class LiveRoomSection extends Object {
-  @JsonKey(name: 'module_info')
-  ModuleInfo moduleInfo;
-
-  @JsonKey(name: 'list')
-  List<ListRoom> list;
-
-  LiveRoomSection(
-    this.moduleInfo,
-    this.list,
-  );
-
-  factory LiveRoomSection.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveRoomSectionFromJson(srcJson);
-
-  Map<String, dynamic> toJson() => _$LiveRoomSectionToJson(this);
-}
-*/
-
-@JsonSerializable()
-class LiveRoom {
+class LiveStreamRoom {
   @JsonKey(name: 'accept_quality')
   List<int> acceptQuality;
 
@@ -527,9 +432,9 @@ class LiveRoom {
   int flag;
 
   @JsonKey(name: 'pendent_list')
-  List<LivePendent> pendentList;
+  List<LiveStreamPendent> pendentList;
 
-  LiveRoom(
+  LiveStreamRoom({
     this.acceptQuality,
     this.areaV2Id,
     this.areaV2ParentId,
@@ -561,41 +466,16 @@ class LiveRoom {
     this.uid,
     this.flag,
     this.pendentList,
-  );
+  });
 
-  factory LiveRoom.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveRoomFromJson(srcJson);
+  factory LiveStreamRoom.fromJson(Map<String, dynamic> srcJson) =>
+      _$LiveStreamRoomFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$LiveRoomToJson(this);
+  Map<String, dynamic> toJson() => _$LiveStreamRoomToJson(this);
 }
 
-/*
 @JsonSerializable()
-class LiveRankSection extends Object {
-  @JsonKey(name: 'module_info')
-  ModuleInfo moduleInfo;
-
-  @JsonKey(name: 'extra_info')
-  ExtraInfo extraInfo;
-
-  @JsonKey(name: 'list')
-  List<LiveRank> list;
-
-  LiveRankSection(
-    this.moduleInfo,
-    this.extraInfo,
-    this.list,
-  );
-
-  factory LiveRankSection.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveRankSectionFromJson(srcJson);
-
-  Map<String, dynamic> toJson() => _$LiveRankSectionToJson(this);
-}
-*/
-
-@JsonSerializable()
-class LiveRank {
+class LiveStreamRank {
   @JsonKey(name: 'rank')
   int rank;
 
@@ -626,7 +506,7 @@ class LiveRank {
   @JsonKey(name: 'area_v2_name')
   String areaV2Name;
 
-  LiveRank(
+  LiveStreamRank({
     this.rank,
     this.uid,
     this.roomid,
@@ -637,12 +517,12 @@ class LiveRank {
     this.areaV2ParentName,
     this.areaV2Id,
     this.areaV2Name,
-  );
+  });
 
-  factory LiveRank.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveRankFromJson(srcJson);
+  factory LiveStreamRank.fromJson(Map<String, dynamic> srcJson) =>
+      _$LiveStreamRankFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$LiveRankToJson(this);
+  Map<String, dynamic> toJson() => _$LiveStreamRankToJson(this);
 }
 
 @JsonSerializable()
@@ -653,10 +533,10 @@ class QualityDescription {
   @JsonKey(name: 'desc')
   String desc;
 
-  QualityDescription(
+  QualityDescription({
     this.qn,
     this.desc,
-  );
+  });
 
   factory QualityDescription.fromJson(Map<String, dynamic> srcJson) =>
       _$QualityDescriptionFromJson(srcJson);
@@ -693,16 +573,17 @@ class ExtraInfo {
   @JsonKey(name: "sub_title")
   String subtitle;
 
-  ExtraInfo(
-      this.totalCount,
-      this.timeDesc,
-      this.unameDesc,
-      this.tagsDesc,
-      this.cardType,
-      this.relationPage,
-      this.showType,
-      this.offline,
-      this.subtitle);
+  ExtraInfo({
+    this.totalCount,
+    this.timeDesc,
+    this.unameDesc,
+    this.tagsDesc,
+    this.cardType,
+    this.relationPage,
+    this.showType,
+    this.offline,
+    this.subtitle,
+  });
 
   factory ExtraInfo.fromJson(Map<String, dynamic> srcJson) =>
       _$ExtraInfoFromJson(srcJson);
@@ -733,7 +614,7 @@ class ModuleInfo {
   @JsonKey(name: 'count')
   int count;
 
-  ModuleInfo(
+  ModuleInfo({
     this.id,
     this.link,
     this.pic,
@@ -741,7 +622,7 @@ class ModuleInfo {
     this.type,
     this.sort,
     this.count,
-  );
+  });
 
   factory ModuleInfo.fromJson(Map<String, dynamic> srcJson) =>
       _$ModuleInfoFromJson(srcJson);
@@ -750,7 +631,7 @@ class ModuleInfo {
 }
 
 @JsonSerializable()
-class LiveAd {
+class LiveStreamAd {
   @JsonKey(name: 'id')
   int id;
 
@@ -769,19 +650,19 @@ class LiveAd {
   @JsonKey(name: 'source_content')
   SourceContent sourceContent;
 
-  LiveAd(
+  LiveStreamAd({
     this.id,
     this.link,
     this.pic,
     this.title,
     this.content,
     this.sourceContent,
-  );
+  });
 
-  factory LiveAd.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveAdFromJson(srcJson);
+  factory LiveStreamAd.fromJson(Map<String, dynamic> srcJson) =>
+      _$LiveStreamAdFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$LiveAdToJson(this);
+  Map<String, dynamic> toJson() => _$LiveStreamAdToJson(this);
 }
 
 @JsonSerializable()
@@ -810,7 +691,7 @@ class SourceContent {
   @JsonKey(name: 'index')
   int index;
 
-  SourceContent(
+  SourceContent({
     this.requestId,
     this.sourceId,
     this.resourceId,
@@ -819,7 +700,7 @@ class SourceContent {
     this.clientIp,
     this.cardIndex,
     this.index,
-  );
+  });
 
   factory SourceContent.fromJson(Map<String, dynamic> srcJson) =>
       _$SourceContentFromJson(srcJson);
@@ -827,33 +708,8 @@ class SourceContent {
   Map<String, dynamic> toJson() => _$SourceContentToJson(this);
 }
 
-/*
 @JsonSerializable()
-class LiveHourRankSection {
-  @JsonKey(name: 'extra_info')
-  ExtraInfo extraInfo;
-
-  @JsonKey(name: 'list')
-  List<List> list;
-
-  @JsonKey(name: 'module_info')
-  ModuleInfo moduleInfo;
-
-  LiveHourRankSection(
-    this.extraInfo,
-    this.list,
-    this.moduleInfo,
-  );
-
-  factory LiveHourRankSection.fromJson(Map<String, dynamic> srcJson) =>
-      _$LiveHourRankSectionFromJson(srcJson);
-
-  Map<String, dynamic> toJson() => _$LiveHourRankSectionToJson(this);
-}
-*/
-
-@JsonSerializable()
-class LivePendent {
+class LiveStreamPendent {
   @JsonKey(name: 'content')
   String content;
 
@@ -866,15 +722,15 @@ class LivePendent {
   @JsonKey(name: 'pic')
   String pic;
 
-  LivePendent(
+  LiveStreamPendent({
     this.content,
     this.position,
     this.color,
     this.pic,
-  );
+  });
 
-  factory LivePendent.fromJson(Map<String, dynamic> srcJson) =>
-      _$LivePendentFromJson(srcJson);
+  factory LiveStreamPendent.fromJson(Map<String, dynamic> srcJson) =>
+      _$LiveStreamPendentFromJson(srcJson);
 
-  Map<String, dynamic> toJson() => _$LivePendentToJson(this);
+  Map<String, dynamic> toJson() => _$LiveStreamPendentToJson(this);
 }

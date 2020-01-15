@@ -2,17 +2,17 @@ import 'dart:math';
 
 import 'package:bilibili/widgets/bili_image.dart';
 import 'package:flutter/material.dart';
-import 'package:bilibili/models/bili_live_models.dart';
+import 'package:bilibili/models/bili_live_stream_models.dart';
 import 'package:bilibili/utils/bili_args.dart';
 
-class BiliLiveListSectionHeaderView extends StatelessWidget {
+class BiliLiveStreamListSectionHeaderView extends StatelessWidget {
   final ModuleInfo module;
   final String title;
   final String subtitle;
   final void Function(ModuleInfo) onTap;
   final Widget accessoryView;
 
-  BiliLiveListSectionHeaderView(
+  BiliLiveStreamListSectionHeaderView(
       {this.module, this.title, this.subtitle, this.onTap, this.accessoryView});
 
   @override
@@ -28,7 +28,7 @@ class BiliLiveListSectionHeaderView extends StatelessWidget {
                 title ?? "",
                 style: Theme.of(context).textTheme.headline,
               ),
-              SizedBox(width: spacing),
+              SizedBox(width: defaultMargin.left),
               Text(
                 subtitle ?? "",
                 style: Theme.of(context).textTheme.subtitle,
@@ -57,11 +57,11 @@ class BiliLiveListSectionHeaderView extends StatelessWidget {
   }
 }
 
-class BiliLiveListSectionFooterView extends StatelessWidget {
+class BiliLiveStreamListSectionFooterView extends StatelessWidget {
   final ModuleInfo module;
   final void Function(ModuleInfo) onTap;
 
-  BiliLiveListSectionFooterView({this.module, this.onTap});
+  BiliLiveStreamListSectionFooterView({this.module, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -85,10 +85,10 @@ class BiliLiveListSectionFooterView extends StatelessWidget {
   }
 }
 
-class BiliLiveListPartitionView extends StatelessWidget {
-  final LiveSection<LiveRoom> partition;
+class BiliLiveStreamListPartitionView extends StatelessWidget {
+  final LiveStreamSection<LiveStreamRoom> partition;
 
-  BiliLiveListPartitionView({this.partition});
+  BiliLiveStreamListPartitionView({this.partition});
 
   @override
   Widget build(BuildContext context) {
@@ -96,13 +96,13 @@ class BiliLiveListPartitionView extends StatelessWidget {
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisSpacing: spacing,
-          crossAxisSpacing: spacing,
+          mainAxisSpacing: defaultMargin.top,
+          crossAxisSpacing: defaultMargin.left,
           crossAxisCount: 2,
           childAspectRatio: 1.1),
       itemCount: min(4, partition.list.length),
       itemBuilder: (BuildContext contex, int index) {
-        return BiliLiveListPartitionItemView(
+        return BiliLiveStreamListPartitionItemView(
           item: partition.list[index],
         );
       },
@@ -110,10 +110,10 @@ class BiliLiveListPartitionView extends StatelessWidget {
   }
 }
 
-class BiliLiveListPartitionItemView extends StatelessWidget {
-  final LiveRoom item;
+class BiliLiveStreamListPartitionItemView extends StatelessWidget {
+  final LiveStreamRoom item;
 
-  const BiliLiveListPartitionItemView({this.item});
+  const BiliLiveStreamListPartitionItemView({this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -137,7 +137,7 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: spacing),
+            padding: EdgeInsets.symmetric(vertical: defaultMargin.top),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,10 +160,10 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
   }
 
 // Display prize up have owned.
-  Widget _getTopView(LiveRoom item) {
+  Widget _getTopView(LiveStreamRoom item) {
     List<Widget> children = [];
 
-    for (LivePendent pendent in item.pendentList ?? []) {
+    for (LiveStreamPendent pendent in item.pendentList ?? []) {
       if (pendent.pic == null) continue;
       if (pendent.position == 1) {
         children.add(
@@ -210,9 +210,9 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
   }
 
   // Dispaly image up uname and online.
-  Widget _getBottomView(LiveRoom item) {
+  Widget _getBottomView(LiveStreamRoom item) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(spacing / 2),
+      borderRadius: BorderRadius.circular(defaultMargin.top / 2),
       child: Stack(
         children: <Widget>[
           BiliImage(
@@ -232,10 +232,7 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: spacing,
-                  vertical: spacing,
-                ),
+                padding: defaultMargin,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
@@ -248,7 +245,7 @@ class BiliLiveListPartitionItemView extends StatelessWidget {
                     ),
                     Image.asset("assets/images/live_bc_ico_viewer_n16x16.png"),
                     SizedBox(
-                      width: spacing,
+                      width: defaultMargin.left,
                     ),
                     Text(
                       "${item.online}",

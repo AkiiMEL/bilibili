@@ -1,24 +1,24 @@
-import 'package:bilibili/models/bili_live_models.dart';
+import 'package:bilibili/models/bili_live_stream_models.dart';
 import 'package:bilibili/utils/bili_args.dart';
 import 'package:flutter/material.dart';
 
-class BiliLiveListAreaSectionView extends StatelessWidget {
-  final LiveSection<LiveAreaEntrance> areas;
+class BiliLiveStreamListAreaSectionView extends StatelessWidget {
+  final LiveStreamSection<LiveStreamAreaEntrance> areas;
 
-  BiliLiveListAreaSectionView({this.areas});
+  BiliLiveStreamListAreaSectionView({this.areas});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: spacing),
+      margin: EdgeInsets.symmetric(horizontal: defaultMargin.left),
       child: GridView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 5,
             childAspectRatio: 0.76,
-            crossAxisSpacing: spacing * 2,
-            mainAxisSpacing: spacing),
+            crossAxisSpacing: defaultMargin.left * 2,
+            mainAxisSpacing: defaultMargin.top),
         itemCount: areas.list.length,
         itemBuilder: (context, i) {
           return Column(

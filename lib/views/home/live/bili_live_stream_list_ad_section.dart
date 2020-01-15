@@ -1,11 +1,11 @@
-import 'package:bilibili/models/bili_live_models.dart';
+import 'package:bilibili/models/bili_live_stream_models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-class BiliLiveListAdSectionView extends StatelessWidget {
-  final LiveSection<LiveAd> advertisements;
+class BiliLiveStreamListAdSectionView extends StatelessWidget {
+  final LiveStreamSection<LiveStreamAd> advertisements;
 
-  BiliLiveListAdSectionView({this.advertisements});
+  BiliLiveStreamListAdSectionView({this.advertisements});
 
   @override
   Widget build(BuildContext context) {

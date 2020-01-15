@@ -1,13 +1,13 @@
-import 'package:bilibili/models/bili_live_models.dart';
+import 'package:bilibili/models/bili_live_stream_models.dart';
 import 'package:bilibili/utils/bili_args.dart';
 import 'package:bilibili/widgets/bili_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-class BiliLiveListActivitySectionView extends StatelessWidget {
-  final LiveSection<LiveActivity> activities;
+class BiliLiveStreamListActivitySectionView extends StatelessWidget {
+  final LiveStreamSection<LiveStreamActivity> activities;
 
-  BiliLiveListActivitySectionView({this.activities});
+  BiliLiveStreamListActivitySectionView({this.activities});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class BiliLiveListActivitySectionView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        width: spacing,
+                        width: defaultMargin.left,
                       ),
                       Text.rich(
                         TextSpan(
@@ -56,8 +56,8 @@ class BiliLiveListActivitySectionView extends StatelessWidget {
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      margin: EdgeInsets.only(right: spacing),
-                      padding: EdgeInsets.all(spacing / 2),
+                      margin: EdgeInsets.only(right: defaultMargin.left),
+                      padding: defaultMargin / 2,
                       decoration: BoxDecoration(
                         color: Colors.pink[200],
                         borderRadius: BorderRadius.circular(5.0),

@@ -3,7 +3,7 @@ import 'package:bilibili/widgets/bili_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/views/home/live/bili_live_list_view.dart';
+import 'package:bilibili/views/home/live/bili_Live_stream_list_view.dart';
 import 'package:bilibili/views/home/featured/bili_featured_list_view.dart';
 import 'package:bilibili/views/home/popular/bili_popular_list_view.dart';
 import 'package:bilibili/views/home/bangumi/bili_bangumi_list_view.dart';
@@ -32,7 +32,7 @@ class _BiliHomeViewState extends State<BiliHomeView>
     ].map((e) => Text(e)).toList();
 
     views = [
-      BiliLiveListView(),
+      BiliLiveStreamListView(),
       BiliFeaturedListView(),
       BiliPopularListView(),
       BiliBangumiListView(),
@@ -57,8 +57,7 @@ class _BiliHomeViewState extends State<BiliHomeView>
             return <Widget>[
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.only(
-                      left: spacing, bottom: spacing, right: spacing),
+                  padding: defaultMargin.copyWith(top: 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -68,11 +67,11 @@ class _BiliHomeViewState extends State<BiliHomeView>
                         radius: 18.0,
                       ),
                       SizedBox(
-                        width: spacing * 2.5,
+                        width: defaultMargin.left * 2.5,
                       ),
                       Flexible(
                         child: CupertinoTextField(
-                          padding: EdgeInsets.symmetric(vertical: spacing / 2),
+                          padding: EdgeInsets.symmetric(vertical: defaultMargin.top / 2),
                           decoration: BoxDecoration(
                             color: Colors.grey[100],
                             borderRadius: BorderRadius.circular(15.0),
@@ -83,7 +82,7 @@ class _BiliHomeViewState extends State<BiliHomeView>
                             fontSize: 13.0,
                           ),
                           prefix: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: spacing),
+                            padding: EdgeInsets.symmetric(horizontal: defaultMargin.left),
                             child: Image(
                               image: AssetImage(
                                 "assets/images/topic_search_ico22x22.png",
@@ -98,12 +97,12 @@ class _BiliHomeViewState extends State<BiliHomeView>
                         ),
                       ),
                       SizedBox(
-                        width: spacing * 2.5,
+                        width: defaultMargin.left * 2.5,
                       ),
                       Image.asset(
                           'assets/images/top_btn_game_centerhome_icon22x22.png'),
                       SizedBox(
-                        width: spacing * 2.5,
+                        width: defaultMargin.left * 2.5,
                       ),
                       Image.asset(
                         "assets/images/top_btn_linkim_home_icon22x22.png",
