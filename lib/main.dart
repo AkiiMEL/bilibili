@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/views/bili_initial_view.dart';
@@ -8,8 +11,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+ Dio().get("http://i1.hdslb.com/bfs/archive/3737af63f34d0f4b59ef11a55727194debf6950d.jpg");
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         brightness: Brightness.light,
         appBarTheme: AppBarTheme(

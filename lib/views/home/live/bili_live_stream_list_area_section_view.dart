@@ -1,5 +1,6 @@
 import 'package:bilibili/models/bili_live_stream_models.dart';
 import 'package:bilibili/utils/bili_args.dart';
+import 'package:bilibili/widgets/bili_image.dart';
 import 'package:flutter/material.dart';
 
 class BiliLiveStreamListAreaSectionView extends StatelessWidget {
@@ -25,9 +26,9 @@ class BiliLiveStreamListAreaSectionView extends StatelessWidget {
             children: <Widget>[
               AspectRatio(
                 aspectRatio: 1.0,
-                child: Image.network(
+                child: BiliImage(
                   areas.list[i].pic,
-                  fit: BoxFit.cover,
+                  placeholder: "assets/images/default_img33x31.png",
                 ),
               ),
               Text(

@@ -1,4 +1,5 @@
 import 'package:bilibili/models/bili_live_stream_models.dart';
+import 'package:bilibili/widgets/bili_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -15,11 +16,9 @@ class BiliLiveStreamListAdSectionView extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
         child: Swiper(
           itemBuilder: (context, index) {
-            return Container(
-              child: Image.network(
-                advertisements.list[index].pic ?? "",
-                fit: BoxFit.cover,
-              ),
+            return BiliImage(
+              advertisements.list[index].pic,
+              placeholder: "assets/images/default_img33x31.png",
             );
           },
           itemCount: advertisements.list.length,

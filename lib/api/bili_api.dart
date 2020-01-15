@@ -1,9 +1,8 @@
 import 'dart:convert' as serializer;
 import 'package:bilibili/models/bili_featured_models.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
 import 'package:bilibili/models/bili_live_stream_models.dart';
-import 'package:bilibili/models/bili_featured_models.dart';
 
 class BiliApi {
   static requestAllLive() async {

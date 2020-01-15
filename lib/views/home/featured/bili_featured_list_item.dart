@@ -27,26 +27,44 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isAdType2View =
+        media.cardType == "cm_v2" && media.adInfo?.cardType == 2;
     return _BiliFeaturedBoxItem(
-      child: Column(
-        children: <Widget>[
-          _getPreviewView(context, media),
-          _getPreviewDescriptionView(context, media),
-        ],
-      ),
+      child: isAdType2View
+          ? Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  margin: defaultMargin,
+                  child: _getPreviewDescriptionTitleView(context, media),
+                ),
+                _getPreviewView(context, media, aspectRatio: 16 / 4),
+                Container(
+                  margin: defaultMargin,
+                  child: _getPreviewDescriptionExtraMsgView(context, media),
+                ),
+              ],
+            )
+          : Column(
+              children: <Widget>[
+                _getPreviewView(context, media),
+                _getPreviewDescriptionView(context, media),
+              ],
+            ),
     );
   }
 
   // Media preview contains image, tag and other extra message
   // like number of visited and danmuku.
-  Widget _getPreviewView(BuildContext context, Media media) {
+  Widget _getPreviewView(BuildContext context, Media media,
+      {double aspectRatio = 16 / 9}) {
     bool isAdView = media.cardType == "cm_v2";
     return Stack(
       children: <Widget>[
         AspectRatio(
-          aspectRatio: 16 / 9.0,
+          aspectRatio: aspectRatio,
           child: BiliImage(
-              isAdView ? media.adInfo?.creativeContent?.imageUrl : media.cover),
+              isAdView ? media.adInfo?.creativeContent?.imageUrl : media.cover, placeholder: "assets/images/default_img33x31.png",),
         ),
         Positioned(
           bottom: 0,
@@ -170,7 +188,6 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
   }
 
   Widget _getPreviewDescriptionView(BuildContext context, Media media) {
-    bool isAdView = media.cardType == "cm_v2";
     return Container(
       height: 70.0,
       margin: defaultMargin,
@@ -178,44 +195,54 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            isAdView
-                ? (media.adInfo?.creativeContent?.title ?? "")
-                : media.title ?? "",
-            maxLines: 2,
-            style: Theme.of(context).textTheme.title,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              _getTagView(context, media.rcmdReasonStyle),
-              _getTagView(
-                  context,
-                  isAdView
-                      ? media.adInfo?.extra?.card?.adTagStyle
-                      : media.badgeStyle),
-              Expanded(
-                child: Text(
-                    isAdView
-                        ? media.adInfo?.creativeContent?.description ?? ""
-                        : media.descButton?.text ?? "",
-                    maxLines: 1,
-                    style: Theme.of(context).textTheme.subtitle),
-              ),
-              SizedBox(
-                width: defaultMargin.left / 2,
-              ),
-              GestureDetector(
-                child: Image.asset(
-                    "assets/images/pegasus_card_vertical_more16x16.png"),
-                onTap: () {
-                  print("Accessory action triggle.");
-                },
-              ),
-            ],
-          ),
+          _getPreviewDescriptionTitleView(context, media),
+          _getPreviewDescriptionExtraMsgView(context, media),
         ],
       ),
+    );
+  }
+
+  Widget _getPreviewDescriptionTitleView(BuildContext context, Media media) {
+    bool isAdView = media.cardType == "cm_v2";
+    return Text(
+      isAdView
+          ? (media.adInfo?.creativeContent?.title ?? "")
+          : media.title ?? "",
+      maxLines: 2,
+      style: Theme.of(context).textTheme.title,
+    );
+  }
+
+  Widget _getPreviewDescriptionExtraMsgView(BuildContext context, Media media) {
+    bool isAdView = media.cardType == "cm_v2";
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        _getTagView(context, media.rcmdReasonStyle),
+        _getTagView(
+            context,
+            isAdView
+                ? media.adInfo?.extra?.card?.adTagStyle
+                : media.badgeStyle),
+        Expanded(
+          child: Text(
+              isAdView
+                  ? media.adInfo?.creativeContent?.description ?? ""
+                  : media.descButton?.text ?? "",
+              maxLines: 1,
+              style: Theme.of(context).textTheme.subtitle),
+        ),
+        SizedBox(
+          width: defaultMargin.left / 2,
+        ),
+        GestureDetector(
+          child:
+              Image.asset("assets/images/pegasus_card_vertical_more16x16.png"),
+          onTap: () {
+            print("Accessory action triggle.");
+          },
+        ),
+      ],
     );
   }
 }

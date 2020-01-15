@@ -17,23 +17,20 @@ class _BiliRefreshHeaderState extends RefreshIndicatorState<BiliRefreshHeader>
   void initState() {
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 300),
     );
-    _animation = IntTween(begin: 1, end: 4).animate(_controller);
+    _animation = StepTween(begin: 1, end: 4).animate(_controller);
     super.initState();
   }
 
   @override
   void onModeChange(RefreshStatus mode) {
-    if (mode == RefreshStatus.refreshing) {
+    if (mode == RefreshStatus.canRefresh) {
       _controller.repeat();
+    } else if (mode == RefreshStatus.idle) {
+      _controller.stop();
     }
     super.onModeChange(mode);
-  }
-
-  @override
-  Future<void> endRefresh() {
-    return _controller.animateTo(0, duration: Duration(milliseconds: 500));
   }
 
   @override
@@ -47,6 +44,7 @@ class _BiliRefreshHeaderState extends RefreshIndicatorState<BiliRefreshHeader>
     return AnimatedBuilder(
       animation: _animation,
       builder: (BuildContext context, Widget child) {
+        print(_animation.value);
         return Image.asset(
           "assets/images/pull_loading_${_animation.value}60x60.png",
           width: 60.0,

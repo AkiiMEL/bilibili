@@ -34,7 +34,10 @@ class BiliLiveStreamListActivitySectionView extends StatelessWidget {
                             topLeft: Radius.circular(5.0),
                             bottomLeft: Radius.circular(5.0),
                           ),
-                          child: BiliImage(activities.list[index].logoUrl),
+                          child: BiliImage(
+                            activities.list[index].logoUrl,
+                            placeholder: "assets/images/default_img33x31.png",
+                          ),
                         ),
                       ),
                       SizedBox(

@@ -28,6 +28,7 @@ class BiliImage extends StatelessWidget {
       height: radius != null ? radius * 2 : (size?.height == double.infinity ? null : size?.height),
       fit: fit ?? BoxFit.cover,
     );
+
     return radius != null
         ? ClipOval(
             child: child,
