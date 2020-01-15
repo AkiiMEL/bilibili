@@ -1,4 +1,4 @@
-import 'package:bilibili/api/bili_live_api.dart';
+import 'package:bilibili/api/bili_api.dart';
 import 'package:bilibili/models/bili_featured_models.dart';
 import 'package:bilibili/utils/bili_args.dart';
 import 'package:bilibili/views/home/featured/bili_featured_list_item.dart';
@@ -14,8 +14,7 @@ class BiliFeaturedListView extends StatefulWidget {
 }
 
 class _BiliFeaturedListViewState extends State<BiliFeaturedListView> {
-  List<Object> _bangumis = [
-  ];
+  List<Media> _bangumis = [];
   RefreshController _refreshController = RefreshController();
 
   @override
@@ -43,25 +42,34 @@ class _BiliFeaturedListViewState extends State<BiliFeaturedListView> {
           staggeredTileBuilder: _staggeredTileBuilder,
           itemBuilder: _itemBuilder,
           itemCount: _bangumis.length,
-          mainAxisSpacing: spacing,
-          crossAxisSpacing: spacing,
-          padding: EdgeInsets.all(spacing),
+          mainAxisSpacing: defaultMargin.left,
+          crossAxisSpacing: defaultMargin.left,
+          padding: defaultMargin,
         ),
       ),
     );
   }
 
   Widget _itemBuilder(BuildContext context, int index) {
-    return BiliFeaturedListMultipleColumItem();
+    return BiliFeaturedListMultipleColumItem(
+      media: _bangumis[index],
+    );
   }
 
   StaggeredTile _staggeredTileBuilder(int index) {
+    // If card type is equal to 'cm_v2' means this is an ad.
+    // need more info to choose item type for each media.
+    Media media = _bangumis[index];
+    if (media.cardType == "cm_v2" && media?.adInfo?.cardType == 2) {
+      return StaggeredTile.fit(2);
+    }
     return StaggeredTile.fit(1);
   }
 
   Future<void> _onRefresh() async {
-    FeaturedBody body = await BiliApi.requestAllFeatured();
-    List<Object> copy = [];
+    FeaturedHttpBody body = await BiliApi.requestAllFeatured();
+
+    _bangumis = body.data.items ?? [];
 
     if (this.mounted) {
       Future.delayed(Duration(seconds: 1), () {
