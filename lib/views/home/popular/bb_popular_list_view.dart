@@ -12,8 +12,11 @@ class BBPopularListView extends StatefulWidget {
   _BBPopularListViewState createState() => _BBPopularListViewState();
 }
 
-class _BBPopularListViewState extends State<BBPopularListView> {
+class _BBPopularListViewState extends State<BBPopularListView> with AutomaticKeepAliveClientMixin {
   RefreshController _refreshController = RefreshController();
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {

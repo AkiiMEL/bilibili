@@ -19,9 +19,13 @@ class BBLiveStreamListView extends StatefulWidget {
   _BBLiveStreamListViewState createState() => _BBLiveStreamListViewState();
 }
 
-class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
+class _BBLiveStreamListViewState extends State<BBLiveStreamListView>
+    with AutomaticKeepAliveClientMixin {
   List<LiveStreamSection> _sections = [];
   RefreshController _refreshController = RefreshController();
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
@@ -74,7 +78,7 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
 
     if (this.mounted) {
       Future.delayed(Duration(seconds: 1), () {
-      _refreshController.refreshCompleted();
+        _refreshController.refreshCompleted();
         setState(() {});
       });
     }
@@ -92,7 +96,8 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
           child: index == _sections.length
               ? Center(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 44.0, bottom: defaultMargin.bottom),
+                    padding: EdgeInsets.only(
+                        top: 44.0, bottom: defaultMargin.bottom),
                     child: GestureDetector(
                       onTap: () {},
                       child: Container(

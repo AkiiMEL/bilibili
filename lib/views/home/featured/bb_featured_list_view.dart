@@ -9,13 +9,19 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class BBFeaturedListView extends StatefulWidget {
+  BBFeaturedListView({Key key}) : super(key: key);
+
   @override
   _BBFeaturedListViewState createState() => _BBFeaturedListViewState();
 }
 
-class _BBFeaturedListViewState extends State<BBFeaturedListView> {
+class _BBFeaturedListViewState extends State<BBFeaturedListView>
+    with AutomaticKeepAliveClientMixin {
   List<Media> _bangumis = [];
   RefreshController _refreshController = RefreshController();
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {

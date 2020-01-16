@@ -1,13 +1,11 @@
-import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/views/bb_initial_view.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(BBApp());
 
-class MyApp extends StatelessWidget {
+class BBApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
