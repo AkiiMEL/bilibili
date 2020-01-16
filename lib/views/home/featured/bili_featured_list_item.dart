@@ -1,7 +1,7 @@
 import 'package:bilibili/models/bili_featured_models.dart';
 import 'package:bilibili/utils/bili_args.dart';
 import 'package:bilibili/utils/bili_utils.dart';
-import 'package:bilibili/widgets/bili_image.dart';
+import 'package:bilibili/compenents/bili_image.dart';
 import 'package:flutter/material.dart';
 
 class _BiliFeaturedBoxItem extends StatelessWidget {

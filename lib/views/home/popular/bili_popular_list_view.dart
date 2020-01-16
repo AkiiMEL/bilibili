@@ -1,3 +1,7 @@
+import 'package:bilibili/utils/bili_args.dart';
+import 'package:bilibili/views/home/popular/bili_popular_list_item_default_view.dart';
+import 'package:bilibili/views/home/popular/bili_popular_list_item_idol_relative_media_view.dart';
+import 'package:bilibili/compenents/bili_pull_down_indicator_view.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -13,14 +17,14 @@ class _BiliPopularListViewState extends State<BiliPopularListView> {
 
   @override
   void initState() {
-    super.initState();
     _onRefresh();
+    super.initState();
   }
 
   @override
   void dispose() {
-    super.dispose();
     _refreshController.dispose();
+    super.dispose();
   }
 
   @override
@@ -30,7 +34,14 @@ class _BiliPopularListViewState extends State<BiliPopularListView> {
         controller: _refreshController,
         enablePullUp: true,
         onRefresh: _onRefresh,
-        child: Container(),
+        header: BiliRefreshHeader(),
+        child: ListView.builder(
+          padding: defaultMargin,
+          itemBuilder: (BuildContext context, int index) {
+            return index % 2 == 0 ? BiliPopularListItemDefaultView() : BiliPopularListItemIdolRelativeMediaView();
+          },
+          itemCount: 10,
+        )
       ),
     );
   }

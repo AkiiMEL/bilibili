@@ -1,5 +1,5 @@
 import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/widgets/bili_image.dart';
+import 'package:bilibili/compenents/bili_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

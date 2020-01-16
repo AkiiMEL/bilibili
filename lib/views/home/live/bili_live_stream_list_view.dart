@@ -10,7 +10,7 @@ import 'package:bilibili/views/home/live/bili_Live_stream_list_rank_section_view
 import 'package:bilibili/views/home/live/bili_Live_stream_list_activity_section_view.dart';
 import 'package:bilibili/views/home/live/bili_Live_stream_list_ad_section.dart';
 import 'package:bilibili/views/home/live/bili_Live_stream_list_area_section_view.dart';
-import 'package:bilibili/widgets/bili_pull_down_indicator_view.dart';
+import 'package:bilibili/compenents/bili_pull_down_indicator_view.dart';
 
 class BiliLiveStreamListView extends StatefulWidget {
   BiliLiveStreamListView({Key key}) : super(key: key);

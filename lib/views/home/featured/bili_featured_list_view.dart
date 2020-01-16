@@ -2,7 +2,7 @@ import 'package:bilibili/api/bili_api.dart';
 import 'package:bilibili/models/bili_featured_models.dart';
 import 'package:bilibili/utils/bili_args.dart';
 import 'package:bilibili/views/home/featured/bili_featured_list_item.dart';
-import 'package:bilibili/widgets/bili_pull_down_indicator_view.dart';
+import 'package:bilibili/compenents/bili_pull_down_indicator_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
