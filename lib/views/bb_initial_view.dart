@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/views/home/bili_home_view.dart';
+import 'package:bilibili/views/home/bb_home_view.dart';
 
-class BiliInitialView extends StatefulWidget {
+class BBInitialView extends StatefulWidget {
   @override
-  _BiliInitialViewState createState() => _BiliInitialViewState();
+  _BBInitialViewState createState() => _BBInitialViewState();
 }
 
-class _BiliInitialViewState extends State<BiliInitialView> {
+class _BBInitialViewState extends State<BBInitialView> {
   List<BottomNavigationBarItem> tabBarItems;
   List<Widget> views;
   int currentIndex = 0;
@@ -44,7 +44,7 @@ class _BiliInitialViewState extends State<BiliInitialView> {
     ];
 
     views = <Widget>[
-      BiliHomeView(),
+      BBHomeView(),
       Scaffold(),
       Scaffold(),
       Scaffold(),

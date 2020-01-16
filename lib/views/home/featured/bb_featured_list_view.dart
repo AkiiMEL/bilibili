@@ -1,19 +1,19 @@
-import 'package:bilibili/api/bili_api.dart';
-import 'package:bilibili/models/bili_featured_models.dart';
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/views/home/featured/bili_featured_list_item.dart';
-import 'package:bilibili/compenents/bili_pull_down_indicator_view.dart';
+import 'package:bilibili/api/bb_api.dart';
+import 'package:bilibili/models/bb_featured_models.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/views/home/featured/bb_featured_list_item_multiple_colum_view.dart';
+import 'package:bilibili/compenents/bb_pull_down_indicator_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class BiliFeaturedListView extends StatefulWidget {
+class BBFeaturedListView extends StatefulWidget {
   @override
-  _BiliFeaturedListViewState createState() => _BiliFeaturedListViewState();
+  _BBFeaturedListViewState createState() => _BBFeaturedListViewState();
 }
 
-class _BiliFeaturedListViewState extends State<BiliFeaturedListView> {
+class _BBFeaturedListViewState extends State<BBFeaturedListView> {
   List<Media> _bangumis = [];
   RefreshController _refreshController = RefreshController();
 
@@ -34,7 +34,7 @@ class _BiliFeaturedListViewState extends State<BiliFeaturedListView> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SmartRefresher(
-        header: BiliRefreshHeader(),
+        header: BBRefreshHeader(),
         controller: _refreshController,
         onRefresh: _onRefresh,
         child: StaggeredGridView.countBuilder(
@@ -51,7 +51,7 @@ class _BiliFeaturedListViewState extends State<BiliFeaturedListView> {
   }
 
   Widget _itemBuilder(BuildContext context, int index) {
-    return BiliFeaturedListMultipleColumItem(
+    return BBFeaturedListItemMultipleColumView(
       media: _bangumis[index],
     );
   }
@@ -67,7 +67,7 @@ class _BiliFeaturedListViewState extends State<BiliFeaturedListView> {
   }
 
   Future<void> _onRefresh() async {
-    FeaturedHttpBody body = await BiliApi.requestAllFeatured();
+    FeaturedHttpBody body = await BBApi.requestAllFeatured();
 
     _bangumis = body.data.items ?? [];
 

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/views/bili_initial_view.dart';
+import 'package:bilibili/views/bb_initial_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
- Dio().get("http://i1.hdslb.com/bfs/archive/3737af63f34d0f4b59ef11a55727194debf6950d.jpg");
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.light,
@@ -72,7 +71,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: BiliInitialView(),
+      home: BBInitialView(),
       debugShowCheckedModeBanner: false,
     );
   }

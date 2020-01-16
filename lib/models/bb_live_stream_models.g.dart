@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bili_live_stream_models.dart';
+part of 'bb_live_stream_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

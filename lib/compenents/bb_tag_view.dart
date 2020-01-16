@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/utils/bili_utils.dart';
-import 'package:bilibili/models/bili_featured_models.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/utils/bb_utils.dart';
+import 'package:bilibili/models/bb_featured_models.dart';
 
-class BiliTagView extends StatelessWidget {
+class BBTagView extends StatelessWidget {
   final TextAttributesDefinitions textAttributes;
 
-  BiliTagView({this.textAttributes});
+  BBTagView({this.textAttributes});
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +18,12 @@ class BiliTagView extends StatelessWidget {
         : Container(
             margin: EdgeInsets.only(right: defaultMargin.right),
             decoration: BoxDecoration(
-              color: BiliColor.from(
+              color: BBColor.from(
                   Theme.of(context).brightness == Brightness.light
                       ? textAttributes?.backgroundColor
                       : textAttributes?.darkModeBackgroundColor),
               border: Border.all(
-                color: BiliColor.from(
+                color: BBColor.from(
                         Theme.of(context).brightness == Brightness.light
                             ? textAttributes.borderColor
                             : textAttributes.darkModeBorderColor) ??
@@ -36,7 +36,7 @@ class BiliTagView extends StatelessWidget {
               child: Text(
                 textAttributes.text,
                 style: Theme.of(context).textTheme.display4.copyWith(
-                      color: BiliColor.from(
+                      color: BBColor.from(
                           Theme.of(context).brightness == Brightness.light
                               ? textAttributes.textColor
                               : textAttributes.darkModeTextColor),

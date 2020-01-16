@@ -1,13 +1,13 @@
-import 'package:bilibili/compenents/bili_image.dart';
+import 'package:bilibili/compenents/bb_network_image.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/models/bili_live_stream_models.dart';
-import 'package:bilibili/utils/bili_args.dart';
+import 'package:bilibili/models/bb_live_stream_models.dart';
+import 'package:bilibili/utils/bb_args.dart';
 
-class BiliLiveStreamRankSectionView extends StatelessWidget {
+class BBLiveStreamRankSectionView extends StatelessWidget {
   final LiveStreamSection<LiveStreamRank> section;
 
-  BiliLiveStreamRankSectionView({this.section});
+  BBLiveStreamRankSectionView({this.section});
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +90,7 @@ class BiliLiveStreamRankSectionView extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.all(2),
-                      child: BiliImage(rank.face, radius: radius - 2),
+                      child: BBNetworkImage(rank.face, radius: radius - 2),
                     ),
                   ],
                 ),

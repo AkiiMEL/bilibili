@@ -1,18 +1,18 @@
 import 'dart:math';
 
-import 'package:bilibili/compenents/bili_image.dart';
+import 'package:bilibili/compenents/bb_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:bilibili/models/bili_live_stream_models.dart';
-import 'package:bilibili/utils/bili_args.dart';
+import 'package:bilibili/models/bb_live_stream_models.dart';
+import 'package:bilibili/utils/bb_args.dart';
 
-class BiliLiveStreamListSectionHeaderView extends StatelessWidget {
+class BBLiveStreamListSectionHeaderView extends StatelessWidget {
   final ModuleInfo module;
   final String title;
   final String subtitle;
   final void Function(ModuleInfo) onTap;
   final Widget accessoryView;
 
-  BiliLiveStreamListSectionHeaderView(
+  BBLiveStreamListSectionHeaderView(
       {this.module, this.title, this.subtitle, this.onTap, this.accessoryView});
 
   @override
@@ -172,7 +172,7 @@ class BiliLiveStreamListPartitionItemView extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.only(
                   top: 2.0), // Move down 2 pixel to align with cover image.
-              child: BiliImage(
+              child: BBNetworkImage(
                 pendent.pic,
                 size: Size.fromHeight(20.0),
               ),
@@ -185,7 +185,7 @@ class BiliLiveStreamListPartitionItemView extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: Stack(
               children: <Widget>[
-                BiliImage(
+                BBNetworkImage(
                   pendent.pic,
                   size: Size.fromHeight(20.0),
                 ),
@@ -215,7 +215,7 @@ class BiliLiveStreamListPartitionItemView extends StatelessWidget {
       borderRadius: BorderRadius.circular(defaultMargin.top / 2),
       child: Stack(
         children: <Widget>[
-          BiliImage(
+          BBNetworkImage(
             item.cover,
             placeholder: "assets/images/bgm_category_placeholder30x30.png",
           ),

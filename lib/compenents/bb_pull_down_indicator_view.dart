@@ -20,14 +20,14 @@ class AnimationImages extends AnimatedWidget {
   }
 }
 
-class BiliRefreshHeader extends RefreshIndicator {
-  BiliRefreshHeader() : super(height: 60.0, refreshStyle: RefreshStyle.Follow);
+class BBRefreshHeader extends RefreshIndicator {
+  BBRefreshHeader() : super(height: 60.0, refreshStyle: RefreshStyle.Follow);
 
   @override
-  _BiliRefreshHeaderState createState() => _BiliRefreshHeaderState();
+  _BBRefreshHeaderState createState() => _BBRefreshHeaderState();
 }
 
-class _BiliRefreshHeaderState extends RefreshIndicatorState<BiliRefreshHeader>
+class _BBRefreshHeaderState extends RefreshIndicatorState<BBRefreshHeader>
     with TickerProviderStateMixin {
   AnimationController _controller;
   Animation<int> _animation;

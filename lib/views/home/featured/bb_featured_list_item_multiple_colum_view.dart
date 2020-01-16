@@ -1,35 +1,19 @@
-import 'package:bilibili/models/bili_featured_models.dart';
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/utils/bili_utils.dart';
-import 'package:bilibili/compenents/bili_image.dart';
+import 'package:bilibili/models/bb_featured_models.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/utils/bb_utils.dart';
+import 'package:bilibili/compenents/bb_network_image.dart';
 import 'package:flutter/material.dart';
 
-class _BiliFeaturedBoxItem extends StatelessWidget {
-  final Widget child;
-
-  _BiliFeaturedBoxItem({this.child});
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(defaultMargin.top),
-      child: Container(
-        color: Colors.white,
-        child: child,
-      ),
-    );
-  }
-}
-
-class BiliFeaturedListMultipleColumItem extends StatelessWidget {
+class BBFeaturedListItemMultipleColumView extends StatelessWidget {
   final Media media;
-  BiliFeaturedListMultipleColumItem({this.media});
+  BBFeaturedListItemMultipleColumView({this.media});
 
   @override
   Widget build(BuildContext context) {
     bool isAdType2View =
         media.cardType == "cm_v2" && media.adInfo?.cardType == 2;
-    return _BiliFeaturedBoxItem(
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(defaultMargin.top),
       child: isAdType2View
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,8 +47,10 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
       children: <Widget>[
         AspectRatio(
           aspectRatio: aspectRatio,
-          child: BiliImage(
-              isAdView ? media.adInfo?.creativeContent?.imageUrl : media.cover, placeholder: "assets/images/default_img33x31.png",),
+          child: BBNetworkImage(
+            isAdView ? media.adInfo?.creativeContent?.imageUrl : media.cover,
+            placeholder: "assets/images/default_img33x31.png",
+          ),
         ),
         Positioned(
           bottom: 0,
@@ -86,12 +72,12 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
         : Container(
             margin: EdgeInsets.only(right: defaultMargin.right),
             decoration: BoxDecoration(
-              color: BiliColor.from(
+              color: BBColor.from(
                   Theme.of(context).brightness == Brightness.light
                       ? textAttributes?.backgroundColor
                       : textAttributes?.darkModeBackgroundColor),
               border: Border.all(
-                color: BiliColor.from(
+                color: BBColor.from(
                         Theme.of(context).brightness == Brightness.light
                             ? textAttributes.borderColor
                             : textAttributes.darkModeBorderColor) ??
@@ -104,7 +90,7 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
               child: Text(
                 textAttributes.text,
                 style: Theme.of(context).textTheme.display4.copyWith(
-                      color: BiliColor.from(
+                      color: BBColor.from(
                           Theme.of(context).brightness == Brightness.light
                               ? textAttributes.textColor
                               : textAttributes.darkModeTextColor),
@@ -244,33 +230,5 @@ class BiliFeaturedListMultipleColumItem extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class BiliFeaturedListMultipleColumCollectionItem extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return _BiliFeaturedBoxItem(
-      child: Container(),
-    );
-  }
-}
-
-class BiliFeaturedListMultipleColumAdItem extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return _BiliFeaturedBoxItem(
-      child: Container(),
-    );
-  }
-}
-
-class BiliFeaturedListItem extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        // color: ,
-        );
   }
 }

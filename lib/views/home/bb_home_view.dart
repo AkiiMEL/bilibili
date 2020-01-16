@@ -1,19 +1,19 @@
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/compenents/bili_image.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/compenents/bb_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/views/home/live/bili_Live_stream_list_view.dart';
-import 'package:bilibili/views/home/featured/bili_featured_list_view.dart';
-import 'package:bilibili/views/home/popular/bili_popular_list_view.dart';
-import 'package:bilibili/views/home/bangumi/bili_bangumi_list_view.dart';
+import 'package:bilibili/views/home/live/bb_live_stream_list_view.dart';
+import 'package:bilibili/views/home/featured/bb_featured_list_view.dart';
+import 'package:bilibili/views/home/popular/bb_popular_list_view.dart';
+import 'package:bilibili/views/home/bangumi/bb_bangumi_list_view.dart';
 
-class BiliHomeView extends StatefulWidget {
+class BBHomeView extends StatefulWidget {
   @override
-  _BiliHomeViewState createState() => _BiliHomeViewState();
+  _BBHomeViewState createState() => _BBHomeViewState();
 }
 
-class _BiliHomeViewState extends State<BiliHomeView>
+class _BBHomeViewState extends State<BBHomeView>
     with SingleTickerProviderStateMixin {
   List<Widget> tabBarItems;
   List<Widget> views;
@@ -32,10 +32,10 @@ class _BiliHomeViewState extends State<BiliHomeView>
     ].map((e) => Text(e)).toList();
 
     views = [
-      BiliLiveStreamListView(),
-      BiliFeaturedListView(),
-      BiliPopularListView(),
-      BiliBangumiListView(),
+      BBLiveStreamListView(),
+      BBFeaturedListView(),
+      BBPopularListView(),
+      BBBangumiListView(),
       Scaffold(),
       Scaffold(),
     ];
@@ -61,7 +61,7 @@ class _BiliHomeViewState extends State<BiliHomeView>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      BiliImage(
+                      BBNetworkImage(
                         "http://i1.hdslb.com/bfs/face/27317040707b3034f73402f6b83b6897caffc299.jpg",
                         placeholder: "assets/images/ad_avator24x24.png",
                         radius: 18.0,

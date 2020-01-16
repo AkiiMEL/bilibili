@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'bili_live_stream_models.g.dart';
+part 'bb_live_stream_models.g.dart';
 
 @JsonSerializable(createToJson: false)
 class LiveStreamHttpBody extends Object {

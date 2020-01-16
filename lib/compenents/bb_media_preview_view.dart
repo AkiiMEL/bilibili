@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-class BiliMediaPreviewView extends StatelessWidget {
+class BBMediaPreviewView extends StatelessWidget {
 
   
   @override

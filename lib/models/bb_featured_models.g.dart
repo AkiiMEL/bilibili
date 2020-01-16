@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bili_featured_models.dart';
+part of 'bb_featured_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

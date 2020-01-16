@@ -1,18 +1,18 @@
-import 'package:bilibili/compenents/bili_tag_view.dart';
-import 'package:bilibili/models/bili_featured_models.dart';
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/compenents/bili_image.dart';
+import 'package:bilibili/compenents/bb_tag_view.dart';
+import 'package:bilibili/models/bb_featured_models.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/compenents/bb_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class BiliPopularListItemIdolRelativeMediaView extends StatefulWidget {
+class BBPopularListItemIdolRelativeMediaView extends StatefulWidget {
   @override
-  _BiliPopularListItemIdolRelativeMediaViewState createState() =>
-      _BiliPopularListItemIdolRelativeMediaViewState();
+  _BBPopularListItemIdolRelativeMediaViewState createState() =>
+      _BBPopularListItemIdolRelativeMediaViewState();
 }
 
-class _BiliPopularListItemIdolRelativeMediaViewState
-    extends State<BiliPopularListItemIdolRelativeMediaView> {
+class _BBPopularListItemIdolRelativeMediaViewState
+    extends State<BBPopularListItemIdolRelativeMediaView> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,7 +22,7 @@ class _BiliPopularListItemIdolRelativeMediaViewState
           children: <Widget>[
             Row(
               children: <Widget>[
-                BiliImage("", radius: 20.0),
+                BBNetworkImage("", radius: 20.0),
                 SizedBox(
                   width: defaultMargin.left,
                 ),
@@ -33,7 +33,7 @@ class _BiliPopularListItemIdolRelativeMediaViewState
                       "data",
                       style: Theme.of(context).textTheme.title,
                     ),
-                    BiliTagView(
+                    BBTagView(
                       textAttributes: TextAttributesDefinitions(),
                     ),
                   ],

@@ -1,10 +1,10 @@
-import 'package:bilibili/compenents/bili_tag_view.dart';
-import 'package:bilibili/models/bili_featured_models.dart';
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/compenents/bili_image.dart';
+import 'package:bilibili/compenents/bb_tag_view.dart';
+import 'package:bilibili/models/bb_featured_models.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/compenents/bb_network_image.dart';
 import 'package:flutter/material.dart';
 
-class BiliPopularListItemDefaultView extends StatelessWidget {
+class BBPopularListItemDefaultView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,7 +25,7 @@ class BiliPopularListItemDefaultView extends StatelessWidget {
             borderRadius: BorderRadius.circular(defaultMargin.top / 2),
             child: AspectRatio(
               aspectRatio: 13.0 / 9.0,
-              child: BiliImage(
+              child: BBNetworkImage(
                   "https://i1.hdslb.com/bfs/archive/2058be6aad46923dafce09df2be167424536df6e.jpg_380x240.jpg"),
             ),
           ),
@@ -45,7 +45,7 @@ class BiliPopularListItemDefaultView extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    BiliTagView(textAttributes: TextAttributesDefinitions(),),
+                    BBTagView(textAttributes: TextAttributesDefinitions(),),
                     Text(
                       "data",
                       style: Theme.of(context).textTheme.subtitle,

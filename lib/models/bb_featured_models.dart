@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'bili_featured_models.g.dart';
+part 'bb_featured_models.g.dart';
 
 @JsonSerializable()
 class FeaturedHttpBody extends Object {

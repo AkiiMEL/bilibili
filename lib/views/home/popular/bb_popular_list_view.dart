@@ -1,18 +1,18 @@
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/views/home/popular/bili_popular_list_item_default_view.dart';
-import 'package:bilibili/views/home/popular/bili_popular_list_item_idol_relative_media_view.dart';
-import 'package:bilibili/compenents/bili_pull_down_indicator_view.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/views/home/popular/bb_popular_list_item_default_view.dart';
+import 'package:bilibili/views/home/popular/bb_popular_list_item_idol_relative_media_view.dart';
+import 'package:bilibili/compenents/bb_pull_down_indicator_view.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class BiliPopularListView extends StatefulWidget {
-  BiliPopularListView({Key key}) : super(key: key);
+class BBPopularListView extends StatefulWidget {
+  BBPopularListView({Key key}) : super(key: key);
 
   @override
-  _BiliPopularListViewState createState() => _BiliPopularListViewState();
+  _BBPopularListViewState createState() => _BBPopularListViewState();
 }
 
-class _BiliPopularListViewState extends State<BiliPopularListView> {
+class _BBPopularListViewState extends State<BBPopularListView> {
   RefreshController _refreshController = RefreshController();
 
   @override
@@ -34,11 +34,11 @@ class _BiliPopularListViewState extends State<BiliPopularListView> {
         controller: _refreshController,
         enablePullUp: true,
         onRefresh: _onRefresh,
-        header: BiliRefreshHeader(),
+        header: BBRefreshHeader(),
         child: ListView.builder(
           padding: defaultMargin,
           itemBuilder: (BuildContext context, int index) {
-            return index % 2 == 0 ? BiliPopularListItemDefaultView() : BiliPopularListItemIdolRelativeMediaView();
+            return index % 2 == 0 ? BBPopularListItemDefaultView() : BBPopularListItemIdolRelativeMediaView();
           },
           itemCount: 10,
         )

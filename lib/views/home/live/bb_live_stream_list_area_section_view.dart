@@ -1,12 +1,12 @@
-import 'package:bilibili/models/bili_live_stream_models.dart';
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/compenents/bili_image.dart';
+import 'package:bilibili/models/bb_live_stream_models.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/compenents/bb_network_image.dart';
 import 'package:flutter/material.dart';
 
-class BiliLiveStreamListAreaSectionView extends StatelessWidget {
+class BBLiveStreamListAreaSectionView extends StatelessWidget {
   final LiveStreamSection<LiveStreamAreaEntrance> areas;
 
-  BiliLiveStreamListAreaSectionView({this.areas});
+  BBLiveStreamListAreaSectionView({this.areas});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class BiliLiveStreamListAreaSectionView extends StatelessWidget {
             children: <Widget>[
               AspectRatio(
                 aspectRatio: 1.0,
-                child: BiliImage(
+                child: BBNetworkImage(
                   areas.list[i].pic,
                   placeholder: "assets/images/default_img33x31.png",
                 ),

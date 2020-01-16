@@ -1,7 +1,7 @@
 
 import 'dart:ui';
 
-extension BiliColor on Color {
+extension BBColor on Color {
   static from(String hexString) {
     if (hexString == null) return null;
 

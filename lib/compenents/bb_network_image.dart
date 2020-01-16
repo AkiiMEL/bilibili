@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class BiliImage extends StatelessWidget {
+class BBNetworkImage extends StatelessWidget {
   final String imageURL;
   final String placeholder;
   final BoxFit fit;
@@ -9,7 +9,7 @@ class BiliImage extends StatelessWidget {
   final double radius;
   final Size size;
 
-  BiliImage(this.imageURL,
+  BBNetworkImage(this.imageURL,
       {this.placeholder,
       this.fit,
       this.radius,

@@ -1,13 +1,13 @@
-import 'package:bilibili/models/bili_live_stream_models.dart';
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/compenents/bili_image.dart';
+import 'package:bilibili/models/bb_live_stream_models.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/compenents/bb_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-class BiliLiveStreamListActivitySectionView extends StatelessWidget {
+class BBLiveStreamListActivitySectionView extends StatelessWidget {
   final LiveStreamSection<LiveStreamActivity> activities;
 
-  BiliLiveStreamListActivitySectionView({this.activities});
+  BBLiveStreamListActivitySectionView({this.activities});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class BiliLiveStreamListActivitySectionView extends StatelessWidget {
                             topLeft: Radius.circular(5.0),
                             bottomLeft: Radius.circular(5.0),
                           ),
-                          child: BiliImage(
+                          child: BBNetworkImage(
                             activities.list[index].logoUrl,
                             placeholder: "assets/images/default_img33x31.png",
                           ),

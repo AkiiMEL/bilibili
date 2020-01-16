@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:bilibili/utils/bili_args.dart';
-import 'package:bilibili/api/bili_api.dart';
-import 'package:bilibili/models/bili_live_stream_models.dart';
-import 'package:bilibili/views/home/live/bili_Live_stream_list_partition_section_view.dart';
-import 'package:bilibili/views/home/live/bili_Live_stream_list_rank_section_view.dart';
-import 'package:bilibili/views/home/live/bili_Live_stream_list_activity_section_view.dart';
-import 'package:bilibili/views/home/live/bili_Live_stream_list_ad_section.dart';
-import 'package:bilibili/views/home/live/bili_Live_stream_list_area_section_view.dart';
-import 'package:bilibili/compenents/bili_pull_down_indicator_view.dart';
+import 'package:bilibili/utils/bb_args.dart';
+import 'package:bilibili/api/bb_api.dart';
+import 'package:bilibili/models/bb_live_stream_models.dart';
+import 'package:bilibili/views/home/live/bb_live_stream_list_partition_section_view.dart';
+import 'package:bilibili/views/home/live/bb_live_stream_list_rank_section_view.dart';
+import 'package:bilibili/views/home/live/bb_live_stream_list_activity_section_view.dart';
+import 'package:bilibili/views/home/live/bb_live_stream_list_ad_section.dart';
+import 'package:bilibili/views/home/live/bb_live_stream_list_area_section_view.dart';
+import 'package:bilibili/compenents/bb_pull_down_indicator_view.dart';
 
-class BiliLiveStreamListView extends StatefulWidget {
-  BiliLiveStreamListView({Key key}) : super(key: key);
+class BBLiveStreamListView extends StatefulWidget {
+  BBLiveStreamListView({Key key}) : super(key: key);
 
   @override
-  _BiliLiveStreamListViewState createState() => _BiliLiveStreamListViewState();
+  _BBLiveStreamListViewState createState() => _BBLiveStreamListViewState();
 }
 
-class _BiliLiveStreamListViewState extends State<BiliLiveStreamListView> {
+class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
   List<LiveStreamSection> _sections = [];
   RefreshController _refreshController = RefreshController();
 
@@ -46,7 +46,7 @@ class _BiliLiveStreamListViewState extends State<BiliLiveStreamListView> {
         },
       ),
       body: SmartRefresher(
-        header: BiliRefreshHeader(),
+        header: BBRefreshHeader(),
         controller: _refreshController,
         onRefresh: _onRefresh,
         child: _getListView(),
@@ -56,7 +56,7 @@ class _BiliLiveStreamListViewState extends State<BiliLiveStreamListView> {
   }
 
   Future<void> _onRefresh() async {
-    LiveStreamHttpBody body = await BiliApi.requestAllLive();
+    LiveStreamHttpBody body = await BBApi.requestAllLive();
     List<LiveStreamSection> copy = [];
 
     copy.addAll(body.data?.banner ?? []);
@@ -122,15 +122,15 @@ class _BiliLiveStreamListViewState extends State<BiliLiveStreamListView> {
     ModuleInfo module = section.moduleInfo;
 
     if (section is LiveStreamSection<LiveStreamAd>) {
-      return BiliLiveStreamListAdSectionView(
+      return BBLiveStreamListAdSectionView(
         advertisements: section,
       );
     } else if (section is LiveStreamSection<LiveStreamAreaEntrance>) {
-      return BiliLiveStreamListAreaSectionView(
+      return BBLiveStreamListAreaSectionView(
         areas: section,
       );
     } else if (section is LiveStreamSection<LiveStreamActivity>) {
-      return BiliLiveStreamListActivitySectionView(
+      return BBLiveStreamListActivitySectionView(
         activities: section,
       );
     } else if (section is LiveStreamSection<LiveStreamIdol>) {
@@ -138,14 +138,14 @@ class _BiliLiveStreamListViewState extends State<BiliLiveStreamListView> {
     } else if (section is LiveStreamSection<LiveStreamRank>) {
       return Column(
         children: <Widget>[
-          BiliLiveStreamListSectionHeaderView(
+          BBLiveStreamListSectionHeaderView(
             module: module,
             title: module == null ? null : module.title,
             subtitle:
                 section.extraInfo == null ? null : section.extraInfo.subtitle,
             onTap: (module) {},
           ),
-          BiliLiveStreamRankSectionView(
+          BBLiveStreamRankSectionView(
             section: section,
           ),
         ],
@@ -153,7 +153,7 @@ class _BiliLiveStreamListViewState extends State<BiliLiveStreamListView> {
     } else {
       return Column(
         children: <Widget>[
-          BiliLiveStreamListSectionHeaderView(
+          BBLiveStreamListSectionHeaderView(
             module: section.moduleInfo,
             title: module == null ? null : module.title,
             onTap: (module) {},
