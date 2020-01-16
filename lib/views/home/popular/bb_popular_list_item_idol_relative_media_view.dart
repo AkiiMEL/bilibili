@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import 'package:bilibili/compenents/bb_network_avatar_image.dart';
 import 'package:bilibili/compenents/bb_tag_view.dart';
 import 'package:bilibili/models/bb_featured_models.dart';
 import 'package:bilibili/utils/bb_args.dart';
-import 'package:bilibili/compenents/bb_network_image.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:bilibili/views/home/popular/bb_popular_list_item_idol_relative_media_item_view.dart';
 
 class BBPopularListItemIdolRelativeMediaView extends StatefulWidget {
   @override
@@ -17,12 +19,17 @@ class _BBPopularListItemIdolRelativeMediaViewState
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        SizedBox(height: defaultMargin.top),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Row(
               children: <Widget>[
-                BBNetworkImage("", radius: 20.0),
+                BBNetworkAvatarImage(
+                  defaultAvatarURL,
+                  placeholder: defaultAvatarName,
+                  size: Size(40.0, 40.0),
+                ),
                 SizedBox(
                   width: defaultMargin.left,
                 ),
@@ -54,22 +61,23 @@ class _BBPopularListItemIdolRelativeMediaViewState
             ),
           ],
         ),
+        SizedBox(height: defaultMargin.top),
         Container(
-          height: 100,
+          height: 140,
           child: GridView.builder(
             scrollDirection: Axis.horizontal,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              childAspectRatio: 10.0 / 9.0,
               crossAxisCount: 1,
               mainAxisSpacing: defaultMargin.left,
             ),
             itemBuilder: (BuildContext context, int index) {
-              return Container(
-                color: Colors.orange,
-              );
+              return BBPopularListItemIdolRelativeMediaItemView();
             },
             itemCount: 10,
           ),
         ),
+        Divider(),
       ],
     );
   }

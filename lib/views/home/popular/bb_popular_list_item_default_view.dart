@@ -1,32 +1,39 @@
+
+import 'package:flutter/material.dart';
+
+import 'package:bilibili/compenents/bb_media_preview_view.dart';
 import 'package:bilibili/compenents/bb_tag_view.dart';
 import 'package:bilibili/models/bb_featured_models.dart';
 import 'package:bilibili/utils/bb_args.dart';
-import 'package:bilibili/compenents/bb_network_image.dart';
-import 'package:flutter/material.dart';
 
 class BBPopularListItemDefaultView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        _getPreview(context),
-        _getPopularTipView(),
+        _getPreviewAndDescriptionView(context),
+        Divider(),
       ],
     );
   }
 
-  Widget _getPreview(BuildContext context) {
+  Widget _getPreviewAndDescriptionView(BuildContext context) {
     return Container(
-      margin: defaultMargin,
-      height: 100.0,
+      height: 80.0,
+      margin: defaultMargin.copyWith(left: 0, right: 0),
       child: Row(
         children: <Widget>[
           ClipRRect(
             borderRadius: BorderRadius.circular(defaultMargin.top / 2),
             child: AspectRatio(
-              aspectRatio: 13.0 / 9.0,
-              child: BBNetworkImage(
-                  "https://i1.hdslb.com/bfs/archive/2058be6aad46923dafce09df2be167424536df6e.jpg_380x240.jpg"),
+              aspectRatio: 8.0 / 5.0,
+              child: BBMediaPreviewView(
+                url:
+                    "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
+                bottomRightView: BBTagView(
+                    textAttributes: TextAttributesDefinitions(
+                        text: "2:14", textColor: "#FFFFFF")),
+              ),
             ),
           ),
           SizedBox(
@@ -38,23 +45,25 @@ class BBPopularListItemDefaultView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "data",
+                  "看好了这才是体术与剑术的极致巅峰！",
                   style: Theme.of(context).textTheme.title,
                   maxLines: 2,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    BBTagView(textAttributes: TextAttributesDefinitions(),),
+                    BBTagView(
+                      textAttributes: TextAttributesDefinitions(),
+                    ),
                     Text(
-                      "data",
+                      "努力的小青",
                       style: Theme.of(context).textTheme.subtitle,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          "data",
+                          "7.9万观看•01-12",
                           style: Theme.of(context).textTheme.subtitle,
                         ),
                         Image.asset(

@@ -5,34 +5,39 @@ class BBNetworkImage extends StatelessWidget {
   final String imageURL;
   final String placeholder;
   final BoxFit fit;
-  // if radius is given, size will be ignored and will return an circle image with radius.
-  final double radius;
   final Size size;
 
   BBNetworkImage(this.imageURL,
-      {this.placeholder,
-      this.fit,
-      this.radius,
-      this.size});
+      {this.placeholder, this.fit = BoxFit.cover, this.size});
 
   @override
   Widget build(BuildContext context) {
-    if (imageURL == null || imageURL.isEmpty) return SizedBox.shrink();
-    CachedNetworkImage child = CachedNetworkImage(
-      imageUrl: imageURL,
-      placeholder: ((context, url) =>
-          placeholder != null ? Image.asset(placeholder) : SizedBox.shrink()),
-      errorWidget: ((context, url, e) =>
-          placeholder != null ? Image.asset(placeholder) : SizedBox.shrink()),
-      width: radius != null ? radius * 2 : (size?.width == double.infinity ? null : size?.width),
-      height: radius != null ? radius * 2 : (size?.height == double.infinity ? null : size?.height),
-      fit: fit ?? BoxFit.cover,
-    );
-
-    return radius != null
-        ? ClipOval(
-            child: child,
+    return imageURL == null || imageURL.isEmpty
+        ? SizedBox.fromSize(
+            size: size,
+            child: placeholder == null || placeholder.isEmpty
+                ? null
+                : Image.asset(
+                    placeholder,
+                  ),
           )
-        : child;
+        : CachedNetworkImage(
+            imageUrl: imageURL,
+            placeholder: ((context, url) => SizedBox.fromSize(
+                  size: size,
+                  child: placeholder == null || placeholder.isEmpty
+                      ? null
+                      : Center(child: Image.asset(placeholder)),
+                )),
+            errorWidget: ((context, url, e) => SizedBox.fromSize(
+                  size: size,
+                  child: placeholder == null || placeholder.isEmpty
+                      ? null
+                      : Center(child: Image.asset(placeholder)),
+                )),
+            width: size?.width == double.infinity ? null : size?.width,
+            height: size?.height == double.infinity ? null : size?.height,
+            fit: fit,
+          );
   }
 }

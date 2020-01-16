@@ -1,3 +1,4 @@
+import 'package:bilibili/compenents/bb_network_avatar_image.dart';
 import 'package:bilibili/utils/bb_args.dart';
 import 'package:bilibili/compenents/bb_network_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -61,17 +62,18 @@ class _BBHomeViewState extends State<BBHomeView>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      BBNetworkImage(
-                        "http://i1.hdslb.com/bfs/face/27317040707b3034f73402f6b83b6897caffc299.jpg",
-                        placeholder: "assets/images/ad_avator24x24.png",
-                        radius: 18.0,
+                      BBNetworkAvatarImage(
+                        defaultAvatarURL,
+                        placeholder: defaultAvatarName,
+                        size: Size(36.0, 36.0),
                       ),
                       SizedBox(
                         width: defaultMargin.left * 2.5,
                       ),
                       Flexible(
                         child: CupertinoTextField(
-                          padding: EdgeInsets.symmetric(vertical: defaultMargin.top / 2),
+                          padding: EdgeInsets.symmetric(
+                              vertical: defaultMargin.top / 2),
                           decoration: BoxDecoration(
                             color: Colors.grey[100],
                             borderRadius: BorderRadius.circular(15.0),
@@ -82,7 +84,8 @@ class _BBHomeViewState extends State<BBHomeView>
                             fontSize: 13.0,
                           ),
                           prefix: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: defaultMargin.left),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: defaultMargin.left),
                             child: Image(
                               image: AssetImage(
                                 "assets/images/topic_search_ico22x22.png",

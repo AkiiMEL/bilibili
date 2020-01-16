@@ -28,7 +28,7 @@ class BBLiveStreamListAreaSectionView extends StatelessWidget {
                 aspectRatio: 1.0,
                 child: BBNetworkImage(
                   areas.list[i].pic,
-                  placeholder: "assets/images/default_img33x31.png",
+                  placeholder: defaultIMGPlaceholderName,
                 ),
               ),
               Text(

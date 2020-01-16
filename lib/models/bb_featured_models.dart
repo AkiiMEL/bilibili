@@ -613,4 +613,13 @@ class TextAttributesDefinitions {
   String darkModeBackgroundColor;
   String borderColor;
   String darkModeBorderColor;
+
+  TextAttributesDefinitions(
+      {this.text,
+      this.textColor,
+      this.darkModeTextColor,
+      this.backgroundColor,
+      this.darkModeBackgroundColor,
+      this.borderColor,
+      this.darkModeBorderColor});
 }

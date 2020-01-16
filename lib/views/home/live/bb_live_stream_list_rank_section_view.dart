@@ -1,4 +1,4 @@
-import 'package:bilibili/compenents/bb_network_image.dart';
+import 'package:bilibili/compenents/bb_network_avatar_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/models/bb_live_stream_models.dart';
@@ -81,6 +81,7 @@ class BBLiveStreamRankSectionView extends StatelessWidget {
               Container(
                 margin: edgeInsets,
                 child: Stack(
+                  alignment: Alignment.center,
                   children: <Widget>[
                     Image.asset(
                       "assets/images/misc_battery_rank${rank.rank}_bg48x48.png",
@@ -88,9 +89,9 @@ class BBLiveStreamRankSectionView extends StatelessWidget {
                       height: radius * 2,
                       fit: BoxFit.cover,
                     ),
-                    Container(
-                      margin: EdgeInsets.all(2),
-                      child: BBNetworkImage(rank.face, radius: radius - 2),
+                    BBNetworkAvatarImage(
+                      rank.face,
+                      size: Size(radius * 2 - 4, radius * 2 - 4),
                     ),
                   ],
                 ),

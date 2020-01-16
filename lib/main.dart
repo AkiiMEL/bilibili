@@ -19,7 +19,7 @@ class BBApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Colors.white,
         indicatorColor: Color.fromARGB(255, 248, 116, 153),
-        dividerColor: Color.fromARGB(255, 246, 245, 246),
+        dividerTheme: DividerThemeData(color: Color.fromARGB(255, 246, 245, 246), space: 1,),
         textTheme: TextTheme(
           headline: TextStyle(
             color: Colors.black,
@@ -48,7 +48,7 @@ class BBApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Color.fromARGB(255, 26, 27, 28),
         indicatorColor: Color.fromARGB(255, 248, 116, 153),
-        dividerColor: Color.fromARGB(255, 246, 245, 246),
+        dividerTheme: DividerThemeData(color: Color.fromARGB(255, 246, 245, 246), space: 1,),
         textTheme: TextTheme(
           headline: TextStyle(
             color: Color.fromARGB(255, 92, 93, 94),

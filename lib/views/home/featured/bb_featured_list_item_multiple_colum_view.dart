@@ -49,7 +49,7 @@ class BBFeaturedListItemMultipleColumView extends StatelessWidget {
           aspectRatio: aspectRatio,
           child: BBNetworkImage(
             isAdView ? media.adInfo?.creativeContent?.imageUrl : media.cover,
-            placeholder: "assets/images/default_img33x31.png",
+            placeholder: defaultIMGPlaceholderName,
           ),
         ),
         Positioned(

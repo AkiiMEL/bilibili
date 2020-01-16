@@ -36,7 +36,7 @@ class BBLiveStreamListActivitySectionView extends StatelessWidget {
                           ),
                           child: BBNetworkImage(
                             activities.list[index].logoUrl,
-                            placeholder: "assets/images/default_img33x31.png",
+                            placeholder: defaultIMGPlaceholderName,
                           ),
                         ),
                       ),
