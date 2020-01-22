@@ -1,0 +1,2243 @@
+{
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+        "hour_rank": [
+            {
+                "extra_info": {
+                    "sub_title": "16:00-17:00 总榜排名"
+                },
+                "list": [
+                    {
+                        "roomid": 222591,
+                        "uid": 10760577,
+                        "area_v2_name": "视频聊天",
+                        "live_status": 1,
+                        "area_v2_id": 145,
+                        "rank": 1,
+                        "uname": "是你宁姐呀",
+                        "face": "http://i1.hdslb.com/bfs/face/27317040707b3034f73402f6b83b6897caffc299.jpg",
+                        "area_v2_parent_id": 1,
+                        "area_v2_parent_name": "娱乐"
+                    },
+                    {
+                        "roomid": 7595278,
+                        "uid": 487902,
+                        "area_v2_name": "虚拟主播",
+                        "live_status": 2,
+                        "area_v2_id": 199,
+                        "rank": 2,
+                        "uname": "暗and喵",
+                        "face": "http://i1.hdslb.com/bfs/face/589de8eb91d2ef3be801ce3eb78dcd0469a698e8.jpg",
+                        "area_v2_parent_id": 1,
+                        "area_v2_parent_name": "娱乐"
+                    },
+                    {
+                        "roomid": 5389469,
+                        "uid": 25487242,
+                        "area_v2_name": "唱见电台",
+                        "live_status": 1,
+                        "area_v2_id": 190,
+                        "rank": 3,
+                        "uname": "兮兮兮唐",
+                        "face": "http://i1.hdslb.com/bfs/face/189cbf44b4bd67920cd2bc33bce7b49e11ddc47c.jpg",
+                        "area_v2_parent_id": 5,
+                        "area_v2_parent_name": "电台"
+                    }
+                ],
+                "module_info": {
+                    "sort": 11,
+                    "id": 4,
+                    "pic": "http://i0.hdslb.com/bfs/live/39cd413f6bc72fb9da8c10ff2686b537477294ab.png",
+                    "title": "小时榜",
+                    "count": 0,
+                    "link": "https://live.bilibili.com/p/html/live-app-rank/index.html?is_live_webview=1&nav=hour",
+                    "type": 5
+                }
+            }
+        ],
+        "sea_patrol": [],
+        "my_tag": [],
+        "my_idol": [
+            {
+                "extra_info": {
+                    "card_type": 1,
+                    "tags_desc": "崩坏3",
+                    "relation_page": 1,
+                    "show_type": 0,
+                    "time_desc": "17小时前",
+                    "total_count": 0,
+                    "uname_desc": "Ka洛特"
+                },
+                "list": [],
+                "module_info": {
+                    "sort": 4,
+                    "id": 13,
+                    "pic": "http://i0.hdslb.com/bfs/live/484abcd8940ee43ec8b4409cbfe0c1e52f09a338.png",
+                    "title": "我的关注",
+                    "count": 0,
+                    "link": "http://live.bilibili.com/app/myfollow/",
+                    "type": 8
+                }
+            }
+        ],
+        "room_list": [
+            {
+                "list": [
+                    {
+                        "play_url_h265": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/541586/live_43536_1316344_minihevc.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=5e2d5c06d1490625fcbdf94d727e18e9&ptype=0",
+                        "session_id": "15C0BD8B-62E6-4305-884A-9344877C8B1A",
+                        "group_id": 0,
+                        "link": "/1029",
+                        "title": "巫师3 死而无憾难度",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/183955/live_43536_1316344_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=97a2b7a0902304b12c2fd8e73c98388d&ptype=0",
+                        "area_v2_parent_id": 6,
+                        "area_v2_name": "其他单机",
+                        "uname": "黑桐谷歌",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/ab35dec973e4b088ccbc94e137b5ccdfd41b8a59.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 1029,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/928331/live_43536_1316344_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=2196bb9934db1c083df584fd529e227e&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 43536,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 235,
+                        "area_v2_parent_name": "单机",
+                        "face": "http://i1.hdslb.com/bfs/face/31706c82949b3ba4756a411825c3f16aeb14ad44.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 155562
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "68CB9747-9753-491E-B8B1-C2F788540388",
+                        "group_id": 0,
+                        "link": "/21743919",
+                        "title": "《QQ飞车手游》车神赏金赛直播决赛周",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/380078/live_282234318_26735903.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=9c166616f775e713bc3779d29b154e89&ptype=0",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "QQ飞车",
+                        "uname": "QQ飞车手游S联赛",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [
+                            {
+                                "content": "上小时手游No.1",
+                                "pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                                "position": 2,
+                                "color": "#fb7299"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/2fb22754d3c2fd3325efaa192310e1726e8e5393.jpg",
+                        "pendent_ru_color": "#fb7299",
+                        "flag": 0,
+                        "roomid": 21743919,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/896836/live_282234318_26735903_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=9094619eb0cf9c726a75333d9fe6df75&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 282234318,
+                        "pendent_ru": "上小时手游No.1",
+                        "current_quality": 4,
+                        "area_v2_id": 154,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i0.hdslb.com/bfs/face/09437b77ccf60fd4df46f85f5491aa3326a81f30.jpg",
+                        "pendent_ru_pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                        "online": 24111
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "E357CB5E-889E-440E-9CC0-90231B42931A",
+                        "group_id": 0,
+                        "link": "/5205274",
+                        "title": "日服艾 克 王 目前日服前一百",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/467338/live_82529025_9671430.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=ebddb8500469e2969f446d538d4f7d9f&ptype=0",
+                        "area_v2_parent_id": 2,
+                        "area_v2_name": "英雄联盟",
+                        "uname": "艾克本人",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [
+                            {
+                                "content": "上小时网游No.1",
+                                "pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                                "position": 2,
+                                "color": "#fb7299"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/d572346de41fa3f8b22e24d0a953eccdc6d16374.jpg",
+                        "pendent_ru_color": "#fb7299",
+                        "flag": 0,
+                        "roomid": 5205274,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/467338/live_82529025_9671430.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=ebddb8500469e2969f446d538d4f7d9f&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 82529025,
+                        "pendent_ru": "上小时网游No.1",
+                        "current_quality": 4,
+                        "area_v2_id": 86,
+                        "area_v2_parent_name": "网游",
+                        "face": "http://i1.hdslb.com/bfs/face/b9d6a00a0ff6f62a87be1bac0a1185fa7832dc52.jpg",
+                        "pendent_ru_pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                        "online": 1573
+                    },
+                    {
+                        "play_url_h265": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/881237/live_110631_5953326_minihevc.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=0c5bedcb25f53db42143f30e083803cb&ptype=0",
+                        "session_id": "C4A6D91C-683D-46D6-AC34-B437466A4CEF",
+                        "group_id": 0,
+                        "link": "/5279",
+                        "title": "新赛季第二天：《上分》",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/261643/live_110631_5953326_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=a02b2a7be1681b680dbb703854ccb6d3&ptype=0",
+                        "area_v2_parent_id": 2,
+                        "area_v2_name": "英雄联盟",
+                        "uname": "宫本狗雨",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "",
+                                "pic": "https://i0.hdslb.com/bfs/live/539ce26c45cd4019f55b64cfbcedc3c01820e539.png",
+                                "position": 1,
+                                "color": "#FB9E60"
+                            },
+                            {
+                                "content": "网游分区十强",
+                                "pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191203/024d2a395130c457381e48f66a2b054e/l6RKUDbVk.png",
+                                "position": 2,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/63602c757dd6aaf2f498cb3d44b47fced6589a1e.jpg",
+                        "pendent_ru_color": "#FB9E60",
+                        "flag": 0,
+                        "roomid": 5279,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/255000/live_110631_5953326_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=0e4e4ded4bb17dc1cb843e2d77a7b382&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 110631,
+                        "pendent_ru": "网游分区十强",
+                        "current_quality": 4,
+                        "area_v2_id": 86,
+                        "area_v2_parent_name": "网游",
+                        "face": "http://i0.hdslb.com/bfs/face/8c49a758216f9bd14b0046afe48a3514f44126f0.jpg",
+                        "pendent_ru_pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191203/024d2a395130c457381e48f66a2b054e/l6RKUDbVk.png",
+                        "online": 145943
+                    },
+                    {
+                        "play_url_h265": "https://js.live-play.acgvideo.com/live-js/777069/live_37946996_2039103_minihevc.flv?wsSecret=e564f3ad4089c13f33488cdb3684af85&wsTime=1578739148&ptype=4&trid=f18b4b43d97a422ba3b06dc338e61310&pt=ios&oi=2028282618&order=1&ptype=4&sig=no",
+                        "session_id": "76CCA414-2A84-4439-8057-CE03FAA499D2",
+                        "group_id": 0,
+                        "link": "/1440094",
+                        "title": "人长大了，总是要单排的。",
+                        "play_url": "https://js.live-play.acgvideo.com/live-js/930294/live_37946996_2039103_2500.flv?wsSecret=6bacbb18712866eaf38c93edd3f168d2&wsTime=1578739148&trid=f18b4b43d97a422ba3b06dc338e61310&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 2,
+                        "area_v2_name": "英雄联盟",
+                        "uname": "守护茶茶",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/9cc899cde2349ae7d795456d85afb0f7d10b8631.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 1440094,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://js.live-play.acgvideo.com/live-js/818922/live_37946996_2039103_1500.flv?wsSecret=064b710c115f1cb30bad4e9609874bc4&wsTime=1578739148&trid=f18b4b43d97a422ba3b06dc338e61310&pt=ios&oi=2028282618&order=1&sig=no",
+                        "show_callback": "https://live-trace.bilibili.com/xlive/data-interface/v1/index/log?sessionID=76CCA414-2A84-4439-8057-CE03FAA499D2&group_id=0&biz=live&event_id=live_card_show&rule_key=&special_id=9460",
+                        "click_callback": "https://live-trace.bilibili.com/xlive/data-interface/v1/index/log?sessionID=76CCA414-2A84-4439-8057-CE03FAA499D2&group_id=0&biz=live&event_id=live_card_click&rule_key=&special_id=9460",
+                        "uid": 37946996,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 86,
+                        "area_v2_parent_name": "网游",
+                        "face": "http://i0.hdslb.com/bfs/face/54dade4edab47eb68d535d57778ed2cca958a20e.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 101613
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "42B7A235-8304-44DB-BC20-5C3BBBB95FC7",
+                        "group_id": 0,
+                        "link": "/9910114",
+                        "title": "少允三段 冲击大允",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/506712/live_24237945_9288431.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=82136da4e425549d47009cea2333bcff&ptype=0",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "决战！平安京",
+                        "uname": "宿命sssssm",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/user_cover/2c3651e0cbefc89401a115139540c5fd8e97a85d.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 9910114,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/890880/live_24237945_9288431_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=f18b4b43d97a422ba3b06dc338e61310&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=ae7fbdd4010ce57f93ddfd6454064dc2&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 24237945,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 140,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i1.hdslb.com/bfs/face/beb425ad3ee0c2f013071432ec2fb5330bf082cf.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 5668
+                    }
+                ],
+                "module_info": {
+                    "sort": 5,
+                    "id": 3,
+                    "pic": "http://i0.hdslb.com/bfs/live/3ee2962aae11c32e3b95b7becdac08df337e5f34.png",
+                    "title": "推荐直播",
+                    "count": 11587,
+                    "link": "http://live.bilibili.com/app/all-live/",
+                    "type": 6
+                }
+            },
+            {
+                "list": [
+                    {
+                        "play_url_h265": "",
+                        "session_id": "E84707AE-C27E-4F29-B5CD-09B32C5482FC",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "可能是你喜欢的声音",
+                        "play_url": "https://js.live-play.acgvideo.com/live-js/913831/live_25487242_8045067.flv?wsSecret=40219f7caee2f8d74866f05419aa19be&wsTime=1578739148&trid=646d45f7111d458e875a4bff141323e9&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 5,
+                        "area_v2_name": "唱见电台",
+                        "uname": "兮兮兮唐",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [
+                            {
+                                "content": "上小时电台No.1",
+                                "pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                                "position": 2,
+                                "color": "#fb7299"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/user_cover/bf0766c578294133e46f53662acb11e90bff62ab.jpg",
+                        "pendent_ru_color": "#fb7299",
+                        "flag": 0,
+                        "roomid": 5389469,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 25487242,
+                        "pendent_ru": "上小时电台No.1",
+                        "current_quality": 4,
+                        "area_v2_id": 190,
+                        "area_v2_parent_name": "电台",
+                        "face": "http://i1.hdslb.com/bfs/face/189cbf44b4bd67920cd2bc33bce7b49e11ddc47c.jpg",
+                        "pendent_ru_pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                        "online": 9273
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "E390AF89-D3FE-41B2-9372-09F3E0ABB8DB",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "掐指一算缘分到了",
+                        "play_url": "https://js.live-play.acgvideo.com/live-js/378402/live_1327427_9711206.flv?wsSecret=b29b9c54e23c8bd78affa4eb864bba6f&wsTime=1578739148&trid=646d45f7111d458e875a4bff141323e9&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 5,
+                        "area_v2_name": "聊天电台",
+                        "uname": "团团子",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/633841.jpg?01111735",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 633841,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 1327427,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 192,
+                        "area_v2_parent_name": "电台",
+                        "face": "http://i0.hdslb.com/bfs/face/9b9cfe8838b2ef69063d3f8d3458554347c5de9e.gif",
+                        "pendent_ru_pic": "",
+                        "online": 4053
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "4E439230-941E-4D27-B3A7-7AD316E57115",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "【唱功流】御音点唱！",
+                        "play_url": "https://d1--cn-gotcha03.bilivideo.com/live-bvc/821861/live_174676055_3787865.flv?cdn=cn-gotcha03&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=646d45f7111d458e875a4bff141323e9&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=69321e9dc11b94e850d8d28400262d4e&ptype=0",
+                        "area_v2_parent_id": 5,
+                        "area_v2_name": "唱见电台",
+                        "uname": "轩沐呀_",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [
+                            {
+                                "content": "全站百强",
+                                "pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191224/024d2a395130c457381e48f66a2b054e/ve3ksc1TE.png",
+                                "position": 2,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/fa9cc9500111d39a2ddc89e5403432940287e66e.jpg",
+                        "pendent_ru_color": "#FB9E60",
+                        "flag": 0,
+                        "roomid": 5058273,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 174676055,
+                        "pendent_ru": "全站百强",
+                        "current_quality": 4,
+                        "area_v2_id": 190,
+                        "area_v2_parent_name": "电台",
+                        "face": "http://i2.hdslb.com/bfs/face/d7cef1ad0122fb479ce5c17910ea276ed498ba70.jpg",
+                        "pendent_ru_pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191224/024d2a395130c457381e48f66a2b054e/ve3ksc1TE.png",
+                        "online": 4706
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "5498A9EB-54BA-4DE9-8878-4159F8758886",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "【奶御猛蓝音】猛男必进",
+                        "play_url": "https://js.live-play.acgvideo.com/live-js/292339/live_9854169_1579096.flv?wsSecret=a2cfc87d5e1b9ac9f0093c889cc2d394&wsTime=1578739148&trid=646d45f7111d458e875a4bff141323e9&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 5,
+                        "area_v2_name": "唱见电台",
+                        "uname": "萌蓝不是猛蓝",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/e3530bc1345884c454567e9122653e96028c366e.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 267342,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 9854169,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 190,
+                        "area_v2_parent_name": "电台",
+                        "face": "http://i1.hdslb.com/bfs/face/2541941720006cb3e0b3dadc25f7ac3bcde74e21.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 828
+                    }
+                ],
+                "module_info": {
+                    "sort": 12,
+                    "id": 47,
+                    "pic": "http://i0.hdslb.com/bfs/vc/a7adae1f7571a97f51d60f685823acc610d00a7e.png",
+                    "title": "电台",
+                    "count": 0,
+                    "link": "http://live.bilibili.com/app/area?parent_area_id=5&parent_area_name=电台&area_id=0&area_name=",
+                    "type": 9
+                }
+            },
+            {
+                "list": [
+                    {
+                        "play_url_h265": "",
+                        "session_id": "2E2DFE6A-3B2F-4BDB-868F-02319F1B1BBE",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "B站小甜甜",
+                        "play_url": "https://txy.live-play.acgvideo.com/live-txy/231440/live_354580019_3420095.flv?wsSecret=6a17c28af324008d8cfe99bb8837715c&wsTime=1578739148&trid=3c4324304a46474c810f46dd0fad8a21&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 1,
+                        "area_v2_name": "视频唱见",
+                        "uname": "薄薄的温酱",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/user_cover/3e95271f26e16f290dec1648cb869d60e5876093.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 12735949,
+                        "broadcast_type": 1,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 354580019,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 21,
+                        "area_v2_parent_name": "娱乐",
+                        "face": "http://i2.hdslb.com/bfs/face/0711ddf57f0f90f99c7bd521d5d9c029546df774.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 3987
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "A3258763-69F4-4213-AE9C-5E141C5D3F6B",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "我变强了也...",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/758291/live_303063545_7782021.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=3c4324304a46474c810f46dd0fad8a21&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=bdf702d4a42f211a6d35044091133204&ptype=0",
+                        "area_v2_parent_id": 1,
+                        "area_v2_name": "视频唱见",
+                        "uname": "柏大官人保健站",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/82cd90f76459297c45a95a6312eef0f532ca5b99.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 10040474,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 303063545,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 21,
+                        "area_v2_parent_name": "娱乐",
+                        "face": "http://i0.hdslb.com/bfs/face/0c1001d4e3f49c758c75e8fee946b54a2bd850a6.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 3901
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "CA554318-4025-48DB-ACDD-281292D37F9F",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "几个菜喝成这样",
+                        "play_url": "https://txy.live-play.acgvideo.com/live-txy/587185/live_355834046_49881966.flv?wsSecret=0b1632bb67104aed41ceccf41c2a6202&wsTime=1578739148&trid=3c4324304a46474c810f46dd0fad8a21&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 1,
+                        "area_v2_name": "视频唱见",
+                        "uname": "cc十三cc",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/user_cover/e686169b26d3cb6528df87a28ac0ba3623c04795.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 21735973,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 355834046,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 21,
+                        "area_v2_parent_name": "娱乐",
+                        "face": "http://i1.hdslb.com/bfs/face/e159cf9832022a50b5d96cd7dbf8cf5fce068345.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 290
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "DB2A24B8-DA4A-40FA-8FFF-979828198237",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "聊天的唱见主播",
+                        "play_url": "https://js.live-play.acgvideo.com/live-js/302060/live_486565617_84746981.flv?wsSecret=76e81a8bb8bb50de8a9aa4e3c0b94050&wsTime=1578739148&trid=3c4324304a46474c810f46dd0fad8a21&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 1,
+                        "area_v2_name": "视频唱见",
+                        "uname": "麦冬V587",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/user_cover/08875772a0f9b87818255ce0d1630f695a6e7211.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 21745120,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 486565617,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 21,
+                        "area_v2_parent_name": "娱乐",
+                        "face": "http://i2.hdslb.com/bfs/face/e05f33fcfcc209a40a61ec046343e01750412b96.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 364
+                    }
+                ],
+                "module_info": {
+                    "sort": 12,
+                    "id": 20,
+                    "pic": "http://i0.hdslb.com/bfs/vc/be8762b68775823f487101ef46adc12c709312c2.png",
+                    "title": "视频唱见",
+                    "count": 0,
+                    "link": "http://live.bilibili.com/app/area?parent_area_id=1&parent_area_name=娱乐&area_id=21&area_name=视频唱见",
+                    "type": 3
+                }
+            },
+            {
+                "list": [
+                    {
+                        "play_url_h265": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/259300/live_2206456_3775608_minihevc.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=9182986cb7f03ae451704418435f1d8d&ptype=0",
+                        "session_id": "1952B2D9-3E49-4E8B-8F4D-3083B2C2E0A8",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "快乐游戏",
+                        "play_url": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/255987/live_2206456_3775608_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=5ebef4b6bcc641d4bc38a46fc3222a87&ptype=0",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "王者荣耀",
+                        "uname": "花少北丶",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "",
+                                "pic": "https://i0.hdslb.com/bfs/live/539ce26c45cd4019f55b64cfbcedc3c01820e539.png",
+                                "position": 1,
+                                "color": "#FB9E60"
+                            },
+                            {
+                                "content": "正在抽奖",
+                                "pic": "http://i0.hdslb.com/bfs/live/d93df3b91780c1124eeacb945bf173236d99623f.png",
+                                "position": 2,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/9639288778728f3e00c57b9cdeb5bc2f173c7b2a.jpg",
+                        "pendent_ru_color": "#FB9E60",
+                        "flag": 0,
+                        "roomid": 81711,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/757742/live_2206456_3775608_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=bfd09bac97b984a4e73a4aacedc4d3bd&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 2206456,
+                        "pendent_ru": "正在抽奖",
+                        "current_quality": 4,
+                        "area_v2_id": 35,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i1.hdslb.com/bfs/face/86ef6895a8f88c80f2885e7eb9ba7989db437b93.jpg",
+                        "pendent_ru_pic": "http://i0.hdslb.com/bfs/live/d93df3b91780c1124eeacb945bf173236d99623f.png",
+                        "online": 184125
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "BAC93F47-CE15-4B4F-886F-7B30E7A150B8",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "别曜了受不了了",
+                        "play_url": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/544098/live_87588741_5832828_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=b115c62851dbd9e03a36f826e7e8eaa2&ptype=0",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "王者荣耀",
+                        "uname": "大白泷",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "",
+                                "pic": "https://i0.hdslb.com/bfs/live/539ce26c45cd4019f55b64cfbcedc3c01820e539.png",
+                                "position": 1,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/user_cover/e7d6b9267b47ffaeecb52bab690f4481a0604175.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 3489046,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/454140/live_87588741_5832828_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=ab769b5ce15cada64285c77a9513d356&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 87588741,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 35,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i1.hdslb.com/bfs/face/a79e9ac1e4933e3889d5cac10e149350cecc30ba.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 64674
+                    },
+                    {
+                        "play_url_h265": "https://js.live-play.acgvideo.com/live-js/707191/live_93841264_4272534_minihevc.flv?wsSecret=730bf6f789070a7f109e0ae74504a572&wsTime=1578739148&ptype=4&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&pt=ios&oi=2028282618&order=1&ptype=4&sig=no",
+                        "session_id": "ACB32AF6-9661-44C0-8F5A-63A0368659B3",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "王者荣耀带你看懂二狗",
+                        "play_url": "https://js.live-play.acgvideo.com/live-js/563291/live_93841264_4272534_2500.flv?wsSecret=761d306da8bdb5c0f89745fa5e3d08d1&wsTime=1578739148&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "王者荣耀",
+                        "uname": "梦醒三生梦",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "",
+                                "pic": "https://i0.hdslb.com/bfs/live/539ce26c45cd4019f55b64cfbcedc3c01820e539.png",
+                                "position": 1,
+                                "color": "#FB9E60"
+                            },
+                            {
+                                "content": "全站十强",
+                                "pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191203/024d2a395130c457381e48f66a2b054e/TYVoqw8f6.png",
+                                "position": 2,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/c15e2affba501706a882e8727cecf44e05ac7f50.jpg",
+                        "pendent_ru_color": "#FB9E60",
+                        "flag": 0,
+                        "roomid": 3742025,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://js.live-play.acgvideo.com/live-js/871131/live_93841264_4272534_1500.flv?wsSecret=92758fc4910cf7be93f1fb8c6985bb35&wsTime=1578739148&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&pt=ios&oi=2028282618&order=1&sig=no",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 93841264,
+                        "pendent_ru": "全站十强",
+                        "current_quality": 4,
+                        "area_v2_id": 35,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i1.hdslb.com/bfs/face/1ad8c4948eb6c0753dfdefe50dc76f2ba7d97840.jpg",
+                        "pendent_ru_pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191203/024d2a395130c457381e48f66a2b054e/TYVoqw8f6.png",
+                        "online": 52474
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "45ED61A8-29AB-42F8-BE1B-414EBB90E49F",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "第一女婉儿 输一把猪叫",
+                        "play_url": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/828595/live_108557348_8722761_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=200fe19ecdf5e9fd98abf0540d39829d&ptype=0",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "王者荣耀",
+                        "uname": "瓜妹小天使",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "天选时刻",
+                                "pic": "https://i0.hdslb.com/bfs/live/0cc6f3244063981b21cec7be2692d85f1a6d7792.png",
+                                "position": 2,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/user_cover/e88f108a120a17cb5980a89c9c35d158951ed627.jpg",
+                        "pendent_ru_color": "#FB9E60",
+                        "flag": 0,
+                        "roomid": 8078602,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/166596/live_108557348_8722761_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=b4ce0a5a9d5141e2b6669dec9cfb37b5&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=3e667b81eeea7e0ef5186d5108b82343&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 108557348,
+                        "pendent_ru": "天选时刻",
+                        "current_quality": 4,
+                        "area_v2_id": 35,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i0.hdslb.com/bfs/face/b04970a0aa4c2e03b38bd9e2c32874876835436f.jpg",
+                        "pendent_ru_pic": "https://i0.hdslb.com/bfs/live/0cc6f3244063981b21cec7be2692d85f1a6d7792.png",
+                        "online": 39122
+                    }
+                ],
+                "module_info": {
+                    "sort": 14,
+                    "id": 24,
+                    "pic": "http://i0.hdslb.com/bfs/vc/abdf6902041264984892ddb6ef211fde564a461e.png",
+                    "title": "王者荣耀",
+                    "count": 0,
+                    "link": "http://live.bilibili.com/app/area?parent_area_id=3&parent_area_name=手游&area_id=35&area_name=王者荣耀",
+                    "type": 3
+                }
+            },
+            {
+                "list": [
+                    {
+                        "play_url_h265": "https://js.live-play.acgvideo.com/live-js/717901/live_433351_3463687_minihevc.flv?wsSecret=1354358bf4d2b3362800b6845c457e4a&wsTime=1578739148&ptype=4&trid=52866f2f478c47edb346f73fd565b073&pt=ios&oi=2028282618&order=1&ptype=4&sig=no",
+                        "session_id": "398A7D61-158C-41E3-94C1-E92C0DAC73B3",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "阿 鹅 爱 好 者",
+                        "play_url": "https://js.live-play.acgvideo.com/live-js/271521/live_433351_3463687_2500.flv?wsSecret=65e77886175b7b7f252c0538977a484c&wsTime=1578739148&trid=52866f2f478c47edb346f73fd565b073&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 2,
+                        "area_v2_name": "守望先锋",
+                        "uname": "EdmundDZhang",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "",
+                                "pic": "https://i0.hdslb.com/bfs/live/539ce26c45cd4019f55b64cfbcedc3c01820e539.png",
+                                "position": 1,
+                                "color": "#FB9E60"
+                            },
+                            {
+                                "content": " ",
+                                "pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191203/024d2a395130c457381e48f66a2b054e/sSAKq0TWU.png",
+                                "position": 2,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/17c749332753cb813ef2d0a9d276ceec375907a2.jpg",
+                        "pendent_ru_color": "#FB9E60",
+                        "flag": 0,
+                        "roomid": 5050,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://js.live-play.acgvideo.com/live-js/539654/live_433351_3463687_1500.flv?wsSecret=24d3506e1a920b8f624665928a4e51da&wsTime=1578739148&trid=52866f2f478c47edb346f73fd565b073&pt=ios&oi=2028282618&order=1&sig=no",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 433351,
+                        "pendent_ru": " ",
+                        "current_quality": 4,
+                        "area_v2_id": 87,
+                        "area_v2_parent_name": "网游",
+                        "face": "http://i0.hdslb.com/bfs/face/5d94b9727a49815716cd66fc7ba3840382025c56.jpg",
+                        "pendent_ru_pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191203/024d2a395130c457381e48f66a2b054e/sSAKq0TWU.png",
+                        "online": 296100
+                    },
+                    {
+                        "play_url_h265": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/351375/live_19738891_5360819_minihevc.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=52866f2f478c47edb346f73fd565b073&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=33c9e2e1010089002dd56a80263b7037&ptype=0",
+                        "session_id": "56AA6F66-0D49-4B92-BC16-9D2214494AF3",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "训练赛开始啦！",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/985479/live_19738891_5360819_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=52866f2f478c47edb346f73fd565b073&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=192c2909de5a89c6f8464d3967838067&ptype=0",
+                        "area_v2_parent_id": 2,
+                        "area_v2_name": "绝地求生",
+                        "uname": "一米八的坤儿",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "网游分区冠军",
+                                "pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191203/024d2a395130c457381e48f66a2b054e/Hl8oye2T0.png",
+                                "position": 2,
+                                "color": "#FB9E60"
+                            },
+                            {
+                                "content": "",
+                                "pic": "https://i0.hdslb.com/bfs/live/539ce26c45cd4019f55b64cfbcedc3c01820e539.png",
+                                "position": 1,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/b04c598fe1f9847df89968aa67160af4a29e9b62.jpg",
+                        "pendent_ru_color": "#FB9E60",
+                        "flag": 0,
+                        "roomid": 4350043,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/787099/live_19738891_5360819_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=52866f2f478c47edb346f73fd565b073&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=8e2adbc363c6197aad6db7fcda73362f&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 19738891,
+                        "pendent_ru": "网游分区冠军",
+                        "current_quality": 4,
+                        "area_v2_id": 80,
+                        "area_v2_parent_name": "网游",
+                        "face": "http://i2.hdslb.com/bfs/face/09042ebcde49445793c0a40402e784df79822582.jpg",
+                        "pendent_ru_pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191203/024d2a395130c457381e48f66a2b054e/Hl8oye2T0.png",
+                        "online": 194937
+                    },
+                    {
+                        "play_url_h265": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/717538/live_183430_5743361_minihevc.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=52866f2f478c47edb346f73fd565b073&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=7ba65af4ba2aba97ee0cfdc2281788fa&ptype=0",
+                        "session_id": "CC7B2BDC-03AA-4C32-8FB1-49F786159EFA",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "【滚  《 莽夫千万种 苟王一条心 》",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/246246/live_183430_5743361_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=52866f2f478c47edb346f73fd565b073&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=2221caba55b2aed30119d68f7be05f5f&ptype=0",
+                        "area_v2_parent_id": 2,
+                        "area_v2_name": "英雄联盟",
+                        "uname": "两仪滚",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "",
+                                "pic": "https://i0.hdslb.com/bfs/live/539ce26c45cd4019f55b64cfbcedc3c01820e539.png",
+                                "position": 1,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/vc/eb1be0939a58a7abb25f2e6d6ef3d4c376944fc2.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 5096,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/365987/live_183430_5743361_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=52866f2f478c47edb346f73fd565b073&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=b77deb19a447b22284c38163b510bcd1&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 183430,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 86,
+                        "area_v2_parent_name": "网游",
+                        "face": "http://i1.hdslb.com/bfs/face/cbb9c69ea53cadcd8c6d9fcfd60ec4234e18b40a.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 88786
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "C90C5B8D-815A-4F51-9FB8-9A7E6EFC8FFD",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "精力充沛！冲",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/534019/live_325164925_5324520.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=52866f2f478c47edb346f73fd565b073&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=1e5bc782959e663cc0bf447f144713d8&ptype=0",
+                        "area_v2_parent_id": 2,
+                        "area_v2_name": "英雄联盟",
+                        "uname": "Fireloli",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/vc/c1d34c4ef35b2521482aa0306f7895f79d6c9b07.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 11090072,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/590002/live_325164925_5324520_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=52866f2f478c47edb346f73fd565b073&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=30993ac81de6a9d5d0d25ce2e821bc96&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 325164925,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 86,
+                        "area_v2_parent_name": "网游",
+                        "face": "http://i1.hdslb.com/bfs/face/77ce6a1a491b68f14ab2e86aec46d027bd4afdf8.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 58595
+                    }
+                ],
+                "module_info": {
+                    "sort": 15,
+                    "id": 5,
+                    "pic": "http://i0.hdslb.com/bfs/live/e68d491ed29be81acaeaf3081641140a303aad76.png",
+                    "title": "网游",
+                    "count": 0,
+                    "link": "http://live.bilibili.com/app/area?parent_area_id=2&parent_area_name=网游&area_id=&area_name=",
+                    "type": 9
+                }
+            },
+            {
+                "list": [
+                    {
+                        "play_url_h265": "",
+                        "session_id": "9A032A56-44E8-4C5A-B47C-959FCF69212B",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "COAⅢ至高杰作预选赛",
+                        "play_url": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/256908/live_211005705_2015536.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=14331a614b864d93be9bbc91d5775f7a&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=d0888805e67c324ea322e7ea64b60128&ptype=0",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "第五人格",
+                        "uname": "网易第五人格手游",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/vc/5fc13069bb78ecffef9cb70546ee9f64c006f88f.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 5887574,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/645290/live_211005705_2015536_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=14331a614b864d93be9bbc91d5775f7a&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=d27c6161e3310c48a9f0361e95f5d2a2&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 211005705,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 163,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i2.hdslb.com/bfs/face/d23940de4918b808676b6d61177c9859d2428121.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 63241
+                    },
+                    {
+                        "play_url_h265": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/344485/live_5907649_332_c521e483_minihevc.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=14331a614b864d93be9bbc91d5775f7a&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=b2e8c07cd749537a68aea121b9443f92&ptype=0",
+                        "session_id": "2915D9EE-DA6B-435F-BABC-B2EFF6BC2612",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "阎魔亭高难本冲了",
+                        "play_url": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/444377/live_5907649_332_c521e483_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=14331a614b864d93be9bbc91d5775f7a&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=95b8588e11f77dbef2125d76a82edb8a&ptype=0",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "Fate/GO",
+                        "uname": "千葉型DJ",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/fb2abe83a9a6f6c2d8b1c6bc1b07140bbc7d0e4a.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 37338,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/288484/live_5907649_332_c521e483_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=14331a614b864d93be9bbc91d5775f7a&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=db1258e42231a71e5781eab1a4fbf991&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 5907649,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 37,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i2.hdslb.com/bfs/face/19ce47e08e8727518c7c138dce0c8855ee6cab18.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 57782
+                    },
+                    {
+                        "play_url_h265": "https://txy.live-play.acgvideo.com/live-txy/535903/live_477572721_79181883_minihevc.flv?wsSecret=fa35c21778b1bdcd22a2f42eacd025ee&wsTime=1578739148&ptype=4&trid=14331a614b864d93be9bbc91d5775f7a&pt=ios&oi=2028282618&order=1&ptype=4&sig=no",
+                        "session_id": "E23D05E4-5801-4864-8BAD-6D99E1504984",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "【重播】王者模拟战冬季冠军杯总决赛",
+                        "play_url": "https://txy.live-play.acgvideo.com/live-txy/990028/live_477572721_79181883_2500.flv?wsSecret=cb4ffa7e4b0758f6437f4b23930f5d63&wsTime=1578739148&trid=14331a614b864d93be9bbc91d5775f7a&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "王者模拟战",
+                        "uname": "王者模拟战邀请赛",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/vc/b93b4ba4f0e671711f260d17e144c8f1c1a3b2aa.png",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 21654753,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://txy.live-play.acgvideo.com/live-txy/683487/live_477572721_79181883_1500.flv?wsSecret=d731bf89b4106e43270bf9c89de10220&wsTime=1578739148&trid=14331a614b864d93be9bbc91d5775f7a&pt=ios&oi=2028282618&order=1&sig=no",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 477572721,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 280,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i1.hdslb.com/bfs/face/fd5c36c8d060b6183803a41869ecb4960c7de45c.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 38000
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "4F94269F-B925-4528-AE57-9ECE6EDB6587",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "【杆菌】最后亿把百闻牌！",
+                        "play_url": "https://js.live-play.acgvideo.com/live-js/606627/live_164627_2722814_2500.flv?wsSecret=63d3dedd749727f9d4f69be8d15c39bb&wsTime=1578739148&trid=14331a614b864d93be9bbc91d5775f7a&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 3,
+                        "area_v2_name": "百闻牌",
+                        "uname": "杆菌无敌",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "",
+                                "pic": "https://i0.hdslb.com/bfs/live/539ce26c45cd4019f55b64cfbcedc3c01820e539.png",
+                                "position": 1,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/3b58b427bc8ef467d659b824cbca2160cac906a6.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 26057,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://js.live-play.acgvideo.com/live-js/498442/live_164627_2722814_1500.flv?wsSecret=8f71a857337f1f5305dc5fba04e8614e&wsTime=1578739148&trid=14331a614b864d93be9bbc91d5775f7a&pt=ios&oi=2028282618&order=1&sig=no",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 164627,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 286,
+                        "area_v2_parent_name": "手游",
+                        "face": "http://i1.hdslb.com/bfs/face/6bbeb93dd72c60cb7ad2e876b241d0360d7f0d38.gif",
+                        "pendent_ru_pic": "",
+                        "online": 30312
+                    }
+                ],
+                "module_info": {
+                    "sort": 17,
+                    "id": 6,
+                    "pic": "http://i0.hdslb.com/bfs/live/72d1a2d06b9f05f81bd5c3361448918a06415585.png",
+                    "title": "手游",
+                    "count": 0,
+                    "link": "http://live.bilibili.com/app/area?parent_area_id=3&parent_area_name=手游&area_id=&area_name=",
+                    "type": 9
+                }
+            },
+            {
+                "list": [
+                    {
+                        "play_url_h265": "",
+                        "session_id": "5B0660A8-8C79-4D3B-9EF4-FA8CA0FD4E2D",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "在MC中365天走到边境之地 【纯手动】",
+                        "play_url": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/189053/live_423450200_54785388_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=b793d999fb184c97885cbf6b211175ec&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=3baf37fc7a6b36a7fb7f5cb210dbb005&ptype=0",
+                        "area_v2_parent_id": 6,
+                        "area_v2_name": "我的世界",
+                        "uname": "Africa_Qz",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [
+                            {
+                                "content": "上小时单机No.1",
+                                "pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                                "position": 2,
+                                "color": "#fb7299"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/66ab3d7f7adbd3ca16025bd612284f94199def5b.jpg",
+                        "pendent_ru_color": "#fb7299",
+                        "flag": 0,
+                        "roomid": 21424490,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/518272/live_423450200_54785388_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=b793d999fb184c97885cbf6b211175ec&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=867912f1b0ad8e1f325ab489d31c990c&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 423450200,
+                        "pendent_ru": "上小时单机No.1",
+                        "current_quality": 4,
+                        "area_v2_id": 216,
+                        "area_v2_parent_name": "单机",
+                        "face": "http://i1.hdslb.com/bfs/face/ac98d9e0a04dca9c113891f1cce4235ceb1bb8ba.jpg",
+                        "pendent_ru_pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                        "online": 8805
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "F7333F19-D15D-4526-B0B5-073480D80440",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "爬塔杀戮尖塔进阶20",
+                        "play_url": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/513368/live_6639802_2352392_2500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=400&trid=b793d999fb184c97885cbf6b211175ec&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=5c6dce087e193a1f6fa44b117cf2acb2&ptype=0",
+                        "area_v2_parent_id": 6,
+                        "area_v2_name": "独立游戏",
+                        "uname": "陈哥1",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "蓝光",
+                                "qn": 400
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 400,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/ce4fff4cdbcf37bdb99dd82306482ecec338994a.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 12265,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/518214/live_6639802_2352392_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=b793d999fb184c97885cbf6b211175ec&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=5d896edc60e8bc77c4318b8be093f842&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 6639802,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 283,
+                        "area_v2_parent_name": "单机",
+                        "face": "http://i1.hdslb.com/bfs/face/9c7f133022a1532a0f0a3ab164f40593f23f7a4c.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 61125
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "950B6369-5629-4FB9-9BB7-6B7274B59A69",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "保证和封面一样嘤嘤嘤....",
+                        "play_url": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/494722/live_300702024_9725507.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=b793d999fb184c97885cbf6b211175ec&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=1320ece53fba5c0099d1ab6a310cf5dd&ptype=0",
+                        "area_v2_parent_id": 6,
+                        "area_v2_name": "恐怖游戏",
+                        "uname": "丸嘻嘻",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/user_cover/abc594dba0fff6bf01a7754bd44c28f51cded4a6.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 9922197,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/925530/live_300702024_9725507_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=b793d999fb184c97885cbf6b211175ec&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=3f5ff0acfcfaf09678c80f79a86570cc&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 300702024,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 276,
+                        "area_v2_parent_name": "单机",
+                        "face": "http://i0.hdslb.com/bfs/face/e27b0c8c0b795a2a6f5f96a265f136d3600b7910.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 45655
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "772008A5-BAE2-46FF-9B8C-640B214D548F",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "高能游戏夜：旅游前直播一次",
+                        "play_url": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/627314/live_4059920_332_c521e483.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=b793d999fb184c97885cbf6b211175ec&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=420ba23a12ceb9d0dd27562e931a0b41&ptype=0",
+                        "area_v2_parent_id": 6,
+                        "area_v2_name": "主机游戏",
+                        "uname": "靖菌命",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            },
+                            {
+                                "desc": "高清",
+                                "qn": 150
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4,
+                            3
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [
+                            {
+                                "content": "全站百强",
+                                "pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191224/024d2a395130c457381e48f66a2b054e/ve3ksc1TE.png",
+                                "position": 2,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/70d855f96ab2eadc24d7d9eb3b22d37d7d4dbfb0.jpg",
+                        "pendent_ru_color": "#FB9E60",
+                        "flag": 0,
+                        "roomid": 36250,
+                        "broadcast_type": 0,
+                        "play_url_card": "https://cn-ahhf-cmcc-live-02.bilivideo.com/live-bvc/672203/live_4059920_332_c521e483_1500.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=150&trid=b793d999fb184c97885cbf6b211175ec&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=7ee4c962f33c69dec294e611c6f8af30&ptype=0",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 4059920,
+                        "pendent_ru": "全站百强",
+                        "current_quality": 4,
+                        "area_v2_id": 236,
+                        "area_v2_parent_name": "单机",
+                        "face": "http://i0.hdslb.com/bfs/face/6f6411b3d701ad213df75b8f9ad8910fc1ebe408.jpg",
+                        "pendent_ru_pic": "https://i0.hdslb.com/bfs/activity-plat/static/20191224/024d2a395130c457381e48f66a2b054e/ve3ksc1TE.png",
+                        "online": 27309
+                    }
+                ],
+                "module_info": {
+                    "sort": 18,
+                    "id": 56,
+                    "pic": "http://i0.hdslb.com/bfs/vc/874fcf726b1137bf7e88c127f64884502fb2cea7.png",
+                    "title": "单机",
+                    "count": 0,
+                    "link": "https://live.bilibili.com/app/area?parent_area_id=6&parent_area_name=单机&area_id=0&area_name=",
+                    "type": 9
+                }
+            },
+            {
+                "list": [
+                    {
+                        "play_url_h265": "",
+                        "session_id": "126BF9E9-FD52-4C34-84D4-E92F9E747B37",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "周末愉快！",
+                        "play_url": "https://d1--cn-gotcha03.bilivideo.com/live-bvc/123625/live_10760577_6390753.flv?cdn=cn-gotcha03&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=6de3b842a7e74cf799185351d1da3d35&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=4989f0fbb6ced15af3a119ee9b55a8fc&ptype=0",
+                        "area_v2_parent_id": 1,
+                        "area_v2_name": "视频聊天",
+                        "uname": "是你宁姐呀",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [
+                            {
+                                "content": "上小时总榜No.1",
+                                "pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                                "position": 2,
+                                "color": "#fb7299"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/5f0f10e62cfd262d2b7b19f4452157e283b11e1d.jpg",
+                        "pendent_ru_color": "#fb7299",
+                        "flag": 0,
+                        "roomid": 222591,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 10760577,
+                        "pendent_ru": "上小时总榜No.1",
+                        "current_quality": 4,
+                        "area_v2_id": 145,
+                        "area_v2_parent_name": "娱乐",
+                        "face": "http://i1.hdslb.com/bfs/face/27317040707b3034f73402f6b83b6897caffc299.jpg",
+                        "pendent_ru_pic": "http://i0.hdslb.com/bfs/vc/f1ae40390f1d613735cafd9e45dd07c808d6a866.png",
+                        "online": 8021
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "1C3B99BB-41AC-493F-8357-20D5264CA694",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "【b限】LOLOLOL【有翻译】",
+                        "play_url": "https://d1--cn-gotcha03.bilivideo.com/live-bvc/726504/live_487902_4692533.flv?cdn=cn-gotcha03&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=6de3b842a7e74cf799185351d1da3d35&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=cdbc58d48aa7348cdd668393b844fbbb&ptype=0",
+                        "area_v2_parent_id": 1,
+                        "area_v2_name": "虚拟主播",
+                        "uname": "暗and喵",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [
+                            {
+                                "content": "正在抽奖",
+                                "pic": "http://i0.hdslb.com/bfs/live/d93df3b91780c1124eeacb945bf173236d99623f.png",
+                                "position": 2,
+                                "color": "#FB9E60"
+                            }
+                        ],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/85e3c43f241b2e185eec1cdd0427fae246145959.jpg",
+                        "pendent_ru_color": "#FB9E60",
+                        "flag": 0,
+                        "roomid": 7595278,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 487902,
+                        "pendent_ru": "正在抽奖",
+                        "current_quality": 4,
+                        "area_v2_id": 199,
+                        "area_v2_parent_name": "娱乐",
+                        "face": "http://i1.hdslb.com/bfs/face/589de8eb91d2ef3be801ce3eb78dcd0469a698e8.jpg",
+                        "pendent_ru_pic": "http://i0.hdslb.com/bfs/live/d93df3b91780c1124eeacb945bf173236d99623f.png",
+                        "online": 6028
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "E1EBB9F9-0FDA-418C-8CEA-0B8E8A7E97AD",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "【下午营业】饭前来听听学姐唠唠嗑",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/474993/live_116222056_9852598.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=6de3b842a7e74cf799185351d1da3d35&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=f21e8cc5fb8ede89dcd5a44833d7536a&ptype=0",
+                        "area_v2_parent_id": 1,
+                        "area_v2_name": "视频聊天",
+                        "uname": "葡萄树的枝子",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/857f4df3f9c7d021994048a8382b7bbb1fe6f19a.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 14874932,
+                        "broadcast_type": 1,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 116222056,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 145,
+                        "area_v2_parent_name": "娱乐",
+                        "face": "http://i1.hdslb.com/bfs/face/8fe6d2ce571b66823a52c160b097fd7ae4358218.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 4038
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "9EACEFDF-0CC4-410E-8523-95E0E0A572DC",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "偷偷播一会",
+                        "play_url": "https://d1--cn-gotcha03.bilivideo.com/live-bvc/205620/live_845736_5696072.flv?cdn=cn-gotcha03&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=6de3b842a7e74cf799185351d1da3d35&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=a1dc1ec544db56bbc2b4a1d5cd92cee5&ptype=0",
+                        "area_v2_parent_id": 1,
+                        "area_v2_name": "虚拟主播",
+                        "uname": "紫天垣Official",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/067fd5b020462483e9e1832785e599c4d06a0115.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 21728344,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 845736,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 199,
+                        "area_v2_parent_name": "娱乐",
+                        "face": "http://i2.hdslb.com/bfs/face/719b49ea63d2597d0b05e81103e7e7b4656f0164.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 963
+                    }
+                ],
+                "module_info": {
+                    "sort": 20,
+                    "id": 7,
+                    "pic": "http://i0.hdslb.com/bfs/live/47bbb41bbaa5d94f63789066c0f59014e4a2e49c.png",
+                    "title": "娱乐",
+                    "count": 0,
+                    "link": "http://live.bilibili.com/app/area?parent_area_id=1&parent_area_name=娱乐&area_id=&area_name=",
+                    "type": 9
+                }
+            },
+            {
+                "list": [
+                    {
+                        "play_url_h265": "",
+                        "session_id": "993142A9-0AE3-4568-B89F-5A161E0740FA",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "穹妹，勾线",
+                        "play_url": "https://js.live-play.acgvideo.com/live-js/595669/live_195209728_3648409.flv?wsSecret=71cbf4c000d73af6f769feb9660003f0&wsTime=1578739148&trid=70902d6dbd5143158e19d86a92beea94&pt=ios&oi=2028282618&order=1&sig=no",
+                        "area_v2_parent_id": 4,
+                        "area_v2_name": "临摹绘画",
+                        "uname": "没睡醒的Nana_",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/2ec88ad87b52dc13cdc9b651536c691483d4db87.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 6185713,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 195209728,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 95,
+                        "area_v2_parent_name": "绘画",
+                        "face": "http://i1.hdslb.com/bfs/face/095affdd5bec33a7d5faa185dd6731cf5c690027.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 270
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "D1CE1D0C-8FE3-46D4-B9BA-2D8CCF22EFF5",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "不要呀！笔你怎么自己画起来了！",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/242902/live_18251027_8909011.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=70902d6dbd5143158e19d86a92beea94&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=96a426a73609c39fbfd9e3a6dec7250f&ptype=0",
+                        "area_v2_parent_id": 4,
+                        "area_v2_name": "同人绘画",
+                        "uname": "Grandia元",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/user_cover/2b85faf2dd62d4da41748960efcdb6595ca85562.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 4100738,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 18251027,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 94,
+                        "area_v2_parent_name": "绘画",
+                        "face": "http://i0.hdslb.com/bfs/face/621bee366af996dfefc9ab366c4cc9ddde1f0824.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 6876
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "66B33683-F35C-4687-A62B-D9C823721F90",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "注意事项",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/145733/live_149113_3091275.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=70902d6dbd5143158e19d86a92beea94&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=3039fe64c3c5e073fa3a1f49f4380edd&ptype=0",
+                        "area_v2_parent_id": 4,
+                        "area_v2_name": "原创绘画",
+                        "uname": "FKEY",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/room_cover/25df8eb14faf9b28ff44ffc2547e1c3bfd32387d.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 528819,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 149113,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 51,
+                        "area_v2_parent_name": "绘画",
+                        "face": "http://i2.hdslb.com/bfs/face/cc7a5e44d76937358ea47fd15bd241c218ddc27d.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 5867
+                    },
+                    {
+                        "play_url_h265": "",
+                        "session_id": "CC6B2EEE-6D58-4D1B-B2A9-0202A21D6B77",
+                        "group_id": 0,
+                        "link": "",
+                        "title": "第4期作业辅导现场 讲师：包子",
+                        "play_url": "https://cn-ahhf-cmcc-live-01.bilivideo.com/live-bvc/380904/live_87919354_1422045.flv?cdn=cn-gotcha01&expires=1578739148&len=0&oi=2028282618&pt=ios&qn=10000&trid=70902d6dbd5143158e19d86a92beea94&sigparams=cdn,expires,len,oi,pt,qn,trid&sign=aa9e90aaeea9703b19f292125fbcc40e&ptype=0",
+                        "area_v2_parent_id": 4,
+                        "area_v2_name": "原创绘画",
+                        "uname": "SanTEZ三太子",
+                        "pk_id": 0,
+                        "quality_description": [
+                            {
+                                "desc": "原画",
+                                "qn": 10000
+                            }
+                        ],
+                        "rec_type": 0,
+                        "accept_quality": [
+                            4
+                        ],
+                        "current_qn": 10000,
+                        "pendent_list": [],
+                        "cover": "http://i0.hdslb.com/bfs/live/cecf0a3559e871bfbba0c09f4069d42a6dc031f6.jpg",
+                        "pendent_ru_color": "",
+                        "flag": 0,
+                        "roomid": 3744836,
+                        "broadcast_type": 0,
+                        "play_url_card": "",
+                        "show_callback": "",
+                        "click_callback": "",
+                        "uid": 87919354,
+                        "pendent_ru": "",
+                        "current_quality": 4,
+                        "area_v2_id": 51,
+                        "area_v2_parent_name": "绘画",
+                        "face": "http://i2.hdslb.com/bfs/face/aaca19cff7c478f6afc5f1b4bb3dba58ed3fc0e0.jpg",
+                        "pendent_ru_pic": "",
+                        "online": 4798
+                    }
+                ],
+                "module_info": {
+                    "sort": 25,
+                    "id": 8,
+                    "pic": "http://i0.hdslb.com/bfs/live/7c54d7cc64e022845fccd63221de069b71eb6f67.png",
+                    "title": "绘画",
+                    "count": 0,
+                    "link": "http://live.bilibili.com/app/area?parent_area_id=4&parent_area_name=绘画&area_id=&area_name=",
+                    "type": 9
+                }
+            }
+        ],
+        "activity_card": [],
+        "interval": 10,
+        "area_entrance_v2": [
+            {
+                "extra_info": {
+                    "offline": []
+                },
+                "list": [
+                    {
+                        "id": 94,
+                        "pic": "http://i0.hdslb.com/bfs/vc/4ee7072452943694b497111d1dc9d10bc566be2e.png",
+                        "title": "同人绘画",
+                        "area_v2_id": 94,
+                        "link": "https://live.bilibili.com/app/area?parent_area_id=4&parent_area_name=绘画&area_id=94&area_name=同人绘画",
+                        "area_v2_parent_id": 4,
+                        "tag_type": 0
+                    },
+                    {
+                        "id": 86,
+                        "pic": "http://i0.hdslb.com/bfs/vc/dcfb14f14ec83e503147a262e7607858b05d7ac0.png",
+                        "title": "英雄联盟",
+                        "area_v2_id": 86,
+                        "link": "https://live.bilibili.com/app/area?parent_area_id=2&parent_area_name=网游&area_id=86&area_name=英雄联盟",
+                        "area_v2_parent_id": 2,
+                        "tag_type": 1
+                    },
+                    {
+                        "id": 260,
+                        "pic": "http://i0.hdslb.com/bfs/vc/c666c6dc2d5346e0d3cfda7162914d84d16964dd.png",
+                        "title": "lol云顶之弈",
+                        "area_v2_id": 260,
+                        "link": "https://live.bilibili.com/app/area?parent_area_id=2&parent_area_name=网游&area_id=260&area_name=lol云顶之弈",
+                        "area_v2_parent_id": 2,
+                        "tag_type": 1
+                    },
+                    {
+                        "id": 35,
+                        "pic": "http://i0.hdslb.com/bfs/vc/0fefa924760b2dd492a12dddafe179bfa1216918.png",
+                        "title": "王者荣耀",
+                        "area_v2_id": 35,
+                        "link": "https://live.bilibili.com/app/area?parent_area_id=3&parent_area_name=手游&area_id=35&area_name=王者荣耀",
+                        "area_v2_parent_id": 3,
+                        "tag_type": 1
+                    },
+                    {
+                        "id": 1,
+                        "pic": "http://i0.hdslb.com/bfs/live/8fd5339dac84ec34e72f707f4c3b665d0aa41905.png",
+                        "title": "娱乐",
+                        "area_v2_id": 0,
+                        "link": "https://live.bilibili.com/app/area?parent_area_id=1&parent_area_name=娱乐&area_id=0&area_name=",
+                        "area_v2_parent_id": 1,
+                        "tag_type": 1
+                    },
+                    {
+                        "id": 6,
+                        "pic": "http://i0.hdslb.com/bfs/live/827033eb0ac50db3d9f849abe8e39a5d3b1ecd53.png",
+                        "title": "单机",
+                        "area_v2_id": 0,
+                        "link": "https://live.bilibili.com/app/area?parent_area_id=6&parent_area_name=单机&area_id=0&area_name=",
+                        "area_v2_parent_id": 6,
+                        "tag_type": 1
+                    },
+                    {
+                        "id": 5,
+                        "pic": "http://i0.hdslb.com/bfs/live/a7adae1f7571a97f51d60f685823acc610d00a7e.png",
+                        "title": "电台",
+                        "area_v2_id": 0,
+                        "link": "https://live.bilibili.com/app/area?parent_area_id=5&parent_area_name=电台&area_id=0&area_name=",
+                        "area_v2_parent_id": 5,
+                        "tag_type": 1
+                    },
+                    {
+                        "id": 190,
+                        "pic": "http://i0.hdslb.com/bfs/vc/d22d7fafbf9b24e2bc3ce1df5eb9f006e6035e5d.png",
+                        "title": "唱见电台",
+                        "area_v2_id": 190,
+                        "link": "https://live.bilibili.com/app/area?parent_area_id=5&parent_area_name=电台&area_id=190&area_name=唱见电台",
+                        "area_v2_parent_id": 5,
+                        "tag_type": 1
+                    },
+                    {
+                        "id": 163,
+                        "pic": "http://i0.hdslb.com/bfs/vc/976be38da68267cab88f92f0ed78e057995798d6.png",
+                        "title": "第五人格",
+                        "area_v2_id": 163,
+                        "link": "https://live.bilibili.com/app/area?parent_area_id=3&parent_area_name=手游&area_id=163&area_name=第五人格",
+                        "area_v2_parent_id": 3,
+                        "tag_type": 1
+                    },
+                    {
+                        "id": 0,
+                        "pic": "https://i0.hdslb.com/bfs/vc/ff03528785fc8c91491d79e440398484811d6d87.png",
+                        "title": "全部标签",
+                        "area_v2_id": 0,
+                        "link": "https://live.bilibili.com/app/mytag/",
+                        "area_v2_parent_id": 0,
+                        "tag_type": 1
+                    }
+                ],
+                "module_info": {
+                    "sort": 3,
+                    "id": 58,
+                    "pic": "",
+                    "title": "分区入口（二合一）",
+                    "count": 0,
+                    "link": "",
+                    "type": 15
+                }
+            }
+        ],
+        "area_entrance": [],
+        "banner": [
+            {
+                "list": [
+                    {
+                        "id": 19245,
+                        "title": "2020小年yeah！王牌合战",
+                        "pic": "https://i0.hdslb.com/bfs/live/133e4ca713bf1902a3933a4b8cf205ff0f70ddaa.jpg",
+                        "content": "",
+                        "source_content": {
+                            "card_index": 0,
+                            "resource_id": 466,
+                            "is_ad_loc": true,
+                            "server_type": 0,
+                            "request_id": "1578735548608q172a22a54a133q711",
+                            "client_ip": "120.229.34.250",
+                            "source_id": 545,
+                            "index": 1
+                        },
+                        "link": "https://www.bilibili.com/blackboard/live/activity-xnyh5.html"
+                    },
+                    {
+                        "id": 18661,
+                        "title": "决战平安京二周年主播招募",
+                        "pic": "https://i0.hdslb.com/bfs/live/37fbc3122cf98ebba5d0d35ad05d909e4060a9eb.jpg",
+                        "content": "",
+                        "source_content": {
+                            "card_index": 0,
+                            "resource_id": 466,
+                            "is_ad_loc": true,
+                            "server_type": 0,
+                            "request_id": "1578735548608q172a22a54a133q711",
+                            "client_ip": "120.229.34.250",
+                            "source_id": 546,
+                            "index": 2
+                        },
+                        "link": "https://www.bilibili.com/blackboard/live/activity-ltzT5E5P.html"
+                    }
+                ],
+                "module_info": {
+                    "sort": 0,
+                    "id": 1,
+                    "pic": "",
+                    "title": "banner位",
+                    "count": 0,
+                    "link": "",
+                    "type": 1
+                }
+            }
+        ],
+        "activity_card_v2": [
+            {
+                "list": [
+                    {
+                        "logo_url": "http://i0.hdslb.com/bfs/live/mlive/fa8b3abc13012f9711d4663a4008f036e557c338.jpg",
+                        "end_at": 1579264552,
+                        "time_text": "1月16日 00:00 开始",
+                        "button_text": "去围观",
+                        "type": 2,
+                        "title": "《浮生一顿饭》直播首档下饭综艺",
+                        "start_at": 1579104000,
+                        "on_live": 0,
+                        "activity_url": "https://live.bilibili.com/p/html/live-app-activity-center/index.html?is_live_webview=1",
+                        "button_url": "https://www.bilibili.com/blackboard/live/activity-JZS8AzyD.html",
+                        "aid": 181,
+                        "status": 0
+                    },
+                    {
+                        "logo_url": "http://i0.hdslb.com/bfs/live/mlive/e40a1531384149bfe488c762fe71bbc9eb0a2d37.jpg",
+                        "end_at": 1579190399,
+                        "time_text": "1月16日 19:00 开始",
+                        "button_text": "去围观",
+                        "type": 2,
+                        "title": "2020小年yeah！王牌合战",
+                        "start_at": 1579172400,
+                        "on_live": 0,
+                        "activity_url": "https://live.bilibili.com/p/html/live-app-activity-center/index.html?is_live_webview=1",
+                        "button_url": "https://www.bilibili.com/blackboard/live/activity-xnyh5.html",
+                        "aid": 219,
+                        "status": 0
+                    }
+                ],
+                "module_info": {
+                    "sort": 4,
+                    "id": 60,
+                    "pic": "",
+                    "title": "活动预约卡V2",
+                    "count": 0,
+                    "link": "",
+                    "type": 16
+                }
+            }
+        ],
+        "is_sky_horse_gray": 1
+    }
+}
