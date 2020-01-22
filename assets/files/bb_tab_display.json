@@ -1,0 +1,132 @@
+{
+    "code": 0,
+    "config": {
+        "no_login_avatar_type": 0,
+        "popup_style": 1,
+        "no_login_avatar": "http://i0.hdslb.com/bfs/archive/689ed56f5b8b9bd26a90b20c52d464ebc0156185.png"
+    },
+    "data": {
+        "tab": [
+            {
+                "id": 39,
+                "tab_id": "直播tab",
+                "name": "直播",
+                "uri": "bilibili://live/home",
+                "pos": 1
+            },
+            {
+                "id": 40,
+                "tab_id": "推荐tab",
+                "default_selected": 1,
+                "name": "推荐",
+                "uri": "bilibili://pegasus/promo",
+                "pos": 2
+            },
+            {
+                "id": 41,
+                "tab_id": "热门tab",
+                "name": "热门",
+                "uri": "bilibili://pegasus/hottopic",
+                "pos": 3
+            },
+            {
+                "id": 42,
+                "tab_id": "追番Tab",
+                "name": "追番",
+                "uri": "bilibili://pgc/home",
+                "pos": 4
+            },
+            {
+                "id": 151,
+                "tab_id": "影视tab",
+                "name": "影视",
+                "uri": "bilibili://pgc/cinema-tab",
+                "pos": 5
+            },
+            {
+                "extension": {
+                    "inactive_icon": "http://i0.hdslb.com/bfs/feed-admin/b58a9dc56848d6dadc017c39d9d7fa18c9bb1aba.png",
+                    "active_icon": "http://i0.hdslb.com/bfs/feed-admin/c37f5e26d30cb10fc5fec4ed254649123e9c5f97.png"
+                },
+                "id": 50119,
+                "tab_id": "167",
+                "name": "拜年祭",
+                "uri": "bilibili://pegasus/op/50119?name=拜年祭",
+                "pos": 6
+            },
+            {
+                "id": 38247,
+                "tab_id": "165",
+                "name": "新时代",
+                "uri": "bilibili://pegasus/op/38247?name=新时代",
+                "pos": 7
+            }
+        ],
+        "top": [
+            {
+                "id": 222,
+                "icon": "http://i0.hdslb.com/bfs/archive/734a3b610a953df398bbe6d787944514dcd94a46.png",
+                "tab_id": "游戏中心Top",
+                "name": "游戏中心",
+                "uri": "bilibili://game_center/home",
+                "pos": 1
+            },
+            {
+                "id": 176,
+                "icon": "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
+                "tab_id": "消息Top",
+                "name": "消息",
+                "uri": "bilibili://link/im_home",
+                "pos": 2
+            }
+        ],
+        "bottom": [
+            {
+                "uri": "bilibili://main/home/",
+                "tab_id": "首页Bottom",
+                "pos": 1,
+                "id": 177,
+                "icon_selected": "http://i0.hdslb.com/bfs/archive/e5106aa688dc729e7f0eafcbb80317feb54a43bd.png",
+                "icon": "http://i0.hdslb.com/bfs/archive/63d7ee88d471786c1af45af86e8cb7f607edf91b.png",
+                "name": "首页"
+            },
+            {
+                "uri": "bilibili://pegasus/channel/",
+                "tab_id": "频道Bottom",
+                "pos": 2,
+                "id": 178,
+                "icon_selected": "http://i0.hdslb.com/bfs/archive/79d29e6ac3b6e52652881b050e63988e2038130f.png",
+                "icon": "http://i0.hdslb.com/bfs/archive/9c453a54eb83f5140cd098bf2e8ed8a599edc7fe.png",
+                "name": "频道"
+            },
+            {
+                "uri": "bilibili://following/home/",
+                "tab_id": "动态Bottom",
+                "pos": 3,
+                "id": 179,
+                "icon_selected": "http://i0.hdslb.com/bfs/archive/25b658e1f6b6da57eecba328556101dbdcb4b53f.png",
+                "icon": "http://i0.hdslb.com/bfs/archive/86dfbe5fa32f11a8588b9ae0fccb77d3c27cedf6.png",
+                "name": "动态"
+            },
+            {
+                "uri": "bilibili://mall/home/",
+                "tab_id": "会员购Bottom",
+                "pos": 4,
+                "id": 180,
+                "icon_selected": "http://i0.hdslb.com/bfs/archive/eeaf83fb7157000776dd93f61702a049f56801d3.png",
+                "icon": "http://i0.hdslb.com/bfs/archive/6090d5fa7ece2a94de839e7cce4f1e774dae7779.png",
+                "name": "会员购"
+            },
+            {
+                "uri": "bilibili://user_center/",
+                "tab_id": "我的Bottom",
+                "pos": 5,
+                "id": 181,
+                "icon_selected": "http://i0.hdslb.com/bfs/archive/a54a8009116cb896e64ef14dcf50e5cade401e00.png",
+                "icon": "http://i0.hdslb.com/bfs/archive/4b0b2c49ffeb4f0c2e6a4cceebeef0aab1c53fe1.png",
+                "name": "我的"
+            }
+        ]
+    },
+    "message": "0"
+}
