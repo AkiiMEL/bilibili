@@ -12,6 +12,8 @@ import 'package:bilibili/app/views/home/live/bb_live_stream_list_ad_section.dart
 import 'package:bilibili/app/views/home/live/bb_live_stream_list_area_section_view.dart';
 import 'package:bilibili/app/compenents/bb_pull_down_indicator_view.dart';
 
+import '../../../utils/bb_args.dart';
+
 class BBLiveStreamListView extends StatefulWidget {
   BBLiveStreamListView({Key key}) : super(key: key);
 
@@ -21,15 +23,16 @@ class BBLiveStreamListView extends StatefulWidget {
 
 class _BBLiveStreamListViewState extends State<BBLiveStreamListView>
     with AutomaticKeepAliveClientMixin {
-  List<LiveStreamSection> _sections = [];
-  RefreshController _refreshController = RefreshController();
+  List<LiveStreamSection> _sections;
+  RefreshController _refreshController;
 
   @override
   bool get wantKeepAlive => true;
 
   @override
   void initState() {
-    _refreshController = RefreshController();
+    _sections = [];
+    _refreshController = RefreshController(initialRefresh: true);
     super.initState();
   }
 
@@ -91,7 +94,7 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView>
       itemBuilder: (context, index) {
         // EdgeInsets of contents.
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: defaultMargin.left),
+          padding: defaultMargin,
           child: index == _sections.length
               ? Center(
                   child: Padding(

@@ -1,51 +1,39 @@
-import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
-import 'package:bilibili/app/utils/bb_args.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluro/fluro.dart';
 
-import 'package:bilibili/app/views/home/live/bb_live_stream_list_view.dart';
-import 'package:bilibili/app/views/home/featured/bb_featured_list_view.dart';
-import 'package:bilibili/app/views/home/popular/bb_popular_list_view.dart';
-import 'package:bilibili/app/views/home/bangumi/bb_bangumi_list_view.dart';
+import '../../compenents/bb_network_avatar_image.dart';
+import '../../compenents/bb_network_image.dart';
+import '../../models/bb_tab_models.dart';
+import '../../utils/bb_args.dart';
 
 class BBHomeView extends StatefulWidget {
+  final BBTabBody configuration;
+  BBHomeView({this.configuration});
+
   @override
   _BBHomeViewState createState() => _BBHomeViewState();
 }
 
 class _BBHomeViewState extends State<BBHomeView>
     with SingleTickerProviderStateMixin {
-  List<Widget> tabBarItems;
-  List<Widget> views;
-  TabController controller;
+  List<BBTabBarItem> _tabBarItems;
+  TabController _tabCtr;
 
   @override
   void initState() {
     super.initState();
-    tabBarItems = [
-      "直播",
-      "推荐",
-      "热门",
-      "追番",
-      "影视",
-      "新时代",
-    ].map((e) => Text(e)).toList();
 
-    views = [
-      BBLiveStreamListView(),
-      BBFeaturedListView(),
-      BBPopularListView(),
-      BBBangumiListView(),
-      Scaffold(),
-      Scaffold(),
-    ];
-    controller = TabController(length: tabBarItems.length, vsync: this);
+    _tabBarItems =
+        widget.configuration?.tab?.where((e) => e.uri != null)?.toList() ?? [];
+
+    _tabCtr = TabController(length: _tabBarItems.length, vsync: this);
   }
 
   @override
   void dispose() {
     super.dispose();
-    controller.dispose();
+    _tabCtr.dispose();
   }
 
   @override
@@ -57,68 +45,30 @@ class _BBHomeViewState extends State<BBHomeView>
             return <Widget>[
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: defaultMargin.copyWith(top: 0),
+                  padding: defaultMargin.copyWith(top: 0.0, bottom: 0.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      BBNetworkAvatarImage(
-                        defaultAvatarURL,
-                        placeholder: defaultAvatarName,
-                        size: Size(36.0, 36.0),
-                      ),
-                      SizedBox(
-                        width: defaultMargin.left * 2.5,
-                      ),
-                      Flexible(
-                        child: CupertinoTextField(
-                          padding: EdgeInsets.symmetric(
-                              vertical: defaultMargin.top / 2),
-                          decoration: BoxDecoration(
-                            color: Colors.grey[100],
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          placeholder: "机设是男人的浪漫",
-                          placeholderStyle: TextStyle(
-                            color: CupertinoColors.placeholderText,
-                            fontSize: 13.0,
-                          ),
-                          prefix: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: defaultMargin.left),
-                            child: Image(
-                              image: AssetImage(
-                                "assets/images/topic_search_ico22x22.png",
-                              ),
-                            ),
-                          ),
-                          prefixMode: OverlayVisibilityMode.always,
-                          readOnly: true,
-                          onTap: () {
-                            print("search ...............");
-                          },
-                        ),
-                      ),
-                      SizedBox(
-                        width: defaultMargin.left * 2.5,
-                      ),
-                      Image.asset(
-                          'assets/images/top_btn_game_centerhome_icon22x22.png'),
-                      SizedBox(
-                        width: defaultMargin.left * 2.5,
-                      ),
-                      Image.asset(
-                        "assets/images/top_btn_linkim_home_icon22x22.png",
-                      ),
-                    ],
+                    children: _getTopView(),
                   ),
                 ),
               ),
               SliverPersistentHeader(
                 delegate: _SliverAppBarDelegate(
                   tabBar: TabBar(
-                    tabs: tabBarItems,
+                    tabs: _tabBarItems.map((e) {
+                      return Tab(
+                        text:
+                            e.ext?.inactiveIcon != null ? null : (e.name ?? ""),
+                        icon: e.ext?.inactiveIcon != null
+                            ? BBNetworkImage(
+                                e.ext.inactiveIcon,
+                                size: Size(54, 20),
+                              )
+                            : null,
+                      );
+                    }).toList(),
                     isScrollable: true,
-                    controller: controller,
+                    controller: _tabCtr,
                     indicatorColor: Colors.pink,
                     labelColor: Colors.pink,
                     labelStyle: TextStyle(fontSize: 18.0),
@@ -136,13 +86,63 @@ class _BBHomeViewState extends State<BBHomeView>
             ];
           },
           body: TabBarView(
-            children: views,
-            controller: controller,
+            children: _tabBarItems.map((e) {
+              Handler handler = Router.appRouter.match(e.uri)?.route?.handler;
+              return handler?.handlerFunc(context, null) ?? Container();
+            }).toList(),
+            controller: _tabCtr,
           ),
         ),
       ),
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     );
+  }
+
+  List<Widget> _getTopView() {
+    List<Widget> children = [
+      BBNetworkAvatarImage(
+        defaultAvatarURL,
+        placeholder: defaultAvatarName,
+        size: Size(36.0, 36.0),
+      ),
+      SizedBox(width: defaultMargin.left * 2.5),
+      Flexible(
+        child: CupertinoTextField(
+          padding: EdgeInsets.symmetric(vertical: defaultMargin.top / 2),
+          decoration: BoxDecoration(
+            color: Colors.grey[100],
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          placeholder: "机设是男人的浪漫",
+          placeholderStyle: TextStyle(
+            color: CupertinoColors.placeholderText,
+            fontSize: 13.0,
+          ),
+          prefix: Padding(
+            padding: EdgeInsets.symmetric(horizontal: defaultMargin.left),
+            child: Image(
+              image: AssetImage(
+                "assets/images/topic_search_ico22x22.png",
+              ),
+            ),
+          ),
+          prefixMode: OverlayVisibilityMode.always,
+          readOnly: true,
+          onTap: () {
+            print("search ...............");
+          },
+        ),
+      ),
+    ];
+
+    widget.configuration?.top?.forEach((e) {
+      children.add(SizedBox(width: defaultMargin.left * 2.5));
+      children.add(BBNetworkImage(
+        e.image,
+        size: Size(22.0, 22.0),
+      ));
+    });
+    return children;
   }
 }
 
@@ -152,21 +152,33 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   _SliverAppBarDelegate({this.tabBar});
 
   @override
-  double get minExtent => tabBar.preferredSize.height;
+  double get minExtent => 40.0;
 
   @override
-  double get maxExtent => tabBar.preferredSize.height;
+  double get maxExtent => 40.0;
 
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      child: tabBar,
+      decoration: BoxDecoration(
+        color: Theme.of(context).appBarTheme.color,
+        border: Border(
+          bottom: BorderSide(
+            color: Theme.of(context).dividerTheme.color,
+            width: 0.75,
+          ),
+        ),
+      ),
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: tabBar,
+      ),
     );
   }
 
   @override
   bool shouldRebuild(_SliverAppBarDelegate oldDelegate) {
-    return false;
+    return tabBar.tabs != oldDelegate.tabBar.tabs;
   }
 }

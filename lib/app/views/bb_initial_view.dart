@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluro/fluro.dart';
 
-import 'package:bilibili/app/compenents/bb_cupertino_tab_scaffold.dart';
-import 'package:bilibili/app/compenents/bb_network_image.dart';
-import 'package:bilibili/app/api/bb_api.dart';
-import 'package:bilibili/app/models/bb_tab_models.dart';
+import '../compenents/bb_cupertino_tab_scaffold.dart';
+import '../compenents/bb_network_image.dart';
+import '../api/bb_api.dart';
+import '../models/bb_tab_models.dart';
+import '../routers/bb_route_mgr.dart';
+import 'home/bb_home_view.dart';
 
 class BBInitialView extends StatefulWidget {
   @override
@@ -15,6 +17,7 @@ class BBInitialView extends StatefulWidget {
 class _BBInitialViewState extends State<BBInitialView> {
   int _currentIndex;
   Widget _view;
+  BBTabBody _tabBody;
 
   @override
   void initState() {
@@ -32,8 +35,8 @@ class _BBInitialViewState extends State<BBInitialView> {
   // Load tab configuration from network.
   void _load() async {
     try {
-      BBTabBody body = await BBApi.requestTabConfiguration();
-      List<BBTabBarItem> tabBarItems = body?.bottom ?? [];
+      _tabBody = await BBApi.requestTabConfiguration();
+      List<BBTabBarItem> tabBarItems = _tabBody?.bottom ?? [];
       BBTabBarItem selectedItem =
           tabBarItems.firstWhere((e) => e.selected == 1, orElse: () => null);
       _currentIndex = selectedItem?.pos != null ? selectedItem.pos - 1 : 0;
@@ -85,16 +88,25 @@ class _BBInitialViewState extends State<BBInitialView> {
         currentIndex: _currentIndex,
       ),
       tabBuilder: (BuildContext context, int index) {
-        return CupertinoTabView(
-          onGenerateRoute: (RouteSettings settings) {
-            RouteSettings routeSettings = settings;
-            // Replace root route settings with matched route settings.
-            if (settings.name == "/") {
-              routeSettings = settings.copyWith(name: tabBarItems[index].uri);
-            }
-            return Router.appRouter.generator(routeSettings);
-          },
-        );
+        // Home view need more tab info that given by `BBApi.requestTabConfiguration`
+        return tabBarItems[index].uri == Fluro.home
+            ? CupertinoTabView(
+                builder: (BuildContext context) {
+                  return BBHomeView(configuration: _tabBody);
+                },
+              )
+            : CupertinoTabView(
+                onGenerateRoute: (RouteSettings settings) {
+                  RouteSettings routeSettings = settings;
+                  // Replace root route settings with matched route settings.
+                  if (settings.name == "/") {
+                    routeSettings =
+                        settings.copyWith(name: tabBarItems[index].uri);
+                  }
+
+                  return Router.appRouter.generator(routeSettings);
+                },
+              );
       },
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     );
