@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:bilibili/app/utils/bb_args.dart';
-import 'package:bilibili/app/api/bb_api.dart';
-import 'package:bilibili/app/models/bb_live_stream_models.dart';
-import 'package:bilibili/app/views/home/live/bb_live_stream_list_partition_section_view.dart';
-import 'package:bilibili/app/views/home/live/bb_live_stream_list_rank_section_view.dart';
-import 'package:bilibili/app/views/home/live/bb_live_stream_list_activity_section_view.dart';
-import 'package:bilibili/app/views/home/live/bb_live_stream_list_ad_section.dart';
-import 'package:bilibili/app/views/home/live/bb_live_stream_list_area_section_view.dart';
-import 'package:bilibili/app/compenents/bb_pull_down_indicator_view.dart';
-
 import '../../../utils/bb_args.dart';
+import '../../../api/bb_api.dart';
+import '../../../models/bb_live_stream_models.dart';
+
+import 'bb_live_stream_list_partition_section_view.dart';
+import 'bb_live_stream_list_rank_section_view.dart';
+import 'bb_live_stream_list_activity_section_view.dart';
+import 'bb_live_stream_list_ad_section.dart';
+import 'bb_live_stream_list_area_section_view.dart';
 
 class BBLiveStreamListView extends StatefulWidget {
   BBLiveStreamListView({Key key}) : super(key: key);
@@ -54,7 +51,6 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView>
         },
       ),
       body: SmartRefresher(
-        header: BBRefreshHeader(),
         controller: _refreshController,
         onRefresh: _onRefresh,
         child: _getListView(),

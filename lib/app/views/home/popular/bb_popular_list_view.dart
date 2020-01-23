@@ -1,11 +1,9 @@
-import 'package:bilibili/app/utils/bb_args.dart';
 import 'package:flutter/material.dart';
-
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:bilibili/app/views/home/popular/bb_popular_list_item_default_view.dart';
-import 'package:bilibili/app/views/home/popular/bb_popular_list_item_idol_relative_media_view.dart';
-import 'package:bilibili/app/compenents/bb_pull_down_indicator_view.dart';
+import '../../../utils/bb_args.dart';
+import '../../../views/home/popular/bb_popular_list_item_default_view.dart';
+import '../../../views/home/popular/bb_popular_list_item_idol_relative_media_view.dart';
 
 class BBPopularListView extends StatefulWidget {
   BBPopularListView({Key key}) : super(key: key);
@@ -16,15 +14,15 @@ class BBPopularListView extends StatefulWidget {
 
 class _BBPopularListViewState extends State<BBPopularListView>
     with AutomaticKeepAliveClientMixin {
-  RefreshController _refreshController = RefreshController();
+  RefreshController _refreshController;
 
   @override
   bool get wantKeepAlive => true;
 
   @override
   void initState() {
-    _onRefresh();
     super.initState();
+    _refreshController = RefreshController(initialRefresh: true);
   }
 
   @override
@@ -41,7 +39,6 @@ class _BBPopularListViewState extends State<BBPopularListView>
           controller: _refreshController,
           enablePullUp: true,
           onRefresh: _onRefresh,
-          header: BBRefreshHeader(),
           child: ListView.builder(
             padding: defaultMargin,
             itemBuilder: (BuildContext context, int index) {

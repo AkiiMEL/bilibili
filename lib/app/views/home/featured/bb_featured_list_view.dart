@@ -1,12 +1,13 @@
-import 'package:bilibili/app/api/bb_api.dart';
-import 'package:bilibili/app/models/bb_featured_models.dart';
-import 'package:bilibili/app/utils/bb_args.dart';
-import 'package:bilibili/app/views/home/featured/bb_featured_list_item_multiple_colum_view.dart';
-import 'package:bilibili/app/compenents/bb_pull_down_indicator_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+
+import '../../../utils/bb_args.dart';
+import '../../../api/bb_api.dart';
+import '../../../models/bb_featured_models.dart';
+import '../../../views/home/featured/bb_featured_list_item_multiple_colum_view.dart';
+
 
 class BBFeaturedListView extends StatefulWidget {
   BBFeaturedListView({Key key}) : super(key: key);
@@ -25,7 +26,7 @@ class _BBFeaturedListViewState extends State<BBFeaturedListView>
 
   @override
   void initState() {
-    _refreshController = RefreshController();
+    _refreshController = RefreshController(initialRefresh: true);
     super.initState();
   }
 
@@ -41,7 +42,6 @@ class _BBFeaturedListViewState extends State<BBFeaturedListView>
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SmartRefresher(
-        header: BBRefreshHeader(),
         controller: _refreshController,
         onRefresh: _onRefresh,
         child: StaggeredGridView.countBuilder(
