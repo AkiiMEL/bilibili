@@ -28,34 +28,37 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView>
 
   @override
   void initState() {
-    _sections = [];
-    _refreshController = RefreshController(initialRefresh: true);
     super.initState();
+    _sections = [];
+    _refreshController = RefreshController();
+    _onRefresh();
   }
 
   @override
   void dispose() {
-    _refreshController.dispose();
     super.dispose();
+    _refreshController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: Image.asset("assets/images/live_shoot58x58.png"),
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Container()));
-        },
+    return SafeArea(
+      child: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          SmartRefresher(
+            controller: _refreshController,
+            onRefresh: _onRefresh,
+            child: _getListView(),
+          ),
+          Positioned(
+            bottom: defaultMargin.bottom,
+            right: defaultMargin.right,
+            child: Image.asset("assets/images/live_shoot58x58.png"),
+          ),
+        ],
       ),
-      body: SmartRefresher(
-        controller: _refreshController,
-        onRefresh: _onRefresh,
-        child: _getListView(),
-      ),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     );
   }
 

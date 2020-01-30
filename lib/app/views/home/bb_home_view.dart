@@ -78,6 +78,9 @@ class _BBHomeViewState extends State<BBHomeView>
                     labelPadding: EdgeInsets.symmetric(
                       horizontal: 17.0,
                     ),
+                    onTap: (int index) {
+                      print(index);
+                    },
                   ),
                 ),
                 floating: true,
@@ -94,7 +97,6 @@ class _BBHomeViewState extends State<BBHomeView>
           ),
         ),
       ),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     );
   }
 
@@ -152,10 +154,10 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   _SliverAppBarDelegate({this.tabBar});
 
   @override
-  double get minExtent => 40.0;
+  double get minExtent => 44.0;
 
   @override
-  double get maxExtent => 40.0;
+  double get maxExtent => 44.0;
 
   @override
   Widget build(
