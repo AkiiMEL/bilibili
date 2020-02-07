@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'compenents/bb_pull_down_indicator_view.dart';
-import 'views/bb_initial_view.dart';
+import 'package:bilibili/app/compenents/bb_pull_down_indicator_view.dart';
+import 'package:bilibili/app/views/bb_initial_view.dart';
 
 // This widget is the root of your application.
 class BBApp extends StatelessWidget {
@@ -17,8 +17,16 @@ class BBApp extends StatelessWidget {
             brightness: Brightness.light,
             color: Colors.white,
           ),
+          tabBarTheme: TabBarTheme(
+            indicatorSize: TabBarIndicatorSize.label,
+            labelColor: Color.fromARGB(255, 246, 116, 154),
+            labelStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            unselectedLabelColor: Color.fromARGB(255, 123, 123, 123),
+            unselectedLabelStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.normal),
+            labelPadding: EdgeInsets.symmetric(horizontal: 17.0),
+          ),
           scaffoldBackgroundColor: Colors.white,
-          indicatorColor: Color.fromARGB(255, 248, 116, 153),
+          indicatorColor: Color.fromARGB(255, 246, 116, 154),
           dividerTheme: DividerThemeData(
             color: Color.fromARGB(255, 238, 239, 239),
             space: 0.5,

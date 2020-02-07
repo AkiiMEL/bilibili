@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluro/fluro.dart';
 
-import '../compenents/bb_cupertino_tab_scaffold.dart';
-import '../compenents/bb_network_image.dart';
-import '../api/bb_api.dart';
-import '../models/bb_tab_models.dart';
-import '../routers/bb_route_mgr.dart';
-import 'home/bb_home_view.dart';
+import 'package:bilibili/app/compenents/bb_cupertino_tab_scaffold.dart';
+import 'package:bilibili/app/compenents/bb_network_image.dart';
+import 'package:bilibili/app/api/bb_api.dart';
+import 'package:bilibili/app/models/bb_tab_models.dart';
+import 'package:bilibili/app/routers/bb_route_mgr.dart';
+
+import 'bb_home_view.dart';
 
 class BBInitialView extends StatefulWidget {
   @override
@@ -86,6 +87,9 @@ class _BBInitialViewState extends State<BBInitialView> {
           });
         },
         currentIndex: _currentIndex,
+        // backgroundColor: Theme.of(context).appBarTheme.color,
+        activeColor: Theme.of(context).tabBarTheme.labelColor,
+        inactiveColor: Theme.of(context).tabBarTheme.unselectedLabelColor,
       ),
       tabBuilder: (BuildContext context, int index) {
         // Home view need more tab info that given by `BBApi.requestTabConfiguration`

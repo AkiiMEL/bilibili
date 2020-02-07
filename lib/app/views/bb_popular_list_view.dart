@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import '../../../utils/bb_args.dart';
-import '../../../views/home/popular/bb_popular_list_item_default_view.dart';
-import '../../../views/home/popular/bb_popular_list_item_idol_relative_media_view.dart';
+import 'package:bilibili/app/utils/bb_args.dart';
+
+import 'bb_popular_list_item_default_view.dart';
+import 'bb_popular_list_item_idol_relative_media_view.dart';
 
 class BBPopularListView extends StatefulWidget {
   BBPopularListView({Key key}) : super(key: key);

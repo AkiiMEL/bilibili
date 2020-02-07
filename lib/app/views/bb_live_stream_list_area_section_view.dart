@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'package:bilibili/app/models/bb_live_stream_models.dart';
 import 'package:bilibili/app/utils/bb_args.dart';
 import 'package:bilibili/app/compenents/bb_network_image.dart';
-import 'package:flutter/material.dart';
 
 class BBLiveStreamListAreaSectionView extends StatelessWidget {
   final LiveStreamSection<LiveStreamAreaEntrance> areas;

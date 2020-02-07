@@ -1,9 +1,10 @@
-import 'package:bilibili/app/compenents/bb_network_image.dart';
-import 'package:bilibili/app/utils/bb_args.dart';
 import 'package:flutter/material.dart';
 
-// Entry point view
-class BBEPView extends StatelessWidget {
+import 'package:bilibili/app/utils/bb_args.dart';
+import 'package:bilibili/app/compenents/bb_network_image.dart';
+
+// entry point view
+class BBEntryPointView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

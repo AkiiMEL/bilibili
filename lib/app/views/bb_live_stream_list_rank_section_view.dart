@@ -1,6 +1,6 @@
-import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
 import 'package:flutter/material.dart';
 
+import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
 import 'package:bilibili/app/models/bb_live_stream_models.dart';
 import 'package:bilibili/app/utils/bb_args.dart';
 
@@ -68,9 +68,9 @@ class BBLiveStreamRankSectionView extends StatelessWidget {
 
   // Rank title (e.g. crown).
   Widget _getRankAvatarView(BuildContext context, LiveStreamRank rank) {
-    double horizontal = 10.0;
+    double horizontal = 9.0;
     EdgeInsets edgeInsets =
-        EdgeInsets.only(top: 16.0, left: horizontal, right: horizontal);
+        EdgeInsets.only(top: 14.0, left: horizontal, right: horizontal);
     double radius = rank.rank == 1 ? 35.0 : 30.0;
 
     return [1, 2, 3].contains(rank.rank)

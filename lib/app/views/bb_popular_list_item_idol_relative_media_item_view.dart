@@ -1,6 +1,6 @@
-import 'package:bilibili/app/utils/bb_args.dart';
 import 'package:flutter/material.dart';
 
+import 'package:bilibili/app/utils/bb_args.dart';
 import 'package:bilibili/app/compenents/bb_media_preview_view.dart';
 
 class BBPopularListItemIdolRelativeMediaItemView extends StatelessWidget {

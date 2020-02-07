@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
-import '../../compenents/bb_network_avatar_image.dart';
-import '../../compenents/bb_network_image.dart';
-import '../../models/bb_tab_models.dart';
-import '../../utils/bb_args.dart';
+import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
+import 'package:bilibili/app/compenents/bb_network_image.dart';
+import 'package:bilibili/app/models/bb_tab_models.dart';
+import 'package:bilibili/app/utils/bb_args.dart';
 
 class BBHomeView extends StatefulWidget {
   final BBTabBody configuration;
@@ -44,12 +44,12 @@ class _BBHomeViewState extends State<BBHomeView>
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverToBoxAdapter(
-                child: Padding(
-                  padding: defaultMargin.copyWith(top: 0.0, bottom: 0.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: _getTopView(),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).appBarTheme.color,
                   ),
+                  padding: defaultMargin.copyWith(top: 0.0, bottom: 0.0),
+                  child: _getTopView(),
                 ),
               ),
               SliverPersistentHeader(
@@ -69,18 +69,12 @@ class _BBHomeViewState extends State<BBHomeView>
                     }).toList(),
                     isScrollable: true,
                     controller: _tabCtr,
-                    indicatorColor: Colors.pink,
-                    labelColor: Colors.pink,
-                    labelStyle: TextStyle(fontSize: 18.0),
-                    unselectedLabelColor: Colors.black54,
-                    unselectedLabelStyle: TextStyle(fontSize: 18.0),
-                    indicatorSize: TabBarIndicatorSize.label,
-                    labelPadding: EdgeInsets.symmetric(
-                      horizontal: 17.0,
-                    ),
-                    onTap: (int index) {
-                      print(index);
-                    },
+                    labelColor: Theme.of(context).tabBarTheme.labelColor,
+                    labelStyle: Theme.of(context).tabBarTheme.labelStyle,
+                    unselectedLabelColor:
+                        Theme.of(context).tabBarTheme.unselectedLabelColor,
+                    unselectedLabelStyle:
+                        Theme.of(context).tabBarTheme.unselectedLabelStyle,
                   ),
                 ),
                 floating: true,
@@ -100,7 +94,7 @@ class _BBHomeViewState extends State<BBHomeView>
     );
   }
 
-  List<Widget> _getTopView() {
+  Widget _getTopView() {
     List<Widget> children = [
       BBNetworkAvatarImage(
         defaultAvatarURL,
@@ -144,7 +138,11 @@ class _BBHomeViewState extends State<BBHomeView>
         size: Size(22.0, 22.0),
       ));
     });
-    return children;
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: children,
+    );
   }
 }
 

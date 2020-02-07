@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
-import 'package:bilibili/app/compenents/bb_tag_view.dart';
+import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
 import 'package:bilibili/app/models/bb_featured_models.dart';
 import 'package:bilibili/app/utils/bb_args.dart';
-import 'package:bilibili/app/views/home/popular/bb_popular_list_item_idol_relative_media_item_view.dart';
+
+import 'bb_popular_list_item_idol_relative_media_item_view.dart';
 
 class BBPopularListItemIdolRelativeMediaView extends StatefulWidget {
   @override
@@ -40,7 +41,7 @@ class _BBPopularListItemIdolRelativeMediaViewState
                       "data",
                       style: Theme.of(context).textTheme.title,
                     ),
-                    BBTagView(
+                    BBMediaTagView(
                       textAttributes: TextAttributesDefinitions(),
                     ),
                   ],

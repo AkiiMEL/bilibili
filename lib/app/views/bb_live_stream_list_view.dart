@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import '../../../utils/bb_args.dart';
-import '../../../api/bb_api.dart';
-import '../../../models/bb_live_stream_models.dart';
+import 'package:bilibili/app/utils/bb_args.dart';
+import 'package:bilibili/app/api/bb_api.dart';
+import 'package:bilibili/app/models/bb_live_stream_models.dart';
 
 import 'bb_live_stream_list_partition_section_view.dart';
 import 'bb_live_stream_list_rank_section_view.dart';
@@ -73,16 +73,13 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView>
     copy.addAll(body.data?.roomList ?? []);
     copy.addAll(body.data?.hourRank ?? []);
 
-    _sections.clear();
-    _sections
-        .addAll(copy.where((test) => (test.list ?? []).isNotEmpty).toList());
-    _sections
-        .sort((lhs, rhs) => lhs.moduleInfo.sort.compareTo(rhs.moduleInfo.sort));
+    copy = copy.where((e) => (e.list ?? []).isNotEmpty).toList();
+    copy.sort((lhs, rhs) => lhs.moduleInfo.sort.compareTo(rhs.moduleInfo.sort));
 
-    if (mounted) {
-      _refreshController.refreshCompleted();
-      setState(() {});
-    }
+    _refreshController.refreshCompleted();
+    setState(() {
+      _sections = copy;
+    });
   }
 
   Widget _getListView() {

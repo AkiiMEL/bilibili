@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/app/compenents/bb_media_preview_view.dart';
-import 'package:bilibili/app/compenents/bb_tag_view.dart';
+import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
 import 'package:bilibili/app/models/bb_featured_models.dart';
 import 'package:bilibili/app/utils/bb_args.dart';
 
@@ -30,7 +29,7 @@ class BBPopularListItemDefaultView extends StatelessWidget {
               child: BBMediaPreviewView(
                 url:
                     "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
-                bottomRightView: BBTagView(
+                bottomRightView: BBMediaTagView(
                     textAttributes: TextAttributesDefinitions(
                         text: "2:14", textColor: "#FFFFFF")),
               ),
@@ -52,7 +51,7 @@ class BBPopularListItemDefaultView extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    BBTagView(
+                    BBMediaTagView(
                       textAttributes: TextAttributesDefinitions(),
                     ),
                     Text(

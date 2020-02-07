@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/bb_args.dart';
+import 'package:bilibili/app/utils/bb_args.dart';
 
 class BBNotFoundView extends StatelessWidget {
   @override

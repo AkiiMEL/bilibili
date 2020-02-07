@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
+
 import 'package:bilibili/app/models/bb_live_stream_models.dart';
 import 'package:bilibili/app/compenents/bb_network_image.dart';
 import 'package:bilibili/app/utils/bb_args.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 
 class BBLiveStreamListAdSectionView extends StatelessWidget {
   final LiveStreamSection<LiveStreamAd> advertisements;
