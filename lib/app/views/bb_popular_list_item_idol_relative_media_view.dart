@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
@@ -48,15 +47,26 @@ class _BBPopularListItemIdolRelativeMediaViewState
                 ),
               ],
             ),
-            CupertinoButton(
-              padding: EdgeInsets.symmetric(
-                  horizontal: defaultMargin.left,
-                  vertical: defaultMargin.top / 2),
-              child: Center(
-                child: Text("+ 关注"),
+            GestureDetector(
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                    horizontal: defaultMargin.left * 1.5,
+                    vertical: defaultMargin.top / 4),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Theme.of(context).accentColor),
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
+                child: Center(
+                  child: Text(
+                    "+ 关注",
+                    style: Theme.of(context)
+                        .textTheme
+                        .title
+                        .copyWith(color: Theme.of(context).accentColor),
+                  ),
+                ),
               ),
-              borderRadius: BorderRadius.circular(2.0),
-              onPressed: () {
+              onTap: () {
                 print("Follow button clicked.");
               },
             ),

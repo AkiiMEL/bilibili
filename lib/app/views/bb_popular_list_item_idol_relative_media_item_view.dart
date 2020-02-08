@@ -9,14 +9,19 @@ class BBPopularListItemIdolRelativeMediaItemView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        AspectRatio(
-          aspectRatio: 8.0 / 5.0,
-          child: BBMediaPreviewView(
-            url:
-                "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
+        ClipRRect(
+          borderRadius: BorderRadius.circular(4.0),
+          child: AspectRatio(
+            aspectRatio: 8.0 / 5.0,
+            child: BBMediaPreviewView(
+              url:
+                  "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
+            ),
           ),
         ),
-        SizedBox(height: defaultMargin.top / 2,),
+        SizedBox(
+          height: defaultMargin.top / 2,
+        ),
         Text(
           "看好了这才是体术与剑术的极致巅峰！",
           style: Theme.of(context).textTheme.subtitle,

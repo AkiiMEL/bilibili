@@ -22,11 +22,11 @@ class BBApp extends StatelessWidget {
             labelColor: Color.fromARGB(255, 246, 116, 154),
             labelStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             unselectedLabelColor: Color.fromARGB(255, 123, 123, 123),
-            unselectedLabelStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.normal),
+            unselectedLabelStyle:
+                TextStyle(fontSize: 18.0, fontWeight: FontWeight.normal),
             labelPadding: EdgeInsets.symmetric(horizontal: 17.0),
           ),
           scaffoldBackgroundColor: Colors.white,
-          indicatorColor: Color.fromARGB(255, 246, 116, 154),
           dividerTheme: DividerThemeData(
             color: Color.fromARGB(255, 238, 239, 239),
             space: 0.5,
@@ -50,6 +50,7 @@ class BBApp extends StatelessWidget {
               color: Color.fromARGB(255, 183, 183, 182),
             ),
           ),
+          accentColor: Color.fromARGB(255, 246, 116, 154),
         ),
         darkTheme: ThemeData(
           brightness: Brightness.dark,
@@ -58,7 +59,6 @@ class BBApp extends StatelessWidget {
             color: Color.fromARGB(255, 44, 45, 46),
           ),
           scaffoldBackgroundColor: Color.fromARGB(255, 26, 27, 28),
-          indicatorColor: Color.fromARGB(255, 248, 116, 153),
           dividerTheme: DividerThemeData(
             color: Color.fromARGB(255, 246, 245, 246),
             space: 1,

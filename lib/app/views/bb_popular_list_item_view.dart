@@ -5,7 +5,12 @@ import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
 import 'package:bilibili/app/models/bb_featured_models.dart';
 import 'package:bilibili/app/utils/bb_args.dart';
 
-class BBPopularListItemDefaultView extends StatelessWidget {
+class BBPopularListItemView extends StatefulWidget {
+  @override
+  _BBPopularListItemViewState createState() => _BBPopularListItemViewState();
+}
+
+class _BBPopularListItemViewState extends State<BBPopularListItemView> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +23,7 @@ class BBPopularListItemDefaultView extends StatelessWidget {
 
   Widget _getPreviewAndDescriptionView(BuildContext context) {
     return Container(
-      height: 80.0,
+      height: 90.0,
       margin: defaultMargin.copyWith(left: 0, right: 0),
       child: Row(
         children: <Widget>[
@@ -30,8 +35,11 @@ class BBPopularListItemDefaultView extends StatelessWidget {
                 url:
                     "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
                 bottomRightView: BBMediaTagView(
-                    textAttributes: TextAttributesDefinitions(
-                        text: "2:14", textColor: "#FFFFFF")),
+                  textAttributes: TextAttributesDefinitions(
+                    text: "2:14",
+                    textColor: "#FFFFFF",
+                  ),
+                ),
               ),
             ),
           ),
@@ -51,8 +59,16 @@ class BBPopularListItemDefaultView extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    BBMediaTagView(
-                      textAttributes: TextAttributesDefinitions(),
+                    Row(
+                      children: <Widget>[
+                        BBMediaTagView(
+                          textAttributes: TextAttributesDefinitions(
+                            text: "百万播放",
+                            textColor: "#F69E67",
+                            borderColor: "#F69E67",
+                          ),
+                        ),
+                      ],
                     ),
                     Text(
                       "努力的小青",
