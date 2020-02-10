@@ -1,3 +1,5 @@
+import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
+import 'package:bilibili/app/models/bb_featured_models.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/app/utils/bb_args.dart';
@@ -10,31 +12,35 @@ class BBEntryPointView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Stack(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.topLeft,
-              child: BBNetworkImage(
-                "",
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: defaultMargin.top,
-              ),
-              child: Center(
-                child: AspectRatio(
-                  aspectRatio: 1.0,
-                  child: BBNetworkImage(""),
+        Expanded(
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 1.0,
+                child: BBNetworkImage(
+                  "",
+                  placeholder: defaultIMGPlaceholderName,
                 ),
               ),
-            ),
-          ],
+              // Positioned(
+              //   top: 0,
+              //   left: ...,
+              //   child: BBMediaTagView(
+              //     textAttributes: TextAttributesDefinitions(
+              //       text: "some",
+              //       textColor: "#000000",
+              //       backgroundColor: "#70d9b8",
+              //     ),
+              //   ),
+              // ),
+            ],
+          ),
         ),
         SizedBox(
-          height: defaultMargin.bottom,
+          height: defaultMargin.bottom / 2,
         ),
-        Text("data"),
+        Text("title", style: Theme.of(context).textTheme.title),
       ],
     );
   }

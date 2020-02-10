@@ -25,5 +25,6 @@ class Fluro {
     Router.appRouter.define(live, handler: liveHandler);
     Router.appRouter.define(featured, handler: featuredHandler);
     Router.appRouter.define(popular, handler: popularHandler);
+    Router.appRouter.define(channel, handler: channelHandler);
   }
 }

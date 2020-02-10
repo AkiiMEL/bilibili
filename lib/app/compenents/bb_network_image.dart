@@ -17,9 +17,7 @@ class BBNetworkImage extends StatelessWidget {
             size: size,
             child: placeholder == null || placeholder.isEmpty
                 ? null
-                : Image.asset(
-                    placeholder,
-                  ),
+                : Image.asset(placeholder),
           )
         : CachedNetworkImage(
             imageUrl: imageURL,
@@ -27,13 +25,13 @@ class BBNetworkImage extends StatelessWidget {
                   size: size,
                   child: placeholder == null || placeholder.isEmpty
                       ? null
-                      : Center(child: Image.asset(placeholder)),
+                      : Image.asset(placeholder),
                 )),
             errorWidget: ((context, url, e) => SizedBox.fromSize(
                   size: size,
                   child: placeholder == null || placeholder.isEmpty
                       ? null
-                      : Center(child: Image.asset(placeholder)),
+                      : Image.asset(placeholder),
                 )),
             width: size?.width == double.infinity ? null : size?.width,
             height: size?.height == double.infinity ? null : size?.height,

@@ -1,3 +1,4 @@
+import 'package:bilibili/app/views/bb_channel_list_view.dart';
 import 'package:bilibili/app/views/bb_home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -38,3 +39,7 @@ Handler popularHandler = Handler(
 Handler bangumiHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
         BBBangumiListView());
+
+Handler channelHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+        BBChannelListView());

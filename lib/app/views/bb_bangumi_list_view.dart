@@ -10,7 +10,7 @@ class BBBangumiListView extends StatefulWidget {
 class _BBBangumiListViewState extends State<BBBangumiListView> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SafeArea(child: Container(),
     );
   }
 }
