@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/compenents/bb_media_preview_view.dart';
+import 'package:bilibili/app/compenents/bb_media_thumbnail_view.dart';
 import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
 import 'package:bilibili/app/models/bb_featured_models.dart';
 import 'package:bilibili/app/utils/bb_args.dart';
@@ -31,7 +31,7 @@ class _BBPopularListItemViewState extends State<BBPopularListItemView> {
             borderRadius: BorderRadius.circular(defaultMargin.top / 2),
             child: AspectRatio(
               aspectRatio: 8.0 / 5.0,
-              child: BBMediaPreviewView(
+              child: BBThumbnailView(
                 url:
                     "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
                 bottomRightView: BBMediaTagView(

@@ -2,17 +2,17 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BBNetworkImage extends StatelessWidget {
-  final String imageURL;
+  final String url;
   final String placeholder;
   final BoxFit fit;
   final Size size;
 
-  BBNetworkImage(this.imageURL,
+  BBNetworkImage(this.url,
       {this.placeholder, this.fit = BoxFit.cover, this.size});
 
   @override
   Widget build(BuildContext context) {
-    return imageURL == null || imageURL.isEmpty
+    return url == null || url.isEmpty
         ? SizedBox.fromSize(
             size: size,
             child: placeholder == null || placeholder.isEmpty
@@ -20,14 +20,8 @@ class BBNetworkImage extends StatelessWidget {
                 : Image.asset(placeholder),
           )
         : CachedNetworkImage(
-            imageUrl: imageURL,
+            imageUrl: url,
             placeholder: ((context, url) => SizedBox.fromSize(
-                  size: size,
-                  child: placeholder == null || placeholder.isEmpty
-                      ? null
-                      : Image.asset(placeholder),
-                )),
-            errorWidget: ((context, url, e) => SizedBox.fromSize(
                   size: size,
                   child: placeholder == null || placeholder.isEmpty
                       ? null

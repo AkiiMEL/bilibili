@@ -1,9 +1,11 @@
 import 'dart:math';
+import 'package:bilibili/app/compenents/bb_media_thumbnail_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/app/compenents/bb_network_image.dart';
 import 'package:bilibili/app/models/bb_live_stream_models.dart';
 import 'package:bilibili/app/utils/bb_args.dart';
+import 'package:tuple/tuple.dart';
 
 class BBLiveStreamListSectionHeaderView extends StatelessWidget {
   final ModuleInfo module;
@@ -123,17 +125,18 @@ class BiliLiveStreamListPartitionItemView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Expanded(
-            child: Stack(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(
-                    top: 2,
-                  ),
-                  child: _getBottomView(item),
-                ),
-                _getTopView(item),
+            child: BBThumbnailView(
+              url: item.cover,
+              borderRadius: BorderRadius.circular(5.0),
+              topLeftIconAndDescriptions:
+                  _pendentAtLoc(item.pendentList, 2),
+              topRightIconAndDescriptions: _pendentAtLoc(item.pendentList, 1),
+              bottomLeftIconAndDescriptions: [
+                Tuple2(null, item.uname),
               ],
-              fit: StackFit.expand,
+              bottomRightIconAndDescriptions: [
+                Tuple2(9, "${item.online}"),
+              ],
             ),
           ),
           Padding(
@@ -159,109 +162,11 @@ class BiliLiveStreamListPartitionItemView extends StatelessWidget {
     );
   }
 
-// Display prize up have owned.
-  Widget _getTopView(LiveStreamRoom item) {
-    List<Widget> children = [];
-
-    for (LiveStreamPendent pendent in item.pendentList ?? []) {
-      if (pendent.pic == null) continue;
-      if (pendent.position == 1) {
-        children.add(
-          Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              margin: EdgeInsets.only(
-                  top: 2.0), // Move down 2 pixel to align with cover image.
-              child: BBNetworkImage(
-                pendent.pic,
-                size: Size.fromHeight(20.0),
-              ),
-            ),
-          ),
-        );
-      } else {
-        children.add(
-          Align(
-            alignment: Alignment.topLeft,
-            child: Stack(
-              children: <Widget>[
-                BBNetworkImage(
-                  pendent.pic,
-                  size: Size.fromHeight(20.0),
-                ),
-                Positioned(
-                  top: 3.0,
-                  left: 25.0,
-                  child: Text(
-                    pendent.content ?? "",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 10.0,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      }
-    }
-    return children.isEmpty ? SizedBox.shrink() : Stack(children: children);
-  }
-
-  // Dispaly image up uname and online.
-  Widget _getBottomView(LiveStreamRoom item) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(defaultMargin.top / 2),
-      child: Stack(
-        children: <Widget>[
-          BBNetworkImage(
-            item.cover,
-            placeholder: "assets/images/bgm_category_placeholder30x30.png",
-          ),
-          Positioned(
-            left: 0,
-            bottom: 0,
-            right: 0,
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Color.fromRGBO(0, 0, 0, 0), Colors.black45],
-                ),
-              ),
-              child: Padding(
-                padding: defaultMargin,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Expanded(
-                      child: Text(
-                        item.uname ?? "",
-                        style: TextStyle(color: Colors.white, fontSize: 12),
-                        maxLines: 1,
-                      ),
-                    ),
-                    Image.asset("assets/images/live_bc_ico_viewer_n16x16.png"),
-                    SizedBox(
-                      width: defaultMargin.left,
-                    ),
-                    Text(
-                      "${item.online}",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          )
-        ],
-        fit: StackFit.expand,
-      ),
-    );
+  List<Tuple2<dynamic, String>> _pendentAtLoc(List<LiveStreamPendent> pendents, int position) {
+    LiveStreamPendent pendent = pendents?.isNotEmpty ?? false
+        ? pendents.firstWhere((e) => e.pic != null && e.position == position,
+            orElse: () => null)
+        : null;
+        return pendent != null ? [Tuple2(pendent.pic, pendent.content)] : null;
   }
 }

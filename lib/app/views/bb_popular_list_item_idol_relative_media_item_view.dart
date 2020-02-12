@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/app/utils/bb_args.dart';
-import 'package:bilibili/app/compenents/bb_media_preview_view.dart';
+import 'package:bilibili/app/compenents/bb_media_thumbnail_view.dart';
 
 class BBPopularListItemIdolRelativeMediaItemView extends StatelessWidget {
   @override
@@ -13,7 +13,7 @@ class BBPopularListItemIdolRelativeMediaItemView extends StatelessWidget {
           borderRadius: BorderRadius.circular(4.0),
           child: AspectRatio(
             aspectRatio: 8.0 / 5.0,
-            child: BBMediaPreviewView(
+            child: BBThumbnailView(
               url:
                   "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
             ),
