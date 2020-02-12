@@ -1,17 +1,18 @@
-import 'package:bilibili/app/compenents/bb_media_preview_view.dart';
-import 'package:bilibili/app/utils/bb_args.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:tuple/tuple.dart';
 
-class BBChannelListSection extends StatefulWidget {
-  @override
-  _BBChannelListSectionState createState() => _BBChannelListSectionState();
-}
+import 'package:bilibili/app/compenents/bb_media_thumbnail_view.dart';
+import 'package:bilibili/app/models/bb_channel_models.dart';
+import 'package:bilibili/app/utils/bb_args.dart';
 
-class _BBChannelListSectionState extends State<BBChannelListSection> {
+class BBChannelListSection extends StatelessWidget {
+  final Channel channel;
+  BBChannelListSection({this.channel});
+
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-
     return Padding(
       padding: defaultMargin,
       child: Column(
@@ -24,31 +25,37 @@ class _BBChannelListSectionState extends State<BBChannelListSection> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text("Re：从零开始的异世界生活",
-                        style: textTheme.headline, maxLines: 1,),
-                    Text("刚刚更新", style: textTheme.display4),
+                    Text(
+                      channel.title ?? channel.name ?? "",
+                      style: textTheme.headline,
+                      maxLines: 1,
+                    ),
+                    Text(channel.desc1 ?? "", style: textTheme.display4),
                   ],
                 ),
               ),
-              GestureDetector(
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: defaultMargin.left * 2,
-                    vertical: defaultMargin.top / 4,
-                  ),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Theme.of(context).accentColor),
-                    borderRadius: BorderRadius.circular(4.0),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "+5个优质视频",
-                      style: textTheme.subtitle
-                          .copyWith(color: Theme.of(context).accentColor),
-                    ),
-                  ),
-                ),
-              )
+              channel.descButton?.text != null
+                  ? GestureDetector(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: defaultMargin.left * 2,
+                          vertical: defaultMargin.top / 4,
+                        ),
+                        decoration: BoxDecoration(
+                          border:
+                              Border.all(color: Theme.of(context).accentColor),
+                          borderRadius: BorderRadius.circular(4.0),
+                        ),
+                        child: Center(
+                          child: Text(
+                            channel.descButton.text,
+                            style: textTheme.subtitle
+                                .copyWith(color: Theme.of(context).accentColor),
+                          ),
+                        ),
+                      ),
+                    )
+                  : SizedBox.shrink(),
             ],
           ),
           GridView.builder(
@@ -61,34 +68,47 @@ class _BBChannelListSectionState extends State<BBChannelListSection> {
               childAspectRatio: 16 / 14,
             ),
             itemBuilder: (BuildContext context, int index) {
+              MediaCard media = channel.items[index];
               return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   AspectRatio(
                     aspectRatio: 16.0 / 9.0,
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(5.0),
-                        child: BBMediaPreviewView()),
+                    child: BBThumbnailView(
+                      url: media.cover,
+                      topLeftIconAndDescriptions: [
+                        Tuple2(media.badge?.iconBgUrl, media.badge?.text),
+                      ],
+                      bottomLeftIconAndDescriptions: [
+                        Tuple2(media.coverLeftIcon1, media.coverLeftText1),
+                        Tuple2(media.coverLeftIcon2, media.coverLeftText2),
+                      ],
+                      bottomRightIconAndDescriptions: [
+                        Tuple2(null, media.coverRightText1),
+                      ],
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
                   ),
                   SizedBox(height: defaultMargin.bottom),
                   Expanded(
-                    child: Center(
-                      child: Text(
-                        "【AMV•2020雷姆生贺】誓愿守候此生梦醒，从零开始笑迎未来",
-                        style: textTheme.title,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                    child: Text(
+                      media.title ?? "",
+                      style: textTheme.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ],
               );
             },
-            itemCount: 2,
+            itemCount: min(channel.items?.length ?? 0, 2),
           ),
-          Text(
-            "精选视频184个 >",
-            style: textTheme.display4,
-          ),
+          channel.descButton2?.text != null
+              ? Text(
+                  channel.descButton2.text,
+                  style: textTheme.display4,
+                )
+              : SizedBox.shrink(),
         ],
       ),
     );
