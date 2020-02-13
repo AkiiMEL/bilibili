@@ -27,20 +27,18 @@ class _BBPopularListItemViewState extends State<BBPopularListItemView> {
       margin: defaultMargin.copyWith(left: 0, right: 0),
       child: Row(
         children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.circular(defaultMargin.top / 2),
-            child: AspectRatio(
-              aspectRatio: 8.0 / 5.0,
-              child: BBThumbnailView(
-                url:
-                    "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
-                bottomRightView: BBMediaTagView(
-                  textAttributes: TextAttributesDefinitions(
-                    text: "2:14",
-                    textColor: "#FFFFFF",
-                  ),
+          AspectRatio(
+            aspectRatio: 8.0 / 5.0,
+            child: BBThumbnailView(
+              url:
+                  "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
+              bottomRightView: BBMediaTagView(
+                textAttributes: TextAttributesDefinitions(
+                  text: "2:14",
+                  textColor: "#FFFFFF",
                 ),
               ),
+              borderRadius: BorderRadius.circular(defaultMargin.top / 2),
             ),
           ),
           SizedBox(

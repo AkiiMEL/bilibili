@@ -9,14 +9,12 @@ class BBPopularListItemIdolRelativeMediaItemView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        ClipRRect(
-          borderRadius: BorderRadius.circular(4.0),
-          child: AspectRatio(
-            aspectRatio: 8.0 / 5.0,
-            child: BBThumbnailView(
-              url:
-                  "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
-            ),
+        AspectRatio(
+          aspectRatio: 8.0 / 5.0,
+          child: BBThumbnailView(
+            url:
+                "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
+            borderRadius: BorderRadius.circular(5.0),
           ),
         ),
         SizedBox(

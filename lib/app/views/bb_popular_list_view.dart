@@ -38,6 +38,7 @@ class _BBPopularListViewState extends State<BBPopularListView>
   Widget build(BuildContext context) {
     super.build(context);
     return SafeArea(
+      bottom: false,
       child: SmartRefresher(
         controller: _refreshController,
         enablePullUp: true,
