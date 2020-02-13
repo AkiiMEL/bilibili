@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/utils/bb_args.dart';
+import 'package:bilibili/app/utils/bb_common.dart';
 import 'package:bilibili/app/compenents/bb_network_image.dart';
 
 class BBPopularListEntrySectionView extends StatelessWidget {
@@ -28,7 +28,7 @@ class BBPopularListEntrySectionView extends StatelessWidget {
                 child: BBNetworkImage(
                   // entries[i].pic,
                   null,
-                  placeholder: defaultIMGPlaceholderName,
+                  placeholder: Images.placeholder,
                 ),
               ),
               SizedBox(height: defaultMargin.bottom),

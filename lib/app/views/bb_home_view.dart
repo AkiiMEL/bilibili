@@ -5,7 +5,7 @@ import 'package:fluro/fluro.dart';
 import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
 import 'package:bilibili/app/compenents/bb_network_image.dart';
 import 'package:bilibili/app/models/bb_tab_models.dart';
-import 'package:bilibili/app/utils/bb_args.dart';
+import 'package:bilibili/app/utils/bb_common.dart';
 
 class BBHomeView extends StatefulWidget {
   final BBTabBody configuration;
@@ -98,7 +98,7 @@ class _BBHomeViewState extends State<BBHomeView>
     List<Widget> children = [
       BBNetworkAvatarImage(
         defaultAvatarURL,
-        placeholder: defaultAvatarName,
+        placeholder: Images.defaultAvatar,
         size: Size(36.0, 36.0),
       ),
       SizedBox(width: defaultMargin.left * 2.5),

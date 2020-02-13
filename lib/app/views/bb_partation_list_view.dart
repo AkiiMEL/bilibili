@@ -56,7 +56,7 @@ class _BBPartationListViewState extends State<BBPartationListView> {
     );
   }
 
-  _onLoading() async {
+  void _onLoading() async {
     HttpListBody<Partation> p = await BBApi.requestAllPartion();
 
     if (mounted) {

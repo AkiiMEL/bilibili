@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:bilibili/app/models/bb_featured_models.dart';
-import 'package:bilibili/app/utils/bb_args.dart';
-import 'package:bilibili/app/utils/bb_utils.dart';
+import 'package:bilibili/app/utils/bb_common.dart';
 import 'package:bilibili/app/compenents/bb_network_image.dart';
 
 class BBFeaturedListItemMultipleColumView extends StatelessWidget {
@@ -50,7 +49,7 @@ class BBFeaturedListItemMultipleColumView extends StatelessWidget {
           aspectRatio: aspectRatio,
           child: BBNetworkImage(
             isAdView ? media.adInfo?.creativeContent?.imageUrl : media.cover,
-            placeholder: defaultIMGPlaceholderName,
+            placeholder: Images.placeholder,
           ),
         ),
         Positioned(

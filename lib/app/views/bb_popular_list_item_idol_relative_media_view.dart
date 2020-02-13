@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
 import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
 import 'package:bilibili/app/models/bb_featured_models.dart';
-import 'package:bilibili/app/utils/bb_args.dart';
+import 'package:bilibili/app/utils/bb_common.dart';
 
 import 'bb_popular_list_item_idol_relative_media_item_view.dart';
 
@@ -27,7 +27,7 @@ class _BBPopularListItemIdolRelativeMediaViewState
               children: <Widget>[
                 BBNetworkAvatarImage(
                   defaultAvatarURL,
-                  placeholder: defaultAvatarName,
+                  placeholder: Images.defaultAvatar,
                   size: Size(40.0, 40.0),
                 ),
                 SizedBox(
