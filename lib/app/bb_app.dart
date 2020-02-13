@@ -1,4 +1,4 @@
-import 'package:bilibili/app/views/bb_partation_list_view.dart';
+import 'package:bilibili/app/utils/bb_color.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -29,8 +29,8 @@ class BBApp extends StatelessWidget {
           ),
           scaffoldBackgroundColor: Colors.white,
           dividerTheme: DividerThemeData(
-            color: Color.fromARGB(255, 238, 239, 239),
-            space: 0.5,
+            color: Color(0xfff0f0f0),
+            space: 1,
           ),
           textTheme: TextTheme(
             headline: TextStyle(
@@ -84,8 +84,7 @@ class BBApp extends StatelessWidget {
             ),
           ),
         ),
-        home: BBPartationListView(),
-        // home: BBInitialView(),
+        home: BBInitialView(),
         debugShowCheckedModeBanner: false,
       ),
     );

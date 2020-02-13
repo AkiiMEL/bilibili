@@ -93,7 +93,7 @@ class _BBInitialViewState extends State<BBInitialView> {
       ),
       tabBuilder: (BuildContext context, int index) {
         // Home view need more tab info that given by `BBApi.requestTabConfiguration`
-        return tabBarItems[index].uri == Fluro.home
+        return tabBarItems[index].uri == BBRouteMgr.home
             ? CupertinoTabView(
                 builder: (BuildContext context) {
                   return BBHomeView(configuration: _tabBody);

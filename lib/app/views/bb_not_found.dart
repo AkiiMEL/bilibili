@@ -6,13 +6,8 @@ import 'package:bilibili/app/utils/bb_args.dart';
 class BBNotFoundView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text(
-          "404",
-        ),
-      ),
-      child: LayoutBuilder(
+    return SafeArea(
+          child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return SingleChildScrollView(
             padding: defaultMargin,

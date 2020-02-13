@@ -38,6 +38,7 @@ class _BBChannelListViewState extends State<BBChannelListView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      bottom: false,
       child: SmartRefresher(
         controller: _refreshController,
         onRefresh: _onRefresh,

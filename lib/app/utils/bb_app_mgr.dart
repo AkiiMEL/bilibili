@@ -16,6 +16,6 @@ class BBAppMgr extends Object {
   }
 
   BBAppMgr.init() {
-    Fluro.setup();
+    BBRouteMgr.setup();
   }
 }

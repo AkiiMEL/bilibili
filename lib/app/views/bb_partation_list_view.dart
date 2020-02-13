@@ -26,17 +26,28 @@ class _BBPartationListViewState extends State<BBPartationListView> {
         padding: defaultMargin,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
-          mainAxisSpacing: defaultMargin.bottom,
+          mainAxisSpacing: defaultMargin.bottom * 2,
           crossAxisSpacing: defaultMargin.left,
+          childAspectRatio: 1.3,
         ),
         itemBuilder: (BuildContext context, int index) {
           Partation partation = _partations[index];
           return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              BBNetworkImage(partation.logo, size: Size(40.0, 40.0),),
+              Expanded(
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: BBNetworkImage(
+                    partation.logo,
+                  ),
+                ),
+              ),
               SizedBox(height: defaultMargin.bottom / 2),
-              Text(partation.name ?? "", style: Theme.of(context).textTheme.caption,),
+              Text(
+                partation.name ?? "",
+                style: Theme.of(context).textTheme.caption,
+              ),
             ],
           );
         },
@@ -47,8 +58,11 @@ class _BBPartationListViewState extends State<BBPartationListView> {
 
   _onLoading() async {
     HttpListBody<Partation> p = await BBApi.requestAllPartion();
-    _partations = p?.data?.toList() ?? [];
-    print(_partations);
-    print(p);
+
+    if (mounted) {
+      setState(() {
+        _partations = p?.data?.toList() ?? [];
+      });
+    }
   }
 }
