@@ -1,3 +1,4 @@
+import 'package:bilibili/app/views/bb_partation_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -83,7 +84,8 @@ class BBApp extends StatelessWidget {
             ),
           ),
         ),
-        home: BBInitialView(),
+        home: BBPartationListView(),
+        // home: BBInitialView(),
         debugShowCheckedModeBanner: false,
       ),
     );
