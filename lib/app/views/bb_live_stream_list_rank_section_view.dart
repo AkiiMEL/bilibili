@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
+import 'package:bilibili/app/compenents/bb_network_circle_avatar_image.dart';
 import 'package:bilibili/app/models/bb_live_stream_models.dart';
 import 'package:bilibili/app/utils/bb_args.dart';
 
@@ -89,9 +89,9 @@ class BBLiveStreamRankSectionView extends StatelessWidget {
                       height: radius * 2,
                       fit: BoxFit.cover,
                     ),
-                    BBNetworkAvatarImage(
+                    BBNetworkCircleAvatarImage(
                       rank.face,
-                      size: Size(radius * 2 - 4, radius * 2 - 4),
+                      radius: radius - 2,
                     ),
                   ],
                 ),

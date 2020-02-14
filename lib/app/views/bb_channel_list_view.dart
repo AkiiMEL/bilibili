@@ -1,5 +1,3 @@
-import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
-import 'package:bilibili/app/compenents/bb_network_image.dart';
 import 'package:bilibili/app/utils/bb_color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +9,7 @@ import 'package:bilibili/app/models/bb_channel_models.dart';
 import 'package:bilibili/app/views/bb_channel_list_entry_item_view.dart';
 import 'package:bilibili/app/views/bb_channel_list_section.dart';
 import 'package:bilibili/app/views/bb_channel_list_dynamics_view.dart';
+import 'package:bilibili/app/compenents/bb_network_circle_avatar_image.dart';
 
 class BBChannelListView extends StatefulWidget {
   @override
@@ -259,7 +258,7 @@ class _BBChannelListViewState extends State<BBChannelListView> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(22.0),
                           ),
-                          child: BBNetworkAvatarImage(
+                          child: BBNetworkCircleAvatarImage(
                             channel.cover,
                             placeholder: Images.channel,
                           ),

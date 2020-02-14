@@ -4,19 +4,6 @@ import 'package:tuple/tuple.dart';
 import 'package:bilibili/app/utils/bb_common.dart';
 import 'package:bilibili/app/compenents/bb_network_image.dart';
 
-List<String> _imageURLs = [
-  Images.thumbnailOverlayStar,
-  Images.thumbnailOverlayPlay,
-  Images.thumbnailOverlayLocation,
-  Images.thumbnailOverlayDanmaku,
-  Images.thumbnailOverlayFollow,
-  Images.thumbnailOverlayArticle,
-  Images.thumbnailOverlayComment,
-  Images.thumbnailOverlayUnlike,
-  Images.thumbnailOverlayLiked,
-  Images.thumbnailOverlayPepole,
-];
-
 // Media preview contains image, tag and other extra message
 // like number of visited and danmuku.
 class BBThumbnailView extends StatelessWidget {
@@ -208,9 +195,9 @@ class BBThumbnailView extends StatelessWidget {
       BuildContext context, List<Tuple2<dynamic, String>> iconAndDescriptions) {
     List<Widget> views = [];
     (iconAndDescriptions ?? []).forEach((e) {
-      if (e.item1 is int && e.item1 >= 0 && e.item1 < _imageURLs.length) {
+      if (e.item1 is int && e.item1 >= 0 && e.item1 < Images.thumbnailOverlays.length) {
         views.add(Image.asset(
-          _imageURLs[e.item1],
+          Images.thumbnailOverlays[e.item1],
           color: Colors.white,
         ));
         views.add(SizedBox(width: 2.0));

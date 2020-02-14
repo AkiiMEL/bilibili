@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
+import 'package:bilibili/app/compenents/bb_network_circle_avatar_image.dart';
 import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
 import 'package:bilibili/app/models/bb_featured_models.dart';
 import 'package:bilibili/app/utils/bb_common.dart';
@@ -25,10 +25,10 @@ class _BBPopularListItemIdolRelativeMediaViewState
           children: <Widget>[
             Row(
               children: <Widget>[
-                BBNetworkAvatarImage(
+                BBNetworkCircleAvatarImage(
                   defaultAvatarURL,
                   placeholder: Images.defaultAvatar,
-                  size: Size(40.0, 40.0),
+                  radius: 20.0,
                 ),
                 SizedBox(
                   width: defaultMargin.left,
