@@ -45,9 +45,8 @@ class BBChannelListSliverDynamics extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            AspectRatio(
-              aspectRatio: 1.0,
-              child: BBNetworkCircleAvatarImage(
+            ClipOval(
+              child: BBNetworkImage(
                 channel.cover,
                 placeholder: Images.channel,
               ),

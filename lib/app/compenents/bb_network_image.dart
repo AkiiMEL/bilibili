@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:bilibili/app/utils/bb_assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class BBNetworkImage extends StatelessWidget {
@@ -11,7 +13,7 @@ class BBNetworkImage extends StatelessWidget {
   BBNetworkImage(
     this.url, {
     Key key,
-    this.placeholder,
+    this.placeholder = Images.placeholder,
     this.fit = BoxFit.cover,
     this.size,
     this.aspectRatio,
@@ -36,7 +38,7 @@ class BBNetworkImage extends StatelessWidget {
       child: placeholder?.isNotEmpty ?? false
           ? Image.asset(
               placeholder,
-              fit: fit,
+              fit: BoxFit.none,
             )
           : null,
     );

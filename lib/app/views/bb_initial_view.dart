@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluro/fluro.dart';
 
-import 'package:bilibili/app/compenents/bb_cupertino_tab_scaffold.dart';
 import 'package:bilibili/app/compenents/bb_network_image.dart';
 import 'package:bilibili/app/api/bb_api.dart';
 import 'package:bilibili/app/models/bb_tab_models.dart';
@@ -65,9 +64,9 @@ class _BBInitialViewState extends State<BBInitialView> {
     // Default `CupertinoTabScaffold with CupertinoTabBar` requires tab items >= 2,
     // but we request tab by send a http request and maybe response with only one
     // item, so we need a new `BBCupertinoTabScaffold` and `BBCupertinoTabBar`.
-    return BBCupertinoTabScaffold(
-      controller: BBCupertinoTabController(),
-      tabBar: BBCupertinoTabBar(
+    return CupertinoTabScaffold(
+      controller: CupertinoTabController(),
+      tabBar: CupertinoTabBar(
         items: tabBarItems
             .map((e) => BottomNavigationBarItem(
                   title: e.name != null ? Text(e.name) : SizedBox.shrink(),

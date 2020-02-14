@@ -194,7 +194,6 @@ class _BBChannelListViewState extends State<BBChannelListView> {
   }
 
   Widget _buildSliverHistory(List<Channel> e) {
-
     return SliverToBoxAdapter(
       child: Padding(
         padding: defaultMargin,
@@ -256,11 +255,13 @@ class _BBChannelListViewState extends State<BBChannelListView> {
                           padding: EdgeInsets.all(2),
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(22.0),
+                            shape: BoxShape.circle,
                           ),
-                          child: BBNetworkCircleAvatarImage(
-                            channel.cover,
-                            placeholder: Images.channel,
+                          child: ClipOval(
+                            child: BBNetworkImage(
+                              channel.cover,
+                              placeholder: Images.channel,
+                            ),
                           ),
                         ),
                       ),
