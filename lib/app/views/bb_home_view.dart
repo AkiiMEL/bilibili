@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
-import 'package:bilibili/app/compenents/bb_network_avatar_image.dart';
-import 'package:bilibili/app/compenents/bb_network_image.dart';
+import 'package:bilibili/app/compenents/bb_network_circle_avatar_image.dart';
 import 'package:bilibili/app/models/bb_tab_models.dart';
 import 'package:bilibili/app/utils/bb_common.dart';
 
@@ -96,10 +95,10 @@ class _BBHomeViewState extends State<BBHomeView>
 
   Widget _getTopView() {
     List<Widget> children = [
-      BBNetworkAvatarImage(
+      BBNetworkCircleAvatarImage(
         defaultAvatarURL,
         placeholder: Images.defaultAvatar,
-        size: Size(36.0, 36.0),
+        radius: 18.0,
       ),
       SizedBox(width: defaultMargin.left * 2.5),
       Flexible(

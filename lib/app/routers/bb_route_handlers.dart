@@ -11,6 +11,7 @@ import 'package:bilibili/app/views/bb_channel_container_view.dart';
 import 'package:bilibili/app/views/bb_home_view.dart';
 import 'package:bilibili/app/views/bb_channel_list_view.dart';
 import 'package:bilibili/app/views/bb_partation_list_view.dart';
+import 'package:bilibili/app/views/bb_mine_view.dart';
 
 Handler notFoundHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
@@ -41,6 +42,8 @@ Handler channelContainerHandler = _buildHandler(BBChannelContainerView());
 Handler partationsHandler = _buildHandler(BBPartationListView());
 
 Handler channelsHandler = _buildHandler(BBChannelListView());
+
+Handler mineHandler = _buildHandler(BBMineView());
 
 Handler _buildHandler(Widget v) {
   return Handler(handlerFunc: (BuildContext context, Map<String, List<String>> params) => v);

@@ -16,7 +16,7 @@ class BBRouteMgr {
   static String message = "bilibili://link/home/im_home";
   static String timeline = "bilibili://following/home/";
   static String shopping = "bilibili://mall/home/";
-  static String userCenter = "bilibili://user_center/";
+  static String mine = "bilibili://user_center/";
   static String channel = "bilibili://pegasus/channel/";
   static String partations = "bilibili://partations";
   static String channels = "bilibili://channels";
@@ -31,5 +31,6 @@ class BBRouteMgr {
     Router.appRouter.define(channel, handler: channelContainerHandler);
     Router.appRouter.define(partations, handler: partationsHandler);
     Router.appRouter.define(channels, handler: channelsHandler);
+    Router.appRouter.define(mine, handler: mineHandler);
   }
 }

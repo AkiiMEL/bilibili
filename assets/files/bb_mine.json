@@ -1,0 +1,246 @@
+{
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+        "rank": 10000,
+        "follower": 14,
+        "pendant": {
+            "image": "http://i0.hdslb.com/bfs/face/89b25cad74abd9e42a94b11e456bc21fe36b8763.png"
+        },
+        "official_verify": {
+            "type": -1,
+            "desc": ""
+        },
+        "bcoin": 0,
+        "mid": 8009445,
+        "silence": 0,
+        "vip_type": 2,
+        "new_followers": 0,
+        "sex": 1,
+        "vip_section_v2": {
+            "title": "我的年度大会员",
+            "subtitle": "2020-04-06到期",
+            "url": "https://big.bilibili.com/mobile/home"
+        },
+        "sections": [
+            {
+                "type": 1,
+                "title": "创作中心",
+                "items": [
+                    {
+                        "display": 1,
+                        "title": "创作首页",
+                        "icon": "http://i0.hdslb.com/bfs/archive/d3aad2d07538d2d43805f1fa14a412d7a45cc861.png",
+                        "need_login": 1,
+                        "uri": "bilibili://uper/homevc",
+                        "global_red_dot": 1
+                    },
+                    {
+                        "title": "创作学院",
+                        "icon": "http://i0.hdslb.com/bfs/archive/5b46a16b3f0d01ab401af071f0da3abdf35a384f.png",
+                        "need_login": 1,
+                        "uri": "https://member.bilibili.com/college?navhide=1",
+                        "global_red_dot": 1
+                    },
+                    {
+                        "display": 1,
+                        "title": "稿件管理",
+                        "icon": "http://i0.hdslb.com/bfs/archive/97acb2d8dec09b296a38f7f7093d651947d13b91.png",
+                        "need_login": 1,
+                        "uri": "bilibili://uper/user_center/archive_list",
+                        "global_red_dot": 1
+                    },
+                    {
+                        "display": 1,
+                        "title": "创作日历",
+                        "icon": "http://i0.hdslb.com/bfs/archive/ccb3a0f38ed0ea72a773741c5d82b11ceb8ce3f0.png",
+                        "need_login": 1,
+                        "uri": "https://member.bilibili.com/studio/gabriel/creator-calendar/today?navhide=1",
+                        "global_red_dot": 1
+                    },
+                    {
+                        "title": "创作激励",
+                        "icon": "http://i0.hdslb.com/bfs/archive/a4a70bbf4447b327fdad5d383f8b90eb0ecda286.png",
+                        "need_login": 1,
+                        "uri": "https://member.bilibili.com/studio/up-allowance-h5#/",
+                        "global_red_dot": 1
+                    },
+                    {
+                        "need_login": 1,
+                        "display": 1,
+                        "title": "热门活动",
+                        "red_dot": 1,
+                        "global_red_dot": 1,
+                        "uri": "https://www.bilibili.com/blackboard/x/activity-tougao-h5/all",
+                        "icon": "http://i0.hdslb.com/bfs/archive/7f4fa86d99bf3814bf10f8ee5d6c8c9db6e931c8.png"
+                    }
+                ]
+            },
+            {
+                "type": 5,
+                "title": "宅家挑战赛",
+                "items": [
+                    {
+                        "id": 280,
+                        "title": "B站不停学",
+                        "icon": "http://i0.hdslb.com/bfs/archive/b3a9ac56cfe7ab87a8affc4b109e8b43ba829c09.png",
+                        "uri": "https://www.bilibili.com/blackboard/activity-gSw08j13.html"
+                    },
+                    {
+                        "id": 281,
+                        "title": "新年不咕打卡",
+                        "icon": "http://i0.hdslb.com/bfs/archive/93bfba87d26bcae39f0dcf850e7f59d6418d06a2.png",
+                        "uri": "https://www.bilibili.com/blackboard/activity-Ln_VnDhN.html"
+                    },
+                    {
+                        "id": 282,
+                        "title": "情人节一起过",
+                        "icon": "http://i0.hdslb.com/bfs/archive/c70693f206c3dbe9dfe9bf178247c5dcb6f7ea66.png",
+                        "uri": "https://www.bilibili.com/blackboard/activity-N0J3TtP8.html"
+                    },
+                    {
+                        "id": 283,
+                        "title": "宅家健身挑战",
+                        "icon": "http://i0.hdslb.com/bfs/archive/74aa5b6c77adfdd413e78ff2a0c059572996b23b.png",
+                        "uri": "https://www.bilibili.com/blackboard/dynamic/290"
+                    }
+                ]
+            },
+            {
+                "type": 3,
+                "title": "个人中心",
+                "items": [
+                    {
+                        "id": 159,
+                        "title": "离线缓存",
+                        "icon": "http://i0.hdslb.com/bfs/archive/0f3e682b0611f9404c6e9d0a8d57f7246f91bffd.png",
+                        "uri": "bilibili://user_center/download"
+                    },
+                    {
+                        "id": 160,
+                        "title": "历史记录",
+                        "icon": "http://i0.hdslb.com/bfs/archive/ae502b4b69b6a3b287ea59b1552859332e59c277.png",
+                        "uri": "bilibili://user_center/history"
+                    },
+                    {
+                        "id": 161,
+                        "title": "我的收藏",
+                        "icon": "http://i0.hdslb.com/bfs/archive/1e6b0583257a086f40779c10ad7e2fcd72984463.png",
+                        "need_login": 1,
+                        "uri": "bilibili://user_center/favourite"
+                    },
+                    {
+                        "id": 162,
+                        "title": "我的关注",
+                        "icon": "http://i0.hdslb.com/bfs/archive/d03e56a5f3368304a0fe8ca81f46fcd532fcfcd2.png",
+                        "need_login": 1,
+                        "uri": "bilibili://user_center/myfollows"
+                    },
+                    {
+                        "id": 163,
+                        "title": "稍后再看",
+                        "icon": "http://i0.hdslb.com/bfs/archive/56893a05f41d7c503f7f1f5b67e9ee2add8581fa.png",
+                        "need_login": 1,
+                        "uri": "bilibili://user_center/watch_later"
+                    },
+                    {
+                        "id": 217,
+                        "title": "我的钱包",
+                        "icon": "http://i0.hdslb.com/bfs/archive/d1aabc007dfe01a86b3078777e836109fb4ed2b0.png",
+                        "uri": "bilibili://bilipay/mine_wallet"
+                    },
+                    {
+                        "id": 165,
+                        "title": "会员购中心",
+                        "icon": "http://i0.hdslb.com/bfs/archive/1857e44f93339bea4138b265544aba8571cabf79.png",
+                        "uri": "bilibili://mall/mine?msource=mine"
+                    },
+                    {
+                        "id": 220,
+                        "title": "直播中心",
+                        "icon": "http://i0.hdslb.com/bfs/archive/013807e8281c2f216e47b26b4bde2fe4ee13c305.png",
+                        "uri": "bilibili://user_center/live_center"
+                    }
+                ]
+            },
+            {
+                "type": 4,
+                "title": "我的服务",
+                "items": [
+                    {
+                        "id": 167,
+                        "title": "大会员",
+                        "icon": "http://i0.hdslb.com/bfs/archive/d4715c5ad673405c9bbb24d9d3cc5e54d744601e.png",
+                        "uri": "bilibili://user_center/vip"
+                    },
+                    {
+                        "id": 244,
+                        "title": "我的课程",
+                        "icon": "http://i0.hdslb.com/bfs/archive/82782c2922f8fc3f3d171ca79d8a5a5176be7b8a.png",
+                        "uri": "https://m.bilibili.com/cheese/mine?navhide=1"
+                    },
+                    {
+                        "id": 263,
+                        "title": "游戏中心",
+                        "icon": "http://i0.hdslb.com/bfs/archive/936c1aab188b4c87a31b84069bb8642ec88413a6.png",
+                        "uri": "bilibili://game_center/user?sourceFrom=100003"
+                    },
+                    {
+                        "id": 249,
+                        "title": "个性装扮",
+                        "icon": "http://i0.hdslb.com/bfs/archive/4d9bd644d3cc2bb236858ba314b3027dce2486c7.png",
+                        "uri": "https://www.bilibili.com/h5/mall/home?navhide=1&from=myservice"
+                    },
+                    {
+                        "id": 168,
+                        "title": "看视频免流量",
+                        "icon": "http://i0.hdslb.com/bfs/archive/c4519ac7db28cec9bac7a96cc22496a62ffe0e84.png",
+                        "uri": "bilibili://user_center/free_traffic"
+                    },
+                    {
+                        "id": 170,
+                        "title": "我的客服",
+                        "icon": "http://i0.hdslb.com/bfs/archive/d5b342aa838c2f4d2cc830468ac739aa7bd62fe4.png",
+                        "uri": "bilibili://user_center/feedback"
+                    },
+                    {
+                        "id": 216,
+                        "title": "创作学院",
+                        "icon": "http://i0.hdslb.com/bfs/archive/f59f137399e25b994f4cf29beaee7ed3a55f30e3.png",
+                        "need_login": 1,
+                        "uri": "https://member.bilibili.com/college?navhide=1&from=my"
+                    },
+                    {
+                        "id": 240,
+                        "title": "青少年模式",
+                        "icon": "http://i0.hdslb.com/bfs/archive/9a137e4b0efc1f812bf879f68beb5012949e13ef.png",
+                        "uri": "bilibili://user_center/teenagersmode"
+                    }
+                ]
+            }
+        ],
+        "show_videoup": 1,
+        "name": "集_",
+        "show_creative": 1,
+        "dynamic": 1,
+        "vip_section": {
+            "url": "https://big.bilibili.com/mobile/home"
+        },
+        "level": 4,
+        "coin": 343.7,
+        "audio_type": 0,
+        "following": 90,
+        "face": "http://i0.hdslb.com/bfs/face/d15b5f83389794608f3290e312f7b13c0d020ada.jpg",
+        "vip": {
+            "status": 1,
+            "vip_pay_type": 0,
+            "theme_type": 0,
+            "label": {
+                "path": ""
+            },
+            "type": 2,
+            "due_date": 1586102400000
+        }
+    }
+}
