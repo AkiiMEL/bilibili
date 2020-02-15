@@ -1,5 +1,5 @@
 name: bilibili
-description: A new Flutter project.
+description: 哔哩哔哩(゜-゜)つロ干杯~-bilibili.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -52,7 +52,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+ 
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
