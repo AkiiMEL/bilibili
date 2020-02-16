@@ -1,15 +1,13 @@
+import 'package:bilibili/app/utils/bb_app_mgr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
-import 'package:bilibili/app/compenents/bb_network_circle_avatar_image.dart';
-import 'package:bilibili/app/models/bb_tab_models.dart';
-import 'package:bilibili/app/utils/bb_common.dart';
+import '../compenents/bb_network_circle_avatar_image.dart';
+import '../models/bb_tab_models.dart';
+import '../utils/bb_common.dart';
 
 class BBHomeView extends StatefulWidget {
-  final BBTabBody configuration;
-  BBHomeView({this.configuration});
-
   @override
   _BBHomeViewState createState() => _BBHomeViewState();
 }
@@ -24,7 +22,8 @@ class _BBHomeViewState extends State<BBHomeView>
     super.initState();
 
     _tabBarItems =
-        widget.configuration?.tab?.where((e) => e.uri != null)?.toList() ?? [];
+        BBAppMgr.shared.tabLayout?.tab?.where((e) => e.uri != null)?.toList() ??
+            [];
 
     _tabCtr = TabController(length: _tabBarItems.length, vsync: this);
   }
@@ -130,7 +129,7 @@ class _BBHomeViewState extends State<BBHomeView>
       ),
     ];
 
-    widget.configuration?.top?.forEach((e) {
+    BBAppMgr.shared.tabLayout?.top?.forEach((e) {
       children.add(SizedBox(width: defaultMargin.left * 2.5));
       children.add(BBNetworkImage(
         e.image,

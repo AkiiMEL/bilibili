@@ -1,3 +1,5 @@
+import 'package:bilibili/app/compenents/bb_navigation_view.dart';
+import 'package:bilibili/app/utils/bb_app_mgr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluro/fluro.dart';
@@ -6,8 +8,6 @@ import 'package:bilibili/app/compenents/bb_network_image.dart';
 import 'package:bilibili/app/api/bb_api.dart';
 import 'package:bilibili/app/models/bb_tab_models.dart';
 import 'package:bilibili/app/routers/bb_route_mgr.dart';
-
-import 'bb_home_view.dart';
 
 class BBInitialView extends StatefulWidget {
   @override
@@ -36,6 +36,7 @@ class _BBInitialViewState extends State<BBInitialView> {
   void _load() async {
     try {
       _tabBody = await BBApi.requestTabConfiguration();
+      BBAppMgr.shared.tabLayout = _tabBody;
       List<BBTabBarItem> tabBarItems = _tabBody?.bottom ?? [];
       BBTabBarItem selectedItem =
           tabBarItems.firstWhere((e) => e.selected == 1, orElse: () => null);
@@ -92,24 +93,10 @@ class _BBInitialViewState extends State<BBInitialView> {
       ),
       tabBuilder: (BuildContext context, int index) {
         // Home view need more tab info that given by `BBApi.requestTabConfiguration`
-        return tabBarItems[index].uri == BBRouteMgr.home
-            ? CupertinoTabView(
-                builder: (BuildContext context) {
-                  return BBHomeView(configuration: _tabBody);
-                },
-              )
-            : CupertinoTabView(
-                onGenerateRoute: (RouteSettings settings) {
-                  RouteSettings routeSettings = settings;
-                  // Replace root route settings with matched route settings.
-                  if (settings.name == "/") {
-                    routeSettings =
-                        settings.copyWith(name: tabBarItems[index].uri);
-                  }
-
-                  return Router.appRouter.generator(routeSettings);
-                },
-              );
+        return BBNavigationView(
+          rootRouteName: tabBarItems[index].uri,
+          onGenerateRoute: Router.appRouter.generator,
+        );
       },
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     );
