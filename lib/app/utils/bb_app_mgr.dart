@@ -1,21 +1,23 @@
+import 'package:bilibili/app/models/bb_tab_models.dart';
 
-import 'package:bilibili/app/routers/bb_route_mgr.dart';
+import '../routers/bb_route_mgr.dart';
 
 BBAppMgr _appMgr;
 
 class BBAppMgr extends Object {
+  BBTabBody tabLayout;
 
   factory BBAppMgr() => _getInstance();
   static BBAppMgr get shared => _getInstance();
 
   static BBAppMgr _getInstance() {
     if (_appMgr == null) {
-      _appMgr = BBAppMgr.init();
+      _appMgr = BBAppMgr._init();
     }
     return _appMgr;
   }
 
-  BBAppMgr.init() {
+  BBAppMgr._init() {
     BBRouteMgr.setup();
   }
 }

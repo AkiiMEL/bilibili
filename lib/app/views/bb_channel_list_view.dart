@@ -1,15 +1,14 @@
-import 'package:bilibili/app/utils/bb_color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:bilibili/app/utils/bb_common.dart';
-import 'package:bilibili/app/api/bb_api.dart';
-import 'package:bilibili/app/models/bb_channel_models.dart';
-import 'package:bilibili/app/views/bb_channel_list_entry_item_view.dart';
-import 'package:bilibili/app/views/bb_channel_list_section.dart';
-import 'package:bilibili/app/views/bb_channel_list_dynamics_view.dart';
-import 'package:bilibili/app/compenents/bb_network_circle_avatar_image.dart';
+import '../utils/bb_common.dart';
+import '../api/bb_api.dart';
+import '../models/bb_channel_models.dart';
+import '../compenents/bb_network_circle_avatar_image.dart';
+import 'bb_channel_list_entry_item_view.dart';
+import 'bb_channel_list_section.dart';
+import 'bb_channel_list_dynamics_view.dart';
 
 class BBChannelListView extends StatefulWidget {
   @override
@@ -223,29 +222,28 @@ class _BBChannelListViewState extends State<BBChannelListView> {
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: <Widget>[
-                      Container(
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(radius),
-                            topRight: Radius.circular(radius),
-                          ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(radius),
+                          topRight: Radius.circular(radius),
                         ),
-                        clipBehavior: Clip.antiAlias,
-                        child: Stack(
-                          fit: StackFit.expand,
-                          children: <Widget>[
-                            BBNetworkImage(
-                              channel.background,
-                              placeholder: Images.placeholder,
-                            ),
-                            Container(
-                              color: BBColor.from(
-                                channel.themeColor,
-                                alpha: channel.alpha ?? 100,
+                        child: Container(
+                          height: 50.0,
+                          child: Stack(
+                            fit: StackFit.expand,
+                            children: <Widget>[
+                              BBNetworkImage(
+                                channel.background,
+                                placeholder: Images.placeholder,
                               ),
-                            )
-                          ],
+                              Container(
+                                color: BBColor.from(
+                                  channel.themeColor,
+                                  alpha: channel.alpha ?? 100,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       Positioned(

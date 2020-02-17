@@ -1,6 +1,6 @@
 import 'package:fluro/fluro.dart';
 
-import 'package:bilibili/app/routers/bb_route_handlers.dart';
+import '../routers/bb_route_handlers.dart';
 
 export 'package:fluro/fluro.dart';
 
@@ -20,17 +20,19 @@ class BBRouteMgr {
   static String channel = "bilibili://pegasus/channel/";
   static String partations = "bilibili://partations";
   static String channels = "bilibili://channels";
+  static String video = "bilibili://video/";
 
   static setup() {
     Router.appRouter.notFoundHandler = notFoundHandler;
-    Router.appRouter.define(root, handler: rootHandler);
-    Router.appRouter.define(home, handler: homeHandler);
-    Router.appRouter.define(live, handler: liveHandler);
-    Router.appRouter.define(featured, handler: featuredHandler);
-    Router.appRouter.define(popular, handler: popularHandler);
-    Router.appRouter.define(channel, handler: channelContainerHandler);
-    Router.appRouter.define(partations, handler: partationsHandler);
-    Router.appRouter.define(channels, handler: channelsHandler);
-    Router.appRouter.define(mine, handler: mineHandler);
+    Router.appRouter.define(root, handler: rootHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(home, handler: homeHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(live, handler: liveHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(featured, handler: featuredHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(popular, handler: popularHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(channel, handler: channelContainerHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(partations, handler: partationsHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(channels, handler: channelsHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(mine, handler: mineHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(video + ":id", handler: videoHandler, transitionType: TransitionType.cupertino);
   }
 }

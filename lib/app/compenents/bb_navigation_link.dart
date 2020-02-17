@@ -1,4 +1,3 @@
-import 'package:bilibili/app/routers/bb_route_handlers.dart';
 import 'package:bilibili/app/routers/bb_route_mgr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,12 +10,14 @@ enum BBNaviLinkAnimation {
 }
 
 class BBNavigationLink extends StatelessWidget {
+  final bool rootNavigator;
   final String destination;
   final BBNaviLinkAnimation animation;
   final Object arguments;
   final Widget child;
 
   BBNavigationLink({
+    this.rootNavigator = true,
     this.animation = BBNaviLinkAnimation.PUSH,
     this.destination,
     this.arguments,
@@ -32,7 +33,7 @@ class BBNavigationLink extends StatelessWidget {
         switch (animation) {
           case BBNaviLinkAnimation.PUSH:
           case BBNaviLinkAnimation.PRESENT:
-            Navigator.pushNamed(context, destination, arguments: arguments);
+            Navigator.of(context, rootNavigator: rootNavigator).pushNamed(destination);
             break;
           case BBNaviLinkAnimation.POP:
           case BBNaviLinkAnimation.DISMISS:

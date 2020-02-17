@@ -1,9 +1,9 @@
-import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/utils/bb_common.dart';
-import 'package:bilibili/app/compenents/bb_network_circle_avatar_image.dart';
-import 'package:bilibili/app/models/bb_mine.dart';
+import '../utils/bb_common.dart';
+import '../compenents/bb_media_tag_view.dart';
+import '../compenents/bb_network_circle_avatar_image.dart';
+import '../models/bb_mine.dart';
 
 class BBMineHeaderView extends StatelessWidget {
   final Mine mine;
@@ -176,7 +176,7 @@ class BBMineHeaderView extends StatelessWidget {
                 mine?.vipSectionV2?.title ?? "",
                 style: Theme.of(context)
                     .textTheme
-                    .headline5
+                    .headline
                     .copyWith(color: Theme.of(context).accentColor),
               ),
               SizedBox(width: defaultMargin.left / 2),

@@ -7,12 +7,9 @@ extension BBColor on Color {
     }
 
     hexString = hexString.replaceAll("#", "");
-    // if (hexString.length == 6) {
-    //   hexString = "ff" + hexString;
-    // }
 
     try {
-      return Color(int.tryParse(hexString, radix: 16)).withOpacity(alpha / 100);
+      return Color(int.tryParse(hexString, radix: 16))?.withOpacity(alpha / 100);
     } on Exception {
       return null;
     }

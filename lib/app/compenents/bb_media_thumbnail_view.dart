@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tuple/tuple.dart';
 
-import 'package:bilibili/app/utils/bb_common.dart';
-import 'package:bilibili/app/compenents/bb_network_image.dart';
+import '../utils/bb_common.dart';
+import 'bb_network_image.dart';
 
 // Media preview contains image, tag and other extra message
 // like number of visited and danmuku.
@@ -55,24 +55,27 @@ class BBThumbnailView extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(top: _edgeInsets.top),
-          child: Container(
-            foregroundDecoration: BoxDecoration(
-              color: foregroundColor,
-            ),
-            decoration: BoxDecoration(
-                color: backgroundColor, borderRadius: borderRadius),
-            clipBehavior: borderRadius != null ? Clip.antiAlias : Clip.none,
-            child: Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
-                BBNetworkImage(
-                  url,
-                  placeholder: Images.placeholder,
-                ),
-                _getGridientView(height: 34.0),
-                _getBottomView(context),
-                _getTopRightView(),
-              ],
+          child: ClipRRect(
+            borderRadius: borderRadius,
+            child: Container(
+              foregroundDecoration: BoxDecoration(
+                color: foregroundColor,
+              ),
+              decoration: BoxDecoration(
+                color: backgroundColor,
+              ),
+              child: Stack(
+                fit: StackFit.expand,
+                children: <Widget>[
+                  BBNetworkImage(
+                    url,
+                    placeholder: Images.placeholder,
+                  ),
+                  _getGridientView(height: 34.0),
+                  _getBottomView(context),
+                  _getTopRightView(),
+                ],
+              ),
             ),
           ),
         ),
@@ -195,7 +198,9 @@ class BBThumbnailView extends StatelessWidget {
       BuildContext context, List<Tuple2<dynamic, String>> iconAndDescriptions) {
     List<Widget> views = [];
     (iconAndDescriptions ?? []).forEach((e) {
-      if (e.item1 is int && e.item1 >= 0 && e.item1 < Images.thumbnailOverlays.length) {
+      if (e.item1 is int &&
+          e.item1 >= 0 &&
+          e.item1 < Images.thumbnailOverlays.length) {
         views.add(Image.asset(
           Images.thumbnailOverlays[e.item1],
           color: Colors.white,

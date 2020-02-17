@@ -23,8 +23,7 @@ class _BBMineViewState extends State<BBMineView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return SafeArea(
         child: Column(
           children: <Widget>[
             BBMineHeaderView(mine: _mine),
@@ -52,7 +51,6 @@ class _BBMineViewState extends State<BBMineView> {
             )
           ],
         ),
-      ),
     );
   }
 
