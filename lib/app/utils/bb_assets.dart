@@ -11,6 +11,9 @@ class Images {
   static const String mineSettings = "${_path}icon_mine_setting22x22.png";
   static const String mineTheme = "${_path}icon_mine_theme22x22.png";
   static const String mineUploadDraft = "${_path}mine_upload_draft16x16.png";
+  static const String danmakuOffDisabled = "${_path}player_detail_danmaku_close_disable24x24.png";
+  static const String danmakuOff = "${_path}player_detail_danmaku_close24x24.png";
+  static const String danmakuOn = "${_path}player_detail_danmaku_open24x24.png";
   static String bigVipMember(Brightness brightness) {
     return "${_path}mine_member${brightness == Brightness.light ? "" : "_night"}16x16.png";
   }
