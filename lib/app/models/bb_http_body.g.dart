@@ -49,6 +49,12 @@ class _$HttpBodySerializer implements StructuredSerializer<HttpBody<Object>> {
         ..add('data')
         ..add(serializers.serialize(object.data, specifiedType: parameterBody));
     }
+    if (object.result != null) {
+      result
+        ..add('result')
+        ..add(
+            serializers.serialize(object.result, specifiedType: parameterBody));
+    }
     return result;
   }
 
@@ -86,6 +92,10 @@ class _$HttpBodySerializer implements StructuredSerializer<HttpBody<Object>> {
           break;
         case 'data':
           result.data =
+              serializers.deserialize(value, specifiedType: parameterBody);
+          break;
+        case 'result':
+          result.result =
               serializers.deserialize(value, specifiedType: parameterBody);
           break;
       }
@@ -193,11 +203,14 @@ class _$HttpBody<Body> extends HttpBody<Body> {
   final int ttl;
   @override
   final Body data;
+  @override
+  final Body result;
 
   factory _$HttpBody([void Function(HttpBodyBuilder<Body>) updates]) =>
       (new HttpBodyBuilder<Body>()..update(updates)).build();
 
-  _$HttpBody._({this.code, this.message, this.ttl, this.data}) : super._() {
+  _$HttpBody._({this.code, this.message, this.ttl, this.data, this.result})
+      : super._() {
     if (Body == dynamic) {
       throw new BuiltValueMissingGenericsError('HttpBody', 'Body');
     }
@@ -218,14 +231,16 @@ class _$HttpBody<Body> extends HttpBody<Body> {
         code == other.code &&
         message == other.message &&
         ttl == other.ttl &&
-        data == other.data;
+        data == other.data &&
+        result == other.result;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, code.hashCode), message.hashCode), ttl.hashCode),
-        data.hashCode));
+        $jc($jc($jc($jc(0, code.hashCode), message.hashCode), ttl.hashCode),
+            data.hashCode),
+        result.hashCode));
   }
 
   @override
@@ -234,7 +249,8 @@ class _$HttpBody<Body> extends HttpBody<Body> {
           ..add('code', code)
           ..add('message', message)
           ..add('ttl', ttl)
-          ..add('data', data))
+          ..add('data', data)
+          ..add('result', result))
         .toString();
   }
 }
@@ -259,6 +275,10 @@ class HttpBodyBuilder<Body>
   Body get data => _$this._data;
   set data(Body data) => _$this._data = data;
 
+  Body _result;
+  Body get result => _$this._result;
+  set result(Body result) => _$this._result = result;
+
   HttpBodyBuilder();
 
   HttpBodyBuilder<Body> get _$this {
@@ -267,6 +287,7 @@ class HttpBodyBuilder<Body>
       _message = _$v.message;
       _ttl = _$v.ttl;
       _data = _$v.data;
+      _result = _$v.result;
       _$v = null;
     }
     return this;
@@ -289,7 +310,7 @@ class HttpBodyBuilder<Body>
   _$HttpBody<Body> build() {
     final _$result = _$v ??
         new _$HttpBody<Body>._(
-            code: code, message: message, ttl: ttl, data: data);
+            code: code, message: message, ttl: ttl, data: data, result: result);
     replace(_$result);
     return _$result;
   }

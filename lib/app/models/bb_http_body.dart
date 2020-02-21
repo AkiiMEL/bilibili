@@ -18,6 +18,8 @@ abstract class HttpBody<Body>
   int get ttl;
   @nullable
   Body get data;
+  @nullable
+  Body get result;
 
   HttpBody._();
 
