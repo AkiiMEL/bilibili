@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/compenents/bb_network_circle_avatar_image.dart';
-import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
-import 'package:bilibili/app/models/bb_featured_models.dart';
-import 'package:bilibili/app/utils/bb_common.dart';
+import '../compenents/bb_network_circle_avatar_image.dart';
+import '../compenents/bb_media_tag_view.dart';
+import '../utils/bb_common.dart';
 
 import 'bb_popular_list_item_idol_relative_media_item_view.dart';
 
@@ -41,7 +40,7 @@ class _BBPopularListItemIdolRelativeMediaViewState
                       style: Theme.of(context).textTheme.title,
                     ),
                     BBMediaTagView(
-                      textAttributes: TextAttributesDefinitions(),
+                      textAttributes: TextAttributes(),
                     ),
                   ],
                 ),

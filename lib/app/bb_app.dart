@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:bilibili/app/compenents/bb_pull_down_indicator_view.dart';
-import 'package:bilibili/app/views/bb_initial_view.dart';
-
+import 'compenents/bb_pull_down_indicator_view.dart';
 import 'routers/bb_route_mgr.dart';
 
 // This widget is the root of your application.

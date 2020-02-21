@@ -3,8 +3,10 @@ import 'dart:convert';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-import 'bb_bangumi_report.dart';
+import 'bb_report.dart';
 import 'bb_serializers.dart';
+
+export 'bb_report.dart';
 
 part 'bb_region.g.dart';
 

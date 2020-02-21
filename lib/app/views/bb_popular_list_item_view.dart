@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/compenents/bb_media_thumbnail_view.dart';
-import 'package:bilibili/app/compenents/bb_media_tag_view.dart';
-import 'package:bilibili/app/models/bb_featured_models.dart';
-import 'package:bilibili/app/utils/bb_args.dart';
+import '../compenents/bb_media_thumbnail_view.dart';
+import '../compenents/bb_media_tag_view.dart';
+import '../utils/bb_args.dart';
 
 class BBPopularListItemView extends StatefulWidget {
   @override
@@ -33,10 +32,9 @@ class _BBPopularListItemViewState extends State<BBPopularListItemView> {
               url:
                   "https://i0.hdslb.com/bfs/archive/363aa721e698dca557ea7aabd556476e625fcbe4.jpg@320w_200h.jpg",
               bottomRightView: BBMediaTagView(
-                textAttributes: TextAttributesDefinitions(
-                  text: "2:14",
-                  textColor: "#FFFFFF",
-                ),
+                textAttributes: TextAttributes((b) => b
+                  ..text = "2:14"
+                  ..textColor = "#FFFFFF"),
               ),
               borderRadius: BorderRadius.circular(defaultMargin.top / 2),
             ),
@@ -60,11 +58,10 @@ class _BBPopularListItemViewState extends State<BBPopularListItemView> {
                     Row(
                       children: <Widget>[
                         BBMediaTagView(
-                          textAttributes: TextAttributesDefinitions(
-                            text: "百万播放",
-                            textColor: "#F69E67",
-                            borderColor: "#F69E67",
-                          ),
+                          textAttributes: TextAttributes((b) => b
+                            ..text = "百万播放"
+                            ..textColor = "#F69E67"
+                            ..borderColor = "#F69E67"),
                         ),
                       ],
                     ),

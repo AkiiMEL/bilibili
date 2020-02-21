@@ -6,10 +6,11 @@ import '../utils/bb_args.dart';
 import '../routers/bb_route_mgr.dart';
 import '../compenents/bb_navigation_link.dart';
 import '../compenents/bb_media_thumbnail_view.dart';
-import '../models/bb_live_stream_models.dart';
+import '../models/bb_room.dart';
+import '../models/bb_live_pendent.dart';
 
 class BBLiveStreamListItemView extends StatelessWidget {
-  final LiveStreamRoom item;
+  final Room item;
 
   const BBLiveStreamListItemView({this.item});
 
@@ -22,8 +23,8 @@ class BBLiveStreamListItemView extends StatelessWidget {
           child: BBThumbnailView(
             url: item.cover,
             borderRadius: BorderRadius.circular(5.0),
-            topLeftIconAndDescriptions: _pendentAtLoc(item.pendentList, 2),
-            topRightIconAndDescriptions: _pendentAtLoc(item.pendentList, 1),
+            topLeftIconAndDescriptions: _pendentAtLoc(item.pendentList?.toList(), 2),
+            topRightIconAndDescriptions: _pendentAtLoc(item.pendentList?.toList(), 1),
             bottomLeftIconAndDescriptions: [
               Tuple2(null, item.uname),
             ],
@@ -55,8 +56,8 @@ class BBLiveStreamListItemView extends StatelessWidget {
   }
 
   List<Tuple2<dynamic, String>> _pendentAtLoc(
-      List<LiveStreamPendent> pendents, int position) {
-    LiveStreamPendent pendent = pendents?.isNotEmpty ?? false
+      List<LivePendent> pendents, int position) {
+    LivePendent pendent = pendents?.isNotEmpty ?? false
         ? pendents.firstWhere((e) => e.pic != null && e.position == position,
             orElse: () => null)
         : null;

@@ -1,7 +1,10 @@
-import 'package:bilibili/app/api/bb_api.dart';
-import 'package:bilibili/app/compenents/bb_network_image.dart';
-import 'package:bilibili/app/utils/bb_common.dart';
 import 'package:flutter/material.dart';
+
+import '../utils/bb_common.dart';
+import '../api/bb_api.dart';
+import '../compenents/bb_network_image.dart';
+import '../models/bb_http_body.dart';
+import '../models/bb_partation.dart';
 
 class BBPartationListView extends StatefulWidget {
   @override

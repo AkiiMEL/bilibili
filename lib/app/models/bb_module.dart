@@ -6,10 +6,16 @@ import 'package:built_value/serializer.dart';
 
 import 'bb_attr.dart';
 import 'bb_bangumi_list_item.dart';
-import 'bb_bangumi_report.dart';
 import 'bb_module_follow.dart';
 import 'bb_region.dart';
+import 'bb_report.dart';
 import 'bb_serializers.dart';
+
+export 'bb_attr.dart';
+export 'bb_bangumi_list_item.dart';
+export 'bb_module_follow.dart';
+export 'bb_region.dart';
+export 'bb_report.dart';
 
 part 'bb_module.g.dart';
 

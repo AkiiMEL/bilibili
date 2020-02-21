@@ -42,6 +42,30 @@ class _$AdTagStyleSerializer implements StructuredSerializer<AdTagStyle> {
         ..add(serializers.serialize(object.borderColor,
             specifiedType: const FullType(String)));
     }
+    if (object.darkModeTextColor != null) {
+      result
+        ..add('darkModeTextColor')
+        ..add(serializers.serialize(object.darkModeTextColor,
+            specifiedType: const FullType(String)));
+    }
+    if (object.backgroundColor != null) {
+      result
+        ..add('backgroundColor')
+        ..add(serializers.serialize(object.backgroundColor,
+            specifiedType: const FullType(String)));
+    }
+    if (object.darkModeBackgroundColor != null) {
+      result
+        ..add('darkModeBackgroundColor')
+        ..add(serializers.serialize(object.darkModeBackgroundColor,
+            specifiedType: const FullType(String)));
+    }
+    if (object.darkModeBorderColor != null) {
+      result
+        ..add('darkModeBorderColor')
+        ..add(serializers.serialize(object.darkModeBorderColor,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -72,6 +96,22 @@ class _$AdTagStyleSerializer implements StructuredSerializer<AdTagStyle> {
           result.borderColor = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'darkModeTextColor':
+          result.darkModeTextColor = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'backgroundColor':
+          result.backgroundColor = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'darkModeBackgroundColor':
+          result.darkModeBackgroundColor = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'darkModeBorderColor':
+          result.darkModeBorderColor = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
       }
     }
 
@@ -88,11 +128,27 @@ class _$AdTagStyle extends AdTagStyle {
   final String textColor;
   @override
   final String borderColor;
+  @override
+  final String darkModeTextColor;
+  @override
+  final String backgroundColor;
+  @override
+  final String darkModeBackgroundColor;
+  @override
+  final String darkModeBorderColor;
 
   factory _$AdTagStyle([void Function(AdTagStyleBuilder) updates]) =>
       (new AdTagStyleBuilder()..update(updates)).build();
 
-  _$AdTagStyle._({this.type, this.text, this.textColor, this.borderColor})
+  _$AdTagStyle._(
+      {this.type,
+      this.text,
+      this.textColor,
+      this.borderColor,
+      this.darkModeTextColor,
+      this.backgroundColor,
+      this.darkModeBackgroundColor,
+      this.darkModeBorderColor})
       : super._();
 
   @override
@@ -109,14 +165,27 @@ class _$AdTagStyle extends AdTagStyle {
         type == other.type &&
         text == other.text &&
         textColor == other.textColor &&
-        borderColor == other.borderColor;
+        borderColor == other.borderColor &&
+        darkModeTextColor == other.darkModeTextColor &&
+        backgroundColor == other.backgroundColor &&
+        darkModeBackgroundColor == other.darkModeBackgroundColor &&
+        darkModeBorderColor == other.darkModeBorderColor;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, type.hashCode), text.hashCode), textColor.hashCode),
-        borderColor.hashCode));
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, type.hashCode), text.hashCode),
+                            textColor.hashCode),
+                        borderColor.hashCode),
+                    darkModeTextColor.hashCode),
+                backgroundColor.hashCode),
+            darkModeBackgroundColor.hashCode),
+        darkModeBorderColor.hashCode));
   }
 
   @override
@@ -125,7 +194,11 @@ class _$AdTagStyle extends AdTagStyle {
           ..add('type', type)
           ..add('text', text)
           ..add('textColor', textColor)
-          ..add('borderColor', borderColor))
+          ..add('borderColor', borderColor)
+          ..add('darkModeTextColor', darkModeTextColor)
+          ..add('backgroundColor', backgroundColor)
+          ..add('darkModeBackgroundColor', darkModeBackgroundColor)
+          ..add('darkModeBorderColor', darkModeBorderColor))
         .toString();
   }
 }
@@ -149,6 +222,26 @@ class AdTagStyleBuilder implements Builder<AdTagStyle, AdTagStyleBuilder> {
   String get borderColor => _$this._borderColor;
   set borderColor(String borderColor) => _$this._borderColor = borderColor;
 
+  String _darkModeTextColor;
+  String get darkModeTextColor => _$this._darkModeTextColor;
+  set darkModeTextColor(String darkModeTextColor) =>
+      _$this._darkModeTextColor = darkModeTextColor;
+
+  String _backgroundColor;
+  String get backgroundColor => _$this._backgroundColor;
+  set backgroundColor(String backgroundColor) =>
+      _$this._backgroundColor = backgroundColor;
+
+  String _darkModeBackgroundColor;
+  String get darkModeBackgroundColor => _$this._darkModeBackgroundColor;
+  set darkModeBackgroundColor(String darkModeBackgroundColor) =>
+      _$this._darkModeBackgroundColor = darkModeBackgroundColor;
+
+  String _darkModeBorderColor;
+  String get darkModeBorderColor => _$this._darkModeBorderColor;
+  set darkModeBorderColor(String darkModeBorderColor) =>
+      _$this._darkModeBorderColor = darkModeBorderColor;
+
   AdTagStyleBuilder();
 
   AdTagStyleBuilder get _$this {
@@ -157,6 +250,10 @@ class AdTagStyleBuilder implements Builder<AdTagStyle, AdTagStyleBuilder> {
       _text = _$v.text;
       _textColor = _$v.textColor;
       _borderColor = _$v.borderColor;
+      _darkModeTextColor = _$v.darkModeTextColor;
+      _backgroundColor = _$v.backgroundColor;
+      _darkModeBackgroundColor = _$v.darkModeBackgroundColor;
+      _darkModeBorderColor = _$v.darkModeBorderColor;
       _$v = null;
     }
     return this;
@@ -182,7 +279,11 @@ class AdTagStyleBuilder implements Builder<AdTagStyle, AdTagStyleBuilder> {
             type: type,
             text: text,
             textColor: textColor,
-            borderColor: borderColor);
+            borderColor: borderColor,
+            darkModeTextColor: darkModeTextColor,
+            backgroundColor: backgroundColor,
+            darkModeBackgroundColor: darkModeBackgroundColor,
+            darkModeBorderColor: darkModeBorderColor);
     replace(_$result);
     return _$result;
   }

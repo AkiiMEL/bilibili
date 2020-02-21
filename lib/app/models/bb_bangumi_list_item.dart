@@ -5,13 +5,21 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 import 'bb_bangumi_follow.dart';
-import 'bb_bangumi_report.dart';
 import 'bb_bangumi_stat.dart';
 import 'bb_bangumi_status.dart';
+import 'bb_report.dart';
 import 'bb_episode.dart';
 import 'bb_serializers.dart';
 import 'bb_source_content.dart';
 import 'bb_watch_progress.dart';
+
+export 'bb_bangumi_follow.dart';
+export 'bb_bangumi_stat.dart';
+export 'bb_bangumi_status.dart';
+export 'bb_report.dart';
+export 'bb_episode.dart';
+export 'bb_source_content.dart';
+export 'bb_watch_progress.dart';
 
 part 'bb_bangumi_list_item.g.dart';
 

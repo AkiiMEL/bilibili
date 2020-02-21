@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/models/bb_featured_models.dart';
-import 'package:bilibili/app/utils/bb_common.dart';
-import 'package:bilibili/app/compenents/bb_network_image.dart';
+import '../models/bb_media.dart';
+import '../utils/bb_common.dart';
+import '../compenents/bb_network_image.dart';
 
 class BBFeaturedListItemMultipleColumView extends StatelessWidget {
   final Media media;
@@ -64,7 +64,7 @@ class BBFeaturedListItemMultipleColumView extends StatelessWidget {
 
   // Media tag.
   Widget _getTagView(
-      BuildContext context, TextAttributesDefinitions textAttributes) {
+      BuildContext context, TextAttributesDifinations textAttributes) {
     return textAttributes == null ||
             textAttributes.text == null ||
             textAttributes.text.isEmpty

@@ -5,11 +5,11 @@ import 'package:built_value/serializer.dart';
 
 import 'bb_serializers.dart';
 
-part 'bb_bangumi_report.g.dart';
+part 'bb_report.g.dart';
 
 abstract class Report implements Built<Report, ReportBuilder> {
   // Fields
-    @nullable
+  @nullable
   @BuiltValueField(wireName: "card_type")
   String get cardType;
   @nullable

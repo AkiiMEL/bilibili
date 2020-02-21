@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/utils/bb_common.dart';
-import 'package:bilibili/app/models/bb_featured_models.dart';
+import '../utils/bb_common.dart';
+import '../models/bb_text_attributes_definations.dart';
 
-export 'package:bilibili/app/models/bb_featured_models.dart';
+export '../models/bb_text_attributes.dart';
 
 class BBMediaTagView extends StatelessWidget {
-  final TextAttributesDefinitions textAttributes;
+  final TextAttributesDifinations textAttributes;
 
   BBMediaTagView({this.textAttributes});
 

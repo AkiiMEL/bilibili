@@ -7,6 +7,10 @@ import 'bb_serializers.dart';
 import 'bb_advertisement_creative_content.dart';
 import 'bb_extra.dart';
 
+export 'bb_serializers.dart';
+export 'bb_advertisement_creative_content.dart';
+export 'bb_extra.dart';
+
 part 'bb_advertisement.g.dart';
 
 abstract class Advertisement

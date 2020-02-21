@@ -1,11 +1,10 @@
-import 'package:bilibili/app/models/bb_tab_models.dart';
-
+import '../models/bb_tab_bar_display.dart';
 import '../routers/bb_route_mgr.dart';
 
 BBAppMgr _appMgr;
 
 class BBAppMgr extends Object {
-  BBTabBody tabLayout;
+  TabBarDisplay tabLayout;
 
   factory BBAppMgr() => _getInstance();
   static BBAppMgr get shared => _getInstance();

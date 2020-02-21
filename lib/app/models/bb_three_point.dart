@@ -7,14 +7,19 @@ import 'package:built_value/serializer.dart';
 import 'bb_reason.dart';
 import 'bb_serializers.dart';
 
+export 'bb_reason.dart';
+
 part 'bb_three_point.g.dart';
 
 abstract class ThreePoint implements Built<ThreePoint, ThreePointBuilder> {
   // Fields
+  @nullable
   @BuiltValueField(wireName: "dislike_reasons")
   BuiltList<Reason> get dislikeReasons;
+  @nullable
   @BuiltValueField(wireName: "feedbacks")
   BuiltList<Reason> get feedbacks;
+  @nullable
   @BuiltValueField(wireName: "watch_later")
   int get watchLater;
 

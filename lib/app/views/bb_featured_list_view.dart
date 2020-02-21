@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:bilibili/app/utils/bb_args.dart';
-import 'package:bilibili/app/api/bb_api.dart';
-import 'package:bilibili/app/models/bb_featured_models.dart';
+import '../utils/bb_args.dart';
+import '../api/bb_api.dart';
+import '../models/bb_http_body.dart';
+import '../models/bb_featured_body.dart';
 
 import 'bb_featured_list_item_multiple_colum_view.dart';
 
@@ -71,12 +72,12 @@ class _BBFeaturedListViewState extends State<BBFeaturedListView>
   }
 
   void _onRefresh() async {
-    FeaturedHttpBody body = await BBApi.requestAllFeatured();
+    HttpBody<FeaturedBody> body = await BBApi.requestAllFeatured();
 
     _refreshController.refreshCompleted();
 
     setState(() {
-      _bangumis = body.data?.items ?? [];
+      _bangumis = body?.data?.items?.toList() ?? [];
     });
   }
 }

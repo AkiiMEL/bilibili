@@ -1,13 +1,13 @@
-import 'package:bilibili/app/compenents/bb_navigation_view.dart';
-import 'package:bilibili/app/utils/bb_app_mgr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluro/fluro.dart';
 
-import 'package:bilibili/app/compenents/bb_network_image.dart';
-import 'package:bilibili/app/api/bb_api.dart';
-import 'package:bilibili/app/models/bb_tab_models.dart';
-import 'package:bilibili/app/routers/bb_route_mgr.dart';
+import '../compenents/bb_network_image.dart';
+import '../api/bb_api.dart';
+import '../routers/bb_route_mgr.dart';
+import '../compenents/bb_navigation_view.dart';
+import '../models/bb_tab_bar_http_body.dart';
+import '../utils/bb_app_mgr.dart';
 
 class BBInitialView extends StatefulWidget {
   @override
@@ -17,7 +17,6 @@ class BBInitialView extends StatefulWidget {
 class _BBInitialViewState extends State<BBInitialView> {
   int _currentIndex;
   Widget _view;
-  BBTabBody _tabBody;
 
   @override
   void initState() {
@@ -35,10 +34,10 @@ class _BBInitialViewState extends State<BBInitialView> {
   // Load tab configuration from network.
   void _load() async {
     try {
-      _tabBody = await BBApi.requestTabConfiguration();
-      BBAppMgr.shared.tabLayout = _tabBody;
-      List<BBTabBarItem> tabBarItems = _tabBody?.bottom ?? [];
-      BBTabBarItem selectedItem =
+      TabBarHttpBody body = await BBApi.requestTabConfig();
+      BBAppMgr.shared.tabLayout = body?.data;
+      List<TabBarItem> tabBarItems = body?.data?.bottom?.toList() ?? [];
+      TabBarItem selectedItem =
           tabBarItems.firstWhere((e) => e.selected == 1, orElse: () => null);
       _currentIndex = selectedItem?.pos != null ? selectedItem.pos - 1 : 0;
       _view = _getTabBarView(tabBarItems);
@@ -61,7 +60,7 @@ class _BBInitialViewState extends State<BBInitialView> {
     );
   }
 
-  Widget _getTabBarView(List<BBTabBarItem> tabBarItems) {
+  Widget _getTabBarView(List<TabBarItem> tabBarItems) {
     // Default `CupertinoTabScaffold with CupertinoTabBar` requires tab items >= 2,
     // but we request tab by send a http request and maybe response with only one
     // item, so we need a new `BBCupertinoTabScaffold` and `BBCupertinoTabBar`.

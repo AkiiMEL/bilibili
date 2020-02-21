@@ -9,6 +9,10 @@ import 'bb_module.dart';
 import 'bb_region.dart';
 import 'bb_serializers.dart';
 
+export 'bb_bangumi_body_popular.dart';
+export 'bb_module.dart';
+export 'bb_region.dart';
+
 part 'bb_bangumi_body.g.dart';
 
 abstract class BangumiBody implements Built<BangumiBody, BangumiBodyBuilder> {

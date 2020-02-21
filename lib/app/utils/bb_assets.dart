@@ -1,4 +1,4 @@
-import 'package:bilibili/app/api/bb_api.dart';
+import 'dart:ui';
 
 class Images {
   static const String _path = "assets/images/";

@@ -1,7 +1,8 @@
-import 'package:bilibili/app/models/bb_tab_models.dart';
-import 'package:bilibili/app/routers/bb_route_mgr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../models/bb_tab_bar_item.dart';
+import '../routers/bb_route_mgr.dart';
 
 class BBChannelContainerView extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class BBChannelContainerView extends StatefulWidget {
 
 class _BBChannelContainerViewState extends State<BBChannelContainerView>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
-  List<BBTabBarItem> _tabBarItems;
+  List<TabBarItem> _tabBarItems;
   TabController _tabCtr;
 
   @override
@@ -20,8 +21,8 @@ class _BBChannelContainerViewState extends State<BBChannelContainerView>
   void initState() {
     super.initState();
     _tabBarItems = [
-      BBTabBarItem(name: "频道", uri: BBRouteMgr.channels),
-      BBTabBarItem(name: "分区", uri: BBRouteMgr.partations),
+      TabBarItem((b) => b..name = "频道"..uri = BBRouteMgr.channels),
+      TabBarItem((b) => b..name = "分区"..uri = BBRouteMgr.partations)
     ];
     _tabCtr = TabController(length: _tabBarItems.length, vsync: this);
   }

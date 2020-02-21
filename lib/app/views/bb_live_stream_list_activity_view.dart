@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-import '../models/bb_live_stream_models.dart';
 import '../utils/bb_common.dart';
 import '../compenents/bb_network_image.dart';
+import '../models/bb_live_group.dart';
+import '../models/bb_live_activity.dart';
 
 class BBLiveStreamListActivityView extends StatelessWidget {
-  final LiveStreamSection<LiveStreamActivity> activities;
+  final LiveGroup<LiveActivity> activities;
 
   BBLiveStreamListActivityView({this.activities});
 

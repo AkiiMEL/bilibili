@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-import 'package:bilibili/app/utils/bb_common.dart';
-import 'package:bilibili/app/models/bb_channel_models.dart';
-import 'package:bilibili/app/compenents/bb_network_circle_avatar_image.dart';
+import '../models/bb_channel.dart';
+import '../utils/bb_common.dart';
+import '../compenents/bb_network_circle_avatar_image.dart';
 
 class BBChannelListSliverDynamics extends StatelessWidget {
   final List<Channel> channels;

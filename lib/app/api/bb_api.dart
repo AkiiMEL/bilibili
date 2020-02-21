@@ -1,48 +1,47 @@
-import 'dart:convert';
-
+import 'package:flutter/services.dart';
 import 'package:dio/dio.dart';
 
-import 'package:bilibili/app/models/bb_http_body.dart';
-import 'package:bilibili/app/models/bb_mine.dart';
-import 'package:bilibili/app/models/bb_partation.dart';
-import 'package:flutter/services.dart';
-import 'package:bilibili/app/models/bb_channel_models.dart';
-import 'package:bilibili/app/models/bb_featured_models.dart';
-import 'package:bilibili/app/models/bb_tab_models.dart';
-import 'package:bilibili/app/models/bb_live_stream_models.dart';
+import '../models/bb_http_body.dart';
+import '../models/bb_mine.dart';
+import '../models/bb_partation.dart';
+import '../models/bb_tab_bar_http_body.dart';
+import '../models/bb_bangumi_body.dart';
+import '../models/bb_featured_body.dart';
+import '../models/bb_live_list_body.dart';
+import '../models/bb_channel_module.dart';
 
-export 'package:bilibili/app/models/bb_http_body.dart';
-export 'package:bilibili/app/models/bb_mine.dart';
-export 'package:bilibili/app/models/bb_partation.dart';
-export 'package:flutter/services.dart';
-export 'package:bilibili/app/models/bb_channel_models.dart';
-export 'package:bilibili/app/models/bb_featured_models.dart';
-export 'package:bilibili/app/models/bb_tab_models.dart';
-export 'package:bilibili/app/models/bb_live_stream_models.dart';
+export '../models/bb_http_body.dart';
+export '../models/bb_mine.dart';
+export '../models/bb_partation.dart';
+export '../models/bb_tab_bar_http_body.dart';
+export '../models/bb_bangumi_body.dart';
+export '../models/bb_featured_body.dart';
+export '../models/bb_live_list_body.dart';
+export '../models/bb_channel_module.dart';
 
 class BBApi {
-  static Future<BBTabBody> requestTabConfiguration() {
+  static Future<TabBarHttpBody> requestTabConfig() {
     return rootBundle
         .loadString("assets/files/bb_tab_display.json")
-        .then((value) => BBTabHttpBody.fromJson(json.decode(value))?.data);
+        .then((value) => TabBarHttpBody.fromJson(value));
   }
 
-  static Future<LiveStreamHttpBody> requestAllLive() {
+  static Future<HttpBody<LiveListBody>> requestAllLive() {
     return rootBundle
         .loadString("assets/files/bb_live_stream_list.json")
-        .then((value) => LiveStreamHttpBody.fromJson(json.decode(value)));
+        .then((value) => HttpBody.fromJson(value));
   }
 
-  static Future<FeaturedHttpBody> requestAllFeatured() {
+  static Future<HttpBody<FeaturedBody>> requestAllFeatured() {
     return rootBundle
         .loadString("assets/files/bb_featured_list.json")
-        .then((value) => FeaturedHttpBody.fromJson(json.decode(value)));
+        .then((value) => HttpBody.fromJson(value));
   }
 
-  static Future<ChannelHomeHttpBody> requestChannelHomeData() {
+  static Future<HttpListBody<ChannelModule>> requestChannelHomeData() {
     return rootBundle
         .loadString("assets/files/bb_channel_list.json")
-        .then((value) => ChannelHomeHttpBody.fromJson(json.decode(value)));
+        .then((value) => HttpListBody.fromJson(value));
   }
 
   static Future<HttpListBody<Partation>> requestAllPartion() {
@@ -54,6 +53,12 @@ class BBApi {
   static Future<HttpBody<Mine>> requestMine() {
     return rootBundle
         .loadString("assets/files/bb_mine.json")
+        .then((value) => HttpBody.fromJson(value));
+  }
+
+  static Future<HttpBody<BangumiBody>> requestAllBangumi() {
+    return rootBundle
+        .loadString("assets/files/bb_bangumi_list.json")
         .then((value) => HttpBody.fromJson(value));
   }
 }

@@ -2,9 +2,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:tuple/tuple.dart';
 
-import 'package:bilibili/app/compenents/bb_media_thumbnail_view.dart';
-import 'package:bilibili/app/models/bb_channel_models.dart';
-import 'package:bilibili/app/utils/bb_args.dart';
+import '../compenents/bb_media_thumbnail_view.dart';
+import '../utils/bb_args.dart';
+import '../models/bb_channel.dart';
 
 class BBChannelListSection extends StatelessWidget {
   final Channel channel;
@@ -68,7 +68,7 @@ class BBChannelListSection extends StatelessWidget {
               childAspectRatio: 16 / 14,
             ),
             itemBuilder: (BuildContext context, int index) {
-              MediaCard media = channel.items[index];
+              Media media = channel.items[index];
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -77,14 +77,14 @@ class BBChannelListSection extends StatelessWidget {
                     child: BBThumbnailView(
                       url: media.cover,
                       topLeftIconAndDescriptions: [
-                        Tuple2(media.badge?.iconBgUrl, media.badge?.text),
+                        Tuple2(media.badge?.imageUrl, media.badge?.text),
                       ],
                       bottomLeftIconAndDescriptions: [
                         Tuple2(media.coverLeftIcon1, media.coverLeftText1),
                         Tuple2(media.coverLeftIcon2, media.coverLeftText2),
                       ],
                       bottomRightIconAndDescriptions: [
-                        Tuple2(null, media.coverRightText1),
+                        Tuple2(null, media.coverLeftText3),
                       ],
                       borderRadius: BorderRadius.circular(5.0),
                     ),

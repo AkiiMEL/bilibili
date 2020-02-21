@@ -7,6 +7,8 @@ import 'package:built_value/serializer.dart';
 import 'bb_serializers.dart';
 import 'bb_service.dart';
 
+export 'bb_service.dart';
+
 part 'bb_classified_services.g.dart';
 
 abstract class ClassifiedServices implements Built<ClassifiedServices, ClassifiedServicesBuilder> {

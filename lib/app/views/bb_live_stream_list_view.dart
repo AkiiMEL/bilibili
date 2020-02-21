@@ -1,4 +1,3 @@
-import 'package:bilibili/app/routers/bb_route_mgr.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -7,7 +6,14 @@ import '../compenents/bb_network_image.dart';
 import '../compenents/bb_ad_view.dart';
 import '../utils/bb_common.dart';
 import '../api/bb_api.dart';
-import '../models/bb_live_stream_models.dart';
+import '../models/bb_http_body.dart';
+import '../models/bb_live_list_body.dart';
+import '../models/bb_live_group.dart';
+import '../models/bb_live_ad.dart';
+import '../models/bb_live_area_entrance.dart';
+import '../models/bb_live_activity.dart';
+import '../models/bb_live_rank.dart';
+import '../models/bb_room.dart';
 
 import 'bb_live_stream_list_item_view.dart';
 import 'bb_live_stream_list_rank_view.dart';
@@ -19,7 +25,7 @@ class BBLiveStreamListView extends StatefulWidget {
 }
 
 class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
-  List<LiveStreamSection> _sections;
+  List<LiveGroup> _sections;
   RefreshController _refreshController;
 
   @override
@@ -48,7 +54,7 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
   List<Widget> _buildSlivers() {
     List<Widget> slivers = _sections
         .map((section) {
-          if (section is LiveStreamSection<LiveStreamAd>) {
+          if (section is LiveGroup<LiveAd>) {
             return [
               _box(BBAdView(
                 aspectRatio: 375.0 / 100.0,
@@ -59,18 +65,18 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
                     placeholder: Images.placeholder,
                   );
                 },
-                advertise: section.list,
+                advertise: section.list?.toList(),
               ))
             ];
-          } else if (section is LiveStreamSection<LiveStreamAreaEntrance>) {
-            List<LiveStreamAreaEntrance> items = section.list;
+          } else if (section is LiveGroup<LiveAreaEntrance>) {
+            List<LiveAreaEntrance> items = section.list?.toList();
             return [
               sliverGrid(
                   items: items,
                   max: 5,
                   lineSpacing: defaultMargin.bottom * 2,
                   itemBuilder:
-                      (BuildContext context, LiveStreamAreaEntrance entrance) {
+                      (BuildContext context, LiveAreaEntrance entrance) {
                     return Column(
                       children: <Widget>[
                         Expanded(
@@ -92,18 +98,18 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
                     );
                   })
             ];
-          } else if (section is LiveStreamSection<LiveStreamActivity>) {
+          } else if (section is LiveGroup<LiveActivity>) {
             return [_box(BBLiveStreamListActivityView(activities: section))];
-          } else if (section is LiveStreamSection<LiveStreamIdol>) {
+          } else if (section is LiveGroup<int>) {
             return [_box(SizedBox.shrink())];
-          } else if (section is LiveStreamSection<LiveStreamRank>) {
+          } else if (section is LiveGroup<LiveRank>) {
             return [
               _box(_header(section)),
               _box(BBLiveStreamRankView(section: section)),
               SliverToBoxAdapter(child: Divider())
             ];
           } else {
-            List<LiveStreamRoom> items = section.list;
+            List<Room> items = section.list?.toList();
             List<Widget> views;
             views = [
               _box(_header(section)),
@@ -111,7 +117,7 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
                 items: items,
                 max: 2,
                 aspectRatio: 1.2,
-                itemBuilder: (BuildContext context, LiveStreamRoom liveRoom) {
+                itemBuilder: (BuildContext context, Room liveRoom) {
                   return BBNavigationLink(
                     destination: BBRouteMgr.video + "${12345567}",
                     child: BBLiveStreamListItemView(item: liveRoom),
@@ -119,14 +125,14 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
                 },
               ),
             ];
-            if (section.moduleInfo?.id == 3) {
+            if (section.module?.id == 3) {
               views.add(_box(Padding(
                 padding: EdgeInsets.symmetric(vertical: defaultMargin.bottom),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "更多${section.moduleInfo.count}个${section.moduleInfo.title}",
+                      "更多${section.module.count}个${section.module.title}",
                       style: TextStyle(color: Colors.pink, fontSize: 14.0),
                     ),
                     Icon(Icons.arrow_forward_ios,
@@ -177,7 +183,7 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
     );
   }
 
-  Widget _header(LiveStreamSection section) {
+  Widget _header(LiveGroup section) {
     return ConstrainedBox(
       constraints: BoxConstraints(
         minHeight: 28.0,
@@ -187,9 +193,9 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Text(section.moduleInfo?.title ?? ""),
+              Text(section.module?.title ?? ""),
               SizedBox(width: defaultMargin.left / 2),
-              Text(section.extraInfo?.subtitle ?? ""),
+              Text(section.extra?.subtitle ?? ""),
             ],
           ),
           BBNavigationLink(
@@ -197,11 +203,11 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
             child: Row(
               children: <Widget>[
                 Text(
-                  section?.moduleInfo?.id == 3 ? "换一换" : "查看更多",
+                  section?.module?.id == 3 ? "换一换" : "查看更多",
                 ),
                 SizedBox(width: defaultMargin.left / 2),
                 Image.asset(
-                  section?.moduleInfo?.id == 3
+                  section?.module?.id == 3
                       ? Images.rightArrow
                       : Images.rightArrow,
                 ),
@@ -214,8 +220,8 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
   }
 
   void _onRefresh() async {
-    LiveStreamHttpBody body = await BBApi.requestAllLive();
-    List<LiveStreamSection> copy = [];
+    HttpBody<LiveListBody> body = await BBApi.requestAllLive();
+    List<LiveGroup> copy = [];
 
     copy.addAll(body?.data?.banner ?? []);
     copy.addAll(body?.data?.areaEntranceV2 ?? []);
@@ -225,7 +231,7 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
     copy.addAll(body?.data?.hourRank ?? []);
 
     copy = copy.where((e) => e.list?.isNotEmpty ?? false).toList();
-    copy.sort((lhs, rhs) => lhs.moduleInfo.sort.compareTo(rhs.moduleInfo.sort));
+    copy.sort((lhs, rhs) => lhs.module.sort.compareTo(rhs.module.sort));
 
     _refreshController.refreshCompleted();
     setState(() {

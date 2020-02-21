@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/api/bb_api.dart';
-import 'package:bilibili/app/utils/bb_common.dart';
-import 'package:bilibili/app/compenents/bb_network_image.dart';
-import 'package:bilibili/app/models/bb_classified_services.dart';
-import 'package:bilibili/app/models/bb_service.dart';
-import 'package:bilibili/app/views/bb_mine_header_view.dart';
+import '../api/bb_api.dart';
+import '../utils/bb_common.dart';
+import '../compenents/bb_network_image.dart';
+import '../views/bb_mine_header_view.dart';
+import '../models/bb_http_body.dart';
+import '../models/bb_classified_services.dart';
+import '../models/bb_mine.dart';
+import '../models/bb_service.dart';
 
 class BBMineView extends StatefulWidget {
   @override

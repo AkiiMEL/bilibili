@@ -10,6 +10,11 @@ import 'bb_serializers.dart';
 import 'bb_vip.dart';
 import 'bb_pendent.dart';
 
+export 'bb_classified_services.dart';
+export 'bb_official_verify.dart';
+export 'bb_vip.dart';
+export 'bb_pendent.dart';
+
 part 'bb_mine.g.dart';
 
 abstract class Mine implements Built<Mine, MineBuilder> {

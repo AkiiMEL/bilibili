@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bb_bangumi_report.dart';
+part of 'bb_report.dart';
 
 // **************************************************************************
 // BuiltValueGenerator

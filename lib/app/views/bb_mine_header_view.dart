@@ -133,18 +133,16 @@ class BBMineHeaderView extends StatelessWidget {
   Widget _vipLabel(BuildContext context) {
     TextAttributes textAttributes;
     if (mine?.vip?.type == 1) {
-      textAttributes = TextAttributes(
-        text: "正式会员",
-        textColor: "#F6749A",
-        darkModeTextColor: "F6749A",
-        darkModeBorderColor: "#FFFFFF",
-      );
+      textAttributes = TextAttributes((b) => b
+        ..text = "正式会员"
+        ..textColor = "#F6749A"
+        ..darkModeTextColor = "F6749A"
+        ..darkModeBorderColor = "#FFFFFF");
     } else if (mine?.vip?.type == 2) {
-      textAttributes = TextAttributes(
-        text: "年度大会员",
-        textColor: "#FFFFFF",
-        backgroundColor: "#F6749A",
-      );
+      textAttributes = TextAttributes((b) => b
+        ..text = "年度大会员"
+        ..textColor = "#FFFFFF"
+        ..backgroundColor = "#F6749A");
     }
     return Padding(
       padding: EdgeInsets.symmetric(vertical: defaultMargin.bottom / 2),

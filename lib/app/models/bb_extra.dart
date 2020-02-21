@@ -9,6 +9,10 @@ import 'bb_share_info.dart';
 import 'bb_whitelist.dart';
 import 'bb_card.dart';
 
+export 'bb_share_info.dart';
+export 'bb_whitelist.dart';
+export 'bb_card.dart';
+
 part 'bb_extra.g.dart';
 
 abstract class Extra implements Built<Extra, ExtraBuilder> {

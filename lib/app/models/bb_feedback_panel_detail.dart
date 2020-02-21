@@ -6,6 +6,8 @@ import 'package:built_value/serializer.dart';
 import 'bb_secondary_panel.dart';
 import 'bb_serializers.dart';
 
+export 'bb_secondary_panel.dart';
+
 part 'bb_feedback_panel_detail.g.dart';
 
 abstract class FeedbackPanelDetail implements Built<FeedbackPanelDetail, FeedbackPanelDetailBuilder> {

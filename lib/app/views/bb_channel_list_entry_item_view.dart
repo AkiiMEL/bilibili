@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/utils/bb_common.dart';
-import 'package:bilibili/app/compenents/bb_network_image.dart';
-import 'package:bilibili/app/models/bb_channel_models.dart';
+import '../utils/bb_common.dart';
+import '../compenents/bb_network_image.dart';
+import '../models/bb_channel.dart';
 
 class BBChannelListEntryItemView extends StatelessWidget {
   final Channel channel;

@@ -4,10 +4,14 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_collection/built_collection.dart';
 
-import 'bb_serializers.dart';
-import 'bb_cover.dart';
 import 'bb_ad_tag_style.dart';
+import 'bb_cover.dart';
 import 'bb_feedback_panel.dart';
+import 'bb_serializers.dart';
+
+export 'bb_ad_tag_style.dart';
+export 'bb_cover.dart';
+export 'bb_feedback_panel.dart';
 
 part 'bb_card.g.dart';
 

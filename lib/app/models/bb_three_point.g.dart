@@ -19,20 +19,27 @@ class _$ThreePointSerializer implements StructuredSerializer<ThreePoint> {
   @override
   Iterable<Object> serialize(Serializers serializers, ThreePoint object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
-      'dislike_reasons',
-      serializers.serialize(object.dislikeReasons,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Reason)])),
-      'feedbacks',
-      serializers.serialize(object.feedbacks,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Reason)])),
-      'watch_later',
-      serializers.serialize(object.watchLater,
-          specifiedType: const FullType(int)),
-    ];
-
+    final result = <Object>[];
+    if (object.dislikeReasons != null) {
+      result
+        ..add('dislike_reasons')
+        ..add(serializers.serialize(object.dislikeReasons,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(Reason)])));
+    }
+    if (object.feedbacks != null) {
+      result
+        ..add('feedbacks')
+        ..add(serializers.serialize(object.feedbacks,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(Reason)])));
+    }
+    if (object.watchLater != null) {
+      result
+        ..add('watch_later')
+        ..add(serializers.serialize(object.watchLater,
+            specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -166,17 +173,7 @@ class _$ThreePoint extends ThreePoint {
       (new ThreePointBuilder()..update(updates)).build();
 
   _$ThreePoint._({this.dislikeReasons, this.feedbacks, this.watchLater})
-      : super._() {
-    if (dislikeReasons == null) {
-      throw new BuiltValueNullFieldError('ThreePoint', 'dislikeReasons');
-    }
-    if (feedbacks == null) {
-      throw new BuiltValueNullFieldError('ThreePoint', 'feedbacks');
-    }
-    if (watchLater == null) {
-      throw new BuiltValueNullFieldError('ThreePoint', 'watchLater');
-    }
-  }
+      : super._();
 
   @override
   ThreePoint rebuild(void Function(ThreePointBuilder) updates) =>
@@ -259,16 +256,16 @@ class ThreePointBuilder implements Builder<ThreePoint, ThreePointBuilder> {
     try {
       _$result = _$v ??
           new _$ThreePoint._(
-              dislikeReasons: dislikeReasons.build(),
-              feedbacks: feedbacks.build(),
+              dislikeReasons: _dislikeReasons?.build(),
+              feedbacks: _feedbacks?.build(),
               watchLater: watchLater);
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'dislikeReasons';
-        dislikeReasons.build();
+        _dislikeReasons?.build();
         _$failedField = 'feedbacks';
-        feedbacks.build();
+        _feedbacks?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'ThreePoint', _$failedField, e.toString());

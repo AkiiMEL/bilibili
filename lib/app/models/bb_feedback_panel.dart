@@ -7,6 +7,8 @@ import 'package:built_value/serializer.dart';
 import 'bb_serializers.dart';
 import 'bb_feedback_panel_detail.dart';
 
+export 'bb_feedback_panel_detail.dart';
+
 part 'bb_feedback_panel.g.dart';
 
 abstract class FeedbackPanel

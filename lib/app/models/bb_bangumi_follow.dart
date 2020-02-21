@@ -7,6 +7,9 @@ import 'bb_button_description.dart';
 import 'bb_new_ep.dart';
 import 'bb_serializers.dart';
 
+export 'bb_button_description.dart';
+export 'bb_new_ep.dart';
+
 part 'bb_bangumi_follow.g.dart';
 
 abstract class BangumiFollow

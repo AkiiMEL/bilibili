@@ -1,11 +1,11 @@
-import 'package:bilibili/app/utils/bb_app_mgr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
+import '../utils/bb_app_mgr.dart';
 import '../compenents/bb_network_circle_avatar_image.dart';
-import '../models/bb_tab_models.dart';
 import '../utils/bb_common.dart';
+import '../models/bb_tab_bar_item.dart';
 
 class BBHomeView extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class BBHomeView extends StatefulWidget {
 
 class _BBHomeViewState extends State<BBHomeView>
     with SingleTickerProviderStateMixin {
-  List<BBTabBarItem> _tabBarItems;
+  List<TabBarItem> _tabBarItems;
   TabController _tabCtr;
 
   @override
@@ -82,8 +82,8 @@ class _BBHomeViewState extends State<BBHomeView>
           },
           body: TabBarView(
             children: _tabBarItems.map((e) {
-              Handler handler = Router.appRouter.match(e.uri)?.route?.handler;
-              return handler?.handlerFunc(context, null) ?? Container();
+              Handler handler = Router.appRouter.match(e.uri)?.route?.handler ?? Router.appRouter.notFoundHandler;
+              return handler.handlerFunc(context, null);
             }).toList(),
             controller: _tabCtr,
           ),
