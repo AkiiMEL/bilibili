@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/utils/bb_common.dart';
+import 'bb_related_media_list_view.dart';
 
 class BBMediaView extends StatefulWidget {
   @override
@@ -24,6 +25,7 @@ class _BBMediaViewState extends State<BBMediaView>
       backgroundColor: Colors.black,
       body: SafeArea(
         bottom: false,
+        maintainBottomViewPadding: true,
         child: Container(
           color: Theme.of(context).scaffoldBackgroundColor,
           child: Stack(
@@ -79,7 +81,7 @@ class _BBMediaViewState extends State<BBMediaView>
                     Expanded(
                         child: TabBarView(
                       children: <Widget>[
-                        Container(),
+                        BBRelatedMediaListView(),
                         Container(),
                       ],
                       controller: _tabCtr,

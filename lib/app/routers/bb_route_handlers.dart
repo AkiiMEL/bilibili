@@ -50,7 +50,6 @@ Handler videoHandler = _buildHandler(BBMediaView());
 
 Handler _buildHandler(Widget v) {
   return Handler(handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-    print((params??{})["id"]?.isNotEmpty ?? false ? params["id"][0] : "null");
     return v;
   });
 }
