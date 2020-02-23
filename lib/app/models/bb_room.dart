@@ -19,6 +19,9 @@ abstract class Room implements Built<Room, RoomBuilder> {
   @BuiltValueField(wireName: 'accept_quality')
   BuiltList<int> get acceptQuality;
   @nullable
+  @BuiltValueField(wireName: "official_verify")
+  int get officialVerify;
+  @nullable
   @BuiltValueField(wireName: 'area_v2_id')
   int get areaV2Id;
   @nullable

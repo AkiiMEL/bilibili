@@ -41,7 +41,7 @@ class _$SourceContentSerializer implements StructuredSerializer<SourceContent> {
       result
         ..add('is_ad_loc')
         ..add(serializers.serialize(object.isAdLoc,
-            specifiedType: const FullType(int)));
+            specifiedType: const FullType(bool)));
     }
     if (object.requestId != null) {
       result
@@ -102,7 +102,7 @@ class _$SourceContentSerializer implements StructuredSerializer<SourceContent> {
           break;
         case 'is_ad_loc':
           result.isAdLoc = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(bool)) as bool;
           break;
         case 'request_id':
           result.requestId = serializers.deserialize(value,
@@ -139,7 +139,7 @@ class _$SourceContent extends SourceContent {
   @override
   final int index;
   @override
-  final int isAdLoc;
+  final bool isAdLoc;
   @override
   final String requestId;
   @override
@@ -240,9 +240,9 @@ class SourceContentBuilder
   int get index => _$this._index;
   set index(int index) => _$this._index = index;
 
-  int _isAdLoc;
-  int get isAdLoc => _$this._isAdLoc;
-  set isAdLoc(int isAdLoc) => _$this._isAdLoc = isAdLoc;
+  bool _isAdLoc;
+  bool get isAdLoc => _$this._isAdLoc;
+  set isAdLoc(bool isAdLoc) => _$this._isAdLoc = isAdLoc;
 
   String _requestId;
   String get requestId => _$this._requestId;

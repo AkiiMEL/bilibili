@@ -17,6 +17,7 @@ class Images {
   static String bigVipMember(Brightness brightness) {
     return "${_path}mine_member${brightness == Brightness.light ? "" : "_night"}16x16.png";
   }
+  static const String officialVerify = "${_path}live_Certification_official18x18.png";
   static const List<String> thumbnailOverlays = [
     "${_path}pegasus_card_ic_star16x16.png",
     "${_path}pegasus_card_ic_play16x16.png",

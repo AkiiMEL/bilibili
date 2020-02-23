@@ -6,13 +6,17 @@ class BBAdView<Ad> extends StatelessWidget {
   final Widget Function(BuildContext, int) itemBuilder;
   final double aspectRatio;
   final BorderRadius borderRadius;
+  final BoxBorder border;
   final Axis scrollDirection;
+  final ScrollPhysics physics;
 
   BBAdView({
     this.advertise,
     this.aspectRatio,
     this.borderRadius,
+    this.border,
     this.scrollDirection = Axis.horizontal,
+    this.physics,
     this.itemBuilder,
   });
 
@@ -29,11 +33,18 @@ class BBAdView<Ad> extends StatelessWidget {
   Widget _swiper() {
     return ClipRRect(
       borderRadius: borderRadius ?? BorderRadius.zero,
-      child: Swiper(
-        scrollDirection: scrollDirection,
-        itemBuilder: itemBuilder,
-        itemCount: advertise?.length ?? 0,
-        autoplay: true,
+      child: Container(
+        decoration: BoxDecoration(
+          border: border,
+          borderRadius: borderRadius ?? BorderRadius.zero,
+        ),
+        child: Swiper(
+          scrollDirection: scrollDirection,
+          itemBuilder: itemBuilder,
+          itemCount: advertise?.length ?? 0,
+          autoplay: true,
+          physics: physics,
+        ),
       ),
     );
   }

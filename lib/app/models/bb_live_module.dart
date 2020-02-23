@@ -39,3 +39,4 @@ abstract class LiveModule implements Built<LiveModule, LiveModuleBuilder> {
 
   static Serializer<LiveModule> get serializer => _$liveModuleSerializer;
 }
+

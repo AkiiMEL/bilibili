@@ -5,10 +5,10 @@ import '../compenents/bb_network_circle_avatar_image.dart';
 import '../models/bb_live_rank.dart';
 import '../models/bb_live_group.dart';
 
-class BBLiveStreamRankView extends StatelessWidget {
+class BBLiveHomeRankView extends StatelessWidget {
   final LiveGroup<LiveRank> section;
 
-  BBLiveStreamRankView({this.section});
+  BBLiveHomeRankView({this.section});
 
   @override
   Widget build(BuildContext context) {

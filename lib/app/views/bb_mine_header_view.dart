@@ -42,7 +42,10 @@ class BBMineHeaderView extends StatelessWidget {
                     mine?.face,
                     pendant: mine?.pendant?.image,
                     placeholder: Images.defaultAvatar,
-                    bigVip: mine?.vip?.type == 2,
+                    extra: mine?.vip?.type == 2
+                        ? Image.asset(
+                            Images.bigVipMember(Theme.of(context).brightness))
+                        : null,
                     radius: 20.0,
                   ),
                   SizedBox(width: defaultMargin.left),

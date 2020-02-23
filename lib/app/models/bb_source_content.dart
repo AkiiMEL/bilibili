@@ -23,7 +23,7 @@ abstract class SourceContent
   int get index;
   @nullable
   @BuiltValueField(wireName: "is_ad_loc")
-  int get isAdLoc;
+  bool get isAdLoc;
   @nullable
   @BuiltValueField(wireName: "request_id")
   String get requestId;

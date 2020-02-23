@@ -6,7 +6,7 @@ import '../views/bb_not_found.dart';
 import '../views/bb_initial_view.dart';
 import '../views/bb_bangumi_list_view.dart';
 import '../views/bb_featured_list_view.dart';
-import '../views/bb_live_stream_list_view.dart';
+import '../views/bb_live_home_view.dart';
 import '../views/bb_popular_list_view.dart';
 import '../views/bb_channel_container_view.dart';
 import '../views/bb_home_view.dart';
@@ -28,7 +28,7 @@ Handler homeHandler = Handler(
 
 Handler liveHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
-        BBLiveStreamListView());
+        BBLiveHomeView());
 
 Handler featuredHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) =>

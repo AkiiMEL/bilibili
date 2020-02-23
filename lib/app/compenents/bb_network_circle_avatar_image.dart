@@ -10,7 +10,7 @@ class BBNetworkCircleAvatarImage extends StatelessWidget {
   final String url;
   final String placeholder;
   final String pendant;
-  final bool bigVip;
+  final Widget extra;
   final double radius;
   final void Function() onTap;
 
@@ -19,7 +19,7 @@ class BBNetworkCircleAvatarImage extends StatelessWidget {
     this.placeholder = Images.defaultAvatar,
     this.pendant,
     this.onTap,
-    this.bigVip,
+    this.extra,
     this.radius,
   }) : assert(radius != null);
 
@@ -53,13 +53,11 @@ class BBNetworkCircleAvatarImage extends StatelessWidget {
       ));
     }
 
-    if (bigVip ?? false) {
+    if (extra != null) {
       children.add(Positioned(
         bottom: radius * 1.7 - sin(45 * pi / 180) * radius * 1.7,
         right: radius * 1.7 - sin(45 * pi / 180) * radius * 1.7,
-        child: Image.asset(
-          Images.bigVipMember(Theme.of(context).brightness),
-        ),
+        child: extra,
       ));
     }
     return children;

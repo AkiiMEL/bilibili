@@ -25,6 +25,12 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
             specifiedType:
                 const FullType(BuiltList, const [const FullType(int)])));
     }
+    if (object.officialVerify != null) {
+      result
+        ..add('official_verify')
+        ..add(serializers.serialize(object.officialVerify,
+            specifiedType: const FullType(int)));
+    }
     if (object.areaV2Id != null) {
       result
         ..add('area_v2_id')
@@ -227,6 +233,10 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
                       const FullType(BuiltList, const [const FullType(int)]))
               as BuiltList<Object>);
           break;
+        case 'official_verify':
+          result.officialVerify = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'area_v2_id':
           result.areaV2Id = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
@@ -362,6 +372,8 @@ class _$Room extends Room {
   @override
   final BuiltList<int> acceptQuality;
   @override
+  final int officialVerify;
+  @override
   final int areaV2Id;
   @override
   final int areaV2ParentId;
@@ -427,6 +439,7 @@ class _$Room extends Room {
 
   _$Room._(
       {this.acceptQuality,
+      this.officialVerify,
       this.areaV2Id,
       this.areaV2ParentId,
       this.areaV2Name,
@@ -471,6 +484,7 @@ class _$Room extends Room {
     if (identical(other, this)) return true;
     return other is Room &&
         acceptQuality == other.acceptQuality &&
+        officialVerify == other.officialVerify &&
         areaV2Id == other.areaV2Id &&
         areaV2ParentId == other.areaV2ParentId &&
         areaV2Name == other.areaV2Name &&
@@ -523,7 +537,7 @@ class _$Room extends Room {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, acceptQuality.hashCode), areaV2Id.hashCode), areaV2ParentId.hashCode), areaV2Name.hashCode), areaV2ParentName.hashCode), broadcastType.hashCode), cover.hashCode), currentQuality.hashCode), face.hashCode), link.hashCode), online.hashCode), pendentRu.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, acceptQuality.hashCode), officialVerify.hashCode), areaV2Id.hashCode), areaV2ParentId.hashCode), areaV2Name.hashCode), areaV2ParentName.hashCode), broadcastType.hashCode), cover.hashCode), currentQuality.hashCode), face.hashCode), link.hashCode), online.hashCode), pendentRu.hashCode),
                                                                                 pendentRuColor.hashCode),
                                                                             pendentRuPic.hashCode),
                                                                         pkId.hashCode),
@@ -549,6 +563,7 @@ class _$Room extends Room {
   String toString() {
     return (newBuiltValueToStringHelper('Room')
           ..add('acceptQuality', acceptQuality)
+          ..add('officialVerify', officialVerify)
           ..add('areaV2Id', areaV2Id)
           ..add('areaV2ParentId', areaV2ParentId)
           ..add('areaV2Name', areaV2Name)
@@ -591,6 +606,11 @@ class RoomBuilder implements Builder<Room, RoomBuilder> {
       _$this._acceptQuality ??= new ListBuilder<int>();
   set acceptQuality(ListBuilder<int> acceptQuality) =>
       _$this._acceptQuality = acceptQuality;
+
+  int _officialVerify;
+  int get officialVerify => _$this._officialVerify;
+  set officialVerify(int officialVerify) =>
+      _$this._officialVerify = officialVerify;
 
   int _areaV2Id;
   int get areaV2Id => _$this._areaV2Id;
@@ -726,6 +746,7 @@ class RoomBuilder implements Builder<Room, RoomBuilder> {
   RoomBuilder get _$this {
     if (_$v != null) {
       _acceptQuality = _$v.acceptQuality?.toBuilder();
+      _officialVerify = _$v.officialVerify;
       _areaV2Id = _$v.areaV2Id;
       _areaV2ParentId = _$v.areaV2ParentId;
       _areaV2Name = _$v.areaV2Name;
@@ -781,6 +802,7 @@ class RoomBuilder implements Builder<Room, RoomBuilder> {
       _$result = _$v ??
           new _$Room._(
               acceptQuality: _acceptQuality?.build(),
+              officialVerify: officialVerify,
               areaV2Id: areaV2Id,
               areaV2ParentId: areaV2ParentId,
               areaV2Name: areaV2Name,

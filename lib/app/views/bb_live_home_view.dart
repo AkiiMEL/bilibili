@@ -4,27 +4,22 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '../compenents/bb_navigation_link.dart';
 import '../compenents/bb_network_image.dart';
 import '../compenents/bb_ad_view.dart';
+import '../compenents/bb_app_view.dart';
 import '../utils/bb_common.dart';
 import '../api/bb_api.dart';
 import '../models/bb_http_body.dart';
 import '../models/bb_live_list_body.dart';
-import '../models/bb_live_group.dart';
-import '../models/bb_live_ad.dart';
-import '../models/bb_live_area_entrance.dart';
-import '../models/bb_live_activity.dart';
-import '../models/bb_live_rank.dart';
-import '../models/bb_room.dart';
 
-import 'bb_live_stream_list_item_view.dart';
-import 'bb_live_stream_list_rank_view.dart';
-import 'bb_live_stream_list_activity_view.dart';
+import 'bb_live_home_card_view.dart';
+import 'bb_live_home_rank_view.dart';
+import 'bb_live_home_activity_view.dart';
 
-class BBLiveStreamListView extends StatefulWidget {
+class BBLiveHomeView extends StatefulWidget {
   @override
-  _BBLiveStreamListViewState createState() => _BBLiveStreamListViewState();
+  _BBLiveHomeViewState createState() => _BBLiveHomeViewState();
 }
 
-class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
+class _BBLiveHomeViewState extends State<BBLiveHomeView> {
   List<LiveGroup> _sections;
   RefreshController _refreshController;
 
@@ -45,8 +40,13 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: CustomScrollView(
-        slivers: _buildSlivers(),
+      bottom: false,
+      child: SmartRefresher(
+        controller: _refreshController,
+        onRefresh: _onRefresh,
+        child: CustomScrollView(
+          slivers: _buildSlivers(),
+        ),
       ),
     );
   }
@@ -54,7 +54,7 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
   List<Widget> _buildSlivers() {
     List<Widget> slivers = _sections
         .map((section) {
-          if (section is LiveGroup<LiveAd>) {
+          if (section.module?.id == 1) {
             return [
               _box(BBAdView(
                 aspectRatio: 375.0 / 100.0,
@@ -68,81 +68,48 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
                 advertise: section.list?.toList(),
               ))
             ];
-          } else if (section is LiveGroup<LiveAreaEntrance>) {
-            List<LiveAreaEntrance> items = section.list?.toList();
+          } else if (section.module?.id == 58) {
             return [
-              sliverGrid(
-                  items: items,
+              sliverGrid<LiveAreaEntrance>(
+                  items: section.list?.toList(),
                   max: 5,
                   lineSpacing: defaultMargin.bottom * 2,
-                  itemBuilder:
-                      (BuildContext context, LiveAreaEntrance entrance) {
-                    return Column(
-                      children: <Widget>[
-                        Expanded(
-                          child: AspectRatio(
-                            aspectRatio: 1.0,
-                            child: BBNetworkImage(
-                              entrance.pic,
-                              placeholder: Images.placeholder,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          entrance.title ?? "",
-                          style: TextStyle(fontSize: 12),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
+                  itemBuilder: (BuildContext context, LiveAreaEntrance e) {
+                    return BBAppView(
+                      title: e.title,
+                      image: e.pic,
+                      imageSize: Size(44.0, 44.0),
                     );
                   })
             ];
-          } else if (section is LiveGroup<LiveActivity>) {
-            return [_box(BBLiveStreamListActivityView(activities: section))];
-          } else if (section is LiveGroup<int>) {
-            return [_box(SizedBox.shrink())];
-          } else if (section is LiveGroup<LiveRank>) {
+          } else if (section.module?.id == 60) {
+            return [_box(BBLiveHomeActivityView(activities: section))];
+          } else if (section.module?.id == 4) {
             return [
               _box(_header(section)),
-              _box(BBLiveStreamRankView(section: section)),
+              _box(BBLiveHomeRankView(section: section)),
               SliverToBoxAdapter(child: Divider())
             ];
           } else {
-            List<Room> items = section.list?.toList();
-            List<Widget> views;
-            views = [
+            return [
               _box(_header(section)),
-              sliverGrid(
-                items: items,
+              sliverGrid<Room>(
+                items: section.list?.toList(),
                 max: 2,
                 aspectRatio: 1.2,
                 itemBuilder: (BuildContext context, Room liveRoom) {
                   return BBNavigationLink(
-                    destination: BBRouteMgr.video + "${12345567}",
-                    child: BBLiveStreamListItemView(item: liveRoom),
+                    destination: BBRouteMgr.video + "${liveRoom.roomid}",
+                    child: BBLiveHomeCardView(
+                      item: liveRoom,
+                      showAvatar: section.module?.id == 13,
+                    ),
                   );
                 },
               ),
+              _box(_footer(section)),
+              SliverToBoxAdapter(child: Divider()),
             ];
-            if (section.module?.id == 3) {
-              views.add(_box(Padding(
-                padding: EdgeInsets.symmetric(vertical: defaultMargin.bottom),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "更多${section.module.count}个${section.module.title}",
-                      style: TextStyle(color: Colors.pink, fontSize: 14.0),
-                    ),
-                    Icon(Icons.arrow_forward_ios,
-                        size: 14.0, color: Colors.pink),
-                  ],
-                ),
-              )));
-            }
-            views.add(SliverToBoxAdapter(child: Divider()));
-            return views;
           }
         })
         .expand((slivers) => slivers)
@@ -217,6 +184,21 @@ class _BBLiveStreamListViewState extends State<BBLiveStreamListView> {
         ],
       ),
     );
+  }
+
+  Widget _footer(LiveGroup section) {
+    return section?.module?.id == 3
+        ? Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "更多${section.module.count}个${section.module.title}",
+                style: TextStyle(color: Colors.pink, fontSize: 14.0),
+              ),
+              Icon(Icons.arrow_forward_ios, size: 14.0, color: Colors.pink),
+            ],
+          )
+        : SizedBox.shrink();
   }
 
   void _onRefresh() async {
