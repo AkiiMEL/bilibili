@@ -18,6 +18,18 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
   Iterable<Object> serialize(Serializers serializers, Room object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
+    if (object.rank != null) {
+      result
+        ..add('rank')
+        ..add(serializers.serialize(object.rank,
+            specifiedType: const FullType(int)));
+    }
+    if (object.liveStatus != null) {
+      result
+        ..add('live_status')
+        ..add(serializers.serialize(object.liveStatus,
+            specifiedType: const FullType(int)));
+    }
     if (object.acceptQuality != null) {
       result
         ..add('accept_quality')
@@ -227,6 +239,14 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
+        case 'rank':
+          result.rank = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'live_status':
+          result.liveStatus = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'accept_quality':
           result.acceptQuality.replace(serializers.deserialize(value,
                   specifiedType:
@@ -370,6 +390,10 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
 
 class _$Room extends Room {
   @override
+  final int rank;
+  @override
+  final int liveStatus;
+  @override
   final BuiltList<int> acceptQuality;
   @override
   final int officialVerify;
@@ -438,7 +462,9 @@ class _$Room extends Room {
       (new RoomBuilder()..update(updates)).build();
 
   _$Room._(
-      {this.acceptQuality,
+      {this.rank,
+      this.liveStatus,
+      this.acceptQuality,
       this.officialVerify,
       this.areaV2Id,
       this.areaV2ParentId,
@@ -483,6 +509,8 @@ class _$Room extends Room {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Room &&
+        rank == other.rank &&
+        liveStatus == other.liveStatus &&
         acceptQuality == other.acceptQuality &&
         officialVerify == other.officialVerify &&
         areaV2Id == other.areaV2Id &&
@@ -537,7 +565,7 @@ class _$Room extends Room {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, acceptQuality.hashCode), officialVerify.hashCode), areaV2Id.hashCode), areaV2ParentId.hashCode), areaV2Name.hashCode), areaV2ParentName.hashCode), broadcastType.hashCode), cover.hashCode), currentQuality.hashCode), face.hashCode), link.hashCode), online.hashCode), pendentRu.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, rank.hashCode), liveStatus.hashCode), acceptQuality.hashCode), officialVerify.hashCode), areaV2Id.hashCode), areaV2ParentId.hashCode), areaV2Name.hashCode), areaV2ParentName.hashCode), broadcastType.hashCode), cover.hashCode), currentQuality.hashCode), face.hashCode), link.hashCode), online.hashCode), pendentRu.hashCode),
                                                                                 pendentRuColor.hashCode),
                                                                             pendentRuPic.hashCode),
                                                                         pkId.hashCode),
@@ -562,6 +590,8 @@ class _$Room extends Room {
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Room')
+          ..add('rank', rank)
+          ..add('liveStatus', liveStatus)
           ..add('acceptQuality', acceptQuality)
           ..add('officialVerify', officialVerify)
           ..add('areaV2Id', areaV2Id)
@@ -600,6 +630,14 @@ class _$Room extends Room {
 
 class RoomBuilder implements Builder<Room, RoomBuilder> {
   _$Room _$v;
+
+  int _rank;
+  int get rank => _$this._rank;
+  set rank(int rank) => _$this._rank = rank;
+
+  int _liveStatus;
+  int get liveStatus => _$this._liveStatus;
+  set liveStatus(int liveStatus) => _$this._liveStatus = liveStatus;
 
   ListBuilder<int> _acceptQuality;
   ListBuilder<int> get acceptQuality =>
@@ -745,6 +783,8 @@ class RoomBuilder implements Builder<Room, RoomBuilder> {
 
   RoomBuilder get _$this {
     if (_$v != null) {
+      _rank = _$v.rank;
+      _liveStatus = _$v.liveStatus;
       _acceptQuality = _$v.acceptQuality?.toBuilder();
       _officialVerify = _$v.officialVerify;
       _areaV2Id = _$v.areaV2Id;
@@ -801,6 +841,8 @@ class RoomBuilder implements Builder<Room, RoomBuilder> {
     try {
       _$result = _$v ??
           new _$Room._(
+              rank: rank,
+              liveStatus: liveStatus,
               acceptQuality: _acceptQuality?.build(),
               officialVerify: officialVerify,
               areaV2Id: areaV2Id,

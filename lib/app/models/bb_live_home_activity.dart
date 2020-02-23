@@ -5,10 +5,10 @@ import 'package:built_value/serializer.dart';
 
 import 'bb_serializers.dart';
 
-part 'bb_live_activity.g.dart';
+part 'bb_live_home_activity.g.dart';
 
-abstract class LiveActivity
-    implements Built<LiveActivity, LiveActivityBuilder> {
+abstract class LiveHomeActivity
+    implements Built<LiveHomeActivity, LiveHomeActivityBuilder> {
   // Fields
   @nullable
   int get aid;
@@ -43,20 +43,21 @@ abstract class LiveActivity
   @BuiltValueField(wireName: 'on_live')
   int get onLive;
 
-  LiveActivity._();
+  LiveHomeActivity._();
 
-  factory LiveActivity([void Function(LiveActivityBuilder) updates]) =
-      _$LiveActivity;
+  factory LiveHomeActivity([void Function(LiveHomeActivityBuilder) updates]) =
+      _$LiveHomeActivity;
 
   String toJson() {
     return json
-        .encode(serializers.serializeWith(LiveActivity.serializer, this));
+        .encode(serializers.serializeWith(LiveHomeActivity.serializer, this));
   }
 
-  static LiveActivity fromJson(String jsonString) {
+  static LiveHomeActivity fromJson(String jsonString) {
     return serializers.deserializeWith(
-        LiveActivity.serializer, json.decode(jsonString));
+        LiveHomeActivity.serializer, json.decode(jsonString));
   }
 
-  static Serializer<LiveActivity> get serializer => _$liveActivitySerializer;
+  static Serializer<LiveHomeActivity> get serializer =>
+      _$liveHomeActivitySerializer;
 }

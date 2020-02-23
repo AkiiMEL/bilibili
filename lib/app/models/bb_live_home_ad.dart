@@ -8,9 +8,9 @@ import 'bb_source_content.dart';
 
 export 'bb_source_content.dart';
 
-part 'bb_live_ad.g.dart';
+part 'bb_live_home_ad.g.dart';
 
-abstract class LiveAd implements Built<LiveAd, LiveAdBuilder> {
+abstract class LiveHomeAd implements Built<LiveHomeAd, LiveHomeAdBuilder> {
   // Fields
   @nullable
   int get id;
@@ -26,18 +26,18 @@ abstract class LiveAd implements Built<LiveAd, LiveAdBuilder> {
   @BuiltValueField(wireName: 'source_content')
   SourceContent get sourceContent;
 
-  LiveAd._();
+  LiveHomeAd._();
 
-  factory LiveAd([void Function(LiveAdBuilder) updates]) = _$LiveAd;
+  factory LiveHomeAd([void Function(LiveHomeAdBuilder) updates]) = _$LiveHomeAd;
 
   String toJson() {
-    return json.encode(serializers.serializeWith(LiveAd.serializer, this));
+    return json.encode(serializers.serializeWith(LiveHomeAd.serializer, this));
   }
 
-  static LiveAd fromJson(String jsonString) {
+  static LiveHomeAd fromJson(String jsonString) {
     return serializers.deserializeWith(
-        LiveAd.serializer, json.decode(jsonString));
+        LiveHomeAd.serializer, json.decode(jsonString));
   }
 
-  static Serializer<LiveAd> get serializer => _$liveAdSerializer;
+  static Serializer<LiveHomeAd> get serializer => _$liveHomeAdSerializer;
 }

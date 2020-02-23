@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bb_live_ad.dart';
+part of 'bb_live_tag.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<LiveAd> _$liveAdSerializer = new _$LiveAdSerializer();
+Serializer<LiveTag> _$liveTagSerializer = new _$LiveTagSerializer();
 
-class _$LiveAdSerializer implements StructuredSerializer<LiveAd> {
+class _$LiveTagSerializer implements StructuredSerializer<LiveTag> {
   @override
-  final Iterable<Type> types = const [LiveAd, _$LiveAd];
+  final Iterable<Type> types = const [LiveTag, _$LiveTag];
   @override
-  final String wireName = 'LiveAd';
+  final String wireName = 'LiveTag';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, LiveAd object,
+  Iterable<Object> serialize(Serializers serializers, LiveTag object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
     if (object.id != null) {
@@ -42,25 +42,31 @@ class _$LiveAdSerializer implements StructuredSerializer<LiveAd> {
         ..add(serializers.serialize(object.title,
             specifiedType: const FullType(String)));
     }
-    if (object.content != null) {
+    if (object.areaV2Id != null) {
       result
-        ..add('content')
-        ..add(serializers.serialize(object.content,
-            specifiedType: const FullType(String)));
+        ..add('area_v2_id')
+        ..add(serializers.serialize(object.areaV2Id,
+            specifiedType: const FullType(int)));
     }
-    if (object.sourceContent != null) {
+    if (object.areaV2ParentId != null) {
       result
-        ..add('source_content')
-        ..add(serializers.serialize(object.sourceContent,
-            specifiedType: const FullType(SourceContent)));
+        ..add('area_v2_parent_id')
+        ..add(serializers.serialize(object.areaV2ParentId,
+            specifiedType: const FullType(int)));
+    }
+    if (object.tagType != null) {
+      result
+        ..add('tag_type')
+        ..add(serializers.serialize(object.tagType,
+            specifiedType: const FullType(int)));
     }
     return result;
   }
 
   @override
-  LiveAd deserialize(Serializers serializers, Iterable<Object> serialized,
+  LiveTag deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new LiveAdBuilder();
+    final result = new LiveTagBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -84,13 +90,17 @@ class _$LiveAdSerializer implements StructuredSerializer<LiveAd> {
           result.title = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'content':
-          result.content = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+        case 'area_v2_id':
+          result.areaV2Id = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           break;
-        case 'source_content':
-          result.sourceContent.replace(serializers.deserialize(value,
-              specifiedType: const FullType(SourceContent)) as SourceContent);
+        case 'area_v2_parent_id':
+          result.areaV2ParentId = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'tag_type':
+          result.tagType = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           break;
       }
     }
@@ -99,7 +109,7 @@ class _$LiveAdSerializer implements StructuredSerializer<LiveAd> {
   }
 }
 
-class _$LiveAd extends LiveAd {
+class _$LiveTag extends LiveTag {
   @override
   final int id;
   @override
@@ -109,66 +119,73 @@ class _$LiveAd extends LiveAd {
   @override
   final String title;
   @override
-  final String content;
+  final int areaV2Id;
   @override
-  final SourceContent sourceContent;
+  final int areaV2ParentId;
+  @override
+  final int tagType;
 
-  factory _$LiveAd([void Function(LiveAdBuilder) updates]) =>
-      (new LiveAdBuilder()..update(updates)).build();
+  factory _$LiveTag([void Function(LiveTagBuilder) updates]) =>
+      (new LiveTagBuilder()..update(updates)).build();
 
-  _$LiveAd._(
+  _$LiveTag._(
       {this.id,
       this.link,
       this.pic,
       this.title,
-      this.content,
-      this.sourceContent})
+      this.areaV2Id,
+      this.areaV2ParentId,
+      this.tagType})
       : super._();
 
   @override
-  LiveAd rebuild(void Function(LiveAdBuilder) updates) =>
+  LiveTag rebuild(void Function(LiveTagBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LiveAdBuilder toBuilder() => new LiveAdBuilder()..replace(this);
+  LiveTagBuilder toBuilder() => new LiveTagBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LiveAd &&
+    return other is LiveTag &&
         id == other.id &&
         link == other.link &&
         pic == other.pic &&
         title == other.title &&
-        content == other.content &&
-        sourceContent == other.sourceContent;
+        areaV2Id == other.areaV2Id &&
+        areaV2ParentId == other.areaV2ParentId &&
+        tagType == other.tagType;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc($jc(0, id.hashCode), link.hashCode), pic.hashCode),
-                title.hashCode),
-            content.hashCode),
-        sourceContent.hashCode));
+            $jc(
+                $jc($jc($jc($jc(0, id.hashCode), link.hashCode), pic.hashCode),
+                    title.hashCode),
+                areaV2Id.hashCode),
+            areaV2ParentId.hashCode),
+        tagType.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LiveAd')
+    return (newBuiltValueToStringHelper('LiveTag')
           ..add('id', id)
           ..add('link', link)
           ..add('pic', pic)
           ..add('title', title)
-          ..add('content', content)
-          ..add('sourceContent', sourceContent))
+          ..add('areaV2Id', areaV2Id)
+          ..add('areaV2ParentId', areaV2ParentId)
+          ..add('tagType', tagType))
         .toString();
   }
 }
 
-class LiveAdBuilder implements Builder<LiveAd, LiveAdBuilder> {
-  _$LiveAd _$v;
+class LiveTagBuilder implements Builder<LiveTag, LiveTagBuilder> {
+  _$LiveTag _$v;
 
   int _id;
   int get id => _$this._id;
@@ -186,67 +203,59 @@ class LiveAdBuilder implements Builder<LiveAd, LiveAdBuilder> {
   String get title => _$this._title;
   set title(String title) => _$this._title = title;
 
-  String _content;
-  String get content => _$this._content;
-  set content(String content) => _$this._content = content;
+  int _areaV2Id;
+  int get areaV2Id => _$this._areaV2Id;
+  set areaV2Id(int areaV2Id) => _$this._areaV2Id = areaV2Id;
 
-  SourceContentBuilder _sourceContent;
-  SourceContentBuilder get sourceContent =>
-      _$this._sourceContent ??= new SourceContentBuilder();
-  set sourceContent(SourceContentBuilder sourceContent) =>
-      _$this._sourceContent = sourceContent;
+  int _areaV2ParentId;
+  int get areaV2ParentId => _$this._areaV2ParentId;
+  set areaV2ParentId(int areaV2ParentId) =>
+      _$this._areaV2ParentId = areaV2ParentId;
 
-  LiveAdBuilder();
+  int _tagType;
+  int get tagType => _$this._tagType;
+  set tagType(int tagType) => _$this._tagType = tagType;
 
-  LiveAdBuilder get _$this {
+  LiveTagBuilder();
+
+  LiveTagBuilder get _$this {
     if (_$v != null) {
       _id = _$v.id;
       _link = _$v.link;
       _pic = _$v.pic;
       _title = _$v.title;
-      _content = _$v.content;
-      _sourceContent = _$v.sourceContent?.toBuilder();
+      _areaV2Id = _$v.areaV2Id;
+      _areaV2ParentId = _$v.areaV2ParentId;
+      _tagType = _$v.tagType;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(LiveAd other) {
+  void replace(LiveTag other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$LiveAd;
+    _$v = other as _$LiveTag;
   }
 
   @override
-  void update(void Function(LiveAdBuilder) updates) {
+  void update(void Function(LiveTagBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$LiveAd build() {
-    _$LiveAd _$result;
-    try {
-      _$result = _$v ??
-          new _$LiveAd._(
-              id: id,
-              link: link,
-              pic: pic,
-              title: title,
-              content: content,
-              sourceContent: _sourceContent?.build());
-    } catch (_) {
-      String _$failedField;
-      try {
-        _$failedField = 'sourceContent';
-        _sourceContent?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'LiveAd', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+  _$LiveTag build() {
+    final _$result = _$v ??
+        new _$LiveTag._(
+            id: id,
+            link: link,
+            pic: pic,
+            title: title,
+            areaV2Id: areaV2Id,
+            areaV2ParentId: areaV2ParentId,
+            tagType: tagType);
     replace(_$result);
     return _$result;
   }

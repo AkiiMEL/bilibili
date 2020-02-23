@@ -1,22 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bb_live_activity.dart';
+part of 'bb_live_home_activity.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<LiveActivity> _$liveActivitySerializer =
-    new _$LiveActivitySerializer();
+Serializer<LiveHomeActivity> _$liveHomeActivitySerializer =
+    new _$LiveHomeActivitySerializer();
 
-class _$LiveActivitySerializer implements StructuredSerializer<LiveActivity> {
+class _$LiveHomeActivitySerializer
+    implements StructuredSerializer<LiveHomeActivity> {
   @override
-  final Iterable<Type> types = const [LiveActivity, _$LiveActivity];
+  final Iterable<Type> types = const [LiveHomeActivity, _$LiveHomeActivity];
   @override
-  final String wireName = 'LiveActivity';
+  final String wireName = 'LiveHomeActivity';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, LiveActivity object,
+  Iterable<Object> serialize(Serializers serializers, LiveHomeActivity object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
     if (object.aid != null) {
@@ -95,9 +96,10 @@ class _$LiveActivitySerializer implements StructuredSerializer<LiveActivity> {
   }
 
   @override
-  LiveActivity deserialize(Serializers serializers, Iterable<Object> serialized,
+  LiveHomeActivity deserialize(
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new LiveActivityBuilder();
+    final result = new LiveHomeActivityBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -160,7 +162,7 @@ class _$LiveActivitySerializer implements StructuredSerializer<LiveActivity> {
   }
 }
 
-class _$LiveActivity extends LiveActivity {
+class _$LiveHomeActivity extends LiveHomeActivity {
   @override
   final int aid;
   @override
@@ -186,10 +188,11 @@ class _$LiveActivity extends LiveActivity {
   @override
   final int onLive;
 
-  factory _$LiveActivity([void Function(LiveActivityBuilder) updates]) =>
-      (new LiveActivityBuilder()..update(updates)).build();
+  factory _$LiveHomeActivity(
+          [void Function(LiveHomeActivityBuilder) updates]) =>
+      (new LiveHomeActivityBuilder()..update(updates)).build();
 
-  _$LiveActivity._(
+  _$LiveHomeActivity._(
       {this.aid,
       this.type,
       this.title,
@@ -205,16 +208,17 @@ class _$LiveActivity extends LiveActivity {
       : super._();
 
   @override
-  LiveActivity rebuild(void Function(LiveActivityBuilder) updates) =>
+  LiveHomeActivity rebuild(void Function(LiveHomeActivityBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LiveActivityBuilder toBuilder() => new LiveActivityBuilder()..replace(this);
+  LiveHomeActivityBuilder toBuilder() =>
+      new LiveHomeActivityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LiveActivity &&
+    return other is LiveHomeActivity &&
         aid == other.aid &&
         type == other.type &&
         title == other.title &&
@@ -257,7 +261,7 @@ class _$LiveActivity extends LiveActivity {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LiveActivity')
+    return (newBuiltValueToStringHelper('LiveHomeActivity')
           ..add('aid', aid)
           ..add('type', type)
           ..add('title', title)
@@ -274,9 +278,9 @@ class _$LiveActivity extends LiveActivity {
   }
 }
 
-class LiveActivityBuilder
-    implements Builder<LiveActivity, LiveActivityBuilder> {
-  _$LiveActivity _$v;
+class LiveHomeActivityBuilder
+    implements Builder<LiveHomeActivity, LiveHomeActivityBuilder> {
+  _$LiveHomeActivity _$v;
 
   int _aid;
   int get aid => _$this._aid;
@@ -326,9 +330,9 @@ class LiveActivityBuilder
   int get onLive => _$this._onLive;
   set onLive(int onLive) => _$this._onLive = onLive;
 
-  LiveActivityBuilder();
+  LiveHomeActivityBuilder();
 
-  LiveActivityBuilder get _$this {
+  LiveHomeActivityBuilder get _$this {
     if (_$v != null) {
       _aid = _$v.aid;
       _type = _$v.type;
@@ -348,22 +352,22 @@ class LiveActivityBuilder
   }
 
   @override
-  void replace(LiveActivity other) {
+  void replace(LiveHomeActivity other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$LiveActivity;
+    _$v = other as _$LiveHomeActivity;
   }
 
   @override
-  void update(void Function(LiveActivityBuilder) updates) {
+  void update(void Function(LiveHomeActivityBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$LiveActivity build() {
+  _$LiveHomeActivity build() {
     final _$result = _$v ??
-        new _$LiveActivity._(
+        new _$LiveHomeActivity._(
             aid: aid,
             type: type,
             title: title,

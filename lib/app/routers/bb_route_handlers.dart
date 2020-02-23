@@ -4,7 +4,7 @@ import 'package:fluro/fluro.dart';
 import '../views/bb_media_view.dart';
 import '../views/bb_not_found.dart';
 import '../views/bb_initial_view.dart';
-import '../views/bb_bangumi_list_view.dart';
+import '../views/bb_bangumi_home_view.dart';
 import '../views/bb_featured_list_view.dart';
 import '../views/bb_live_home_view.dart';
 import '../views/bb_popular_list_view.dart';
@@ -26,7 +26,7 @@ Handler homeHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
         BBHomeView());
 
-Handler liveHandler = Handler(
+Handler liveHomeHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
         BBLiveHomeView());
 
@@ -36,7 +36,7 @@ Handler featuredHandler = Handler(
 
 Handler popularHandler = _buildHandler(BBPopularListView());
 
-Handler bangumiHandler = _buildHandler(BBBangumiListView());
+Handler bangumiHomeHandler = _buildHandler(BBBangumiHomeView());
 
 Handler channelContainerHandler = _buildHandler(BBChannelContainerView());
 

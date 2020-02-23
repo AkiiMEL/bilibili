@@ -8,7 +8,7 @@ import '../compenents/bb_app_view.dart';
 import '../utils/bb_common.dart';
 import '../api/bb_api.dart';
 import '../models/bb_http_body.dart';
-import '../models/bb_live_list_body.dart';
+import '../models/bb_live_home_body.dart';
 
 import 'bb_live_home_card_view.dart';
 import 'bb_live_home_rank_view.dart';
@@ -70,11 +70,11 @@ class _BBLiveHomeViewState extends State<BBLiveHomeView> {
             ];
           } else if (section.module?.id == 58) {
             return [
-              sliverGrid<LiveAreaEntrance>(
+              sliverGrid<LiveTag>(
                   items: section.list?.toList(),
                   max: 5,
                   lineSpacing: defaultMargin.bottom * 2,
-                  itemBuilder: (BuildContext context, LiveAreaEntrance e) {
+                  itemBuilder: (BuildContext context, LiveTag e) {
                     return BBAppView(
                       title: e.title,
                       image: e.pic,
@@ -202,7 +202,7 @@ class _BBLiveHomeViewState extends State<BBLiveHomeView> {
   }
 
   void _onRefresh() async {
-    HttpBody<LiveListBody> body = await BBApi.requestAllLive();
+    HttpBody<LiveHomeBody> body = await BBApi.requestAllLive();
     List<LiveGroup> copy = [];
 
     copy.addAll(body?.data?.banner ?? []);

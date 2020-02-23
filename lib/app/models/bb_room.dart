@@ -16,6 +16,11 @@ part 'bb_room.g.dart';
 abstract class Room implements Built<Room, RoomBuilder> {
   // Fields
   @nullable
+  int get rank;
+  @nullable
+  @BuiltValueField(wireName: 'live_status')
+  int get liveStatus;
+  @nullable
   @BuiltValueField(wireName: 'accept_quality')
   BuiltList<int> get acceptQuality;
   @nullable

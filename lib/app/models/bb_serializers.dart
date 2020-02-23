@@ -29,7 +29,7 @@ import 'bb_featured_body.dart';
 import 'bb_feedback_panel.dart';
 import 'bb_feedback_panel_detail.dart';
 import 'bb_http_body.dart';
-import 'bb_live_list_body.dart';
+import 'bb_live_home_body.dart';
 import 'bb_media.dart';
 import 'bb_module.dart';
 import 'bb_module_follow.dart';
@@ -84,15 +84,14 @@ part 'bb_serializers.g.dart';
   FeedbackPanelDetail,
   HttpBody,
   HttpListBody,
-  LiveActivity,
-  LiveAd,
-  LiveAreaEntrance,
   LiveExtra,
   LiveGroup,
-  LiveListBody,
+  LiveHomeActivity,
+  LiveHomeAd,
+  LiveHomeBody,
   LiveModule,
   LivePendent,
-  LiveRank,
+  LiveTag,
   Media,
   Mine,
   Module,
@@ -144,52 +143,44 @@ final Serializers serializers = (_$serializers.toBuilder()
         () => HttpBodyBuilder<FeaturedBody>(),
       )
       ..addBuilderFactory(
-        FullType(HttpBody, [FullType(LiveListBody)]),
-        () => HttpBodyBuilder<LiveListBody>(),
-      )
-      ..addBuilderFactory(
-        FullType(LiveGroup, [FullType(LiveRank)]),
-        () => LiveGroupBuilder<LiveRank>(),
+        FullType(HttpBody, [FullType(LiveHomeBody)]),
+        () => HttpBodyBuilder<LiveHomeBody>(),
       )
       ..addBuilderFactory(
         FullType(LiveGroup, [FullType(Room)]),
         () => LiveGroupBuilder<Room>(),
       )
       ..addBuilderFactory(
-        FullType(LiveGroup, [FullType(LiveAreaEntrance)]),
-        () => LiveGroupBuilder<LiveAreaEntrance>(),
+        FullType(LiveGroup, [FullType(LiveTag)]),
+        () => LiveGroupBuilder<LiveTag>(),
       )
       ..addBuilderFactory(
-        FullType(LiveGroup, [FullType(LiveAd)]),
-        () => LiveGroupBuilder<LiveAd>(),
+        FullType(LiveGroup, [FullType(LiveHomeAd)]),
+        () => LiveGroupBuilder<LiveHomeAd>(),
       )
       ..addBuilderFactory(
-        FullType(LiveGroup, [FullType(LiveActivity)]),
-        () => LiveGroupBuilder<LiveActivity>(),
+        FullType(LiveGroup, [FullType(LiveHomeActivity)]),
+        () => LiveGroupBuilder<LiveHomeActivity>(),
       )
       ..addBuilderFactory(
         FullType(BuiltList, [FullType(LiveGroup)]),
         () => ListBuilder<LiveGroup>(),
       )
       ..addBuilderFactory(
-        FullType(BuiltList, [FullType(LiveRank)]),
-        () => ListBuilder<LiveRank>(),
-      )
-      ..addBuilderFactory(
         FullType(BuiltList, [FullType(Room)]),
         () => ListBuilder<Room>(),
       )
       ..addBuilderFactory(
-        FullType(BuiltList, [FullType(LiveAreaEntrance)]),
-        () => ListBuilder<LiveAreaEntrance>(),
+        FullType(BuiltList, [FullType(LiveTag)]),
+        () => ListBuilder<LiveTag>(),
       )
       ..addBuilderFactory(
-        FullType(BuiltList, [FullType(LiveAd)]),
-        () => ListBuilder<LiveAd>(),
+        FullType(BuiltList, [FullType(LiveHomeAd)]),
+        () => ListBuilder<LiveHomeAd>(),
       )
       ..addBuilderFactory(
-        FullType(BuiltList, [FullType(LiveActivity)]),
-        () => ListBuilder<LiveActivity>(),
+        FullType(BuiltList, [FullType(LiveHomeActivity)]),
+        () => ListBuilder<LiveHomeActivity>(),
       )
       ..addBuilderFactory(
         FullType(BuiltList, [FullType(ChannelModule)]),

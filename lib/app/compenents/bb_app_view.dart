@@ -48,14 +48,12 @@ class BBAppView extends StatelessWidget {
       children.add(Expanded(
         child: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
-          print(constraints);
           double width = imageSize?.width != null
               ? min(imageSize.width, constraints.maxWidth)
               : constraints.maxWidth;
           double height = imageSize?.height != null
               ? min(imageSize.height, constraints.maxHeight)
               : constraints.maxHeight;
-              print("$width $height");
           return ConstrainedBox(
             constraints: BoxConstraints.tightFor(
               width: width,

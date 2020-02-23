@@ -35,15 +35,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FeedbackPanelDetail.serializer)
       ..add(HttpBody.serializer)
       ..add(HttpListBody.serializer)
-      ..add(LiveActivity.serializer)
-      ..add(LiveAd.serializer)
-      ..add(LiveAreaEntrance.serializer)
       ..add(LiveExtra.serializer)
       ..add(LiveGroup.serializer)
-      ..add(LiveListBody.serializer)
+      ..add(LiveHomeActivity.serializer)
+      ..add(LiveHomeAd.serializer)
+      ..add(LiveHomeBody.serializer)
       ..add(LiveModule.serializer)
       ..add(LivePendent.serializer)
-      ..add(LiveRank.serializer)
+      ..add(LiveTag.serializer)
       ..add(Media.serializer)
       ..add(Mine.serializer)
       ..add(Module.serializer)
@@ -102,11 +101,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<FeedbackPanelDetail>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(LiveGroup, const [const FullType(LiveRank)])
-          ]),
-          () => new ListBuilder<LiveGroup<LiveRank>>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
             const FullType(LiveGroup, const [const FullType(Room)])
           ]),
           () => new ListBuilder<LiveGroup<Room>>())
@@ -117,19 +111,24 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<LiveGroup<Room>>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(LiveGroup, const [const FullType(LiveAreaEntrance)])
+            const FullType(LiveGroup, const [const FullType(Room)])
           ]),
-          () => new ListBuilder<LiveGroup<LiveAreaEntrance>>())
+          () => new ListBuilder<LiveGroup<Room>>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(LiveGroup, const [const FullType(LiveAd)])
+            const FullType(LiveGroup, const [const FullType(LiveTag)])
           ]),
-          () => new ListBuilder<LiveGroup<LiveAd>>())
+          () => new ListBuilder<LiveGroup<LiveTag>>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(LiveGroup, const [const FullType(LiveActivity)])
+            const FullType(LiveGroup, const [const FullType(LiveHomeAd)])
           ]),
-          () => new ListBuilder<LiveGroup<LiveActivity>>())
+          () => new ListBuilder<LiveGroup<LiveHomeAd>>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(LiveGroup, const [const FullType(LiveHomeActivity)])
+          ]),
+          () => new ListBuilder<LiveGroup<LiveHomeActivity>>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Media)]),
           () => new ListBuilder<Media>())

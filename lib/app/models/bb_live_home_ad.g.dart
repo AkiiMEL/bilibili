@@ -1,23 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bb_live_area_entrance.dart';
+part of 'bb_live_home_ad.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<LiveAreaEntrance> _$liveAreaEntranceSerializer =
-    new _$LiveAreaEntranceSerializer();
+Serializer<LiveHomeAd> _$liveHomeAdSerializer = new _$LiveHomeAdSerializer();
 
-class _$LiveAreaEntranceSerializer
-    implements StructuredSerializer<LiveAreaEntrance> {
+class _$LiveHomeAdSerializer implements StructuredSerializer<LiveHomeAd> {
   @override
-  final Iterable<Type> types = const [LiveAreaEntrance, _$LiveAreaEntrance];
+  final Iterable<Type> types = const [LiveHomeAd, _$LiveHomeAd];
   @override
-  final String wireName = 'LiveAreaEntrance';
+  final String wireName = 'LiveHomeAd';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, LiveAreaEntrance object,
+  Iterable<Object> serialize(Serializers serializers, LiveHomeAd object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
     if (object.id != null) {
@@ -44,32 +42,25 @@ class _$LiveAreaEntranceSerializer
         ..add(serializers.serialize(object.title,
             specifiedType: const FullType(String)));
     }
-    if (object.areaV2Id != null) {
+    if (object.content != null) {
       result
-        ..add('area_v2_id')
-        ..add(serializers.serialize(object.areaV2Id,
-            specifiedType: const FullType(int)));
+        ..add('content')
+        ..add(serializers.serialize(object.content,
+            specifiedType: const FullType(String)));
     }
-    if (object.areaV2ParentId != null) {
+    if (object.sourceContent != null) {
       result
-        ..add('area_v2_parent_id')
-        ..add(serializers.serialize(object.areaV2ParentId,
-            specifiedType: const FullType(int)));
-    }
-    if (object.tagType != null) {
-      result
-        ..add('tag_type')
-        ..add(serializers.serialize(object.tagType,
-            specifiedType: const FullType(int)));
+        ..add('source_content')
+        ..add(serializers.serialize(object.sourceContent,
+            specifiedType: const FullType(SourceContent)));
     }
     return result;
   }
 
   @override
-  LiveAreaEntrance deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+  LiveHomeAd deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new LiveAreaEntranceBuilder();
+    final result = new LiveHomeAdBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -93,17 +84,13 @@ class _$LiveAreaEntranceSerializer
           result.title = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'area_v2_id':
-          result.areaV2Id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+        case 'content':
+          result.content = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
-        case 'area_v2_parent_id':
-          result.areaV2ParentId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          break;
-        case 'tag_type':
-          result.tagType = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+        case 'source_content':
+          result.sourceContent.replace(serializers.deserialize(value,
+              specifiedType: const FullType(SourceContent)) as SourceContent);
           break;
       }
     }
@@ -112,7 +99,7 @@ class _$LiveAreaEntranceSerializer
   }
 }
 
-class _$LiveAreaEntrance extends LiveAreaEntrance {
+class _$LiveHomeAd extends LiveHomeAd {
   @override
   final int id;
   @override
@@ -122,76 +109,66 @@ class _$LiveAreaEntrance extends LiveAreaEntrance {
   @override
   final String title;
   @override
-  final int areaV2Id;
+  final String content;
   @override
-  final int areaV2ParentId;
-  @override
-  final int tagType;
+  final SourceContent sourceContent;
 
-  factory _$LiveAreaEntrance(
-          [void Function(LiveAreaEntranceBuilder) updates]) =>
-      (new LiveAreaEntranceBuilder()..update(updates)).build();
+  factory _$LiveHomeAd([void Function(LiveHomeAdBuilder) updates]) =>
+      (new LiveHomeAdBuilder()..update(updates)).build();
 
-  _$LiveAreaEntrance._(
+  _$LiveHomeAd._(
       {this.id,
       this.link,
       this.pic,
       this.title,
-      this.areaV2Id,
-      this.areaV2ParentId,
-      this.tagType})
+      this.content,
+      this.sourceContent})
       : super._();
 
   @override
-  LiveAreaEntrance rebuild(void Function(LiveAreaEntranceBuilder) updates) =>
+  LiveHomeAd rebuild(void Function(LiveHomeAdBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LiveAreaEntranceBuilder toBuilder() =>
-      new LiveAreaEntranceBuilder()..replace(this);
+  LiveHomeAdBuilder toBuilder() => new LiveHomeAdBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LiveAreaEntrance &&
+    return other is LiveHomeAd &&
         id == other.id &&
         link == other.link &&
         pic == other.pic &&
         title == other.title &&
-        areaV2Id == other.areaV2Id &&
-        areaV2ParentId == other.areaV2ParentId &&
-        tagType == other.tagType;
+        content == other.content &&
+        sourceContent == other.sourceContent;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc(
-                $jc($jc($jc($jc(0, id.hashCode), link.hashCode), pic.hashCode),
-                    title.hashCode),
-                areaV2Id.hashCode),
-            areaV2ParentId.hashCode),
-        tagType.hashCode));
+            $jc($jc($jc($jc(0, id.hashCode), link.hashCode), pic.hashCode),
+                title.hashCode),
+            content.hashCode),
+        sourceContent.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LiveAreaEntrance')
+    return (newBuiltValueToStringHelper('LiveHomeAd')
           ..add('id', id)
           ..add('link', link)
           ..add('pic', pic)
           ..add('title', title)
-          ..add('areaV2Id', areaV2Id)
-          ..add('areaV2ParentId', areaV2ParentId)
-          ..add('tagType', tagType))
+          ..add('content', content)
+          ..add('sourceContent', sourceContent))
         .toString();
   }
 }
 
-class LiveAreaEntranceBuilder
-    implements Builder<LiveAreaEntrance, LiveAreaEntranceBuilder> {
-  _$LiveAreaEntrance _$v;
+class LiveHomeAdBuilder implements Builder<LiveHomeAd, LiveHomeAdBuilder> {
+  _$LiveHomeAd _$v;
 
   int _id;
   int get id => _$this._id;
@@ -209,59 +186,67 @@ class LiveAreaEntranceBuilder
   String get title => _$this._title;
   set title(String title) => _$this._title = title;
 
-  int _areaV2Id;
-  int get areaV2Id => _$this._areaV2Id;
-  set areaV2Id(int areaV2Id) => _$this._areaV2Id = areaV2Id;
+  String _content;
+  String get content => _$this._content;
+  set content(String content) => _$this._content = content;
 
-  int _areaV2ParentId;
-  int get areaV2ParentId => _$this._areaV2ParentId;
-  set areaV2ParentId(int areaV2ParentId) =>
-      _$this._areaV2ParentId = areaV2ParentId;
+  SourceContentBuilder _sourceContent;
+  SourceContentBuilder get sourceContent =>
+      _$this._sourceContent ??= new SourceContentBuilder();
+  set sourceContent(SourceContentBuilder sourceContent) =>
+      _$this._sourceContent = sourceContent;
 
-  int _tagType;
-  int get tagType => _$this._tagType;
-  set tagType(int tagType) => _$this._tagType = tagType;
+  LiveHomeAdBuilder();
 
-  LiveAreaEntranceBuilder();
-
-  LiveAreaEntranceBuilder get _$this {
+  LiveHomeAdBuilder get _$this {
     if (_$v != null) {
       _id = _$v.id;
       _link = _$v.link;
       _pic = _$v.pic;
       _title = _$v.title;
-      _areaV2Id = _$v.areaV2Id;
-      _areaV2ParentId = _$v.areaV2ParentId;
-      _tagType = _$v.tagType;
+      _content = _$v.content;
+      _sourceContent = _$v.sourceContent?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(LiveAreaEntrance other) {
+  void replace(LiveHomeAd other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$LiveAreaEntrance;
+    _$v = other as _$LiveHomeAd;
   }
 
   @override
-  void update(void Function(LiveAreaEntranceBuilder) updates) {
+  void update(void Function(LiveHomeAdBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$LiveAreaEntrance build() {
-    final _$result = _$v ??
-        new _$LiveAreaEntrance._(
-            id: id,
-            link: link,
-            pic: pic,
-            title: title,
-            areaV2Id: areaV2Id,
-            areaV2ParentId: areaV2ParentId,
-            tagType: tagType);
+  _$LiveHomeAd build() {
+    _$LiveHomeAd _$result;
+    try {
+      _$result = _$v ??
+          new _$LiveHomeAd._(
+              id: id,
+              link: link,
+              pic: pic,
+              title: title,
+              content: content,
+              sourceContent: _sourceContent?.build());
+    } catch (_) {
+      String _$failedField;
+      try {
+        _$failedField = 'sourceContent';
+        _sourceContent?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'LiveHomeAd', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

@@ -7,10 +7,10 @@ export 'package:fluro/fluro.dart';
 class BBRouteMgr {
   static String root = "/";
   static String home = "bilibili://main/home/";
-  static String live = "bilibili://live/home";
+  static String liveHome = "bilibili://live/home";
   static String featured = "bilibili://pegasus/promo";
   static String popular = "bilibili://pegasus/hottopic";
-  static String bangumiList = "bilibili://pgc/home";
+  static String bangumiHome = "bilibili://pgc/home";
   static String cinema = "bilibili://pgc/cinema-tab";
   static String gameCenter = "bilibili://game_center/home";
   static String message = "bilibili://link/home/im_home";
@@ -25,8 +25,9 @@ class BBRouteMgr {
   static setup() {
     Router.appRouter.notFoundHandler = notFoundHandler;
     Router.appRouter.define(root, handler: rootHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(bangumiHome, handler: bangumiHomeHandler, transitionType: TransitionType.cupertino);
     Router.appRouter.define(home, handler: homeHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(live, handler: liveHandler, transitionType: TransitionType.cupertino);
+    Router.appRouter.define(liveHome, handler: liveHomeHandler, transitionType: TransitionType.cupertino);
     Router.appRouter.define(featured, handler: featuredHandler, transitionType: TransitionType.cupertino);
     Router.appRouter.define(popular, handler: popularHandler, transitionType: TransitionType.cupertino);
     Router.appRouter.define(channel, handler: channelContainerHandler, transitionType: TransitionType.cupertino);

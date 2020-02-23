@@ -7,7 +7,7 @@ import '../models/bb_partation.dart';
 import '../models/bb_tab_bar_http_body.dart';
 import '../models/bb_bangumi_body.dart';
 import '../models/bb_featured_body.dart';
-import '../models/bb_live_list_body.dart';
+import '../models/bb_live_home_body.dart';
 import '../models/bb_channel_module.dart';
 
 export '../models/bb_http_body.dart';
@@ -16,7 +16,7 @@ export '../models/bb_partation.dart';
 export '../models/bb_tab_bar_http_body.dart';
 export '../models/bb_bangumi_body.dart';
 export '../models/bb_featured_body.dart';
-export '../models/bb_live_list_body.dart';
+export '../models/bb_live_home_body.dart';
 export '../models/bb_channel_module.dart';
 
 class BBApi {
@@ -26,7 +26,7 @@ class BBApi {
         .then((value) => TabBarHttpBody.fromJson(value));
   }
 
-  static Future<HttpBody<LiveListBody>> requestAllLive() {
+  static Future<HttpBody<LiveHomeBody>> requestAllLive() {
     return rootBundle
         .loadString("assets/files/bb_live_stream_list.json")
         .then((value) => HttpBody.fromJson(value));

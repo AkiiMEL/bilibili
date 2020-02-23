@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bb_live_list_body.dart';
+part of 'bb_live_home_body.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<LiveListBody> _$liveListBodySerializer =
-    new _$LiveListBodySerializer();
+Serializer<LiveHomeBody> _$liveHomeBodySerializer =
+    new _$LiveHomeBodySerializer();
 
-class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
+class _$LiveHomeBodySerializer implements StructuredSerializer<LiveHomeBody> {
   @override
-  final Iterable<Type> types = const [LiveListBody, _$LiveListBody];
+  final Iterable<Type> types = const [LiveHomeBody, _$LiveHomeBody];
   @override
-  final String wireName = 'LiveListBody';
+  final String wireName = 'LiveHomeBody';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, LiveListBody object,
+  Iterable<Object> serialize(Serializers serializers, LiveHomeBody object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
     if (object.hourRank != null) {
@@ -24,7 +24,7 @@ class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
         ..add('hour_rank')
         ..add(serializers.serialize(object.hourRank,
             specifiedType: const FullType(BuiltList, const [
-              const FullType(LiveGroup, const [const FullType(LiveRank)])
+              const FullType(LiveGroup, const [const FullType(Room)])
             ])));
     }
     if (object.seaPatrol != null) {
@@ -72,8 +72,7 @@ class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
         ..add('area_entrance_v2')
         ..add(serializers.serialize(object.areaEntranceV2,
             specifiedType: const FullType(BuiltList, const [
-              const FullType(
-                  LiveGroup, const [const FullType(LiveAreaEntrance)])
+              const FullType(LiveGroup, const [const FullType(LiveTag)])
             ])));
     }
     if (object.areaEntrance != null) {
@@ -87,7 +86,7 @@ class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
         ..add('banner')
         ..add(serializers.serialize(object.banner,
             specifiedType: const FullType(BuiltList, const [
-              const FullType(LiveGroup, const [const FullType(LiveAd)])
+              const FullType(LiveGroup, const [const FullType(LiveHomeAd)])
             ])));
     }
     if (object.activityCardV2 != null) {
@@ -95,7 +94,8 @@ class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
         ..add('activity_card_v2')
         ..add(serializers.serialize(object.activityCardV2,
             specifiedType: const FullType(BuiltList, const [
-              const FullType(LiveGroup, const [const FullType(LiveActivity)])
+              const FullType(
+                  LiveGroup, const [const FullType(LiveHomeActivity)])
             ])));
     }
     if (object.isSkyHorseGray != null) {
@@ -108,9 +108,9 @@ class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
   }
 
   @override
-  LiveListBody deserialize(Serializers serializers, Iterable<Object> serialized,
+  LiveHomeBody deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new LiveListBodyBuilder();
+    final result = new LiveHomeBodyBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -121,7 +121,7 @@ class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
         case 'hour_rank':
           result.hourRank.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(LiveGroup, const [const FullType(LiveRank)])
+                const FullType(LiveGroup, const [const FullType(Room)])
               ])) as BuiltList<Object>);
           break;
         case 'sea_patrol':
@@ -155,8 +155,7 @@ class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
         case 'area_entrance_v2':
           result.areaEntranceV2.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(
-                    LiveGroup, const [const FullType(LiveAreaEntrance)])
+                const FullType(LiveGroup, const [const FullType(LiveTag)])
               ])) as BuiltList<Object>);
           break;
         case 'area_entrance':
@@ -166,13 +165,14 @@ class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
         case 'banner':
           result.banner.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(LiveGroup, const [const FullType(LiveAd)])
+                const FullType(LiveGroup, const [const FullType(LiveHomeAd)])
               ])) as BuiltList<Object>);
           break;
         case 'activity_card_v2':
           result.activityCardV2.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(LiveGroup, const [const FullType(LiveActivity)])
+                const FullType(
+                    LiveGroup, const [const FullType(LiveHomeActivity)])
               ])) as BuiltList<Object>);
           break;
         case 'is_sky_horse_gray':
@@ -186,9 +186,9 @@ class _$LiveListBodySerializer implements StructuredSerializer<LiveListBody> {
   }
 }
 
-class _$LiveListBody extends LiveListBody {
+class _$LiveHomeBody extends LiveHomeBody {
   @override
-  final BuiltList<LiveGroup<LiveRank>> hourRank;
+  final BuiltList<LiveGroup<Room>> hourRank;
   @override
   final BuiltList seaPatrol;
   @override
@@ -202,20 +202,20 @@ class _$LiveListBody extends LiveListBody {
   @override
   final int interval;
   @override
-  final BuiltList<LiveGroup<LiveAreaEntrance>> areaEntranceV2;
+  final BuiltList<LiveGroup<LiveTag>> areaEntranceV2;
   @override
   final BuiltList areaEntrance;
   @override
-  final BuiltList<LiveGroup<LiveAd>> banner;
+  final BuiltList<LiveGroup<LiveHomeAd>> banner;
   @override
-  final BuiltList<LiveGroup<LiveActivity>> activityCardV2;
+  final BuiltList<LiveGroup<LiveHomeActivity>> activityCardV2;
   @override
   final int isSkyHorseGray;
 
-  factory _$LiveListBody([void Function(LiveListBodyBuilder) updates]) =>
-      (new LiveListBodyBuilder()..update(updates)).build();
+  factory _$LiveHomeBody([void Function(LiveHomeBodyBuilder) updates]) =>
+      (new LiveHomeBodyBuilder()..update(updates)).build();
 
-  _$LiveListBody._(
+  _$LiveHomeBody._(
       {this.hourRank,
       this.seaPatrol,
       this.myTag,
@@ -231,16 +231,16 @@ class _$LiveListBody extends LiveListBody {
       : super._();
 
   @override
-  LiveListBody rebuild(void Function(LiveListBodyBuilder) updates) =>
+  LiveHomeBody rebuild(void Function(LiveHomeBodyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LiveListBodyBuilder toBuilder() => new LiveListBodyBuilder()..replace(this);
+  LiveHomeBodyBuilder toBuilder() => new LiveHomeBodyBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LiveListBody &&
+    return other is LiveHomeBody &&
         hourRank == other.hourRank &&
         seaPatrol == other.seaPatrol &&
         myTag == other.myTag &&
@@ -283,7 +283,7 @@ class _$LiveListBody extends LiveListBody {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LiveListBody')
+    return (newBuiltValueToStringHelper('LiveHomeBody')
           ..add('hourRank', hourRank)
           ..add('seaPatrol', seaPatrol)
           ..add('myTag', myTag)
@@ -300,14 +300,14 @@ class _$LiveListBody extends LiveListBody {
   }
 }
 
-class LiveListBodyBuilder
-    implements Builder<LiveListBody, LiveListBodyBuilder> {
-  _$LiveListBody _$v;
+class LiveHomeBodyBuilder
+    implements Builder<LiveHomeBody, LiveHomeBodyBuilder> {
+  _$LiveHomeBody _$v;
 
-  ListBuilder<LiveGroup<LiveRank>> _hourRank;
-  ListBuilder<LiveGroup<LiveRank>> get hourRank =>
-      _$this._hourRank ??= new ListBuilder<LiveGroup<LiveRank>>();
-  set hourRank(ListBuilder<LiveGroup<LiveRank>> hourRank) =>
+  ListBuilder<LiveGroup<Room>> _hourRank;
+  ListBuilder<LiveGroup<Room>> get hourRank =>
+      _$this._hourRank ??= new ListBuilder<LiveGroup<Room>>();
+  set hourRank(ListBuilder<LiveGroup<Room>> hourRank) =>
       _$this._hourRank = hourRank;
 
   BuiltList _seaPatrol;
@@ -338,10 +338,10 @@ class LiveListBodyBuilder
   int get interval => _$this._interval;
   set interval(int interval) => _$this._interval = interval;
 
-  ListBuilder<LiveGroup<LiveAreaEntrance>> _areaEntranceV2;
-  ListBuilder<LiveGroup<LiveAreaEntrance>> get areaEntranceV2 =>
-      _$this._areaEntranceV2 ??= new ListBuilder<LiveGroup<LiveAreaEntrance>>();
-  set areaEntranceV2(ListBuilder<LiveGroup<LiveAreaEntrance>> areaEntranceV2) =>
+  ListBuilder<LiveGroup<LiveTag>> _areaEntranceV2;
+  ListBuilder<LiveGroup<LiveTag>> get areaEntranceV2 =>
+      _$this._areaEntranceV2 ??= new ListBuilder<LiveGroup<LiveTag>>();
+  set areaEntranceV2(ListBuilder<LiveGroup<LiveTag>> areaEntranceV2) =>
       _$this._areaEntranceV2 = areaEntranceV2;
 
   BuiltList _areaEntrance;
@@ -349,15 +349,16 @@ class LiveListBodyBuilder
   set areaEntrance(BuiltList areaEntrance) =>
       _$this._areaEntrance = areaEntrance;
 
-  ListBuilder<LiveGroup<LiveAd>> _banner;
-  ListBuilder<LiveGroup<LiveAd>> get banner =>
-      _$this._banner ??= new ListBuilder<LiveGroup<LiveAd>>();
-  set banner(ListBuilder<LiveGroup<LiveAd>> banner) => _$this._banner = banner;
+  ListBuilder<LiveGroup<LiveHomeAd>> _banner;
+  ListBuilder<LiveGroup<LiveHomeAd>> get banner =>
+      _$this._banner ??= new ListBuilder<LiveGroup<LiveHomeAd>>();
+  set banner(ListBuilder<LiveGroup<LiveHomeAd>> banner) =>
+      _$this._banner = banner;
 
-  ListBuilder<LiveGroup<LiveActivity>> _activityCardV2;
-  ListBuilder<LiveGroup<LiveActivity>> get activityCardV2 =>
-      _$this._activityCardV2 ??= new ListBuilder<LiveGroup<LiveActivity>>();
-  set activityCardV2(ListBuilder<LiveGroup<LiveActivity>> activityCardV2) =>
+  ListBuilder<LiveGroup<LiveHomeActivity>> _activityCardV2;
+  ListBuilder<LiveGroup<LiveHomeActivity>> get activityCardV2 =>
+      _$this._activityCardV2 ??= new ListBuilder<LiveGroup<LiveHomeActivity>>();
+  set activityCardV2(ListBuilder<LiveGroup<LiveHomeActivity>> activityCardV2) =>
       _$this._activityCardV2 = activityCardV2;
 
   int _isSkyHorseGray;
@@ -365,9 +366,9 @@ class LiveListBodyBuilder
   set isSkyHorseGray(int isSkyHorseGray) =>
       _$this._isSkyHorseGray = isSkyHorseGray;
 
-  LiveListBodyBuilder();
+  LiveHomeBodyBuilder();
 
-  LiveListBodyBuilder get _$this {
+  LiveHomeBodyBuilder get _$this {
     if (_$v != null) {
       _hourRank = _$v.hourRank?.toBuilder();
       _seaPatrol = _$v.seaPatrol;
@@ -387,24 +388,24 @@ class LiveListBodyBuilder
   }
 
   @override
-  void replace(LiveListBody other) {
+  void replace(LiveHomeBody other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$LiveListBody;
+    _$v = other as _$LiveHomeBody;
   }
 
   @override
-  void update(void Function(LiveListBodyBuilder) updates) {
+  void update(void Function(LiveHomeBodyBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$LiveListBody build() {
-    _$LiveListBody _$result;
+  _$LiveHomeBody build() {
+    _$LiveHomeBody _$result;
     try {
       _$result = _$v ??
-          new _$LiveListBody._(
+          new _$LiveHomeBody._(
               hourRank: _hourRank?.build(),
               seaPatrol: seaPatrol,
               myTag: myTag,
@@ -437,7 +438,7 @@ class LiveListBodyBuilder
         _activityCardV2?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'LiveListBody', _$failedField, e.toString());
+            'LiveHomeBody', _$failedField, e.toString());
       }
       rethrow;
     }

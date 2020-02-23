@@ -4,10 +4,10 @@ import '../utils/bb_common.dart';
 import '../compenents/bb_ad_view.dart';
 import '../compenents/bb_network_image.dart';
 import '../models/bb_live_group.dart';
-import '../models/bb_live_activity.dart';
+import '../models/bb_live_home_activity.dart';
 
 class BBLiveHomeActivityView extends StatelessWidget {
-  final LiveGroup<LiveActivity> activities;
+  final LiveGroup<LiveHomeActivity> activities;
 
   BBLiveHomeActivityView({this.activities});
 

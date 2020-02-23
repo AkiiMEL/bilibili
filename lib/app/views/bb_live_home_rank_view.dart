@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 
 import '../utils/bb_args.dart';
 import '../compenents/bb_network_circle_avatar_image.dart';
-import '../models/bb_live_rank.dart';
 import '../models/bb_live_group.dart';
+import '../models/bb_room.dart';
 
 class BBLiveHomeRankView extends StatelessWidget {
-  final LiveGroup<LiveRank> section;
+  final LiveGroup<Room> section;
 
   BBLiveHomeRankView({this.section});
 
   @override
   Widget build(BuildContext context) {
     // Fix sort order with 2 1 3;
-    LiveRank goldMedal =
+    Room goldMedal =
         section.list?.firstWhere((e) => e.rank == 1, orElse: () => null);
-    LiveRank silverMedal =
+    Room silverMedal =
         section.list?.firstWhere((e) => e.rank == 2, orElse: () => null);
-    LiveRank bronzeMedal =
+    Room bronzeMedal =
         section.list?.firstWhere((e) => e.rank == 3, orElse: () => null);
 
-    List<LiveRank> models = [];
+    List<Room> models = [];
     if (silverMedal != null) {
       models.add(silverMedal);
     }
@@ -47,7 +47,7 @@ class BBLiveHomeRankView extends StatelessWidget {
           );
   }
 
-  Widget _getRankItem(BuildContext context, LiveRank rank) {
+  Widget _getRankItem(BuildContext context, Room rank) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
@@ -68,7 +68,7 @@ class BBLiveHomeRankView extends StatelessWidget {
   }
 
   // Rank title (e.g. crown).
-  Widget _getRankAvatarView(BuildContext context, LiveRank rank) {
+  Widget _getRankAvatarView(BuildContext context, Room rank) {
     double horizontal = 9.0;
     EdgeInsets edgeInsets =
         EdgeInsets.only(top: 14.0, left: horizontal, right: horizontal);

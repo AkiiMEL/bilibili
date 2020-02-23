@@ -4,29 +4,27 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-import 'bb_live_activity.dart';
-import 'bb_live_ad.dart';
-import 'bb_live_area_entrance.dart';
+import 'bb_live_home_activity.dart';
+import 'bb_live_home_ad.dart';
+import 'bb_live_tag.dart';
 import 'bb_live_group.dart';
-import 'bb_live_rank.dart';
 import 'bb_room.dart';
 import 'bb_serializers.dart';
 
-export 'bb_live_activity.dart';
-export 'bb_live_ad.dart';
-export 'bb_live_area_entrance.dart';
+export 'bb_live_home_activity.dart';
+export 'bb_live_home_ad.dart';
+export 'bb_live_tag.dart';
 export 'bb_live_group.dart';
-export 'bb_live_rank.dart';
 export 'bb_room.dart';
 
-part 'bb_live_list_body.g.dart';
+part 'bb_live_home_body.g.dart';
 
-abstract class LiveListBody
-    implements Built<LiveListBody, LiveListBodyBuilder> {
+abstract class LiveHomeBody
+    implements Built<LiveHomeBody, LiveHomeBodyBuilder> {
   // Fields
   @nullable
   @BuiltValueField(wireName: 'hour_rank')
-  BuiltList<LiveGroup<LiveRank>> get hourRank;
+  BuiltList<LiveGroup<Room>> get hourRank;
   @nullable
   @BuiltValueField(wireName: 'sea_patrol')
   BuiltList<dynamic> get seaPatrol;
@@ -46,34 +44,34 @@ abstract class LiveListBody
   int get interval;
   @nullable
   @BuiltValueField(wireName: 'area_entrance_v2')
-  BuiltList<LiveGroup<LiveAreaEntrance>> get areaEntranceV2;
+  BuiltList<LiveGroup<LiveTag>> get areaEntranceV2;
   @nullable
   @BuiltValueField(wireName: 'area_entrance')
   BuiltList<dynamic> get areaEntrance;
   @nullable
   @BuiltValueField(wireName: 'banner')
-  BuiltList<LiveGroup<LiveAd>> get banner;
+  BuiltList<LiveGroup<LiveHomeAd>> get banner;
   @nullable
   @BuiltValueField(wireName: 'activity_card_v2')
-  BuiltList<LiveGroup<LiveActivity>> get activityCardV2;
+  BuiltList<LiveGroup<LiveHomeActivity>> get activityCardV2;
   @nullable
   @BuiltValueField(wireName: 'is_sky_horse_gray')
   int get isSkyHorseGray;
 
-  LiveListBody._();
+  LiveHomeBody._();
 
-  factory LiveListBody([void Function(LiveListBodyBuilder) updates]) =
-      _$LiveListBody;
+  factory LiveHomeBody([void Function(LiveHomeBodyBuilder) updates]) =
+      _$LiveHomeBody;
 
   String toJson() {
     return json
-        .encode(serializers.serializeWith(LiveListBody.serializer, this));
+        .encode(serializers.serializeWith(LiveHomeBody.serializer, this));
   }
 
-  static LiveListBody fromJson(String jsonString) {
+  static LiveHomeBody fromJson(String jsonString) {
     return serializers.deserializeWith(
-        LiveListBody.serializer, json.decode(jsonString));
+        LiveHomeBody.serializer, json.decode(jsonString));
   }
 
-  static Serializer<LiveListBody> get serializer => _$liveListBodySerializer;
+  static Serializer<LiveHomeBody> get serializer => _$liveHomeBodySerializer;
 }
