@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 
-import '../utils/bb_common.dart';
+import '../utils/bb_utils.dart';
 import '../models/bb_text_attributes_definations.dart';
 
 export '../models/bb_text_attributes.dart';
 
+BorderRadius _borderRadius = BorderRadius.circular(2.0);
+
 class BBMediaTagView extends StatelessWidget {
   final TextAttributesDifinations textAttributes;
-
-  BBMediaTagView({this.textAttributes});
+  final BorderRadius borderRadius;
+  final EdgeInsets contentInsets;
+  BBMediaTagView({
+    Key key,
+    this.textAttributes,
+    this.borderRadius,
+    this.contentInsets = EdgeInsets.zero,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +25,7 @@ class BBMediaTagView extends StatelessWidget {
             textAttributes.text.isEmpty
         ? SizedBox.shrink()
         : Container(
-            margin: EdgeInsets.only(right: defaultMargin.right),
+            padding: contentInsets,
             decoration: BoxDecoration(
               color: BBColor.from(
                   Theme.of(context).brightness == Brightness.light
@@ -30,18 +38,18 @@ class BBMediaTagView extends StatelessWidget {
                             : textAttributes.darkModeBorderColor) ??
                     Colors.transparent,
               ),
-              borderRadius: BorderRadius.circular(3.0),
+              borderRadius: borderRadius ?? _borderRadius,
             ),
-            padding: EdgeInsets.symmetric(horizontal: 1),
             child: Center(
               child: Text(
                 textAttributes.text,
-                style: Theme.of(context).textTheme.display4.copyWith(
-                      color: BBColor.from(
-                          Theme.of(context).brightness == Brightness.light
-                              ? textAttributes.textColor
-                              : textAttributes.darkModeTextColor),
-                    ),
+                style: TextStyle(
+                  fontSize: 10.0,
+                  color: BBColor.from(
+                      Theme.of(context).brightness == Brightness.light
+                          ? textAttributes.textColor
+                          : textAttributes.darkModeTextColor),
+                ),
               ),
             ),
           );

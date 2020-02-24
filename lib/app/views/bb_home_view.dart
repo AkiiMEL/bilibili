@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
-import '../utils/bb_app_mgr.dart';
-import '../compenents/bb_network_circle_avatar_image.dart';
-import '../utils/bb_common.dart';
+import '../utils/bb_args.dart';
+import '../utils/bb_utils.dart';
+import '../compenents/bb_ui.dart';
 import '../models/bb_tab_bar_item.dart';
 
 class BBHomeView extends StatefulWidget {
@@ -95,7 +95,7 @@ class _BBHomeViewState extends State<BBHomeView>
   Widget _getTopView() {
     List<Widget> children = [
       BBNetworkCircleAvatarImage(
-        defaultAvatarURL,
+        "",
         placeholder: Images.defaultAvatar,
         radius: 18.0,
       ),

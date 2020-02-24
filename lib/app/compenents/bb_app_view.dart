@@ -46,22 +46,24 @@ class BBAppView extends StatelessWidget {
     List<Widget> children = [];
     if (image != null) {
       children.add(Expanded(
-        child: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-          double width = imageSize?.width != null
-              ? min(imageSize.width, constraints.maxWidth)
-              : constraints.maxWidth;
-          double height = imageSize?.height != null
-              ? min(imageSize.height, constraints.maxHeight)
-              : constraints.maxHeight;
-          return ConstrainedBox(
-            constraints: BoxConstraints.tightFor(
-              width: width,
-              height: height,
-            ),
-            child: BBNetworkImage(image),
-          );
-        }),
+        child: Center(
+          child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+            double width = imageSize?.width != null
+                ? min(imageSize.width, constraints.maxWidth)
+                : constraints.maxWidth;
+            double height = imageSize?.height != null
+                ? min(imageSize.height, constraints.maxHeight)
+                : constraints.maxHeight;
+            return ConstrainedBox(
+              constraints: BoxConstraints.tightFor(
+                width: width,
+                height: height,
+              ),
+              child: BBNetworkImage(image),
+            );
+          }),
+        ),
       ));
     }
     if (title != null) {

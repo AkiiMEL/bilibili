@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../models/bb_media.dart';
-import '../utils/bb_common.dart';
-import '../compenents/bb_network_image.dart';
+import '../utils/bb_args.dart';
+import '../utils/bb_utils.dart';
+import '../compenents/bb_ui.dart';
 
 class BBFeaturedListItemMultipleColumView extends StatelessWidget {
   final Media media;

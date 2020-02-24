@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../utils/bb_common.dart';
-import '../compenents/bb_media_thumbnail_view.dart';
+import '../utils/bb_args.dart';
+import '../utils/bb_utils.dart';
+import '../compenents/bb_ui.dart';
 
 class BBRelatedBangumiRow extends StatefulWidget {
   @override

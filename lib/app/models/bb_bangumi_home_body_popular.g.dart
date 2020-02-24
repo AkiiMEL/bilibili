@@ -1,23 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bb_bangumi_body_popular.dart';
+part of 'bb_bangumi_home_body_popular.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<BangumiBodyPopular> _$bangumiBodyPopularSerializer =
-    new _$BangumiBodyPopularSerializer();
+Serializer<BangumiHomeBodyPopular> _$bangumiHomeBodyPopularSerializer =
+    new _$BangumiHomeBodyPopularSerializer();
 
-class _$BangumiBodyPopularSerializer
-    implements StructuredSerializer<BangumiBodyPopular> {
+class _$BangumiHomeBodyPopularSerializer
+    implements StructuredSerializer<BangumiHomeBodyPopular> {
   @override
-  final Iterable<Type> types = const [BangumiBodyPopular, _$BangumiBodyPopular];
+  final Iterable<Type> types = const [
+    BangumiHomeBodyPopular,
+    _$BangumiHomeBodyPopular
+  ];
   @override
-  final String wireName = 'BangumiBodyPopular';
+  final String wireName = 'BangumiHomeBodyPopular';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, BangumiBodyPopular object,
+  Iterable<Object> serialize(
+      Serializers serializers, BangumiHomeBodyPopular object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
     if (object.desc != null) {
@@ -48,10 +52,10 @@ class _$BangumiBodyPopularSerializer
   }
 
   @override
-  BangumiBodyPopular deserialize(
+  BangumiHomeBodyPopular deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new BangumiBodyPopularBuilder();
+    final result = new BangumiHomeBodyPopularBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -82,7 +86,7 @@ class _$BangumiBodyPopularSerializer
   }
 }
 
-class _$BangumiBodyPopular extends BangumiBodyPopular {
+class _$BangumiHomeBodyPopular extends BangumiHomeBodyPopular {
   @override
   final String desc;
   @override
@@ -92,26 +96,26 @@ class _$BangumiBodyPopular extends BangumiBodyPopular {
   @override
   final int wid;
 
-  factory _$BangumiBodyPopular(
-          [void Function(BangumiBodyPopularBuilder) updates]) =>
-      (new BangumiBodyPopularBuilder()..update(updates)).build();
+  factory _$BangumiHomeBodyPopular(
+          [void Function(BangumiHomeBodyPopularBuilder) updates]) =>
+      (new BangumiHomeBodyPopularBuilder()..update(updates)).build();
 
-  _$BangumiBodyPopular._({this.desc, this.items, this.title, this.wid})
+  _$BangumiHomeBodyPopular._({this.desc, this.items, this.title, this.wid})
       : super._();
 
   @override
-  BangumiBodyPopular rebuild(
-          void Function(BangumiBodyPopularBuilder) updates) =>
+  BangumiHomeBodyPopular rebuild(
+          void Function(BangumiHomeBodyPopularBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  BangumiBodyPopularBuilder toBuilder() =>
-      new BangumiBodyPopularBuilder()..replace(this);
+  BangumiHomeBodyPopularBuilder toBuilder() =>
+      new BangumiHomeBodyPopularBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is BangumiBodyPopular &&
+    return other is BangumiHomeBodyPopular &&
         desc == other.desc &&
         items == other.items &&
         title == other.title &&
@@ -127,7 +131,7 @@ class _$BangumiBodyPopular extends BangumiBodyPopular {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('BangumiBodyPopular')
+    return (newBuiltValueToStringHelper('BangumiHomeBodyPopular')
           ..add('desc', desc)
           ..add('items', items)
           ..add('title', title)
@@ -136,9 +140,9 @@ class _$BangumiBodyPopular extends BangumiBodyPopular {
   }
 }
 
-class BangumiBodyPopularBuilder
-    implements Builder<BangumiBodyPopular, BangumiBodyPopularBuilder> {
-  _$BangumiBodyPopular _$v;
+class BangumiHomeBodyPopularBuilder
+    implements Builder<BangumiHomeBodyPopular, BangumiHomeBodyPopularBuilder> {
+  _$BangumiHomeBodyPopular _$v;
 
   String _desc;
   String get desc => _$this._desc;
@@ -156,9 +160,9 @@ class BangumiBodyPopularBuilder
   int get wid => _$this._wid;
   set wid(int wid) => _$this._wid = wid;
 
-  BangumiBodyPopularBuilder();
+  BangumiHomeBodyPopularBuilder();
 
-  BangumiBodyPopularBuilder get _$this {
+  BangumiHomeBodyPopularBuilder get _$this {
     if (_$v != null) {
       _desc = _$v.desc;
       _items = _$v.items;
@@ -170,22 +174,22 @@ class BangumiBodyPopularBuilder
   }
 
   @override
-  void replace(BangumiBodyPopular other) {
+  void replace(BangumiHomeBodyPopular other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$BangumiBodyPopular;
+    _$v = other as _$BangumiHomeBodyPopular;
   }
 
   @override
-  void update(void Function(BangumiBodyPopularBuilder) updates) {
+  void update(void Function(BangumiHomeBodyPopularBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$BangumiBodyPopular build() {
+  _$BangumiHomeBodyPopular build() {
     final _$result = _$v ??
-        new _$BangumiBodyPopular._(
+        new _$BangumiHomeBodyPopular._(
             desc: desc, items: items, title: title, wid: wid);
     replace(_$result);
     return _$result;

@@ -5,7 +5,7 @@ import '../models/bb_http_body.dart';
 import '../models/bb_mine.dart';
 import '../models/bb_partation.dart';
 import '../models/bb_tab_bar_http_body.dart';
-import '../models/bb_bangumi_body.dart';
+import '../models/bb_bangumi_home_body.dart';
 import '../models/bb_featured_body.dart';
 import '../models/bb_live_home_body.dart';
 import '../models/bb_channel_module.dart';
@@ -14,7 +14,7 @@ export '../models/bb_http_body.dart';
 export '../models/bb_mine.dart';
 export '../models/bb_partation.dart';
 export '../models/bb_tab_bar_http_body.dart';
-export '../models/bb_bangumi_body.dart';
+export '../models/bb_bangumi_home_body.dart';
 export '../models/bb_featured_body.dart';
 export '../models/bb_live_home_body.dart';
 export '../models/bb_channel_module.dart';
@@ -56,7 +56,7 @@ class BBApi {
         .then((value) => HttpBody.fromJson(value));
   }
 
-  static Future<HttpBody<BangumiBody>> requestAllBangumi() {
+  static Future<HttpBody<BangumiHomeBody>> requestAllBangumi() {
     return rootBundle
         .loadString("assets/files/bb_bangumi_list.json")
         .then((value) => HttpBody.fromJson(value));

@@ -13,6 +13,7 @@ class BBNavigationLink extends StatelessWidget {
   final BBNaviLinkAnimation animation;
   final Object arguments;
   final Widget child;
+  final void Function() onTap;
 
   BBNavigationLink({
     this.rootNavigator = true,
@@ -20,18 +21,26 @@ class BBNavigationLink extends StatelessWidget {
     this.destination,
     this.arguments,
     this.child,
-  }) : assert(destination != null);
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: child,
       onTapUp: (TapUpDetails d) {
-        print("CLICKED !!!");
+        if (onTap != null) {
+          onTap();
+        }
+        if (destination?.isEmpty ?? true) {
+          return;
+        }
+
         switch (animation) {
           case BBNaviLinkAnimation.PUSH:
           case BBNaviLinkAnimation.PRESENT:
-            Navigator.of(context, rootNavigator: rootNavigator).pushNamed(destination);
+            Navigator.of(context, rootNavigator: rootNavigator)
+                .pushNamed(destination);
             break;
           case BBNaviLinkAnimation.POP:
           case BBNaviLinkAnimation.DISMISS:

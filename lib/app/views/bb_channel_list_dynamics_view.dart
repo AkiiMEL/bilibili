@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 import '../models/bb_channel.dart';
-import '../utils/bb_common.dart';
-import '../compenents/bb_network_circle_avatar_image.dart';
+import '../utils/bb_args.dart';
+import '../utils/bb_utils.dart';
+import '../compenents/bb_ui.dart';
 
 class BBChannelListSliverDynamics extends StatelessWidget {
   final List<Channel> channels;

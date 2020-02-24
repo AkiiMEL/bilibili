@@ -1,28 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bb_bangumi_body.dart';
+part of 'bb_bangumi_home_body.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<BangumiBody> _$bangumiBodySerializer = new _$BangumiBodySerializer();
+Serializer<BangumiHomeBody> _$bangumiHomeBodySerializer =
+    new _$BangumiHomeBodySerializer();
 
-class _$BangumiBodySerializer implements StructuredSerializer<BangumiBody> {
+class _$BangumiHomeBodySerializer
+    implements StructuredSerializer<BangumiHomeBody> {
   @override
-  final Iterable<Type> types = const [BangumiBody, _$BangumiBody];
+  final Iterable<Type> types = const [BangumiHomeBody, _$BangumiHomeBody];
   @override
-  final String wireName = 'BangumiBody';
+  final String wireName = 'BangumiHomeBody';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, BangumiBody object,
+  Iterable<Object> serialize(Serializers serializers, BangumiHomeBody object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
     if (object.hot != null) {
       result
         ..add('hot')
         ..add(serializers.serialize(object.hot,
-            specifiedType: const FullType(BangumiBodyPopular)));
+            specifiedType: const FullType(BangumiHomeBodyPopular)));
     }
     if (object.modules != null) {
       result
@@ -42,9 +44,10 @@ class _$BangumiBodySerializer implements StructuredSerializer<BangumiBody> {
   }
 
   @override
-  BangumiBody deserialize(Serializers serializers, Iterable<Object> serialized,
+  BangumiHomeBody deserialize(
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new BangumiBodyBuilder();
+    final result = new BangumiHomeBodyBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -54,8 +57,8 @@ class _$BangumiBodySerializer implements StructuredSerializer<BangumiBody> {
       switch (key) {
         case 'hot':
           result.hot.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(BangumiBodyPopular))
-              as BangumiBodyPopular);
+                  specifiedType: const FullType(BangumiHomeBodyPopular))
+              as BangumiHomeBodyPopular);
           break;
         case 'modules':
           result.modules.replace(serializers.deserialize(value,
@@ -76,30 +79,31 @@ class _$BangumiBodySerializer implements StructuredSerializer<BangumiBody> {
   }
 }
 
-class _$BangumiBody extends BangumiBody {
+class _$BangumiHomeBody extends BangumiHomeBody {
   @override
-  final BangumiBodyPopular hot;
+  final BangumiHomeBodyPopular hot;
   @override
   final BuiltList<Module> modules;
   @override
   final BuiltList<Region> regions;
 
-  factory _$BangumiBody([void Function(BangumiBodyBuilder) updates]) =>
-      (new BangumiBodyBuilder()..update(updates)).build();
+  factory _$BangumiHomeBody([void Function(BangumiHomeBodyBuilder) updates]) =>
+      (new BangumiHomeBodyBuilder()..update(updates)).build();
 
-  _$BangumiBody._({this.hot, this.modules, this.regions}) : super._();
+  _$BangumiHomeBody._({this.hot, this.modules, this.regions}) : super._();
 
   @override
-  BangumiBody rebuild(void Function(BangumiBodyBuilder) updates) =>
+  BangumiHomeBody rebuild(void Function(BangumiHomeBodyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  BangumiBodyBuilder toBuilder() => new BangumiBodyBuilder()..replace(this);
+  BangumiHomeBodyBuilder toBuilder() =>
+      new BangumiHomeBodyBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is BangumiBody &&
+    return other is BangumiHomeBody &&
         hot == other.hot &&
         modules == other.modules &&
         regions == other.regions;
@@ -113,7 +117,7 @@ class _$BangumiBody extends BangumiBody {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('BangumiBody')
+    return (newBuiltValueToStringHelper('BangumiHomeBody')
           ..add('hot', hot)
           ..add('modules', modules)
           ..add('regions', regions))
@@ -121,13 +125,14 @@ class _$BangumiBody extends BangumiBody {
   }
 }
 
-class BangumiBodyBuilder implements Builder<BangumiBody, BangumiBodyBuilder> {
-  _$BangumiBody _$v;
+class BangumiHomeBodyBuilder
+    implements Builder<BangumiHomeBody, BangumiHomeBodyBuilder> {
+  _$BangumiHomeBody _$v;
 
-  BangumiBodyPopularBuilder _hot;
-  BangumiBodyPopularBuilder get hot =>
-      _$this._hot ??= new BangumiBodyPopularBuilder();
-  set hot(BangumiBodyPopularBuilder hot) => _$this._hot = hot;
+  BangumiHomeBodyPopularBuilder _hot;
+  BangumiHomeBodyPopularBuilder get hot =>
+      _$this._hot ??= new BangumiHomeBodyPopularBuilder();
+  set hot(BangumiHomeBodyPopularBuilder hot) => _$this._hot = hot;
 
   ListBuilder<Module> _modules;
   ListBuilder<Module> get modules =>
@@ -139,9 +144,9 @@ class BangumiBodyBuilder implements Builder<BangumiBody, BangumiBodyBuilder> {
       _$this._regions ??= new ListBuilder<Region>();
   set regions(ListBuilder<Region> regions) => _$this._regions = regions;
 
-  BangumiBodyBuilder();
+  BangumiHomeBodyBuilder();
 
-  BangumiBodyBuilder get _$this {
+  BangumiHomeBodyBuilder get _$this {
     if (_$v != null) {
       _hot = _$v.hot?.toBuilder();
       _modules = _$v.modules?.toBuilder();
@@ -152,24 +157,24 @@ class BangumiBodyBuilder implements Builder<BangumiBody, BangumiBodyBuilder> {
   }
 
   @override
-  void replace(BangumiBody other) {
+  void replace(BangumiHomeBody other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$BangumiBody;
+    _$v = other as _$BangumiHomeBody;
   }
 
   @override
-  void update(void Function(BangumiBodyBuilder) updates) {
+  void update(void Function(BangumiHomeBodyBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$BangumiBody build() {
-    _$BangumiBody _$result;
+  _$BangumiHomeBody build() {
+    _$BangumiHomeBody _$result;
     try {
       _$result = _$v ??
-          new _$BangumiBody._(
+          new _$BangumiHomeBody._(
               hot: _hot?.build(),
               modules: _modules?.build(),
               regions: _regions?.build());
@@ -184,7 +189,7 @@ class BangumiBodyBuilder implements Builder<BangumiBody, BangumiBodyBuilder> {
         _regions?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'BangumiBody', _$failedField, e.toString());
+            'BangumiHomeBody', _$failedField, e.toString());
       }
       rethrow;
     }

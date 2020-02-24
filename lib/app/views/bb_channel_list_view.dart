@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import '../utils/bb_common.dart';
+import '../utils/bb_args.dart';
+import '../utils/bb_utils.dart';
 import '../api/bb_api.dart';
-import '../compenents/bb_network_circle_avatar_image.dart';
+import '../compenents/bb_ui.dart';
 
 import 'bb_channel_list_entry_item_view.dart';
 import 'bb_channel_list_section.dart';

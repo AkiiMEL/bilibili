@@ -27,7 +27,7 @@ class BBApp extends StatelessWidget {
             labelPadding: EdgeInsets.symmetric(horizontal: 17.0),
           ),
           dividerTheme: DividerThemeData(
-            color: Color(0xfff0f0f0),
+            color: Color(0xFFF0F0F0),
             space: 1,
           ),
           textTheme: TextTheme(
@@ -49,7 +49,7 @@ class BBApp extends StatelessWidget {
               color: Color.fromARGB(255, 183, 183, 182),
             ),
           ),
-          accentColor: Color.fromARGB(255, 246, 116, 154),
+          accentColor: Color(0xFFF6749A),
           backgroundColor: Colors.grey[100],
           scaffoldBackgroundColor: Colors.white,
         ),

@@ -10,8 +10,8 @@ import 'bb_advertisement_creative_content.dart';
 import 'bb_argument.dart';
 import 'bb_attr.dart';
 import 'bb_badge.dart';
-import 'bb_bangumi_body.dart';
-import 'bb_bangumi_body_popular.dart';
+import 'bb_bangumi_home_body.dart';
+import 'bb_bangumi_home_body_popular.dart';
 import 'bb_bangumi_follow.dart';
 import 'bb_bangumi_list_item.dart';
 import 'bb_bangumi_stat.dart';
@@ -63,9 +63,9 @@ part 'bb_serializers.g.dart';
   Argument,
   Attr,
   Badge,
-  BangumiBody,
-  BangumiBodyPopular,
   BangumiFollow,
+  BangumiHomeBody,
+  BangumiHomeBodyPopular,
   BangumiListItem,
   BangumiStat,
   BangumiStatus,
@@ -135,8 +135,8 @@ final Serializers serializers = (_$serializers.toBuilder()
         () => HttpBodyBuilder<Mine>(),
       )
       ..addBuilderFactory(
-        FullType(HttpBody, [FullType(BangumiBody)]),
-        () => HttpBodyBuilder<BangumiBody>(),
+        FullType(HttpBody, [FullType(BangumiHomeBody)]),
+        () => HttpBodyBuilder<BangumiHomeBody>(),
       )
       ..addBuilderFactory(
         FullType(HttpBody, [FullType(FeaturedBody)]),

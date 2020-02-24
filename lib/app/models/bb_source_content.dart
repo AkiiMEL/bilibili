@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 
 import 'bb_advertisement.dart';
@@ -23,7 +24,7 @@ abstract class SourceContent
   int get index;
   @nullable
   @BuiltValueField(wireName: "is_ad_loc")
-  bool get isAdLoc;
+  JsonObject get isAdLoc;
   @nullable
   @BuiltValueField(wireName: "request_id")
   String get requestId;

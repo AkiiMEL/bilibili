@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:bilibili/app/utils/bb_common.dart';
-import 'package:bilibili/app/compenents/bb_network_image.dart';
+import '../utils/bb_args.dart';
+import '../utils/bb_utils.dart';
+import '../compenents/bb_ui.dart';
 
 class BBPopularListEntrySectionView extends StatelessWidget {
 

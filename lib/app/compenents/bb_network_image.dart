@@ -6,6 +6,7 @@ class BBNetworkImage extends StatelessWidget {
   final String url;
   final String placeholder;
   final BoxFit fit;
+  final BoxFit pfit;
   final Size size;
   final double aspectRatio;
 
@@ -14,6 +15,7 @@ class BBNetworkImage extends StatelessWidget {
     Key key,
     this.placeholder,
     this.fit = BoxFit.cover,
+    this.pfit = BoxFit.none,
     this.size,
     this.aspectRatio,
   }) : super(key: key);
@@ -37,7 +39,7 @@ class BBNetworkImage extends StatelessWidget {
       child: placeholder?.isNotEmpty ?? false
           ? Image.asset(
               placeholder,
-              fit: BoxFit.none,
+              fit: pfit,
             )
           : null,
     );

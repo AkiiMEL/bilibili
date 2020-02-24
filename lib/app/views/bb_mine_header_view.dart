@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../utils/bb_common.dart';
-import '../compenents/bb_media_tag_view.dart';
-import '../compenents/bb_network_circle_avatar_image.dart';
+import '../utils/bb_args.dart';
+import '../utils/bb_utils.dart';
+import '../compenents/bb_ui.dart';
 import '../models/bb_mine.dart';
 
 class BBMineHeaderView extends StatelessWidget {
@@ -44,7 +44,7 @@ class BBMineHeaderView extends StatelessWidget {
                     placeholder: Images.defaultAvatar,
                     extra: mine?.vip?.type == 2
                         ? Image.asset(
-                            Images.bigVipMember(Theme.of(context).brightness))
+                            Images.bigV(Theme.of(context).brightness))
                         : null,
                     radius: 20.0,
                   ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../api/bb_api.dart';
-import '../utils/bb_common.dart';
-import '../compenents/bb_network_image.dart';
-import '../views/bb_mine_header_view.dart';
+import '../utils/bb_args.dart';
+import '../utils/bb_utils.dart';
+import '../compenents/bb_ui.dart';
 import '../models/bb_http_body.dart';
 import '../models/bb_classified_services.dart';
 import '../models/bb_mine.dart';
 import '../models/bb_service.dart';
+import 'bb_mine_header_view.dart';
 
 class BBMineView extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tuple/tuple.dart';
 
-import '../utils/bb_common.dart';
+import '../utils/bb_assets.dart';
 import 'bb_network_image.dart';
 
 // Media preview contains image, tag and other extra message
@@ -35,19 +35,22 @@ class BBThumbnailView extends StatelessWidget {
 
   final EdgeInsets _edgeInsets = EdgeInsets.fromLTRB(4.0, 2.0, 4.0, 4.0);
 
-  BBThumbnailView(
-      {this.url,
-      this.topLeftView,
-      this.topLeftIconAndDescriptions,
-      this.topRightView,
-      this.topRightIconAndDescriptions,
-      this.bottomLeftView,
-      this.bottomLeftIconAndDescriptions,
-      this.bottomRightView,
-      this.bottomRightIconAndDescriptions,
-      this.foregroundColor,
-      this.backgroundColor,
-      this.borderRadius});
+  BBThumbnailView({
+    Key key,
+    this.url,
+    this.topLeftView,
+    this.topLeftIconAndDescriptions,
+    this.topRightView,
+    this.topRightIconAndDescriptions,
+    this.bottomLeftView,
+    this.bottomLeftIconAndDescriptions,
+    this.bottomRightView,
+    this.bottomRightIconAndDescriptions,
+    this.foregroundColor,
+    this.backgroundColor,
+    this.borderRadius = BorderRadius.zero,
+  })  : assert(borderRadius != null),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -80,10 +83,12 @@ class BBThumbnailView extends StatelessWidget {
           ),
         ),
         ClipRRect(
-            borderRadius: borderRadius == null || borderRadius.topLeft == null
-                ? null
-                : BorderRadius.only(topLeft: borderRadius.topLeft),
-            child: _getTopLeftView()),
+          borderRadius:
+              borderRadius == BorderRadius.zero || borderRadius.topLeft == null
+                  ? BorderRadius.zero
+                  : BorderRadius.only(topLeft: borderRadius.topLeft),
+          child: _getTopLeftView(),
+        ),
       ],
     );
   }

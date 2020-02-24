@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../app/utils/bb_common.dart';
+import '../utils/bb_args.dart';
+import '../utils/bb_utils.dart';
 import 'bb_related_media_list_view.dart';
 
 class BBMediaView extends StatefulWidget {

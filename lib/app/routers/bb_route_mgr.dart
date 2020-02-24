@@ -1,6 +1,6 @@
 import 'package:fluro/fluro.dart';
 
-import '../routers/bb_route_handlers.dart';
+import 'bb_route_handlers.dart';
 
 export 'package:fluro/fluro.dart';
 
