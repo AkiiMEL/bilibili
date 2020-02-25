@@ -54,43 +54,49 @@ class BBThumbnailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(top: _edgeInsets.top),
-          child: ClipRRect(
-            borderRadius: borderRadius,
-            child: Container(
-              foregroundDecoration: BoxDecoration(
-                color: foregroundColor,
-              ),
-              decoration: BoxDecoration(
-                color: backgroundColor,
-              ),
-              child: Stack(
-                fit: StackFit.expand,
-                children: <Widget>[
-                  BBNetworkImage(
-                    url,
-                    placeholder: Images.placeholder,
-                  ),
-                  _getGridientView(height: 34.0),
-                  _getBottomView(context),
-                  _getTopRightView(),
-                ],
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      return Stack(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: _edgeInsets.top),
+            child: ClipRRect(
+              borderRadius: borderRadius,
+              child: Container(
+                foregroundDecoration: BoxDecoration(
+                  color: foregroundColor,
+                ),
+                decoration: BoxDecoration(
+                  color: backgroundColor,
+                ),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: <Widget>[
+                    BBNetworkImage(
+                      url,
+                      placeholder: Images.placeholder,
+                    ),
+                    _getGridientView(
+                        height: constraints.maxHeight != double.infinity
+                            ? constraints.maxHeight / 3
+                            : 34.0),
+                    _getBottomView(context),
+                    _getTopRightView(),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        ClipRRect(
-          borderRadius:
-              borderRadius == BorderRadius.zero || borderRadius.topLeft == null
-                  ? BorderRadius.zero
-                  : BorderRadius.only(topLeft: borderRadius.topLeft),
-          child: _getTopLeftView(),
-        ),
-      ],
-    );
+          ClipRRect(
+            borderRadius: borderRadius == BorderRadius.zero ||
+                    borderRadius.topLeft == null
+                ? BorderRadius.zero
+                : BorderRadius.only(topLeft: borderRadius.topLeft),
+            child: _getTopLeftView(),
+          ),
+        ],
+      );
+    });
   }
 
   Widget _getGridientView({double height}) {
