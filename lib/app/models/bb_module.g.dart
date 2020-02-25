@@ -60,7 +60,7 @@ class _$ModuleSerializer implements StructuredSerializer<Module> {
       result
         ..add('style')
         ..add(serializers.serialize(object.style,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(ModuleStyle)));
     }
     if (object.title != null) {
       result
@@ -131,7 +131,7 @@ class _$ModuleSerializer implements StructuredSerializer<Module> {
           break;
         case 'style':
           result.style = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(ModuleStyle)) as ModuleStyle;
           break;
         case 'title':
           result.title = serializers.deserialize(value,
@@ -172,7 +172,7 @@ class _$Module extends Module {
   @override
   final int size;
   @override
-  final String style;
+  final ModuleStyle style;
   @override
   final String title;
   @override
@@ -294,9 +294,9 @@ class ModuleBuilder implements Builder<Module, ModuleBuilder> {
   int get size => _$this._size;
   set size(int size) => _$this._size = size;
 
-  String _style;
-  String get style => _$this._style;
-  set style(String style) => _$this._style = style;
+  ModuleStyle _style;
+  ModuleStyle get style => _$this._style;
+  set style(ModuleStyle style) => _$this._style = style;
 
   String _title;
   String get title => _$this._title;

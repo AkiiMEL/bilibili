@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:tuple/tuple.dart';
 
 import '../utils/bb_utils.dart';
 import '../api/bb_api.dart';
 import '../compenents/bb_ui.dart';
-import '../models/bb_text_attributes.dart';
+import '../models/bb_models.dart';
+import 'bb_bangumi_card_view.dart';
+import 'bb_bangumi_rank_row.dart';
 
 class BBBangumiHomeView extends StatefulWidget {
   @override
@@ -19,19 +19,23 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
   List<Module> _modules;
   RefreshController _refreshController;
   StreamController<BangumiListItem> _timeline = StreamController.broadcast();
+  ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
     _modules = [];
     _refreshController = RefreshController();
+    _scrollController = ScrollController();
     _onRefresh();
   }
 
   @override
   void dispose() {
     super.dispose();
+    _timeline.close();
     _refreshController.dispose();
+    _scrollController.dispose();
   }
 
   @override
@@ -50,19 +54,35 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
 
   List<Widget> _buildSlivers() {
     List<Widget> slivers = [];
-    _modules.skipWhile((e) => e.items?.isEmpty ?? true).forEach((e) {
-      switch (e.style) {
-        case "banner":
+
+    _modules = _modules.skipWhile((e) => e.items?.isEmpty ?? true).toList();
+
+    int index = _modules.indexWhere((e) => e.style == ModuleStyle.TIP);
+    if (index != -1) {
+      _modules.insert(0, _modules.removeAt(index));
+    }
+    index = _modules.indexWhere((e) => e.style == ModuleStyle.FUNCTION);
+    if (index != -1) {
+      _modules.insert(0, _modules.removeAt(index));
+    }
+    index = _modules.indexWhere((e) => e.style == ModuleStyle.BANNER);
+    if (index != -1) {
+      _modules.insert(0, _modules.removeAt(index));
+    }
+
+    _modules.forEach((module) {
+      switch (module.style) {
+        case ModuleStyle.BANNER:
           slivers.addAll([
             boxAdapter(
               padding: defaultMargin.copyWith(top: 0.0, bottom: 0.0),
               child: BBAdView(
                 aspectRatio: 375 / 150,
                 borderRadius: BorderRadius.circular(5.0),
-                advertise: e.items?.toList(),
+                advertise: module.items?.toList(),
                 itemBuilder: (BuildContext context, int index) {
                   return BBNetworkImage(
-                    e.items.toList()[index].cover,
+                    module.items.toList()[index].cover,
                     placeholder: Images.placeholder,
                   );
                 },
@@ -70,11 +90,11 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
             ),
           ]);
           break;
-        case "function":
+        case ModuleStyle.FUNCTION:
           slivers.addAll([
             sliverGrid(
               padding: defaultMargin.copyWith(left: 0.0, right: 0.0),
-              items: e.items?.toList(),
+              items: module.items?.toList(),
               crossAxisCount: 5,
               itemBuilder: (BuildContext context, BangumiListItem features) {
                 return BBAppView(
@@ -86,12 +106,12 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
             ),
           ]);
           break;
-        case "follow":
+        case ModuleStyle.FOLLOW:
           slivers.addAll([
             boxAdapter(
-              padding: defaultMargin.copyWith(top: 0.0, bottom: 0.0),
+              padding: defaultMargin,
               child: BBHeadView(
-                title: e.title,
+                title: module.title,
                 accessoryView: Row(
                   children: <Widget>[
                     Text.rich(
@@ -100,7 +120,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
                         style: TextStyle(fontSize: 12.0),
                         children: <InlineSpan>[
                           TextSpan(
-                            text: " ${e.follow?.upgrade ?? "-"} ",
+                            text: " ${module.follow?.upgrade ?? "-"} ",
                             style: TextStyle(
                               color: Color(0xFFF6749A),
                             ),
@@ -126,42 +146,40 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
                     mainAxisSpacing: defaultMargin.left,
                   ),
                   itemBuilder: (BuildContext context, int index) {
-                    return _card(e.items[index]);
+                    return BBBangumiCardView(module.items[index]);
                   },
-                  itemCount: e.items.length,
+                  itemCount: module.items.length,
                 ),
               ),
             ),
             boxAdapter(child: Divider()),
           ]);
           break;
-        case "tip":
+        case ModuleStyle.TIP:
           slivers.addAll([
             boxAdapter(
               padding: defaultMargin,
-              child: _tip(e),
+              child: _tip(module),
             ),
             boxAdapter(child: Divider()),
           ]);
           break;
-        case "v_card":
-        case "card":
+        case ModuleStyle.VCARD:
+        case ModuleStyle.CARD:
           slivers.addAll([
             boxAdapter(
-              padding: defaultMargin.copyWith(top: 0.0, bottom: 0.0),
-              child: BBHeadView(
-                title: e.title,
-              ),
+              padding: defaultMargin,
+              child: BBHeadView(title: module.title),
             ),
             sliverGrid(
               padding: defaultMargin.copyWith(top: 0.0),
-              aspectRatio: e.style == "card" ? 1.25 : 0.53,
-              items: e.items.toList(),
-              crossAxisCount: e.style == "card" ? 2 : 3,
+              aspectRatio: module.style == ModuleStyle.CARD ? 1.25 : 0.53,
+              items: module.items.toList(),
+              crossAxisCount: module.style == ModuleStyle.CARD ? 2 : 3,
               itemBuilder: (BuildContext context, BangumiListItem bangumi) {
-                return _card(
+                return BBBangumiCardView(
                   bangumi,
-                  aspectRatio: e.style == "card" ? 16.0 / 9.0 : 3.0 / 4.0,
+                  aspectRatio: module.style == ModuleStyle.CARD ? 16.0 / 9.0 : 3.0 / 4.0,
                 );
               },
             ),
@@ -169,21 +187,21 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
             boxAdapter(child: Divider()),
           ]);
           break;
-        case "topic":
+        case ModuleStyle.TOPIC:
           slivers.addAll([]);
           break;
-        case "timeline":
-          slivers.addAll(_timelineSlivers(e));
+        case ModuleStyle.TIMELINE:
+          slivers.addAll(_timelineSlivers(module));
           break;
-        case "rank":
-          slivers.addAll([]);
+        case ModuleStyle.RANK:
+          slivers.addAll(_rankSlivers(module));
           break;
-        case "flow":
+        case ModuleStyle.FLOW:
           slivers.addAll([
             boxAdapter(
-              padding: defaultMargin.copyWith(top: 0.0, bottom: 0.0),
+              padding: defaultMargin,
               child: BBHeadView(
-                title: e.title,
+                title: module.title,
               ),
             ),
             boxAdapter(
@@ -191,7 +209,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
               child: Wrap(
                 spacing: defaultMargin.left,
                 runSpacing: defaultMargin.bottom,
-                children: e.items
+                children: module.items
                         ?.skipWhile((bangumi) => bangumi.title?.isEmpty ?? true)
                         ?.map(
                           (bangumi) => Container(
@@ -214,7 +232,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
             boxAdapter(child: Divider()),
           ]);
           break;
-        case "h_list":
+        case ModuleStyle.HLIST:
           slivers.addAll([]);
           break;
         default:
@@ -279,69 +297,6 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
     );
   }
 
-  Widget _card(BangumiListItem bangumi, {double aspectRatio = 16.0 / 9.0}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        AspectRatio(
-          aspectRatio: aspectRatio,
-          child: BBThumbnailView(
-            url: bangumi.cover,
-            borderRadius: BorderRadius.circular(5.0),
-            topLeftView: bangumi.status != null
-                ? Container(
-                    padding: EdgeInsets.all(1.0),
-                    decoration: BoxDecoration(
-                      color: Colors.black45,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(5.0),
-                        bottomRight: Radius.circular(5.0),
-                      ),
-                    ),
-                    child: Image.asset(
-                      bangumi.status?.follow == 1
-                          ? Images.bangumiFollowed
-                          : Images.bangumiUnFollow,
-                    ),
-                  )
-                : null,
-            topRightView: Padding(
-              padding: EdgeInsets.only(top: 2.0, right: 2.0),
-              child: BBMediaTagView(
-                contentInsets: EdgeInsets.symmetric(horizontal: 2.0),
-                textAttributes: TextAttributes(
-                  (u) => u
-                    ..text = bangumi.badge
-                    ..textColor = "#FFFFFF"
-                    ..backgroundColor = "#F6749A",
-                ),
-              ),
-            ),
-            bottomLeftIconAndDescriptions: [
-              Tuple2(null,
-                  bangumi.follow?.newEp?.indexShow ?? bangumi.stat?.followView)
-            ],
-          ),
-        ),
-        SizedBox(height: defaultMargin.bottom / 2),
-        Text(
-          bangumi.title ?? "",
-          maxLines: aspectRatio > 1 ? 1 : 2,
-          overflow: TextOverflow.ellipsis,
-        ),
-        Text(
-          bangumi.desc ?? "",
-          style: Theme.of(context).textTheme.subtitle.copyWith(
-                color: Theme.of(context).accentColor,
-              ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
-        Spacer(),
-      ],
-    );
-  }
-
   List<Widget> _timelineSlivers(Module module) {
     assert(module.items?.isNotEmpty ?? true);
 
@@ -375,9 +330,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
                         width:
                             (constraints.maxWidth - defaultMargin.left * 8) / 7,
                         decoration: BoxDecoration(
-                          color: isSelected
-                              ? Color(0xFFF6749A)
-                              : null,
+                          color: isSelected ? Color(0xFFF6749A) : null,
                           borderRadius: BorderRadius.circular(14.0),
                         ),
                         child: Center(
@@ -440,6 +393,115 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView> {
         },
         stream: _timeline.stream,
       ),
+      boxAdapter(
+          child: Padding(
+        padding: defaultMargin,
+        child: Row(children: <Widget>[
+          Spacer(),
+          Text(
+            "查看完整时间表",
+            style: Theme.of(context).textTheme.caption.copyWith(
+                  color: Color(0xFFF6749A),
+                ),
+          ),
+          Image.asset(Images.rightArrow, color: Color(0xFFF6749A)),
+          Spacer(),
+        ]),
+      )),
+      boxAdapter(child: Divider()),
+    ];
+  }
+
+  List<Widget> _rankSlivers(Module module) {
+    assert(module.items?.isNotEmpty ?? true);
+    return [
+      boxAdapter(
+        padding: defaultMargin,
+        child: BBHeadView(title: module.title),
+      ),
+      boxAdapter(child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          return SizedBox(
+            height: constraints.maxWidth - 50.0,
+            child: NotificationListener(
+              onNotification: (note) {
+                print(note);
+                return true;
+              },
+              child: GridView.builder(
+                controller: ScrollController(),
+                padding: defaultMargin.copyWith(top: 0.0, bottom: 0.0),
+                scrollDirection: Axis.horizontal,
+                itemCount: module.items.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
+                  mainAxisSpacing: defaultMargin.left,
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.black.withOpacity(0.03),
+                          Colors.transparent
+                        ],
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding:
+                              defaultMargin.copyWith(top: 16.0, bottom: 0.0),
+                          child: Text(module.items[index].title ?? ""),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: defaultMargin.copyWith(bottom: 0.0),
+                            child: LayoutBuilder(builder: (BuildContext context,
+                                BoxConstraints constraints) {
+                              return ListView.builder(
+                                itemCount:
+                                    module.items[index].cards?.length ?? 0,
+                                itemExtent: constraints.maxHeight / 3,
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                itemBuilder: (BuildContext context, int index) {
+                                  BangumiListItem bangumi =
+                                      module.items[index].cards[index];
+                                  return BBBangumiRankRow(bangumi, index);
+                                },
+                              );
+                            }),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          );
+        },
+      )),
+      boxAdapter(
+          child: Padding(
+        padding: defaultMargin,
+        child: Row(children: <Widget>[
+          Spacer(),
+          Text(
+            "查看完整榜单",
+            style: Theme.of(context).textTheme.caption.copyWith(
+                  color: Color(0xFFF6749A),
+                ),
+          ),
+          Image.asset(Images.rightArrow, color: Color(0xFFF6749A)),
+          Spacer(),
+        ]),
+      )),
       boxAdapter(child: Divider()),
     ];
   }

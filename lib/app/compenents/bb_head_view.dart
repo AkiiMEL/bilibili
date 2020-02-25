@@ -27,31 +27,28 @@ class BBHeadView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: defaultMargin.bottom),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Row(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Text(title ?? ""),
+            SizedBox(width: defaultMargin.left / 2),
+            subtitle ?? SizedBox.shrink(),
+          ],
+        ),
+        BBNavigationLink(
+          destination: destination,
+          arguments: arguments,
+          onTap: onTap,
+          child: Row(
             children: <Widget>[
-              Text(title ?? ""),
-              SizedBox(width: defaultMargin.left / 2),
-              subtitle ?? SizedBox.shrink(),
+              accessoryView ?? Text(this.accessory ?? "", style: TextStyle(fontSize: 12.0),),
+              image != null ? Image.asset(image) : SizedBox.shrink(),
             ],
           ),
-          BBNavigationLink(
-            destination: destination,
-            arguments: arguments,
-            onTap: onTap,
-            child: Row(
-              children: <Widget>[
-                accessoryView ?? Text(this.accessory ?? "", style: TextStyle(fontSize: 12.0),),
-                image != null ? Image.asset(image) : SizedBox.shrink(),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

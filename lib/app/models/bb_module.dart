@@ -7,6 +7,7 @@ import 'package:built_value/serializer.dart';
 import 'bb_attr.dart';
 import 'bb_bangumi_list_item.dart';
 import 'bb_module_follow.dart';
+import 'bb_module_style.dart';
 import 'bb_region.dart';
 import 'bb_report.dart';
 import 'bb_serializers.dart';
@@ -35,7 +36,7 @@ abstract class Module implements Built<Module, ModuleBuilder> {
   @nullable
   int get size;
   @nullable
-  String get style;
+  ModuleStyle get style;
   @nullable
   String get title;
   @nullable

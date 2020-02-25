@@ -33,6 +33,7 @@ import 'bb_live_home_body.dart';
 import 'bb_media.dart';
 import 'bb_module.dart';
 import 'bb_module_follow.dart';
+import 'bb_module_style.dart';
 import 'bb_new_ep.dart';
 import 'bb_partation.dart';
 import 'bb_mine.dart';
@@ -96,6 +97,7 @@ part 'bb_serializers.g.dart';
   Mine,
   Module,
   ModuleFollow,
+  ModuleStyle,
   NewEp,
   OfficialVerify,
   Partation,
