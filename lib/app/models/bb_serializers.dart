@@ -14,8 +14,8 @@ import 'bb_bangumi_home_body.dart';
 import 'bb_bangumi_home_body_popular.dart';
 import 'bb_bangumi_follow.dart';
 import 'bb_bangumi_list_item.dart';
-import 'bb_bangumi_stat.dart';
 import 'bb_bangumi_status.dart';
+import 'bb_bangumi_user_status.dart';
 import 'bb_button_description.dart';
 import 'bb_card.dart';
 import 'bb_channel.dart';
@@ -37,12 +37,12 @@ import 'bb_module_style.dart';
 import 'bb_new_ep.dart';
 import 'bb_partation.dart';
 import 'bb_mine.dart';
-import 'bb_classified_services.dart';
 import 'bb_pendent.dart';
 import 'bb_official_verify.dart';
 import 'bb_reason.dart';
 import 'bb_region.dart';
 import 'bb_report.dart';
+import 'bb_review.dart';
 import 'bb_secondary_panel.dart';
 import 'bb_service.dart';
 import 'bb_share_info.dart';
@@ -68,14 +68,13 @@ part 'bb_serializers.g.dart';
   BangumiHomeBody,
   BangumiHomeBodyPopular,
   BangumiListItem,
-  BangumiStat,
   BangumiStatus,
+  BangumiUserStatus,
   ButtonDescription,
   Card,
   Channel,
   ChannelModule,
   ChannelGroup,
-  ClassifiedServices,
   Config,
   Cover,
   Episode,
@@ -106,6 +105,7 @@ part 'bb_serializers.g.dart';
   Reason,
   Region,
   Report,
+  Review,
   Room,
   SecondaryPanel,
   Service,
@@ -147,6 +147,14 @@ final Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         FullType(HttpBody, [FullType(LiveHomeBody)]),
         () => HttpBodyBuilder<LiveHomeBody>(),
+      )
+      ..addBuilderFactory(
+        FullType(Module, [FullType(BangumiListItem)]),
+        () => ModuleBuilder<BangumiListItem>(),
+      )
+      ..addBuilderFactory(
+        FullType(Module, [FullType(Service)]),
+        () => ModuleBuilder<Service>(),
       )
       ..addBuilderFactory(
         FullType(LiveGroup, [FullType(Room)]),
@@ -191,6 +199,10 @@ final Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         FullType(BuiltList, [FullType(Partation)]),
         () => ListBuilder<Partation>(),
+      )
+      ..addBuilderFactory(
+        FullType(BuiltList, [FullType(Service)]),
+        () => ListBuilder<Service>(),
       )
       ..addPlugin(StandardJsonPlugin()))
     .build();

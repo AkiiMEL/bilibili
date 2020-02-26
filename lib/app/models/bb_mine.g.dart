@@ -82,14 +82,16 @@ class _$MineSerializer implements StructuredSerializer<Mine> {
       result
         ..add('vip_section_v2')
         ..add(serializers.serialize(object.vipSectionV2,
-            specifiedType: const FullType(ClassifiedServices)));
+            specifiedType:
+                const FullType(Module, const [const FullType(Service)])));
     }
     if (object.sections != null) {
       result
         ..add('sections')
         ..add(serializers.serialize(object.sections,
-            specifiedType: const FullType(
-                BuiltList, const [const FullType(ClassifiedServices)])));
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(Module, const [const FullType(Service)])
+            ])));
     }
     if (object.showVideoup != null) {
       result
@@ -119,7 +121,8 @@ class _$MineSerializer implements StructuredSerializer<Mine> {
       result
         ..add('vip_section')
         ..add(serializers.serialize(object.vipSection,
-            specifiedType: const FullType(ClassifiedServices)));
+            specifiedType:
+                const FullType(Module, const [const FullType(Service)])));
     }
     if (object.level != null) {
       result
@@ -213,14 +216,15 @@ class _$MineSerializer implements StructuredSerializer<Mine> {
           break;
         case 'vip_section_v2':
           result.vipSectionV2.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ClassifiedServices))
-              as ClassifiedServices);
+                  specifiedType:
+                      const FullType(Module, const [const FullType(Service)]))
+              as Module<Service>);
           break;
         case 'sections':
           result.sections.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(ClassifiedServices)]))
-              as BuiltList<Object>);
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(Module, const [const FullType(Service)])
+              ])) as BuiltList<Object>);
           break;
         case 'show_videoup':
           result.showVideoup = serializers.deserialize(value,
@@ -240,8 +244,9 @@ class _$MineSerializer implements StructuredSerializer<Mine> {
           break;
         case 'vip_section':
           result.vipSection.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ClassifiedServices))
-              as ClassifiedServices);
+                  specifiedType:
+                      const FullType(Module, const [const FullType(Service)]))
+              as Module<Service>);
           break;
         case 'level':
           result.level = serializers.deserialize(value,
@@ -296,9 +301,9 @@ class _$Mine extends Mine {
   @override
   final int sex;
   @override
-  final ClassifiedServices vipSectionV2;
+  final Module<Service> vipSectionV2;
   @override
-  final BuiltList<ClassifiedServices> sections;
+  final BuiltList<Module<Service>> sections;
   @override
   final int showVideoup;
   @override
@@ -308,7 +313,7 @@ class _$Mine extends Mine {
   @override
   final int dynamics;
   @override
-  final ClassifiedServices vipSection;
+  final Module<Service> vipSection;
   @override
   final int level;
   @override
@@ -504,16 +509,16 @@ class MineBuilder implements Builder<Mine, MineBuilder> {
   int get sex => _$this._sex;
   set sex(int sex) => _$this._sex = sex;
 
-  ClassifiedServicesBuilder _vipSectionV2;
-  ClassifiedServicesBuilder get vipSectionV2 =>
-      _$this._vipSectionV2 ??= new ClassifiedServicesBuilder();
-  set vipSectionV2(ClassifiedServicesBuilder vipSectionV2) =>
+  ModuleBuilder<Service> _vipSectionV2;
+  ModuleBuilder<Service> get vipSectionV2 =>
+      _$this._vipSectionV2 ??= new ModuleBuilder<Service>();
+  set vipSectionV2(ModuleBuilder<Service> vipSectionV2) =>
       _$this._vipSectionV2 = vipSectionV2;
 
-  ListBuilder<ClassifiedServices> _sections;
-  ListBuilder<ClassifiedServices> get sections =>
-      _$this._sections ??= new ListBuilder<ClassifiedServices>();
-  set sections(ListBuilder<ClassifiedServices> sections) =>
+  ListBuilder<Module<Service>> _sections;
+  ListBuilder<Module<Service>> get sections =>
+      _$this._sections ??= new ListBuilder<Module<Service>>();
+  set sections(ListBuilder<Module<Service>> sections) =>
       _$this._sections = sections;
 
   int _showVideoup;
@@ -532,10 +537,10 @@ class MineBuilder implements Builder<Mine, MineBuilder> {
   int get dynamics => _$this._dynamics;
   set dynamics(int dynamics) => _$this._dynamics = dynamics;
 
-  ClassifiedServicesBuilder _vipSection;
-  ClassifiedServicesBuilder get vipSection =>
-      _$this._vipSection ??= new ClassifiedServicesBuilder();
-  set vipSection(ClassifiedServicesBuilder vipSection) =>
+  ModuleBuilder<Service> _vipSection;
+  ModuleBuilder<Service> get vipSection =>
+      _$this._vipSection ??= new ModuleBuilder<Service>();
+  set vipSection(ModuleBuilder<Service> vipSection) =>
       _$this._vipSection = vipSection;
 
   int _level;

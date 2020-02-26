@@ -16,10 +16,8 @@ class Images {
   static const String danmakuOff =
       "$_path/player_detail_danmaku_close24x24.png";
   static const String danmakuOn = "$_path/player_detail_danmaku_open24x24.png";
-  static String bigV(Brightness brightness) {
-    return "$_path/mine_member${brightness == Brightness.light ? "" : "_night"}16x16.png";
-  }
-
+  static const String bigVDarkMode = "$_path/mine_member_night16x16.png";
+  static const String bigVLightMode = "$_path/mine_member16x16.png";
   static const String officialVerify =
       "$_path/live_Certification_official18x18.png";
   static const String vipTipClose = "$_path/vip_tip_close_ico22x22.png";
@@ -29,21 +27,40 @@ class Images {
       "$_path/icon_PgcHomeFollow_selected22x22.png";
   static const String thumbnailLiked = "$_path/pegasus_card_ic_liked16x16.png";
   static const String thumbnailUnLike = "$_path/pegasus_card_ic_like16x16.png";
+  static const String thumbnailStar = "$_path/pegasus_card_ic_star16x16.png";
+  static const String thumbnailPlay = "$_path/pegasus_card_ic_play16x16.png";
+  static const String thumbnailLocation =
+      "$_path/pegasus_card_ic_location16x16.png";
+  static const String thumbnailDanmaku =
+      "$_path/pegasus_card_ic_danmaku16x16.png";
+  static const String thumbnailFollow =
+      "$_path/pegasus_card_ic_follow16x16.png";
+  static const String thumbnailArticle =
+      "$_path/pegasus_card_ic_article16x16.png";
+  static const String thumbnailComments =
+      "$_path/pegasus_card_ic_comment16x16.png";
+  static const String thumbnailPeople =
+      "$_path/pegasus_card_ic_people16x16.png";
   static const String rank1 = "$_path/rank_no124x22.png";
   static const String rank2 = "$_path/rank_no224x22.png";
   static const String rank3 = "$_path/rank_no324x22.png";
+  
   static const List<String> thumbnailOverlays = [
-    "$_path/pegasus_card_ic_star16x16.png",
-    "$_path/pegasus_card_ic_play16x16.png",
-    "$_path/pegasus_card_ic_location16x16.png",
-    "$_path/pegasus_card_ic_danmaku16x16.png",
-    "$_path/pegasus_card_ic_follow16x16.png",
-    "$_path/pegasus_card_ic_article16x16.png",
-    "$_path/pegasus_card_ic_comment16x16.png",
+    thumbnailStar,
+    thumbnailPlay,
+    thumbnailLocation,
+    thumbnailDanmaku,
+    thumbnailFollow,
+    thumbnailArticle,
+    thumbnailComments,
     thumbnailUnLike,
     thumbnailLiked,
-    "$_path/pegasus_card_ic_people16x16.png"
+    thumbnailPeople,
   ];
+
+  static String bigV(Brightness brightness) {
+    return brightness == Brightness.light ? bigVLightMode : bigVDarkMode;
+  }
 
   static String themeMiscUserLevel(Brightness brightness, int lv) {
     int solvedLevel = lv == null ? 0 : 0 <= lv && lv <= 9 ? lv : 0;

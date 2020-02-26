@@ -82,8 +82,9 @@ class _BBHomeViewState extends State<BBHomeView>
           },
           body: TabBarView(
             children: _tabBarItems.map((e) {
-              Handler handler = Router.appRouter.match(e.uri)?.route?.handler ?? Router.appRouter.notFoundHandler;
-              return handler.handlerFunc(context, null);
+              AppRouteMatch match = Router.appRouter.match(e.uri);
+              Handler handler = match?.route?.handler ?? Router.appRouter.notFoundHandler;
+              return handler.handlerFunc(context, match?.parameters);
             }).toList(),
             controller: _tabCtr,
           ),

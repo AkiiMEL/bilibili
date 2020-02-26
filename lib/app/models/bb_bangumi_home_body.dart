@@ -20,7 +20,7 @@ abstract class BangumiHomeBody implements Built<BangumiHomeBody, BangumiHomeBody
 @nullable
   BangumiHomeBodyPopular get hot;
   @nullable
-  BuiltList<Module> get modules;
+  BuiltList<Module<BangumiListItem>> get modules;
   @nullable
   BuiltList<Region> get regions;
 

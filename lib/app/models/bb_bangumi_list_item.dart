@@ -5,8 +5,8 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 import 'bb_bangumi_follow.dart';
-import 'bb_bangumi_stat.dart';
 import 'bb_bangumi_status.dart';
+import 'bb_bangumi_user_status.dart';
 import 'bb_report.dart';
 import 'bb_episode.dart';
 import 'bb_serializers.dart';
@@ -14,8 +14,8 @@ import 'bb_source_content.dart';
 import 'bb_watch_progress.dart';
 
 export 'bb_bangumi_follow.dart';
-export 'bb_bangumi_stat.dart';
 export 'bb_bangumi_status.dart';
+export 'bb_bangumi_user_status.dart';
 export 'bb_report.dart';
 export 'bb_episode.dart';
 export 'bb_source_content.dart';
@@ -75,9 +75,9 @@ abstract class BangumiListItem implements Built<BangumiListItem, BangumiListItem
   @nullable
   int get oid;
   @nullable
-  BangumiStat get stat;
+  BangumiStatus get stat;
   @nullable
-  BangumiStatus get status;
+  BangumiUserStatus get status;
   @nullable
   String get type;
   @nullable
@@ -97,6 +97,13 @@ abstract class BangumiListItem implements Built<BangumiListItem, BangumiListItem
   BuiltList<BangumiListItem> get cards;
   @nullable
   String get pts;
+  @nullable
+  @BuiltValueField(wireName: "is_new")
+  int get isNew;
+  @nullable
+  String get cursor;
+  @nullable
+  String get hat;
 
   BangumiListItem._();
 

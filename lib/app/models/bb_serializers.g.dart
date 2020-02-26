@@ -17,14 +17,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BangumiHomeBody.serializer)
       ..add(BangumiHomeBodyPopular.serializer)
       ..add(BangumiListItem.serializer)
-      ..add(BangumiStat.serializer)
       ..add(BangumiStatus.serializer)
+      ..add(BangumiUserStatus.serializer)
       ..add(ButtonDescription.serializer)
       ..add(Card.serializer)
       ..add(Channel.serializer)
       ..add(ChannelGroup.serializer)
       ..add(ChannelModule.serializer)
-      ..add(ClassifiedServices.serializer)
       ..add(Config.serializer)
       ..add(Cover.serializer)
       ..add(Episode.serializer)
@@ -56,6 +55,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Reason.serializer)
       ..add(Region.serializer)
       ..add(Report.serializer)
+      ..add(Review.serializer)
       ..add(Room.serializer)
       ..add(SecondaryPanel.serializer)
       ..add(Service.serializer)
@@ -84,9 +84,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Channel)]),
           () => new ListBuilder<Channel>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(ClassifiedServices)]),
-          () => new ListBuilder<ClassifiedServices>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Cover)]),
           () => new ListBuilder<Cover>())
@@ -134,8 +131,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Media)]),
           () => new ListBuilder<Media>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Module)]),
-          () => new ListBuilder<Module>())
+          const FullType(BuiltList, const [
+            const FullType(Module, const [const FullType(BangumiListItem)])
+          ]),
+          () => new ListBuilder<Module<BangumiListItem>>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Region)]),
           () => new ListBuilder<Region>())
@@ -151,15 +150,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Region)]),
           () => new ListBuilder<Region>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(BangumiListItem)]),
-          () => new ListBuilder<BangumiListItem>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
           () => new ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Service)]),
-          () => new ListBuilder<Service>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
@@ -196,7 +189,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new MapBuilder<String, Object>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Media)]),
-          () => new ListBuilder<Media>()))
+          () => new ListBuilder<Media>())
+      ..addBuilderFactory(
+          const FullType(Module, const [const FullType(Service)]),
+          () => new ModuleBuilder<Service>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(Module, const [const FullType(Service)])
+          ]),
+          () => new ListBuilder<Module<Service>>())
+      ..addBuilderFactory(
+          const FullType(Module, const [const FullType(Service)]),
+          () => new ModuleBuilder<Service>()))
     .build();
 
 // ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

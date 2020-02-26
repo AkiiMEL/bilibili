@@ -144,13 +144,13 @@ class _$BangumiListItemSerializer
       result
         ..add('stat')
         ..add(serializers.serialize(object.stat,
-            specifiedType: const FullType(BangumiStat)));
+            specifiedType: const FullType(BangumiStatus)));
     }
     if (object.status != null) {
       result
         ..add('status')
         ..add(serializers.serialize(object.status,
-            specifiedType: const FullType(BangumiStatus)));
+            specifiedType: const FullType(BangumiUserStatus)));
     }
     if (object.type != null) {
       result
@@ -200,6 +200,24 @@ class _$BangumiListItemSerializer
       result
         ..add('pts')
         ..add(serializers.serialize(object.pts,
+            specifiedType: const FullType(String)));
+    }
+    if (object.isNew != null) {
+      result
+        ..add('is_new')
+        ..add(serializers.serialize(object.isNew,
+            specifiedType: const FullType(int)));
+    }
+    if (object.cursor != null) {
+      result
+        ..add('cursor')
+        ..add(serializers.serialize(object.cursor,
+            specifiedType: const FullType(String)));
+    }
+    if (object.hat != null) {
+      result
+        ..add('hat')
+        ..add(serializers.serialize(object.hat,
             specifiedType: const FullType(String)));
     }
     return result;
@@ -299,11 +317,12 @@ class _$BangumiListItemSerializer
           break;
         case 'stat':
           result.stat.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BangumiStat)) as BangumiStat);
+              specifiedType: const FullType(BangumiStatus)) as BangumiStatus);
           break;
         case 'status':
           result.status.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BangumiStatus)) as BangumiStatus);
+                  specifiedType: const FullType(BangumiUserStatus))
+              as BangumiUserStatus);
           break;
         case 'type':
           result.type = serializers.deserialize(value,
@@ -339,6 +358,18 @@ class _$BangumiListItemSerializer
           break;
         case 'pts':
           result.pts = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'is_new':
+          result.isNew = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'cursor':
+          result.cursor = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'hat':
+          result.hat = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
       }
@@ -390,9 +421,9 @@ class _$BangumiListItem extends BangumiListItem {
   @override
   final int oid;
   @override
-  final BangumiStat stat;
+  final BangumiStatus stat;
   @override
-  final BangumiStatus status;
+  final BangumiUserStatus status;
   @override
   final String type;
   @override
@@ -409,6 +440,12 @@ class _$BangumiListItem extends BangumiListItem {
   final BuiltList<BangumiListItem> cards;
   @override
   final String pts;
+  @override
+  final int isNew;
+  @override
+  final String cursor;
+  @override
+  final String hat;
 
   factory _$BangumiListItem([void Function(BangumiListItemBuilder) updates]) =>
       (new BangumiListItemBuilder()..update(updates)).build();
@@ -443,7 +480,10 @@ class _$BangumiListItem extends BangumiListItem {
       this.episodes,
       this.isToday,
       this.cards,
-      this.pts})
+      this.pts,
+      this.isNew,
+      this.cursor,
+      this.hat})
       : super._();
 
   @override
@@ -487,7 +527,10 @@ class _$BangumiListItem extends BangumiListItem {
         episodes == other.episodes &&
         isToday == other.isToday &&
         cards == other.cards &&
-        pts == other.pts;
+        pts == other.pts &&
+        isNew == other.isNew &&
+        cursor == other.cursor &&
+        hat == other.hat;
   }
 
   @override
@@ -510,26 +553,26 @@ class _$BangumiListItem extends BangumiListItem {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, cover.hashCode), isPreview.hashCode), itemId.hashCode), link.hashCode), report.hashCode), sourceContent.hashCode), title.hashCode), wid.hashCode), badge.hashCode), badgeType.hashCode), desc.hashCode),
-                                                                                descType.hashCode),
-                                                                            follow.hashCode),
-                                                                        progress.hashCode),
-                                                                    seasonId.hashCode),
-                                                                seasonType.hashCode),
-                                                            desc2.hashCode),
-                                                        canWatch.hashCode),
-                                                    isAuto.hashCode),
-                                                oid.hashCode),
-                                            stat.hashCode),
-                                        status.hashCode),
-                                    type.hashCode),
-                                date.hashCode),
-                            dateTs.hashCode),
-                        dayOfWeek.hashCode),
-                    episodes.hashCode),
-                isToday.hashCode),
-            cards.hashCode),
-        pts.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, cover.hashCode), isPreview.hashCode), itemId.hashCode), link.hashCode), report.hashCode), sourceContent.hashCode), title.hashCode), wid.hashCode), badge.hashCode), badgeType.hashCode), desc.hashCode), descType.hashCode), follow.hashCode), progress.hashCode),
+                                                                                seasonId.hashCode),
+                                                                            seasonType.hashCode),
+                                                                        desc2.hashCode),
+                                                                    canWatch.hashCode),
+                                                                isAuto.hashCode),
+                                                            oid.hashCode),
+                                                        stat.hashCode),
+                                                    status.hashCode),
+                                                type.hashCode),
+                                            date.hashCode),
+                                        dateTs.hashCode),
+                                    dayOfWeek.hashCode),
+                                episodes.hashCode),
+                            isToday.hashCode),
+                        cards.hashCode),
+                    pts.hashCode),
+                isNew.hashCode),
+            cursor.hashCode),
+        hat.hashCode));
   }
 
   @override
@@ -564,7 +607,10 @@ class _$BangumiListItem extends BangumiListItem {
           ..add('episodes', episodes)
           ..add('isToday', isToday)
           ..add('cards', cards)
-          ..add('pts', pts))
+          ..add('pts', pts)
+          ..add('isNew', isNew)
+          ..add('cursor', cursor)
+          ..add('hat', hat))
         .toString();
   }
 }
@@ -657,14 +703,14 @@ class BangumiListItemBuilder
   int get oid => _$this._oid;
   set oid(int oid) => _$this._oid = oid;
 
-  BangumiStatBuilder _stat;
-  BangumiStatBuilder get stat => _$this._stat ??= new BangumiStatBuilder();
-  set stat(BangumiStatBuilder stat) => _$this._stat = stat;
+  BangumiStatusBuilder _stat;
+  BangumiStatusBuilder get stat => _$this._stat ??= new BangumiStatusBuilder();
+  set stat(BangumiStatusBuilder stat) => _$this._stat = stat;
 
-  BangumiStatusBuilder _status;
-  BangumiStatusBuilder get status =>
-      _$this._status ??= new BangumiStatusBuilder();
-  set status(BangumiStatusBuilder status) => _$this._status = status;
+  BangumiUserStatusBuilder _status;
+  BangumiUserStatusBuilder get status =>
+      _$this._status ??= new BangumiUserStatusBuilder();
+  set status(BangumiUserStatusBuilder status) => _$this._status = status;
 
   String _type;
   String get type => _$this._type;
@@ -700,6 +746,18 @@ class BangumiListItemBuilder
   String get pts => _$this._pts;
   set pts(String pts) => _$this._pts = pts;
 
+  int _isNew;
+  int get isNew => _$this._isNew;
+  set isNew(int isNew) => _$this._isNew = isNew;
+
+  String _cursor;
+  String get cursor => _$this._cursor;
+  set cursor(String cursor) => _$this._cursor = cursor;
+
+  String _hat;
+  String get hat => _$this._hat;
+  set hat(String hat) => _$this._hat = hat;
+
   BangumiListItemBuilder();
 
   BangumiListItemBuilder get _$this {
@@ -734,6 +792,9 @@ class BangumiListItemBuilder
       _isToday = _$v.isToday;
       _cards = _$v.cards?.toBuilder();
       _pts = _$v.pts;
+      _isNew = _$v.isNew;
+      _cursor = _$v.cursor;
+      _hat = _$v.hat;
       _$v = null;
     }
     return this;
@@ -787,7 +848,10 @@ class BangumiListItemBuilder
               episodes: _episodes?.build(),
               isToday: isToday,
               cards: _cards?.build(),
-              pts: pts);
+              pts: pts,
+              isNew: isNew,
+              cursor: cursor,
+              hat: hat);
     } catch (_) {
       String _$failedField;
       try {

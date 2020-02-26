@@ -6,17 +6,23 @@ part of 'bb_module.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<Module> _$moduleSerializer = new _$ModuleSerializer();
+Serializer<Module<Object>> _$moduleSerializer = new _$ModuleSerializer();
 
-class _$ModuleSerializer implements StructuredSerializer<Module> {
+class _$ModuleSerializer implements StructuredSerializer<Module<Object>> {
   @override
   final Iterable<Type> types = const [Module, _$Module];
   @override
   final String wireName = 'Module';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Module object,
+  Iterable<Object> serialize(Serializers serializers, Module<Object> object,
       {FullType specifiedType = FullType.unspecified}) {
+    final isUnderspecified =
+        specifiedType.isUnspecified || specifiedType.parameters.isEmpty;
+    if (!isUnderspecified) serializers.expectBuilder(specifiedType);
+    final parameterElement =
+        isUnderspecified ? FullType.object : specifiedType.parameters[0];
+
     final result = <Object>[];
     if (object.attr != null) {
       result
@@ -35,8 +41,7 @@ class _$ModuleSerializer implements StructuredSerializer<Module> {
       result
         ..add('items')
         ..add(serializers.serialize(object.items,
-            specifiedType: const FullType(
-                BuiltList, const [const FullType(BangumiListItem)])));
+            specifiedType: new FullType(BuiltList, [parameterElement])));
     }
     if (object.moduleId != null) {
       result
@@ -68,6 +73,18 @@ class _$ModuleSerializer implements StructuredSerializer<Module> {
         ..add(serializers.serialize(object.title,
             specifiedType: const FullType(String)));
     }
+    if (object.subtitle != null) {
+      result
+        ..add('subtitle')
+        ..add(serializers.serialize(object.subtitle,
+            specifiedType: const FullType(String)));
+    }
+    if (object.url != null) {
+      result
+        ..add('url')
+        ..add(serializers.serialize(object.url,
+            specifiedType: const FullType(String)));
+    }
     if (object.type != null) {
       result
         ..add('type')
@@ -91,9 +108,18 @@ class _$ModuleSerializer implements StructuredSerializer<Module> {
   }
 
   @override
-  Module deserialize(Serializers serializers, Iterable<Object> serialized,
+  Module<Object> deserialize(
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new ModuleBuilder();
+    final isUnderspecified =
+        specifiedType.isUnspecified || specifiedType.parameters.isEmpty;
+    if (!isUnderspecified) serializers.expectBuilder(specifiedType);
+    final parameterElement =
+        isUnderspecified ? FullType.object : specifiedType.parameters[0];
+
+    final result = isUnderspecified
+        ? new ModuleBuilder<Object>()
+        : serializers.newBuilder(specifiedType) as ModuleBuilder;
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -113,8 +139,7 @@ class _$ModuleSerializer implements StructuredSerializer<Module> {
           break;
         case 'items':
           result.items.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(BangumiListItem)]))
+                  specifiedType: new FullType(BuiltList, [parameterElement]))
               as BuiltList<Object>);
           break;
         case 'module_id':
@@ -135,6 +160,14 @@ class _$ModuleSerializer implements StructuredSerializer<Module> {
           break;
         case 'title':
           result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'subtitle':
+          result.subtitle = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'type':
@@ -158,13 +191,13 @@ class _$ModuleSerializer implements StructuredSerializer<Module> {
   }
 }
 
-class _$Module extends Module {
+class _$Module<Element> extends Module<Element> {
   @override
   final Attr attr;
   @override
   final BuiltList<Region> headers;
   @override
-  final BuiltList<BangumiListItem> items;
+  final BuiltList<Element> items;
   @override
   final int moduleId;
   @override
@@ -176,14 +209,18 @@ class _$Module extends Module {
   @override
   final String title;
   @override
+  final String subtitle;
+  @override
+  final String url;
+  @override
   final int type;
   @override
   final BuiltList<int> wid;
   @override
   final ModuleFollow follow;
 
-  factory _$Module([void Function(ModuleBuilder) updates]) =>
-      (new ModuleBuilder()..update(updates)).build();
+  factory _$Module([void Function(ModuleBuilder<Element>) updates]) =>
+      (new ModuleBuilder<Element>()..update(updates)).build();
 
   _$Module._(
       {this.attr,
@@ -194,17 +231,24 @@ class _$Module extends Module {
       this.size,
       this.style,
       this.title,
+      this.subtitle,
+      this.url,
       this.type,
       this.wid,
       this.follow})
-      : super._();
+      : super._() {
+    if (Element == dynamic) {
+      throw new BuiltValueMissingGenericsError('Module', 'Element');
+    }
+  }
 
   @override
-  Module rebuild(void Function(ModuleBuilder) updates) =>
+  Module<Element> rebuild(void Function(ModuleBuilder<Element>) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ModuleBuilder toBuilder() => new ModuleBuilder()..replace(this);
+  ModuleBuilder<Element> toBuilder() =>
+      new ModuleBuilder<Element>()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -218,6 +262,8 @@ class _$Module extends Module {
         size == other.size &&
         style == other.style &&
         title == other.title &&
+        subtitle == other.subtitle &&
+        url == other.url &&
         type == other.type &&
         wid == other.wid &&
         follow == other.follow;
@@ -234,14 +280,18 @@ class _$Module extends Module {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, attr.hashCode),
-                                            headers.hashCode),
-                                        items.hashCode),
-                                    moduleId.hashCode),
-                                report.hashCode),
-                            size.hashCode),
-                        style.hashCode),
-                    title.hashCode),
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, attr.hashCode),
+                                                    headers.hashCode),
+                                                items.hashCode),
+                                            moduleId.hashCode),
+                                        report.hashCode),
+                                    size.hashCode),
+                                style.hashCode),
+                            title.hashCode),
+                        subtitle.hashCode),
+                    url.hashCode),
                 type.hashCode),
             wid.hashCode),
         follow.hashCode));
@@ -258,6 +308,8 @@ class _$Module extends Module {
           ..add('size', size)
           ..add('style', style)
           ..add('title', title)
+          ..add('subtitle', subtitle)
+          ..add('url', url)
           ..add('type', type)
           ..add('wid', wid)
           ..add('follow', follow))
@@ -265,8 +317,9 @@ class _$Module extends Module {
   }
 }
 
-class ModuleBuilder implements Builder<Module, ModuleBuilder> {
-  _$Module _$v;
+class ModuleBuilder<Element>
+    implements Builder<Module<Element>, ModuleBuilder<Element>> {
+  _$Module<Element> _$v;
 
   AttrBuilder _attr;
   AttrBuilder get attr => _$this._attr ??= new AttrBuilder();
@@ -277,10 +330,10 @@ class ModuleBuilder implements Builder<Module, ModuleBuilder> {
       _$this._headers ??= new ListBuilder<Region>();
   set headers(ListBuilder<Region> headers) => _$this._headers = headers;
 
-  ListBuilder<BangumiListItem> _items;
-  ListBuilder<BangumiListItem> get items =>
-      _$this._items ??= new ListBuilder<BangumiListItem>();
-  set items(ListBuilder<BangumiListItem> items) => _$this._items = items;
+  ListBuilder<Element> _items;
+  ListBuilder<Element> get items =>
+      _$this._items ??= new ListBuilder<Element>();
+  set items(ListBuilder<Element> items) => _$this._items = items;
 
   int _moduleId;
   int get moduleId => _$this._moduleId;
@@ -302,6 +355,14 @@ class ModuleBuilder implements Builder<Module, ModuleBuilder> {
   String get title => _$this._title;
   set title(String title) => _$this._title = title;
 
+  String _subtitle;
+  String get subtitle => _$this._subtitle;
+  set subtitle(String subtitle) => _$this._subtitle = subtitle;
+
+  String _url;
+  String get url => _$this._url;
+  set url(String url) => _$this._url = url;
+
   int _type;
   int get type => _$this._type;
   set type(int type) => _$this._type = type;
@@ -317,7 +378,7 @@ class ModuleBuilder implements Builder<Module, ModuleBuilder> {
 
   ModuleBuilder();
 
-  ModuleBuilder get _$this {
+  ModuleBuilder<Element> get _$this {
     if (_$v != null) {
       _attr = _$v.attr?.toBuilder();
       _headers = _$v.headers?.toBuilder();
@@ -327,6 +388,8 @@ class ModuleBuilder implements Builder<Module, ModuleBuilder> {
       _size = _$v.size;
       _style = _$v.style;
       _title = _$v.title;
+      _subtitle = _$v.subtitle;
+      _url = _$v.url;
       _type = _$v.type;
       _wid = _$v.wid?.toBuilder();
       _follow = _$v.follow?.toBuilder();
@@ -336,24 +399,24 @@ class ModuleBuilder implements Builder<Module, ModuleBuilder> {
   }
 
   @override
-  void replace(Module other) {
+  void replace(Module<Element> other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$Module;
+    _$v = other as _$Module<Element>;
   }
 
   @override
-  void update(void Function(ModuleBuilder) updates) {
+  void update(void Function(ModuleBuilder<Element>) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Module build() {
-    _$Module _$result;
+  _$Module<Element> build() {
+    _$Module<Element> _$result;
     try {
       _$result = _$v ??
-          new _$Module._(
+          new _$Module<Element>._(
               attr: _attr?.build(),
               headers: _headers?.build(),
               items: _items?.build(),
@@ -362,6 +425,8 @@ class ModuleBuilder implements Builder<Module, ModuleBuilder> {
               size: size,
               style: style,
               title: title,
+              subtitle: subtitle,
+              url: url,
               type: type,
               wid: _wid?.build(),
               follow: _follow?.build());

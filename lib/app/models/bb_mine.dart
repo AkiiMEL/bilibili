@@ -4,13 +4,13 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-import 'bb_classified_services.dart';
+import 'bb_module.dart';
 import 'bb_official_verify.dart';
 import 'bb_serializers.dart';
+import 'bb_service.dart';
 import 'bb_vip.dart';
 import 'bb_pendent.dart';
 
-export 'bb_classified_services.dart';
 export 'bb_official_verify.dart';
 export 'bb_vip.dart';
 export 'bb_pendent.dart';
@@ -44,9 +44,9 @@ abstract class Mine implements Built<Mine, MineBuilder> {
   int get sex;
   @nullable
   @BuiltValueField(wireName: "vip_section_v2")
-  ClassifiedServices get vipSectionV2;
+  Module<Service> get vipSectionV2;
   @nullable
-  BuiltList<ClassifiedServices> get sections;
+  BuiltList<Module<Service>> get sections;
   @nullable
   @BuiltValueField(wireName: "show_videoup")
   int get showVideoup;
@@ -60,7 +60,7 @@ abstract class Mine implements Built<Mine, MineBuilder> {
   int get dynamics;
   @BuiltValueField(wireName: "vip_section")
   @nullable
-  ClassifiedServices get vipSection;
+  Module<Service> get vipSection;
   @nullable
   int get level;
   @nullable

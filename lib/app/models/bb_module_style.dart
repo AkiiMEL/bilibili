@@ -25,6 +25,8 @@ class ModuleStyle extends EnumClass {
   static const ModuleStyle FLOW = _$FLOW;
   @BuiltValueEnumConst(wireName: "topic")
   static const ModuleStyle TOPIC = _$TOPIC;
+  @BuiltValueEnumConst(wireName: "list")
+  static const ModuleStyle LIST = _$LIST;
   @BuiltValueEnumConst(wireName: "h_list")
   static const ModuleStyle HLIST = _$HLIST;
 
@@ -51,6 +53,7 @@ class _$ModuleStyleSerializer implements PrimitiveSerializer<ModuleStyle> {
     'RANK': 'rank',
     'FLOW': 'flow',
     'TOPIC': 'topic',
+    'LIST' : 'list',
     'HLIST': 'h_list',
   };
   static const Map<String, String> _fromWire = const <String, String>{
@@ -64,6 +67,7 @@ class _$ModuleStyleSerializer implements PrimitiveSerializer<ModuleStyle> {
     'rank': 'RANK',
     'flow': 'FLOW',
     'topic': 'TOPIC',
+    'list' : 'LIST',
     'h_list': 'HLIST',
   };
 

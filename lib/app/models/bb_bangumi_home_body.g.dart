@@ -30,8 +30,9 @@ class _$BangumiHomeBodySerializer
       result
         ..add('modules')
         ..add(serializers.serialize(object.modules,
-            specifiedType:
-                const FullType(BuiltList, const [const FullType(Module)])));
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(Module, const [const FullType(BangumiListItem)])
+            ])));
     }
     if (object.regions != null) {
       result
@@ -62,9 +63,9 @@ class _$BangumiHomeBodySerializer
           break;
         case 'modules':
           result.modules.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(Module)]))
-              as BuiltList<Object>);
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(Module, const [const FullType(BangumiListItem)])
+              ])) as BuiltList<Object>);
           break;
         case 'regions':
           result.regions.replace(serializers.deserialize(value,
@@ -83,7 +84,7 @@ class _$BangumiHomeBody extends BangumiHomeBody {
   @override
   final BangumiHomeBodyPopular hot;
   @override
-  final BuiltList<Module> modules;
+  final BuiltList<Module<BangumiListItem>> modules;
   @override
   final BuiltList<Region> regions;
 
@@ -134,10 +135,11 @@ class BangumiHomeBodyBuilder
       _$this._hot ??= new BangumiHomeBodyPopularBuilder();
   set hot(BangumiHomeBodyPopularBuilder hot) => _$this._hot = hot;
 
-  ListBuilder<Module> _modules;
-  ListBuilder<Module> get modules =>
-      _$this._modules ??= new ListBuilder<Module>();
-  set modules(ListBuilder<Module> modules) => _$this._modules = modules;
+  ListBuilder<Module<BangumiListItem>> _modules;
+  ListBuilder<Module<BangumiListItem>> get modules =>
+      _$this._modules ??= new ListBuilder<Module<BangumiListItem>>();
+  set modules(ListBuilder<Module<BangumiListItem>> modules) =>
+      _$this._modules = modules;
 
   ListBuilder<Region> _regions;
   ListBuilder<Region> get regions =>

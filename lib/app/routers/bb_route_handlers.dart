@@ -36,7 +36,11 @@ Handler featuredHandler = Handler(
 
 Handler popularHandler = _buildHandler(BBPopularListView());
 
-Handler bangumiHomeHandler = _buildHandler(BBBangumiHomeView());
+Handler pgcHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+        BBBangumiHomeView(
+          path: params?.isNotEmpty ?? false ? params["path"].first : null,
+        ));
 
 Handler channelContainerHandler = _buildHandler(BBChannelContainerView());
 
@@ -49,7 +53,8 @@ Handler mineHandler = _buildHandler(BBMineView());
 Handler videoHandler = _buildHandler(BBMediaView());
 
 Handler _buildHandler(Widget v) {
-  return Handler(handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return Handler(
+      handlerFunc: (BuildContext context, Map<String, List<String>> params) {
     return v;
   });
 }

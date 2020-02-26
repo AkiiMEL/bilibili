@@ -20,14 +20,15 @@ export 'bb_report.dart';
 
 part 'bb_module.g.dart';
 
-abstract class Module implements Built<Module, ModuleBuilder> {
+abstract class Module<Element>
+    implements Built<Module<Element>, ModuleBuilder<Element>> {
   // Fields
   @nullable
   Attr get attr;
   @nullable
   BuiltList<Region> get headers;
   @nullable
-  BuiltList<BangumiListItem> get items;
+  BuiltList<Element> get items;
   @nullable
   @BuiltValueField(wireName: "module_id")
   int get moduleId;
@@ -40,6 +41,10 @@ abstract class Module implements Built<Module, ModuleBuilder> {
   @nullable
   String get title;
   @nullable
+  String get subtitle;
+  @nullable
+  String get url;
+  @nullable
   int get type;
   @nullable
   BuiltList<int> get wid;
@@ -48,15 +53,19 @@ abstract class Module implements Built<Module, ModuleBuilder> {
 
   Module._();
 
-  factory Module([void Function(ModuleBuilder) updates]) = _$Module;
+  factory Module([void Function(ModuleBuilder<Element>) updates]) =
+      _$Module<Element>;
 
   String toJson() {
-    return json.encode(serializers.serializeWith(Module.serializer, this));
+    return json.encode(serializers.serialize(this,
+        specifiedType: FullType(Module, [FullType(Element)])));
   }
 
-  static Module fromJson(String jsonString) {
-    return serializers.deserializeWith(
-        Module.serializer, json.decode(jsonString));
+  static Module<Element> fromJson<Element>(String jsonString) {
+    return serializers.deserialize(
+      json.decode(jsonString),
+      specifiedType: FullType(Module, [FullType(Element)]),
+    );
   }
 
   static Serializer<Module> get serializer => _$moduleSerializer;

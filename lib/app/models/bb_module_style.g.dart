@@ -16,6 +16,7 @@ const ModuleStyle _$TIMELINE = const ModuleStyle._('TIMELINE');
 const ModuleStyle _$RANK = const ModuleStyle._('RANK');
 const ModuleStyle _$FLOW = const ModuleStyle._('FLOW');
 const ModuleStyle _$TOPIC = const ModuleStyle._('TOPIC');
+const ModuleStyle _$LIST = const ModuleStyle._('LIST');
 const ModuleStyle _$HLIST = const ModuleStyle._('HLIST');
 
 ModuleStyle _$valueOf(String name) {
@@ -40,6 +41,8 @@ ModuleStyle _$valueOf(String name) {
       return _$FLOW;
     case 'TOPIC':
       return _$TOPIC;
+    case 'LIST':
+      return _$LIST;
     case 'HLIST':
       return _$HLIST;
     default:
@@ -59,6 +62,7 @@ final BuiltSet<ModuleStyle> _$values =
   _$RANK,
   _$FLOW,
   _$TOPIC,
+  _$LIST,
   _$HLIST,
 ]);
 
