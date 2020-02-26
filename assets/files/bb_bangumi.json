@@ -1,0 +1,1105 @@
+{
+    "code": 0,
+    "message": "success",
+    "result": {
+        "activity": {
+            "cover": "http://i0.hdslb.com/bfs/bangumi/a52b71b3c9b2fb0dc4e1fbcef45b33441ffdf455.jpg",
+            "id": 78,
+            "link": "https://www.bilibili.com/blackboard/topic/activity-FGO7cn_h5.html",
+            "threshold": [
+                {
+                    "bp": 5,
+                    "days": 7,
+                    "days_text": "7天"
+                },
+                {
+                    "bp": 10,
+                    "days": 31,
+                    "days_text": "31天"
+                },
+                {
+                    "bp": 50,
+                    "days": 186,
+                    "days_text": "186天"
+                }
+            ],
+            "title": "FGO7",
+            "type": -1
+        },
+        "actor": {
+            "info": "藤丸立香：岛崎信长\n玛修·基列莱特：高桥李依\n芙芙：川澄绫子\n罗玛尼·阿基曼：铃村健一\n伊什塔尔：植田佳奈\n吉尔伽美什：关智一\n恩奇都：小林优\n梅林：樱井孝宏\n安娜：浅川悠\n牛若丸：早见沙织\n莱昂纳多·达·芬奇：坂本真绫\n武藏坊弁庆：稲田彻\n列奥尼达一世：三木真一郎",
+            "title": "角色声优"
+        },
+        "alias": "命运冠位指定,Fate/Grand Order,Fate/Grand Order 绝对魔兽战线 巴比伦尼亚,FGO7",
+        "areas": [
+            {
+                "id": 2,
+                "name": "日本"
+            }
+        ],
+        "badge": "会员抢先",
+        "badge_type": 0,
+        "celebrity": [],
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/ef60e620eb507d48c1e8e6002728fae4553f9161.png",
+        "detail": "详情",
+        "dynamic_subtitle": "",
+        "episodes": [
+            {
+                "aid": 62892220,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1Vt411K7Vc",
+                "cid": 122607639,
+                "cover": "http://i0.hdslb.com/bfs/archive/b37cee4c5d5e76004d919821599fa41a05d19bca.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 280924,
+                "link": "https://www.bilibili.com/bangumi/play/ep280924",
+                "long_title": "旅途的开始",
+                "movie_title": "正片：第0节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第0节 旅途的开始",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep280924",
+                "short_link": "https://b23.tv/ep280924",
+                "stat": {
+                    "coin": 91371,
+                    "danmakus": 143308,
+                    "play": 18558525,
+                    "reply": 30276
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第0节",
+                "vid": ""
+            },
+            {
+                "aid": 70157581,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1aE411D7Zw",
+                "cid": 122607747,
+                "cover": "http://i0.hdslb.com/bfs/archive/f060ee5975ab041fd7d8ef959be0425b11e93bb7.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285888,
+                "link": "https://www.bilibili.com/bangumi/play/ep285888",
+                "long_title": "绝对魔兽战线 巴比伦尼亚",
+                "movie_title": "正片：第1节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第1节 绝对魔兽战线 巴比伦尼亚",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285888",
+                "short_link": "https://b23.tv/ep285888",
+                "stat": {
+                    "coin": 75744,
+                    "danmakus": 161078,
+                    "play": 7673154,
+                    "reply": 35216
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第1节",
+                "vid": ""
+            },
+            {
+                "aid": 70844086,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1YE411o7Dt",
+                "cid": 122744550,
+                "cover": "http://i0.hdslb.com/bfs/archive/516ffa02976107fed8a026e4a6fa1d07ba8934bb.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285889,
+                "link": "https://www.bilibili.com/bangumi/play/ep285889",
+                "long_title": "城塞都市乌鲁克",
+                "movie_title": "正片：第2节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第2节 城塞都市乌鲁克",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285889",
+                "short_link": "https://b23.tv/ep285889",
+                "stat": {
+                    "coin": 34320,
+                    "danmakus": 62645,
+                    "play": 4681784,
+                    "reply": 13523
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第2节",
+                "vid": ""
+            },
+            {
+                "aid": 71641363,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1cE411k7EM",
+                "cid": 124166850,
+                "cover": "http://i0.hdslb.com/bfs/archive/0696dd5712c0c98672d13afa2a7a636e25e2603f.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285890,
+                "link": "https://www.bilibili.com/bangumi/play/ep285890",
+                "long_title": "王与臣民",
+                "movie_title": "正片：第3节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第3节 王与臣民",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285890",
+                "short_link": "https://b23.tv/ep285890",
+                "stat": {
+                    "coin": 24704,
+                    "danmakus": 52271,
+                    "play": 4230973,
+                    "reply": 9726
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第3节",
+                "vid": ""
+            },
+            {
+                "aid": 73354527,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV15E41117hF",
+                "cid": 125483951,
+                "cover": "http://i0.hdslb.com/bfs/archive/90a04094f748cb14e01d187196d76b8d3afd421f.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285891,
+                "link": "https://www.bilibili.com/bangumi/play/ep285891",
+                "long_title": "密林的呼唤声",
+                "movie_title": "正片：第4节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第4节 密林的呼唤声",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285891",
+                "short_link": "https://b23.tv/ep285891",
+                "stat": {
+                    "coin": 19165,
+                    "danmakus": 48103,
+                    "play": 3661851,
+                    "reply": 9578
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第4节",
+                "vid": ""
+            },
+            {
+                "aid": 74138062,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1bE41187gf",
+                "cid": 126831189,
+                "cover": "http://i0.hdslb.com/bfs/archive/632959beb952d09177ab803056a78ce4f06b1c40.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285892,
+                "link": "https://www.bilibili.com/bangumi/play/ep285892",
+                "long_title": "吉尔伽美什游记",
+                "movie_title": "正片：第5节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第5节 吉尔伽美什游记",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285892",
+                "short_link": "https://b23.tv/ep285892",
+                "stat": {
+                    "coin": 19167,
+                    "danmakus": 37353,
+                    "play": 3540255,
+                    "reply": 9764
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第5节",
+                "vid": ""
+            },
+            {
+                "aid": 75115685,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1qE411v71K",
+                "cid": 128502209,
+                "cover": "http://i0.hdslb.com/bfs/archive/2d04c171bd204e6ea33b3dd4563bc03c4f988a36.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285893,
+                "link": "https://www.bilibili.com/bangumi/play/ep285893",
+                "long_title": "天命泥板",
+                "movie_title": "正片：第6节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第6节 天命泥板",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285893",
+                "short_link": "https://b23.tv/ep285893",
+                "stat": {
+                    "coin": 15914,
+                    "danmakus": 42335,
+                    "play": 3105419,
+                    "reply": 7105
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第6节",
+                "vid": ""
+            },
+            {
+                "aid": 75767994,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1gJ411U7mN",
+                "cid": 129617911,
+                "cover": "http://i0.hdslb.com/bfs/archive/c5e068348d3e6e0c181a2b95f624c86faa6d25ef.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285894,
+                "link": "https://www.bilibili.com/bangumi/play/ep285894",
+                "long_title": "声东击西作战",
+                "movie_title": "正片：第7节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第7节 声东击西作战",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285894",
+                "short_link": "https://b23.tv/ep285894",
+                "stat": {
+                    "coin": 13997,
+                    "danmakus": 32328,
+                    "play": 3002913,
+                    "reply": 7169
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第7节",
+                "vid": ""
+            },
+            {
+                "aid": 76596844,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1dJ411R7Ci",
+                "cid": 131703178,
+                "cover": "http://i0.hdslb.com/bfs/archive/646ffbf99a7a756eeb84a50a1e409c875e6f47fe.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285895,
+                "link": "https://www.bilibili.com/bangumi/play/ep285895",
+                "long_title": "魔兽母神",
+                "movie_title": "正片：第8节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第8节 魔兽母神",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285895",
+                "short_link": "https://b23.tv/ep285895",
+                "stat": {
+                    "coin": 25732,
+                    "danmakus": 35491,
+                    "play": 3417819,
+                    "reply": 19401
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第8节",
+                "vid": ""
+            },
+            {
+                "aid": 77420013,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1NJ411Q7mp",
+                "cid": 132441486,
+                "cover": "http://i0.hdslb.com/bfs/archive/2f372901909ea7c928a2062e72af50f8d4aff890.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285896,
+                "link": "https://www.bilibili.com/bangumi/play/ep285896",
+                "long_title": "早安、金星女神",
+                "movie_title": "正片：第9节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第9节 早安、金星女神",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285896",
+                "short_link": "https://b23.tv/ep285896",
+                "stat": {
+                    "coin": 17466,
+                    "danmakus": 43159,
+                    "play": 3046813,
+                    "reply": 8665
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第9节",
+                "vid": ""
+            },
+            {
+                "aid": 78246136,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1aJ411i7Fa",
+                "cid": 133885339,
+                "cover": "http://i0.hdslb.com/bfs/archive/f619e5ec149557c1bae613ad5e1eedee11a2e46f.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285897,
+                "link": "https://www.bilibili.com/bangumi/play/ep285897",
+                "long_title": "你好，太阳女神",
+                "movie_title": "正片：第10节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第10节 你好，太阳女神",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285897",
+                "short_link": "https://b23.tv/ep285897",
+                "stat": {
+                    "coin": 16849,
+                    "danmakus": 39292,
+                    "play": 2843504,
+                    "reply": 7461
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第10节",
+                "vid": ""
+            },
+            {
+                "aid": 79083564,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1zJ411C7xR",
+                "cid": 135343586,
+                "cover": "http://i0.hdslb.com/bfs/archive/505a994589b9226d20e40e57e44ee4b52e42036e.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285898,
+                "link": "https://www.bilibili.com/bangumi/play/ep285898",
+                "long_title": "太阳神殿",
+                "movie_title": "正片：第11节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第11节 太阳神殿",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285898",
+                "short_link": "https://b23.tv/ep285898",
+                "stat": {
+                    "coin": 13138,
+                    "danmakus": 70386,
+                    "play": 2880678,
+                    "reply": 15431
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第11节",
+                "vid": ""
+            },
+            {
+                "aid": 80087444,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV17J41147oR",
+                "cid": 137060918,
+                "cover": "http://i0.hdslb.com/bfs/archive/f685764abe424d83882785b556292be22d20b15a.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285899,
+                "link": "https://www.bilibili.com/bangumi/play/ep285899",
+                "long_title": "旅途的开始",
+                "movie_title": "正片：总集篇I",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》总集篇I 旅途的开始",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285899",
+                "short_link": "https://b23.tv/ep285899",
+                "stat": {
+                    "coin": 6232,
+                    "danmakus": 6982,
+                    "play": 1797369,
+                    "reply": 4249
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "总集篇I",
+                "vid": ""
+            },
+            {
+                "aid": 80971373,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1aJ411e7Vj",
+                "cid": 138590555,
+                "cover": "http://i0.hdslb.com/bfs/archive/8774751c75d7a60b1639a1a0b6024f492a8cfdea.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285900,
+                "link": "https://www.bilibili.com/bangumi/play/ep285900",
+                "long_title": "灵魂的战斗",
+                "movie_title": "正片：总集篇II",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》总集篇II 灵魂的战斗",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285900",
+                "short_link": "https://b23.tv/ep285900",
+                "stat": {
+                    "coin": 6395,
+                    "danmakus": 2349,
+                    "play": 1197569,
+                    "reply": 4703
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "总集篇II",
+                "vid": ""
+            },
+            {
+                "aid": 81928862,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1oJ411j7vB",
+                "cid": 140564265,
+                "cover": "http://i0.hdslb.com/bfs/archive/a8c0c5b3bf4dfd4add7d8bdde9ddb6cd0e180cec.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285901,
+                "link": "https://www.bilibili.com/bangumi/play/ep285901",
+                "long_title": "王之死",
+                "movie_title": "正片：第12节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第12节 王之死",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285901",
+                "short_link": "https://b23.tv/ep285901",
+                "stat": {
+                    "coin": 17827,
+                    "danmakus": 40211,
+                    "play": 2495018,
+                    "reply": 6047
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第12节",
+                "vid": ""
+            },
+            {
+                "aid": 82983496,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1JJ411p7d3",
+                "cid": 141979479,
+                "cover": "http://i0.hdslb.com/bfs/archive/cd0a7faf6d688556b6f37415fe12e0bf24382d99.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285902,
+                "link": "https://www.bilibili.com/bangumi/play/ep285902",
+                "long_title": "再见、冥界女神",
+                "movie_title": "正片：第13节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第13节 再见、冥界女神",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285902",
+                "short_link": "https://b23.tv/ep285902",
+                "stat": {
+                    "coin": 16894,
+                    "danmakus": 34774,
+                    "play": 2474531,
+                    "reply": 7851
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第13节",
+                "vid": ""
+            },
+            {
+                "aid": 83945189,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1q7411i78n",
+                "cid": 143608823,
+                "cover": "http://i0.hdslb.com/bfs/archive/64ff37c7f0ad243ee2a461a4b8837cc1b0ef04de.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285903,
+                "link": "https://www.bilibili.com/bangumi/play/ep285903",
+                "long_title": "决战",
+                "movie_title": "正片：第14节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第14节 决战",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285903",
+                "short_link": "https://b23.tv/ep285903",
+                "stat": {
+                    "coin": 16902,
+                    "danmakus": 25009,
+                    "play": 2323492,
+                    "reply": 7303
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第14节",
+                "vid": ""
+            },
+            {
+                "aid": 84881460,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1a7411Y7kf",
+                "cid": 145156741,
+                "cover": "http://i0.hdslb.com/bfs/archive/0b3b290d7c3663e77b50a10a3d4b0075eb47d155.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285904,
+                "link": "https://www.bilibili.com/bangumi/play/ep285904",
+                "long_title": "新人类的形态",
+                "movie_title": "正片：第15节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第15节 新人类的形态",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285904",
+                "short_link": "https://b23.tv/ep285904",
+                "stat": {
+                    "coin": 14307,
+                    "danmakus": 29382,
+                    "play": 2249673,
+                    "reply": 11969
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第15节",
+                "vid": ""
+            },
+            {
+                "aid": 86116436,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1s7411x7Ei",
+                "cid": 147197871,
+                "cover": "http://i0.hdslb.com/bfs/archive/70f8c5531804802dcb2b049f6ea0745cb0f18cfe.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285905,
+                "link": "https://www.bilibili.com/bangumi/play/ep285905",
+                "long_title": "决战",
+                "movie_title": "正片：总集篇III",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》总集篇III 决战",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285905",
+                "short_link": "https://b23.tv/ep285905",
+                "stat": {
+                    "coin": 5187,
+                    "danmakus": 2622,
+                    "play": 1282161,
+                    "reply": 4697
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "总集篇III",
+                "vid": ""
+            },
+            {
+                "aid": 87522958,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV117411873L",
+                "cid": 149545382,
+                "cover": "http://i0.hdslb.com/bfs/archive/e5b5236be1438638a8ea8e29c0f1aa3776105c00.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285906,
+                "link": "https://www.bilibili.com/bangumi/play/ep285906",
+                "long_title": "觉醒",
+                "movie_title": "正片：第16节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第16节 觉醒",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285906",
+                "short_link": "https://b23.tv/ep285906",
+                "stat": {
+                    "coin": 20134,
+                    "danmakus": 40740,
+                    "play": 1953257,
+                    "reply": 11828
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第16节",
+                "vid": ""
+            },
+            {
+                "aid": 89152236,
+                "badge": "",
+                "badge_type": 0,
+                "bvid": "BV1E7411J7T7",
+                "cid": 152340201,
+                "cover": "http://i0.hdslb.com/bfs/archive/2318f8364691cb352106cbe4def28f392d3732d0.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285907,
+                "link": "https://www.bilibili.com/bangumi/play/ep285907",
+                "long_title": "国会舞曲",
+                "movie_title": "正片：第17节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第17节 国会舞曲",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285907",
+                "short_link": "https://b23.tv/ep285907",
+                "stat": {
+                    "coin": 17325,
+                    "danmakus": 49222,
+                    "play": 1732161,
+                    "reply": 11759
+                },
+                "status": 2,
+                "subtitle": "已观看8160.9万次",
+                "title": "第17节",
+                "vid": ""
+            },
+            {
+                "aid": 90896615,
+                "badge": "会员",
+                "badge_type": 0,
+                "bvid": "BV1p7411c7Mb",
+                "cid": 155457196,
+                "cover": "http://i0.hdslb.com/bfs/archive/e77f4a5ef1fd4bfda16136a8ef42d7d7b185622f.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "from": "bangumi",
+                "id": 285908,
+                "link": "https://www.bilibili.com/bangumi/play/ep285908",
+                "long_title": "起源之星，仰望星空",
+                "movie_title": "正片：第18节",
+                "release_date": "",
+                "rights": {
+                    "allow_dm": 1
+                },
+                "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》第18节 起源之星，仰望星空",
+                "share_url": "https://m.bilibili.com/bangumi/play/ep285908",
+                "short_link": "https://b23.tv/ep285908",
+                "stat": {
+                    "coin": 43525,
+                    "danmakus": 38289,
+                    "play": 1284483,
+                    "reply": 19836
+                },
+                "status": 13,
+                "subtitle": "已观看8160.9万次",
+                "title": "第18节",
+                "vid": ""
+            }
+        ],
+        "evaluate": "人理续存保障机构·迦勒底，对于仅凭魔术无法看见的世界，仅凭科学无法计算的世界进行观测，为了让已被证明会灭亡于2017年的人类史存续下去，日夜持续着活动。\n人类灭亡的原因，是在历史上数个地点突然出现的“无法观测领域”——“特异点”。\n迦勒底唯一残存的御主·藤丸立香，与亚从者玛修·基列莱特一同介入这些特异点的事象，从而执行将其解明或破坏的禁断仪式——“圣杯探索 Grand Order”。\n这一次新发现的是第七个特异点——纪元前2655年的古代美索不达米亚。 由结束了不老不死灵草的探索的“天之楔·贤王吉尔伽美什”所统治，以繁荣而自豪的乌鲁克之地，在三柱女神及众多魔兽的蹂躏下面临灭亡的危机。 以及，通过前往过去的时间旅行——“灵子转移”而到达乌鲁克之地的藤丸与玛修，所遇到的是 阻挡住魔兽猛攻的要塞都市·绝对魔兽战线，以及人们那即使暴露于威胁之下仍然拼命求生的样子。 袭来的诸神与魔兽。以及对其反抗的人类——。\n这里是人与神分道扬镳，命运的时代。\n跨越了六个探索（Order）的两人——藤丸与玛修所挑战的光环开始了。",
+        "link": "http://www.bilibili.com/bangumi/media/md28222061/",
+        "media_id": 28222061,
+        "mode": 2,
+        "new_ep": {
+            "desc": "连载中, 每周日 00:00更新",
+            "id": 285908,
+            "is_new": 1,
+            "more": "",
+            "title": "第18节"
+        },
+        "origin_name": "Fate/Grand Order -絶対魔獣戦線バビロニア-",
+        "paster": {
+            "aid": 0,
+            "allow_jump": 0,
+            "cid": 0,
+            "duration": 0,
+            "type": 0,
+            "url": ""
+        },
+        "payment": {
+            "dialog": {
+                "btn_right": {
+                    "title": "成为大会员",
+                    "type": "vip"
+                },
+                "desc": "",
+                "title": "开通大会员抢先看"
+            },
+            "pay_tip": {
+                "primary": {
+                    "icon": "http://i0.hdslb.com/bfs/bangumi/26fca924852d6f4a996a32de9fd003eb1bb5c319.png",
+                    "title": "你的大会员已过期，立即续期",
+                    "type": 1,
+                    "url": ""
+                }
+            },
+            "pay_type": {
+                "allow_ticket": 0
+            },
+            "price": "0.0",
+            "tv_price": "0",
+            "vip_promotion": ""
+        },
+        "playlist": [
+            {
+                "cover": "http://i0.hdslb.com/bfs/bangumi/image/b583fa0245c73c3df9256034cfd082c8b62cdb4e.png",
+                "id": 340,
+                "link": "https://m.bilibili.com/bangumi/list/sl340?theme_color=%23141414%2C%23161616%2C%23212121&navhide=1",
+                "name": "2019哔哩哔哩番剧热度top10"
+            },
+            {
+                "cover": "http://i0.hdslb.com/bfs/bangumi/image/84342e7e9194d0ce139824fdac7a8729258928f8.png",
+                "id": 85,
+                "link": "https://m.bilibili.com/bangumi/list/sl85?theme_color=%23141414%2C%23161616%2C%23212121&navhide=1",
+                "name": "我在未来等你"
+            },
+            {
+                "cover": "http://i0.hdslb.com/bfs/bangumi/image/4ad846ebd74a3292ba8aff5dcaa713f26cc098e9.png",
+                "id": 40,
+                "link": "https://m.bilibili.com/bangumi/list/sl40?theme_color=%23141414%2C%23161616%2C%23212121&navhide=1",
+                "name": "真是一场经费爆炸的战斗啊"
+            },
+            {
+                "cover": "http://i0.hdslb.com/bfs/bangumi/image/ed642210018d423182bd7f73e348c794f95e461d.png",
+                "id": 19,
+                "link": "https://m.bilibili.com/bangumi/list/sl19?theme_color=%23141414%2C%23161616%2C%23212121&navhide=1",
+                "name": "Fate系列作品"
+            }
+        ],
+        "publish": {
+            "is_finish": 0,
+            "is_started": 1,
+            "pub_time": "2019-10-06 00:00:00",
+            "pub_time_show": "2019年10月06日00:00",
+            "release_date_show": "2019年10月6日开播",
+            "time_length_show": "更新至第18节",
+            "unknow_pub_date": 0,
+            "weekday": 0
+        },
+        "rating": {
+            "count": 64344,
+            "score": 9.6
+        },
+        "record": "",
+        "relate_section": [],
+        "rights": {
+            "allow_bp": 0,
+            "allow_bp_rank": 0,
+            "allow_download": 0,
+            "allow_review": 1,
+            "area_limit": 0,
+            "ban_area_show": 1,
+            "can_watch": 1,
+            "copyright": "dujia",
+            "copyright_name": "独家",
+            "forbid_pre": 0,
+            "is_cover_show": 0,
+            "is_preview": 0,
+            "resource": "",
+            "watch_platform": 0
+        },
+        "season_id": 28320,
+        "season_title": "命运-冠位指定 绝对魔兽战线 巴比伦尼亚",
+        "seasons": [
+            {
+                "badge": "会员抢先",
+                "badge_type": 0,
+                "cover": "http://i0.hdslb.com/bfs/bangumi/image/ef60e620eb507d48c1e8e6002728fae4553f9161.png",
+                "is_new": 1,
+                "link": "https://www.bilibili.com/bangumi/play/ss28320",
+                "resource": "",
+                "season_id": 28320,
+                "season_title": "绝对魔兽战线",
+                "title": "命运-冠位指定 绝对魔兽战线 巴比伦尼亚"
+            },
+            {
+                "badge": "",
+                "badge_type": 0,
+                "cover": "http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg",
+                "is_new": 0,
+                "link": "https://www.bilibili.com/bangumi/play/ss5747",
+                "resource": "",
+                "season_id": 5747,
+                "season_title": "特别篇",
+                "title": "Fate/Grand Order ‐First Order‐"
+            }
+        ],
+        "section": [
+            {
+                "episode_id": 0,
+                "episodes": [
+                    {
+                        "aid": 75776193,
+                        "badge": "",
+                        "badge_type": 0,
+                        "bvid": "BV1AJ411U7tM",
+                        "cid": 129631659,
+                        "cover": "http://i0.hdslb.com/bfs/archive/5bd184279b648270057be5edaee09e20da72aaea.jpg",
+                        "dimension": {
+                            "height": 1080,
+                            "rotate": 0,
+                            "width": 1920
+                        },
+                        "from": "bangumi",
+                        "id": 292003,
+                        "link": "https://www.bilibili.com/bangumi/play/ep292003",
+                        "long_title": "西杜丽的巴比伦尼亚报告：第1节-第4节",
+                        "release_date": "",
+                        "rights": {
+                            "allow_dm": 1
+                        },
+                        "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》SP1 西杜丽的巴比伦尼亚报告：第1节-第4节",
+                        "share_url": "https://m.bilibili.com/bangumi/play/ep292003",
+                        "short_link": "https://b23.tv/ep292003",
+                        "stat": {
+                            "coin": 2179,
+                            "danmakus": 696,
+                            "play": 714189,
+                            "reply": 477
+                        },
+                        "status": 2,
+                        "subtitle": "已观看8160.9万次",
+                        "title": "SP1",
+                        "vid": ""
+                    }
+                ],
+                "id": 38965,
+                "more": "",
+                "title": "SP",
+                "type": 2
+            },
+            {
+                "episode_id": 0,
+                "episodes": [
+                    {
+                        "aid": 62635932,
+                        "badge": "",
+                        "badge_type": 0,
+                        "bvid": "BV1vt411T7jW",
+                        "cid": 108807926,
+                        "cover": "http://i0.hdslb.com/bfs/archive/61ffd58c9d3032fa721d9aa98349d5cb6c88e631.jpg",
+                        "dimension": {
+                            "height": 1080,
+                            "rotate": 0,
+                            "width": 1920
+                        },
+                        "from": "bangumi",
+                        "id": 280843,
+                        "link": "https://www.bilibili.com/bangumi/play/ep280843",
+                        "long_title": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》PV",
+                        "release_date": "",
+                        "rights": {
+                            "allow_dm": 1
+                        },
+                        "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》PV 《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》PV",
+                        "share_url": "https://m.bilibili.com/bangumi/play/ep280843",
+                        "short_link": "https://b23.tv/ep280843",
+                        "stat": {
+                            "coin": 11361,
+                            "danmakus": 1884,
+                            "play": 1462421,
+                            "reply": 5866
+                        },
+                        "status": 2,
+                        "subtitle": "已观看8160.9万次",
+                        "title": "PV",
+                        "vid": ""
+                    }
+                ],
+                "id": 38049,
+                "more": "",
+                "title": "预告",
+                "type": 1
+            }
+        ],
+        "series": {
+            "movie_title": "命运-冠位指定系列",
+            "series_id": 4605,
+            "series_title": "命运-冠位指定"
+        },
+        "share_copy": "《命运-冠位指定 绝对魔兽战线 巴比伦尼亚》",
+        "share_url": "http://m.bilibili.com/bangumi/play/ss28320",
+        "short_link": "https://b23.tv/ss28320",
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/e0badae0ffdf6147df348ce14773ba909ba8ac53.jpg",
+        "staff": {
+            "info": "原作: 奈须蘑菇／TYPE-MOON\n导演: 赤井俊文\n脚本: 武井风太\n分镜: 高雄统子\n演出: 高雄统子、原田孝宏\n音乐: 芳贺敬太、川崎龙\n人物原案: 武内崇（主人物设定）\n人物设定: 岩崎将大、高濑智章\n美术监督: 薄井久代、平栁悟\n色彩设计: 中岛和子\n总作画监督: 高濑智章\n作画监督: 岩崎将大\n摄影监督: 佐久间悠也\n剪辑: 三岛章纪\n音响监督: 岩浪美和\n制片人: 福岛祐一\n美术设计: 盐泽良宪\n副导演: 黒木美幸\n3DCG: GEMBA\n动画制作: CloverWorks",
+            "title": "制作信息"
+        },
+        "stat": {
+            "coins": 545830,
+            "danmakus": 1039897,
+            "favorites": 3764396,
+            "followers": "376.4万系列追番",
+            "play": "8160.9万播放",
+            "reply": 269893,
+            "share": 134030,
+            "views": 81609466
+        },
+        "status": 13,
+        "styles": [
+            {
+                "id": 10013,
+                "name": "游戏改",
+                "url": "bilibili://pgc/common/index?style_id=10013&area=2"
+            },
+            {
+                "id": 10018,
+                "name": "奇幻",
+                "url": "bilibili://pgc/common/index?style_id=10018&area=2"
+            },
+            {
+                "id": 10020,
+                "name": "战斗",
+                "url": "bilibili://pgc/common/index?style_id=10020&area=2"
+            },
+            {
+                "id": 10032,
+                "name": "冒险",
+                "url": "bilibili://pgc/common/index?style_id=10032&area=2"
+            }
+        ],
+        "subtitle": "已观看8160.9万次",
+        "title": "命运-冠位指定 绝对魔兽战线 巴比伦尼亚",
+        "total": -1,
+        "type": 1,
+        "type_name": "番剧",
+        "user_status": {
+            "follow": 1,
+            "follow_bubble": 0,
+            "follow_status": 2,
+            "pay": 0,
+            "progress": {
+                "last_ep_id": 285895,
+                "last_ep_index": "第8节",
+                "last_time": 0
+            },
+            "review": {
+                "article_url": "https://bangumi.bilibili.com/review/extra/opening?media_id=28222061&review_type=long",
+                "is_open": 0,
+                "score": 0
+            },
+            "sponsor": 0,
+            "vip": 0,
+            "vip_frozen": 0
+        }
+    }
+}

@@ -1,5 +1,4 @@
 import 'package:flutter/services.dart';
-import 'package:dio/dio.dart';
 
 import '../models/bb_http_body.dart';
 import '../models/bb_mine.dart';
@@ -56,9 +55,18 @@ class BBApi {
         .then((value) => HttpBody.fromJson(value));
   }
 
-  static Future<HttpBody<BangumiHomeBody>> requestAllBangumi() {
+  static Future<HttpBody<BangumiHomeBody>> requestAllBangumi({String path}) {
+    String assetPath;
+    switch (path) {
+      case "cinema-tab":
+        assetPath = "bb_cinema";
+        break;
+      default:
+        assetPath = "bb_bangumi_home";
+        break;
+    }
     return rootBundle
-        .loadString("assets/files/bb_bangumi_list.json")
+        .loadString("assets/files/$assetPath.json")
         .then((value) => HttpBody.fromJson(value));
   }
 }

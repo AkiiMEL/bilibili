@@ -30,6 +30,30 @@ class _$NewEpSerializer implements StructuredSerializer<NewEp> {
         ..add(serializers.serialize(object.id,
             specifiedType: const FullType(int)));
     }
+    if (object.desc != null) {
+      result
+        ..add('desc')
+        ..add(serializers.serialize(object.desc,
+            specifiedType: const FullType(String)));
+    }
+    if (object.isNew != null) {
+      result
+        ..add('is_new')
+        ..add(serializers.serialize(object.isNew,
+            specifiedType: const FullType(int)));
+    }
+    if (object.more != null) {
+      result
+        ..add('more')
+        ..add(serializers.serialize(object.more,
+            specifiedType: const FullType(String)));
+    }
+    if (object.title != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(object.title,
+            specifiedType: const FullType(String)));
+    }
     if (object.indexShow != null) {
       result
         ..add('index_show')
@@ -58,6 +82,22 @@ class _$NewEpSerializer implements StructuredSerializer<NewEp> {
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'desc':
+          result.desc = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'is_new':
+          result.isNew = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'more':
+          result.more = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'index_show':
           result.indexShow = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -75,12 +115,28 @@ class _$NewEp extends NewEp {
   @override
   final int id;
   @override
+  final String desc;
+  @override
+  final int isNew;
+  @override
+  final String more;
+  @override
+  final String title;
+  @override
   final String indexShow;
 
   factory _$NewEp([void Function(NewEpBuilder) updates]) =>
       (new NewEpBuilder()..update(updates)).build();
 
-  _$NewEp._({this.cover, this.id, this.indexShow}) : super._();
+  _$NewEp._(
+      {this.cover,
+      this.id,
+      this.desc,
+      this.isNew,
+      this.more,
+      this.title,
+      this.indexShow})
+      : super._();
 
   @override
   NewEp rebuild(void Function(NewEpBuilder) updates) =>
@@ -95,13 +151,25 @@ class _$NewEp extends NewEp {
     return other is NewEp &&
         cover == other.cover &&
         id == other.id &&
+        desc == other.desc &&
+        isNew == other.isNew &&
+        more == other.more &&
+        title == other.title &&
         indexShow == other.indexShow;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, cover.hashCode), id.hashCode), indexShow.hashCode));
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, cover.hashCode), id.hashCode),
+                        desc.hashCode),
+                    isNew.hashCode),
+                more.hashCode),
+            title.hashCode),
+        indexShow.hashCode));
   }
 
   @override
@@ -109,6 +177,10 @@ class _$NewEp extends NewEp {
     return (newBuiltValueToStringHelper('NewEp')
           ..add('cover', cover)
           ..add('id', id)
+          ..add('desc', desc)
+          ..add('isNew', isNew)
+          ..add('more', more)
+          ..add('title', title)
           ..add('indexShow', indexShow))
         .toString();
   }
@@ -125,6 +197,22 @@ class NewEpBuilder implements Builder<NewEp, NewEpBuilder> {
   int get id => _$this._id;
   set id(int id) => _$this._id = id;
 
+  String _desc;
+  String get desc => _$this._desc;
+  set desc(String desc) => _$this._desc = desc;
+
+  int _isNew;
+  int get isNew => _$this._isNew;
+  set isNew(int isNew) => _$this._isNew = isNew;
+
+  String _more;
+  String get more => _$this._more;
+  set more(String more) => _$this._more = more;
+
+  String _title;
+  String get title => _$this._title;
+  set title(String title) => _$this._title = title;
+
   String _indexShow;
   String get indexShow => _$this._indexShow;
   set indexShow(String indexShow) => _$this._indexShow = indexShow;
@@ -135,6 +223,10 @@ class NewEpBuilder implements Builder<NewEp, NewEpBuilder> {
     if (_$v != null) {
       _cover = _$v.cover;
       _id = _$v.id;
+      _desc = _$v.desc;
+      _isNew = _$v.isNew;
+      _more = _$v.more;
+      _title = _$v.title;
       _indexShow = _$v.indexShow;
       _$v = null;
     }
@@ -156,8 +248,15 @@ class NewEpBuilder implements Builder<NewEp, NewEpBuilder> {
 
   @override
   _$NewEp build() {
-    final _$result =
-        _$v ?? new _$NewEp._(cover: cover, id: id, indexShow: indexShow);
+    final _$result = _$v ??
+        new _$NewEp._(
+            cover: cover,
+            id: id,
+            desc: desc,
+            isNew: isNew,
+            more: more,
+            title: title,
+            indexShow: indexShow);
     replace(_$result);
     return _$result;
   }

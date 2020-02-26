@@ -14,6 +14,15 @@ abstract class NewEp implements Built<NewEp, NewEpBuilder> {
   @nullable
   int get id;
   @nullable
+  String get desc;
+  @nullable
+  @BuiltValueField(wireName: "is_new")
+  int get isNew;
+  @nullable
+  String get more;
+  @nullable 
+  String get title;
+  @nullable
   @BuiltValueField(wireName: "index_show")
   String get indexShow;
 
