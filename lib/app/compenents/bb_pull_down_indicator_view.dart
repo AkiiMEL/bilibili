@@ -1,25 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class AnimationImages extends AnimatedWidget {
-  final List<String> imageURLs;
-  final Animation<int> animation;
-  final Size size;
-
-  AnimationImages({Key key, this.imageURLs, this.animation, this.size})
-      : super(key: key, listenable: animation);
-
-  Widget build(BuildContext context) {
-    final Animation<int> animation = listenable;
-    return Image.asset(
-      imageURLs[animation.value],
-      width: size.width,
-      height: size.height,
-      gaplessPlayback: true,
-    );
-  }
-}
-
 class BBRefreshHeader extends RefreshIndicator {
   BBRefreshHeader() : super(height: 60.0, refreshStyle: RefreshStyle.Follow);
 
@@ -36,10 +17,10 @@ class _BBRefreshHeaderState extends RefreshIndicatorState<BBRefreshHeader>
   void initState() {
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: Duration(milliseconds: 600),
     );
-    _animation = IntTween(begin: 0, end: 3)
-        .animate(CurvedAnimation(parent: _controller, curve: Curves.linear));
+    _animation = IntTween(begin: 1, end: 4)
+        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
     super.initState();
   }
 
@@ -61,15 +42,19 @@ class _BBRefreshHeaderState extends RefreshIndicatorState<BBRefreshHeader>
 
   @override
   Widget buildContent(BuildContext context, RefreshStatus mode) {
-    return AnimationImages(
-      imageURLs: [
-        "assets/images/pull_loading_160x60.png",
-        "assets/images/pull_loading_260x60.png",
-        "assets/images/pull_loading_360x60.png",
-        "assets/images/pull_loading_460x60.png"
-      ],
-      animation: _animation,
-      size: Size(60.0, 60.0),
+    return SizedBox(
+      width: 60.0,
+      height: 60.0,
+      child: AnimatedBuilder(
+        animation: _animation,
+        builder: (BuildContext context, Widget child) {
+          String frame = _animation.value.toString();
+          return Image.asset(
+            "assets/images/pull_loading_${frame}60x60.png",
+            gaplessPlayback: true,
+          );
+        },
+      ),
     );
   }
 }
