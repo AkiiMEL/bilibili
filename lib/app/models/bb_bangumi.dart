@@ -10,7 +10,7 @@ import 'bb_area.dart';
 import 'bb_bangumi_status.dart';
 import 'bb_bangumi_user_status.dart';
 import 'bb_copyright.dart';
-import 'bb_n_episode.dart';
+import 'bb_episode.dart';
 import 'bb_new_ep.dart';
 import 'bb_paster.dart';
 import 'bb_payment.dart';

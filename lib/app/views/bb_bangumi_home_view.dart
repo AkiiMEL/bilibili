@@ -239,7 +239,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
             items: snapshot.data?.episodes?.toList(),
             crossAxisCount: 4,
             aspectRatio: 9.0 / 16.0,
-            itemBuilder: (BuildContext context, Episode bangumi) {
+            itemBuilder: (BuildContext context, Trailer bangumi) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -248,7 +248,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(5.0),
                       child: BBNetworkImage(
-                        bangumi.cover,
+                        bangumi.squareCover,
                         placeholder: Images.placeholder,
                       ),
                     ),

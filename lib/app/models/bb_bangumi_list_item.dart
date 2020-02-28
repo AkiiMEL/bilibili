@@ -8,17 +8,17 @@ import 'bb_bangumi_follow.dart';
 import 'bb_bangumi_status.dart';
 import 'bb_bangumi_user_status.dart';
 import 'bb_report.dart';
-import 'bb_episode.dart';
 import 'bb_serializers.dart';
 import 'bb_source_content.dart';
+import 'bb_trailer.dart';
 import 'bb_watch_progress.dart';
 
 export 'bb_bangumi_follow.dart';
 export 'bb_bangumi_status.dart';
 export 'bb_bangumi_user_status.dart';
 export 'bb_report.dart';
-export 'bb_episode.dart';
 export 'bb_source_content.dart';
+export 'bb_trailer.dart';
 export 'bb_watch_progress.dart';
 
 part 'bb_bangumi_list_item.g.dart';
@@ -89,7 +89,7 @@ abstract class BangumiListItem implements Built<BangumiListItem, BangumiListItem
   @BuiltValueField(wireName: "day_of_week")
   int get dayOfWeek;
   @nullable
-  BuiltList<Episode> get episodes;
+  BuiltList<Trailer> get episodes;
   @nullable
   @BuiltValueField(wireName: "is_today")
   int get isToday;

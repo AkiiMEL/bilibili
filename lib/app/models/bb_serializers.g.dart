@@ -25,7 +25,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ChannelGroup.serializer)
       ..add(ChannelModule.serializer)
       ..add(Config.serializer)
+      ..add(Copyright.serializer)
       ..add(Cover.serializer)
+      ..add(Dimension.serializer)
       ..add(Episode.serializer)
       ..add(ExtTabBarItem.serializer)
       ..add(Extra.serializer)
@@ -68,6 +70,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(TextAttributes.serializer)
       ..add(ThreePoint.serializer)
       ..add(ThreePointV2.serializer)
+      ..add(Trailer.serializer)
       ..add(Vip.serializer)
       ..add(VipLabel.serializer)
       ..add(WatchProgress.serializer)
@@ -87,12 +90,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Cover)]),
           () => new ListBuilder<Cover>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Episode)]),
-          () => new ListBuilder<Episode>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(BangumiListItem)]),
-          () => new ListBuilder<BangumiListItem>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(FeedbackPanelDetail)]),
@@ -174,6 +171,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ThreePointV2)]),
           () => new ListBuilder<ThreePointV2>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Trailer)]),
+          () => new ListBuilder<Trailer>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(BangumiListItem)]),
+          () => new ListBuilder<BangumiListItem>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
           () => new ListBuilder<int>())

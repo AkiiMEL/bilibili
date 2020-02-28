@@ -4,7 +4,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-import 'bb_n_episode.dart';
+import 'bb_episode.dart';
 import 'bb_serializers.dart';
 
 part 'bb_section.g.dart';

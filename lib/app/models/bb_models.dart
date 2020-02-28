@@ -44,6 +44,7 @@ export 'bb_source_content.dart';
 export 'bb_tab_bar_http_body.dart';
 export 'bb_tab_bar_item.dart';
 export 'bb_three_point.dart';
+export 'bb_trailer.dart';
 export 'bb_vip.dart';
 export 'bb_watch_progress.dart';
 export 'bb_whitelist.dart';

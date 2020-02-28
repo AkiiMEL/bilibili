@@ -17,41 +17,57 @@ class _$EpisodeSerializer implements StructuredSerializer<Episode> {
   @override
   Iterable<Object> serialize(Serializers serializers, Episode object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
+    final result = <Object>[
+      'badge_type',
+      serializers.serialize(object.badgeType,
+          specifiedType: const FullType(int)),
+    ];
+    if (object.aid != null) {
+      result
+        ..add('aid')
+        ..add(serializers.serialize(object.aid,
+            specifiedType: const FullType(int)));
+    }
+    if (object.badge != null) {
+      result
+        ..add('badge')
+        ..add(serializers.serialize(object.badge,
+            specifiedType: const FullType(String)));
+    }
+    if (object.bvid != null) {
+      result
+        ..add('bvid')
+        ..add(serializers.serialize(object.bvid,
+            specifiedType: const FullType(String)));
+    }
+    if (object.cid != null) {
+      result
+        ..add('cid')
+        ..add(serializers.serialize(object.cid,
+            specifiedType: const FullType(int)));
+    }
     if (object.cover != null) {
       result
         ..add('cover')
         ..add(serializers.serialize(object.cover,
             specifiedType: const FullType(String)));
     }
-    if (object.delay != null) {
+    if (object.dimension != null) {
       result
-        ..add('delay')
-        ..add(serializers.serialize(object.delay,
-            specifiedType: const FullType(int)));
+        ..add('dimension')
+        ..add(serializers.serialize(object.dimension,
+            specifiedType: const FullType(Dimension)));
     }
-    if (object.delayId != null) {
+    if (object.from != null) {
       result
-        ..add('delay_id')
-        ..add(serializers.serialize(object.delayId,
-            specifiedType: const FullType(int)));
-    }
-    if (object.delayIndex != null) {
-      result
-        ..add('delay_index')
-        ..add(serializers.serialize(object.delayIndex,
+        ..add('from')
+        ..add(serializers.serialize(object.from,
             specifiedType: const FullType(String)));
     }
-    if (object.delayReason != null) {
+    if (object.id != null) {
       result
-        ..add('delay_reason')
-        ..add(serializers.serialize(object.delayReason,
-            specifiedType: const FullType(String)));
-    }
-    if (object.episodeId != null) {
-      result
-        ..add('episode_id')
-        ..add(serializers.serialize(object.episodeId,
+        ..add('id')
+        ..add(serializers.serialize(object.id,
             specifiedType: const FullType(int)));
     }
     if (object.link != null) {
@@ -60,52 +76,76 @@ class _$EpisodeSerializer implements StructuredSerializer<Episode> {
         ..add(serializers.serialize(object.link,
             specifiedType: const FullType(String)));
     }
-    if (object.pubIndex != null) {
+    if (object.longTitle != null) {
       result
-        ..add('pub_index')
-        ..add(serializers.serialize(object.pubIndex,
+        ..add('long_title')
+        ..add(serializers.serialize(object.longTitle,
             specifiedType: const FullType(String)));
     }
-    if (object.pubTime != null) {
+    if (object.movieTitle != null) {
       result
-        ..add('pub_time')
-        ..add(serializers.serialize(object.pubTime,
+        ..add('movie_title')
+        ..add(serializers.serialize(object.movieTitle,
             specifiedType: const FullType(String)));
     }
-    if (object.pubTs != null) {
+    if (object.releaseDate != null) {
       result
-        ..add('pub_ts')
-        ..add(serializers.serialize(object.pubTs,
+        ..add('release_date')
+        ..add(serializers.serialize(object.releaseDate,
+            specifiedType: const FullType(String)));
+    }
+    if (object.rights != null) {
+      result
+        ..add('rights')
+        ..add(serializers.serialize(object.rights,
+            specifiedType: const FullType(Copyright)));
+    }
+    if (object.shareCopy != null) {
+      result
+        ..add('share_copy')
+        ..add(serializers.serialize(object.shareCopy,
+            specifiedType: const FullType(String)));
+    }
+    if (object.shareUrl != null) {
+      result
+        ..add('share_url')
+        ..add(serializers.serialize(object.shareUrl,
+            specifiedType: const FullType(String)));
+    }
+    if (object.shortLink != null) {
+      result
+        ..add('short_link')
+        ..add(serializers.serialize(object.shortLink,
+            specifiedType: const FullType(String)));
+    }
+    if (object.stat != null) {
+      result
+        ..add('stat')
+        ..add(serializers.serialize(object.stat,
+            specifiedType: const FullType(BangumiStatus)));
+    }
+    if (object.status != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(object.status,
             specifiedType: const FullType(int)));
     }
-    if (object.published != null) {
+    if (object.subtitle != null) {
       result
-        ..add('published')
-        ..add(serializers.serialize(object.published,
-            specifiedType: const FullType(int)));
-    }
-    if (object.seasonId != null) {
-      result
-        ..add('season_id')
-        ..add(serializers.serialize(object.seasonId,
-            specifiedType: const FullType(int)));
-    }
-    if (object.seasonType != null) {
-      result
-        ..add('season_type')
-        ..add(serializers.serialize(object.seasonType,
-            specifiedType: const FullType(int)));
-    }
-    if (object.squareCover != null) {
-      result
-        ..add('square_cover')
-        ..add(serializers.serialize(object.squareCover,
+        ..add('subtitle')
+        ..add(serializers.serialize(object.subtitle,
             specifiedType: const FullType(String)));
     }
     if (object.title != null) {
       result
         ..add('title')
         ..add(serializers.serialize(object.title,
+            specifiedType: const FullType(String)));
+    }
+    if (object.vid != null) {
+      result
+        ..add('vid')
+        ..add(serializers.serialize(object.vid,
             specifiedType: const FullType(String)));
     }
     return result;
@@ -122,64 +162,92 @@ class _$EpisodeSerializer implements StructuredSerializer<Episode> {
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
+        case 'aid':
+          result.aid = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'badge':
+          result.badge = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'badge_type':
+          result.badgeType = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'bvid':
+          result.bvid = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'cid':
+          result.cid = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'cover':
           result.cover = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'delay':
-          result.delay = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+        case 'dimension':
+          result.dimension.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Dimension)) as Dimension);
           break;
-        case 'delay_id':
-          result.delayId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          break;
-        case 'delay_index':
-          result.delayIndex = serializers.deserialize(value,
+        case 'from':
+          result.from = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'delay_reason':
-          result.delayReason = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'episode_id':
-          result.episodeId = serializers.deserialize(value,
+        case 'id':
+          result.id = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
         case 'link':
           result.link = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'pub_index':
-          result.pubIndex = serializers.deserialize(value,
+        case 'long_title':
+          result.longTitle = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'pub_time':
-          result.pubTime = serializers.deserialize(value,
+        case 'movie_title':
+          result.movieTitle = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'pub_ts':
-          result.pubTs = serializers.deserialize(value,
+        case 'release_date':
+          result.releaseDate = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'rights':
+          result.rights.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Copyright)) as Copyright);
+          break;
+        case 'share_copy':
+          result.shareCopy = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'share_url':
+          result.shareUrl = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'short_link':
+          result.shortLink = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'stat':
+          result.stat.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BangumiStatus)) as BangumiStatus);
+          break;
+        case 'status':
+          result.status = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'published':
-          result.published = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          break;
-        case 'season_id':
-          result.seasonId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          break;
-        case 'season_type':
-          result.seasonType = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          break;
-        case 'square_cover':
-          result.squareCover = serializers.deserialize(value,
+        case 'subtitle':
+          result.subtitle = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'title':
           result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'vid':
+          result.vid = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
       }
@@ -191,56 +259,81 @@ class _$EpisodeSerializer implements StructuredSerializer<Episode> {
 
 class _$Episode extends Episode {
   @override
+  final int aid;
+  @override
+  final String badge;
+  @override
+  final int badgeType;
+  @override
+  final String bvid;
+  @override
+  final int cid;
+  @override
   final String cover;
   @override
-  final int delay;
+  final Dimension dimension;
   @override
-  final int delayId;
+  final String from;
   @override
-  final String delayIndex;
-  @override
-  final String delayReason;
-  @override
-  final int episodeId;
+  final int id;
   @override
   final String link;
   @override
-  final String pubIndex;
+  final String longTitle;
   @override
-  final String pubTime;
+  final String movieTitle;
   @override
-  final int pubTs;
+  final String releaseDate;
   @override
-  final int published;
+  final Copyright rights;
   @override
-  final int seasonId;
+  final String shareCopy;
   @override
-  final int seasonType;
+  final String shareUrl;
   @override
-  final String squareCover;
+  final String shortLink;
+  @override
+  final BangumiStatus stat;
+  @override
+  final int status;
+  @override
+  final String subtitle;
   @override
   final String title;
+  @override
+  final String vid;
 
   factory _$Episode([void Function(EpisodeBuilder) updates]) =>
       (new EpisodeBuilder()..update(updates)).build();
 
   _$Episode._(
-      {this.cover,
-      this.delay,
-      this.delayId,
-      this.delayIndex,
-      this.delayReason,
-      this.episodeId,
+      {this.aid,
+      this.badge,
+      this.badgeType,
+      this.bvid,
+      this.cid,
+      this.cover,
+      this.dimension,
+      this.from,
+      this.id,
       this.link,
-      this.pubIndex,
-      this.pubTime,
-      this.pubTs,
-      this.published,
-      this.seasonId,
-      this.seasonType,
-      this.squareCover,
-      this.title})
-      : super._();
+      this.longTitle,
+      this.movieTitle,
+      this.releaseDate,
+      this.rights,
+      this.shareCopy,
+      this.shareUrl,
+      this.shortLink,
+      this.stat,
+      this.status,
+      this.subtitle,
+      this.title,
+      this.vid})
+      : super._() {
+    if (badgeType == null) {
+      throw new BuiltValueNullFieldError('Episode', 'badgeType');
+    }
+  }
 
   @override
   Episode rebuild(void Function(EpisodeBuilder) updates) =>
@@ -253,21 +346,28 @@ class _$Episode extends Episode {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Episode &&
+        aid == other.aid &&
+        badge == other.badge &&
+        badgeType == other.badgeType &&
+        bvid == other.bvid &&
+        cid == other.cid &&
         cover == other.cover &&
-        delay == other.delay &&
-        delayId == other.delayId &&
-        delayIndex == other.delayIndex &&
-        delayReason == other.delayReason &&
-        episodeId == other.episodeId &&
+        dimension == other.dimension &&
+        from == other.from &&
+        id == other.id &&
         link == other.link &&
-        pubIndex == other.pubIndex &&
-        pubTime == other.pubTime &&
-        pubTs == other.pubTs &&
-        published == other.published &&
-        seasonId == other.seasonId &&
-        seasonType == other.seasonType &&
-        squareCover == other.squareCover &&
-        title == other.title;
+        longTitle == other.longTitle &&
+        movieTitle == other.movieTitle &&
+        releaseDate == other.releaseDate &&
+        rights == other.rights &&
+        shareCopy == other.shareCopy &&
+        shareUrl == other.shareUrl &&
+        shortLink == other.shortLink &&
+        stat == other.stat &&
+        status == other.status &&
+        subtitle == other.subtitle &&
+        title == other.title &&
+        vid == other.vid;
   }
 
   @override
@@ -286,42 +386,57 @@ class _$Episode extends Episode {
                                                 $jc(
                                                     $jc(
                                                         $jc(
-                                                            $jc(0,
-                                                                cover.hashCode),
-                                                            delay.hashCode),
-                                                        delayId.hashCode),
-                                                    delayIndex.hashCode),
-                                                delayReason.hashCode),
-                                            episodeId.hashCode),
-                                        link.hashCode),
-                                    pubIndex.hashCode),
-                                pubTime.hashCode),
-                            pubTs.hashCode),
-                        published.hashCode),
-                    seasonId.hashCode),
-                seasonType.hashCode),
-            squareCover.hashCode),
-        title.hashCode));
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc($jc(0, aid.hashCode), badge.hashCode), badgeType.hashCode),
+                                                                                bvid.hashCode),
+                                                                            cid.hashCode),
+                                                                        cover.hashCode),
+                                                                    dimension.hashCode),
+                                                                from.hashCode),
+                                                            id.hashCode),
+                                                        link.hashCode),
+                                                    longTitle.hashCode),
+                                                movieTitle.hashCode),
+                                            releaseDate.hashCode),
+                                        rights.hashCode),
+                                    shareCopy.hashCode),
+                                shareUrl.hashCode),
+                            shortLink.hashCode),
+                        stat.hashCode),
+                    status.hashCode),
+                subtitle.hashCode),
+            title.hashCode),
+        vid.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Episode')
+          ..add('aid', aid)
+          ..add('badge', badge)
+          ..add('badgeType', badgeType)
+          ..add('bvid', bvid)
+          ..add('cid', cid)
           ..add('cover', cover)
-          ..add('delay', delay)
-          ..add('delayId', delayId)
-          ..add('delayIndex', delayIndex)
-          ..add('delayReason', delayReason)
-          ..add('episodeId', episodeId)
+          ..add('dimension', dimension)
+          ..add('from', from)
+          ..add('id', id)
           ..add('link', link)
-          ..add('pubIndex', pubIndex)
-          ..add('pubTime', pubTime)
-          ..add('pubTs', pubTs)
-          ..add('published', published)
-          ..add('seasonId', seasonId)
-          ..add('seasonType', seasonType)
-          ..add('squareCover', squareCover)
-          ..add('title', title))
+          ..add('longTitle', longTitle)
+          ..add('movieTitle', movieTitle)
+          ..add('releaseDate', releaseDate)
+          ..add('rights', rights)
+          ..add('shareCopy', shareCopy)
+          ..add('shareUrl', shareUrl)
+          ..add('shortLink', shortLink)
+          ..add('stat', stat)
+          ..add('status', status)
+          ..add('subtitle', subtitle)
+          ..add('title', title)
+          ..add('vid', vid))
         .toString();
   }
 }
@@ -329,85 +444,121 @@ class _$Episode extends Episode {
 class EpisodeBuilder implements Builder<Episode, EpisodeBuilder> {
   _$Episode _$v;
 
+  int _aid;
+  int get aid => _$this._aid;
+  set aid(int aid) => _$this._aid = aid;
+
+  String _badge;
+  String get badge => _$this._badge;
+  set badge(String badge) => _$this._badge = badge;
+
+  int _badgeType;
+  int get badgeType => _$this._badgeType;
+  set badgeType(int badgeType) => _$this._badgeType = badgeType;
+
+  String _bvid;
+  String get bvid => _$this._bvid;
+  set bvid(String bvid) => _$this._bvid = bvid;
+
+  int _cid;
+  int get cid => _$this._cid;
+  set cid(int cid) => _$this._cid = cid;
+
   String _cover;
   String get cover => _$this._cover;
   set cover(String cover) => _$this._cover = cover;
 
-  int _delay;
-  int get delay => _$this._delay;
-  set delay(int delay) => _$this._delay = delay;
+  DimensionBuilder _dimension;
+  DimensionBuilder get dimension =>
+      _$this._dimension ??= new DimensionBuilder();
+  set dimension(DimensionBuilder dimension) => _$this._dimension = dimension;
 
-  int _delayId;
-  int get delayId => _$this._delayId;
-  set delayId(int delayId) => _$this._delayId = delayId;
+  String _from;
+  String get from => _$this._from;
+  set from(String from) => _$this._from = from;
 
-  String _delayIndex;
-  String get delayIndex => _$this._delayIndex;
-  set delayIndex(String delayIndex) => _$this._delayIndex = delayIndex;
-
-  String _delayReason;
-  String get delayReason => _$this._delayReason;
-  set delayReason(String delayReason) => _$this._delayReason = delayReason;
-
-  int _episodeId;
-  int get episodeId => _$this._episodeId;
-  set episodeId(int episodeId) => _$this._episodeId = episodeId;
+  int _id;
+  int get id => _$this._id;
+  set id(int id) => _$this._id = id;
 
   String _link;
   String get link => _$this._link;
   set link(String link) => _$this._link = link;
 
-  String _pubIndex;
-  String get pubIndex => _$this._pubIndex;
-  set pubIndex(String pubIndex) => _$this._pubIndex = pubIndex;
+  String _longTitle;
+  String get longTitle => _$this._longTitle;
+  set longTitle(String longTitle) => _$this._longTitle = longTitle;
 
-  String _pubTime;
-  String get pubTime => _$this._pubTime;
-  set pubTime(String pubTime) => _$this._pubTime = pubTime;
+  String _movieTitle;
+  String get movieTitle => _$this._movieTitle;
+  set movieTitle(String movieTitle) => _$this._movieTitle = movieTitle;
 
-  int _pubTs;
-  int get pubTs => _$this._pubTs;
-  set pubTs(int pubTs) => _$this._pubTs = pubTs;
+  String _releaseDate;
+  String get releaseDate => _$this._releaseDate;
+  set releaseDate(String releaseDate) => _$this._releaseDate = releaseDate;
 
-  int _published;
-  int get published => _$this._published;
-  set published(int published) => _$this._published = published;
+  CopyrightBuilder _rights;
+  CopyrightBuilder get rights => _$this._rights ??= new CopyrightBuilder();
+  set rights(CopyrightBuilder rights) => _$this._rights = rights;
 
-  int _seasonId;
-  int get seasonId => _$this._seasonId;
-  set seasonId(int seasonId) => _$this._seasonId = seasonId;
+  String _shareCopy;
+  String get shareCopy => _$this._shareCopy;
+  set shareCopy(String shareCopy) => _$this._shareCopy = shareCopy;
 
-  int _seasonType;
-  int get seasonType => _$this._seasonType;
-  set seasonType(int seasonType) => _$this._seasonType = seasonType;
+  String _shareUrl;
+  String get shareUrl => _$this._shareUrl;
+  set shareUrl(String shareUrl) => _$this._shareUrl = shareUrl;
 
-  String _squareCover;
-  String get squareCover => _$this._squareCover;
-  set squareCover(String squareCover) => _$this._squareCover = squareCover;
+  String _shortLink;
+  String get shortLink => _$this._shortLink;
+  set shortLink(String shortLink) => _$this._shortLink = shortLink;
+
+  BangumiStatusBuilder _stat;
+  BangumiStatusBuilder get stat => _$this._stat ??= new BangumiStatusBuilder();
+  set stat(BangumiStatusBuilder stat) => _$this._stat = stat;
+
+  int _status;
+  int get status => _$this._status;
+  set status(int status) => _$this._status = status;
+
+  String _subtitle;
+  String get subtitle => _$this._subtitle;
+  set subtitle(String subtitle) => _$this._subtitle = subtitle;
 
   String _title;
   String get title => _$this._title;
   set title(String title) => _$this._title = title;
 
+  String _vid;
+  String get vid => _$this._vid;
+  set vid(String vid) => _$this._vid = vid;
+
   EpisodeBuilder();
 
   EpisodeBuilder get _$this {
     if (_$v != null) {
+      _aid = _$v.aid;
+      _badge = _$v.badge;
+      _badgeType = _$v.badgeType;
+      _bvid = _$v.bvid;
+      _cid = _$v.cid;
       _cover = _$v.cover;
-      _delay = _$v.delay;
-      _delayId = _$v.delayId;
-      _delayIndex = _$v.delayIndex;
-      _delayReason = _$v.delayReason;
-      _episodeId = _$v.episodeId;
+      _dimension = _$v.dimension?.toBuilder();
+      _from = _$v.from;
+      _id = _$v.id;
       _link = _$v.link;
-      _pubIndex = _$v.pubIndex;
-      _pubTime = _$v.pubTime;
-      _pubTs = _$v.pubTs;
-      _published = _$v.published;
-      _seasonId = _$v.seasonId;
-      _seasonType = _$v.seasonType;
-      _squareCover = _$v.squareCover;
+      _longTitle = _$v.longTitle;
+      _movieTitle = _$v.movieTitle;
+      _releaseDate = _$v.releaseDate;
+      _rights = _$v.rights?.toBuilder();
+      _shareCopy = _$v.shareCopy;
+      _shareUrl = _$v.shareUrl;
+      _shortLink = _$v.shortLink;
+      _stat = _$v.stat?.toBuilder();
+      _status = _$v.status;
+      _subtitle = _$v.subtitle;
       _title = _$v.title;
+      _vid = _$v.vid;
       _$v = null;
     }
     return this;
@@ -428,23 +579,49 @@ class EpisodeBuilder implements Builder<Episode, EpisodeBuilder> {
 
   @override
   _$Episode build() {
-    final _$result = _$v ??
-        new _$Episode._(
-            cover: cover,
-            delay: delay,
-            delayId: delayId,
-            delayIndex: delayIndex,
-            delayReason: delayReason,
-            episodeId: episodeId,
-            link: link,
-            pubIndex: pubIndex,
-            pubTime: pubTime,
-            pubTs: pubTs,
-            published: published,
-            seasonId: seasonId,
-            seasonType: seasonType,
-            squareCover: squareCover,
-            title: title);
+    _$Episode _$result;
+    try {
+      _$result = _$v ??
+          new _$Episode._(
+              aid: aid,
+              badge: badge,
+              badgeType: badgeType,
+              bvid: bvid,
+              cid: cid,
+              cover: cover,
+              dimension: _dimension?.build(),
+              from: from,
+              id: id,
+              link: link,
+              longTitle: longTitle,
+              movieTitle: movieTitle,
+              releaseDate: releaseDate,
+              rights: _rights?.build(),
+              shareCopy: shareCopy,
+              shareUrl: shareUrl,
+              shortLink: shortLink,
+              stat: _stat?.build(),
+              status: status,
+              subtitle: subtitle,
+              title: title,
+              vid: vid);
+    } catch (_) {
+      String _$failedField;
+      try {
+        _$failedField = 'dimension';
+        _dimension?.build();
+
+        _$failedField = 'rights';
+        _rights?.build();
+
+        _$failedField = 'stat';
+        _stat?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'Episode', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

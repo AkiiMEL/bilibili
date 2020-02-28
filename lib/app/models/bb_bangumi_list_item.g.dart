@@ -181,7 +181,7 @@ class _$BangumiListItemSerializer
         ..add('episodes')
         ..add(serializers.serialize(object.episodes,
             specifiedType:
-                const FullType(BuiltList, const [const FullType(Episode)])));
+                const FullType(BuiltList, const [const FullType(Trailer)])));
     }
     if (object.isToday != null) {
       result
@@ -343,7 +343,7 @@ class _$BangumiListItemSerializer
         case 'episodes':
           result.episodes.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Episode)]))
+                      BuiltList, const [const FullType(Trailer)]))
               as BuiltList<Object>);
           break;
         case 'is_today':
@@ -433,7 +433,7 @@ class _$BangumiListItem extends BangumiListItem {
   @override
   final int dayOfWeek;
   @override
-  final BuiltList<Episode> episodes;
+  final BuiltList<Trailer> episodes;
   @override
   final int isToday;
   @override
@@ -728,10 +728,10 @@ class BangumiListItemBuilder
   int get dayOfWeek => _$this._dayOfWeek;
   set dayOfWeek(int dayOfWeek) => _$this._dayOfWeek = dayOfWeek;
 
-  ListBuilder<Episode> _episodes;
-  ListBuilder<Episode> get episodes =>
-      _$this._episodes ??= new ListBuilder<Episode>();
-  set episodes(ListBuilder<Episode> episodes) => _$this._episodes = episodes;
+  ListBuilder<Trailer> _episodes;
+  ListBuilder<Trailer> get episodes =>
+      _$this._episodes ??= new ListBuilder<Trailer>();
+  set episodes(ListBuilder<Trailer> episodes) => _$this._episodes = episodes;
 
   int _isToday;
   int get isToday => _$this._isToday;

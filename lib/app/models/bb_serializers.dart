@@ -22,8 +22,11 @@ import 'bb_channel.dart';
 import 'bb_channel_group.dart';
 import 'bb_channel_module.dart';
 import 'bb_config.dart';
+import 'bb_copyright.dart';
 import 'bb_cover.dart';
+import 'bb_dimension.dart';
 import 'bb_episode.dart';
+import 'bb_trailer.dart';
 import 'bb_extra.dart';
 import 'bb_featured_body.dart';
 import 'bb_feedback_panel.dart';
@@ -76,7 +79,9 @@ part 'bb_serializers.g.dart';
   ChannelModule,
   ChannelGroup,
   Config,
+  Copyright,
   Cover,
+  Dimension,
   Episode,
   Extra,
   FeaturedBody,
@@ -118,6 +123,7 @@ part 'bb_serializers.g.dart';
   TextAttributes,
   ThreePoint,
   ThreePointV2,
+  Trailer,
   Vip,
   VipLabel,
   WatchProgress,
