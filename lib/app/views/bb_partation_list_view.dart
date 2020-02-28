@@ -36,24 +36,7 @@ class _BBPartationListViewState extends State<BBPartationListView> {
         ),
         itemBuilder: (BuildContext context, int index) {
           Partation partation = _partations[index];
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Expanded(
-                child: AspectRatio(
-                  aspectRatio: 1,
-                  child: BBNetworkImage(
-                    partation.logo,
-                  ),
-                ),
-              ),
-              SizedBox(height: defaultMargin.bottom / 2),
-              Text(
-                partation.name ?? "",
-                style: Theme.of(context).textTheme.caption,
-              ),
-            ],
-          );
+          return BBAppView(image: partation.logo, title: partation.name);
         },
         itemCount: _partations.length,
       ),
