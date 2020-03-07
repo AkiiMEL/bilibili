@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluro/fluro.dart';
 
-import '../compenents/bb_network_image.dart';
+import '../compenents/bb_ui.dart';
 import '../api/bb_api.dart';
 import '../routers/bb_route_mgr.dart';
-import '../compenents/bb_navigation_view.dart';
 import '../models/bb_tab_bar_http_body.dart';
 import '../utils/bb_app_mgr.dart';
 
@@ -15,14 +14,12 @@ class BBInitialView extends StatefulWidget {
 }
 
 class _BBInitialViewState extends State<BBInitialView> {
-  int _currentIndex;
   Widget _view;
 
   @override
   void initState() {
     super.initState();
-    _currentIndex = 0;
-    _handleError("LOADING...");
+    _view = Scaffold(body: BBLoadingView());
     _load();
   }
 
@@ -37,9 +34,6 @@ class _BBInitialViewState extends State<BBInitialView> {
       TabBarHttpBody body = await BBApi.requestTabConfig();
       BBAppMgr.shared.tabLayout = body?.data;
       List<TabBarItem> tabBarItems = body?.data?.bottom?.toList() ?? [];
-      TabBarItem selectedItem =
-          tabBarItems.firstWhere((e) => e.selected == 1, orElse: () => null);
-      _currentIndex = selectedItem?.pos != null ? selectedItem.pos - 1 : 0;
       _view = _getTabBarView(tabBarItems);
     } catch (e) {
       _handleError(e);
@@ -64,8 +58,10 @@ class _BBInitialViewState extends State<BBInitialView> {
     // Default `CupertinoTabScaffold with CupertinoTabBar` requires tab items >= 2,
     // but we request tab by send a http request and maybe response with only one
     // item, so we need a new `BBCupertinoTabScaffold` and `BBCupertinoTabBar`.
+    int initialIndex = tabBarItems.firstWhere((e) => e.selected == 1, orElse: () => null)?.pos ?? 1;
+    initialIndex = initialIndex < 1 ? 1 : initialIndex;
     return CupertinoTabScaffold(
-      controller: CupertinoTabController(),
+      controller: CupertinoTabController(initialIndex: initialIndex - 1),
       tabBar: CupertinoTabBar(
         items: tabBarItems
             .map((e) => BottomNavigationBarItem(
@@ -80,22 +76,15 @@ class _BBInitialViewState extends State<BBInitialView> {
                   ),
                 ))
             .toList(),
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        currentIndex: _currentIndex,
         // backgroundColor: Theme.of(context).appBarTheme.color,
         activeColor: Theme.of(context).tabBarTheme.labelColor,
         inactiveColor: Theme.of(context).tabBarTheme.unselectedLabelColor,
       ),
       tabBuilder: (BuildContext context, int index) {
-        // Home view need more tab info that given by `BBApi.requestTabConfiguration`
-        return BBNavigationView(
-          rootRouteName: tabBarItems[index].uri,
-          onGenerateRoute: Router.appRouter.generator,
-        );
+        AppRouteMatch match = Router.appRouter.match(tabBarItems[index].uri);
+        Handler handler =
+            match?.route?.handler ?? Router.appRouter.notFoundHandler;
+        return handler.handlerFunc(context, match?.parameters);
       },
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     );

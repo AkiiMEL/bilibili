@@ -54,7 +54,7 @@ Widget _sliverGrid<T>({
   );
 }
 
-Widget boxAdapter({EdgeInsetsGeometry padding = EdgeInsets.zero, Widget child}) {
+Widget sliverToBoxAdapter({EdgeInsetsGeometry padding = EdgeInsets.zero, Widget child}) {
   return SliverToBoxAdapter(
     child: padding != EdgeInsets.zero
         ? Padding(

@@ -7,6 +7,8 @@ class Images {
   static const String channel = "$_path/new_channel_ic_other50x50.png";
   static const String rightArrow = "$_path/panel_arrow_right16x16.png";
   static const String exchange = "$_path/channel_icon_change_refresh16x16.png";
+  static const String liveExchange = "$_path/live_cardRefresh16x16.png";
+  static const String openLive = "$_path/live_shoot58x58.png";
   static const String mineQR = "$_path/icon_mine_qr22x22.png";
   static const String mineSettings = "$_path/icon_mine_setting22x22.png";
   static const String mineTheme = "$_path/icon_mine_theme22x22.png";

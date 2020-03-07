@@ -115,7 +115,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
 
   List<Widget> _tipSlivers(Module<BangumiListItem> module) {
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin,
         child: Container(
           decoration: BoxDecoration(
@@ -169,7 +169,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           ),
         ),
       ),
-      boxAdapter(child: Divider()),
+      sliverToBoxAdapter(child: Divider()),
     ];
   }
 
@@ -179,7 +179,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
             module.items.first;
 
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: EdgeInsets.only(top: defaultMargin.top),
         child: StreamBuilder(
           initialData: initialData,
@@ -267,7 +267,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
         },
         stream: _timeline.stream,
       ),
-      boxAdapter(
+      sliverToBoxAdapter(
           child: Padding(
         padding: defaultMargin,
         child: Row(children: <Widget>[
@@ -282,17 +282,17 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           Spacer(),
         ]),
       )),
-      boxAdapter(child: Divider()),
+      sliverToBoxAdapter(child: Divider()),
     ];
   }
 
   List<Widget> _rankSlivers(Module<BangumiListItem> module) {
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin,
         child: BBHeadView(title: module.title),
       ),
-      boxAdapter(child: LayoutBuilder(
+      sliverToBoxAdapter(child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return SizedBox(
             height: constraints.maxWidth - 50.0,
@@ -360,7 +360,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           );
         },
       )),
-      boxAdapter(
+      sliverToBoxAdapter(
           child: Padding(
         padding: defaultMargin,
         child: Row(children: <Widget>[
@@ -375,13 +375,13 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           Spacer(),
         ]),
       )),
-      boxAdapter(child: Divider()),
+      sliverToBoxAdapter(child: Divider()),
     ];
   }
 
   List<Widget> _cardSlivers(Module<BangumiListItem> module) {
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin,
         child: BBHeadView(title: module.title),
       ),
@@ -398,14 +398,14 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           );
         },
       ),
-      boxAdapter(child: BBExchangeView()),
-      boxAdapter(child: Divider()),
+      sliverToBoxAdapter(child: BBExchangeView()),
+      sliverToBoxAdapter(child: Divider()),
     ];
   }
 
   List<Widget> _bannerSlivers(Module<BangumiListItem> module) {
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin.copyWith(top: 0.0, bottom: 0.0),
         child: BBAdView(
           aspectRatio: 375 / 150,
@@ -441,7 +441,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
 
   List<Widget> _followSlivers(Module<BangumiListItem> module) {
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin,
         child: BBHeadView(
           title: module.title,
@@ -468,7 +468,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           ),
         ),
       ),
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin,
         child: Container(
           height: 120.0,
@@ -485,13 +485,13 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           ),
         ),
       ),
-      boxAdapter(child: Divider()),
+      sliverToBoxAdapter(child: Divider()),
     ];
   }
 
   List<Widget> _topicSlivers(Module<BangumiListItem> module) {
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin.copyWith(bottom: 0.0),
         child: BBHeadView(title: module.title),
       ),
@@ -525,13 +525,13 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           childCount: module.items.length,
         ),
       ),
-      boxAdapter(child: Divider()),
+      sliverToBoxAdapter(child: Divider()),
     ];
   }
 
   List<Widget> _listSlivers(Module<BangumiListItem> module) {
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin.copyWith(bottom: 0.0),
         child: BBHeadView(
           title: module.title,
@@ -585,13 +585,13 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           );
         },
       ),
-      boxAdapter(child: Divider()),
+      sliverToBoxAdapter(child: Divider()),
     ];
   }
 
   List<Widget> _horizontalListSlivers(Module<BangumiListItem> module) {
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin,
         child: BBHeadView(
           title: module.title,
@@ -599,7 +599,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           image: null,
         ),
       ),
-      boxAdapter(
+      sliverToBoxAdapter(
         child: Container(
           height: 235.0,
           child: ListView.builder(
@@ -727,19 +727,19 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
           ),
         ),
       ),
-      boxAdapter(child: Divider()),
+      sliverToBoxAdapter(child: Divider()),
     ];
   }
 
   List<Widget> _flowSlivers(Module<BangumiListItem> module) {
     return [
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin,
         child: BBHeadView(
           title: module.title,
         ),
       ),
-      boxAdapter(
+      sliverToBoxAdapter(
         padding: defaultMargin.copyWith(top: 0.0),
         child: Wrap(
           spacing: defaultMargin.left,
@@ -764,7 +764,7 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
               [],
         ),
       ),
-      boxAdapter(child: Divider()),
+      sliverToBoxAdapter(child: Divider()),
     ];
   }
 

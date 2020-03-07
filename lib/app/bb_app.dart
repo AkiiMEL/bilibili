@@ -1,11 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'compenents/bb_pull_down_indicator_view.dart';
-import 'routers/bb_route_mgr.dart';
+import 'utils/bb_utils.dart';
+import 'utils/bb_args.dart';
 
 // This widget is the root of your application.
 class BBApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return RefreshConfiguration(
@@ -19,7 +22,7 @@ class BBApp extends StatelessWidget {
           ),
           tabBarTheme: TabBarTheme(
             indicatorSize: TabBarIndicatorSize.label,
-            labelColor: Color.fromARGB(255, 246, 116, 154),
+            labelColor: pinkColor,
             labelStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             unselectedLabelColor: Color.fromARGB(255, 123, 123, 123),
             unselectedLabelStyle:
