@@ -81,9 +81,9 @@ class _BBInitialViewState extends State<BBInitialView> {
         inactiveColor: Theme.of(context).tabBarTheme.unselectedLabelColor,
       ),
       tabBuilder: (BuildContext context, int index) {
-        AppRouteMatch match = Router.appRouter.match(tabBarItems[index].uri);
+        AppRouteMatch match = FluroRouter.appRouter.match(tabBarItems[index].uri);
         Handler handler =
-            match?.route?.handler ?? Router.appRouter.notFoundHandler;
+            match?.route?.handler ?? FluroRouter.appRouter.notFoundHandler;
         return handler.handlerFunc(context, match?.parameters);
       },
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,

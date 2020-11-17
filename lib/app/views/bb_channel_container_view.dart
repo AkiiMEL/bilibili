@@ -63,8 +63,8 @@ class _BBChannelContainerViewState extends State<BBChannelContainerView>
         child: Material(
           child: TabBarView(
             children: _tabBarItems.map((e) {
-              Handler handler = Router.appRouter.match(e.uri)?.route?.handler ??
-                  Router.appRouter.notFoundHandler;
+              Handler handler = FluroRouter.appRouter.match(e.uri)?.route?.handler ??
+                  FluroRouter.appRouter.notFoundHandler;
               return handler.handlerFunc(context, null);
             }).toList(),
             controller: _tabCtr,

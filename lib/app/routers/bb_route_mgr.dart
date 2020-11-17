@@ -22,17 +22,17 @@ class BBRouteMgr {
   static String video = "bilibili://video/";
 
   static setup() {
-    Router.appRouter.notFoundHandler = notFoundHandler;
-    Router.appRouter.define(root, handler: rootHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(pgc+":path", handler: pgcHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(home, handler: homeHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(liveHome, handler: liveHomeHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(featured, handler: featuredHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(popular, handler: popularHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(channel, handler: channelContainerHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(partations, handler: partationsHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(channels, handler: channelsHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(mine, handler: mineHandler, transitionType: TransitionType.cupertino);
-    Router.appRouter.define(video + ":id", handler: videoHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.notFoundHandler = notFoundHandler;
+    FluroRouter.appRouter.define(root, handler: rootHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(pgc+":path", handler: pgcHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(home, handler: homeHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(liveHome, handler: liveHomeHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(featured, handler: featuredHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(popular, handler: popularHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(channel, handler: channelContainerHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(partations, handler: partationsHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(channels, handler: channelsHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(mine, handler: mineHandler, transitionType: TransitionType.cupertino);
+    FluroRouter.appRouter.define(video + ":id", handler: videoHandler, transitionType: TransitionType.cupertino);
   }
 }

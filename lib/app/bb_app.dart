@@ -33,25 +33,25 @@ class BBApp extends StatelessWidget {
             color: Color(0xFFF0F0F0),
             space: 1,
           ),
-          textTheme: TextTheme(
-            headline: TextStyle(
-              color: Colors.black,
-              fontSize: 15.0,
-              fontWeight: FontWeight.bold,
-            ),
-            title: TextStyle(
-              color: Color.fromARGB(255, 90, 90, 90),
-              fontSize: 14.0,
-            ),
-            subtitle: TextStyle(
-              color: Color.fromARGB(255, 183, 183, 182),
-              fontSize: 12.0,
-            ),
-            display4: TextStyle(
-              fontSize: 10.0,
-              color: Color.fromARGB(255, 183, 183, 182),
-            ),
-          ),
+          // textTheme: TextTheme(
+          //   headline: TextStyle(
+          //     color: Colors.black,
+          //     fontSize: 15.0,
+          //     fontWeight: FontWeight.bold,
+          //   ),
+          //   title: TextStyle(
+          //     color: Color.fromARGB(255, 90, 90, 90),
+          //     fontSize: 14.0,
+          //   ),
+          //   subtitle: TextStyle(
+          //     color: Color.fromARGB(255, 183, 183, 182),
+          //     fontSize: 12.0,
+          //   ),
+          //   display4: TextStyle(
+          //     fontSize: 10.0,
+          //     color: Color.fromARGB(255, 183, 183, 182),
+          //   ),
+          // ),
           accentColor: Color(0xFFF6749A),
           backgroundColor: Colors.grey[100],
           scaffoldBackgroundColor: Colors.white,
@@ -67,27 +67,27 @@ class BBApp extends StatelessWidget {
             color: Color.fromARGB(255, 246, 245, 246),
             space: 1,
           ),
-          textTheme: TextTheme(
-            headline: TextStyle(
-              color: Color.fromARGB(255, 92, 93, 94),
-              fontSize: 15.0,
-              fontWeight: FontWeight.bold,
-            ),
-            title: TextStyle(
-              color: Color.fromARGB(255, 60, 61, 62),
-              fontSize: 14.0,
-            ),
-            subtitle: TextStyle(
-              color: Color.fromARGB(255, 183, 183, 182),
-              fontSize: 12.0,
-            ),
-            display4: TextStyle(
-              fontSize: 10.0,
-              color: Color.fromARGB(255, 183, 183, 182),
-            ),
-          ),
+          // textTheme: TextTheme(
+          //   headline: TextStyle(
+          //     color: Color.fromARGB(255, 92, 93, 94),
+          //     fontSize: 15.0,
+          //     fontWeight: FontWeight.bold,
+          //   ),
+          //   title: TextStyle(
+          //     color: Color.fromARGB(255, 60, 61, 62),
+          //     fontSize: 14.0,
+          //   ),
+          //   subtitle: TextStyle(
+          //     color: Color.fromARGB(255, 183, 183, 182),
+          //     fontSize: 12.0,
+          //   ),
+          //   display4: TextStyle(
+          //     fontSize: 10.0,
+          //     color: Color.fromARGB(255, 183, 183, 182),
+          //   ),
+          // ),
         ),
-        onGenerateRoute: Router.appRouter.generator,
+        onGenerateRoute: FluroRouter.appRouter.generator,
         debugShowCheckedModeBanner: false,
       ),
     );
