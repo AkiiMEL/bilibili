@@ -55,13 +55,10 @@ class BBLiveHomeRankView extends StatelessWidget {
         SizedBox(
           height: defaultMargin.top / 2,
         ),
-        Text(
-          rank.uname ?? "",
-          style: Theme.of(context).textTheme.title,
-        ),
+        Text(rank.uname ?? ""),
         Text(
           rank.areaV2ParentName ?? "",
-          style: Theme.of(context).textTheme.display4,
+          style: Theme.of(context).textTheme.caption.copyWith(color: Theme.of(context).hintColor),
         ),
       ],
     );

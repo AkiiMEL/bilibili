@@ -65,7 +65,7 @@ class _BBInitialViewState extends State<BBInitialView> {
       tabBar: CupertinoTabBar(
         items: tabBarItems
             .map((e) => BottomNavigationBarItem(
-                  title: e.name != null ? Text(e.name) : SizedBox.shrink(),
+                  label: e.name != null ? e.name : "",
                   icon: BBNetworkImage(
                     e.image,
                     size: Size(24.0, 24.0),

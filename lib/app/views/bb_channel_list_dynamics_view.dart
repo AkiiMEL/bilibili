@@ -15,7 +15,7 @@ class BBChannelListSliverDynamics extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Container(
         padding: defaultMargin,
-        height: 70.0,
+        height: 71.0,
         child: Swiper(
           itemBuilder: _itemBuilder,
           itemCount: channels.length,
@@ -34,7 +34,6 @@ class BBChannelListSliverDynamics extends StatelessWidget {
   }
 
   Widget _itemBuilder(BuildContext context, int index) {
-    TextTheme textTheme = Theme.of(context).textTheme;
     Channel channel = channels[index];
     return Container(
       decoration: BoxDecoration(
@@ -59,10 +58,10 @@ class BBChannelListSliverDynamics extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(channel.title ?? "", style: textTheme.title),
+                    Text(channel.title ?? ""),
                     Text(
                       channel.desc ?? "",
-                      style: textTheme.display4,
+                      style: Theme.of(context).textTheme.caption,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -85,7 +84,7 @@ class BBChannelListSliverDynamics extends StatelessWidget {
                         child: Text(
                           channel.button.text,
                           style:
-                              textTheme.subtitle.copyWith(color: Colors.white),
+                              Theme.of(context).textTheme.button.copyWith(color: Colors.white),
                         ),
                       ),
                     ),

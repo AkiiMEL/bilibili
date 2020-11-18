@@ -22,7 +22,6 @@ class BBPopularListItemIdolRelativeMediaItemView extends StatelessWidget {
         ),
         Text(
           "看好了这才是体术与剑术的极致巅峰！",
-          style: Theme.of(context).textTheme.subtitle,
           maxLines: 2,
         ),
       ],

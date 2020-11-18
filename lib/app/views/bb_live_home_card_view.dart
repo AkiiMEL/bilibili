@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../utils/bb_args.dart';
 import '../utils/bb_utils.dart';
-import '../routers/bb_route_mgr.dart';
-import '../compenents/bb_navigation_link.dart';
 import '../compenents/bb_ui.dart';
 import '../models/bb_room.dart';
 import '../models/bb_live_pendent.dart';
@@ -65,12 +63,13 @@ class BBLiveHomeCardView extends StatelessWidget {
       children: <Widget>[
         Text(
           item.title ?? "",
-          style: Theme.of(context).textTheme.title,
           maxLines: 1,
         ),
-        Text(
-          item.areaV2Name ?? "",
-          style: Theme.of(context).textTheme.subtitle,
+        Expanded(child: 
+          Text(
+            item.areaV2Name ?? "",
+            style: Theme.of(context).textTheme.caption,
+          ),
         ),
       ],
     );

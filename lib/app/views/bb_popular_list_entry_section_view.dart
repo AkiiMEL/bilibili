@@ -22,26 +22,11 @@ class BBPopularListEntrySectionView extends StatelessWidget {
             mainAxisSpacing: defaultMargin.top),
         itemCount: entries.length,
         itemBuilder: (context, i) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              ClipOval(
-                child: BBNetworkImage(
-                  // entries[i].pic,
-                  null,
-                  placeholder: Images.placeholder,
-                ),
-              ),
-              SizedBox(height: defaultMargin.bottom),
-              Text(
-                // entries[i].title,
-                "title",
-                style: Theme.of(context).textTheme.subtitle,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
-          );
+          return BBAppView(
+                      title: "e.title",
+                      image: "e.pic",
+                      imageSize: Size(44.0, 44.0),
+                    );
         },
       );
   }

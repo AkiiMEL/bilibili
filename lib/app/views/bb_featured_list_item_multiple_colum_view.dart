@@ -90,7 +90,7 @@ class BBFeaturedListItemMultipleColumView extends StatelessWidget {
             child: Center(
               child: Text(
                 textAttributes.text,
-                style: Theme.of(context).textTheme.display4.copyWith(
+                style: Theme.of(context).textTheme.overline.copyWith(
                       color: BBColor.from(
                           Theme.of(context).brightness == Brightness.light
                               ? textAttributes.textColor
@@ -158,18 +158,14 @@ class BBFeaturedListItemMultipleColumView extends StatelessWidget {
               SizedBox(width: 3),
               Text(
                 media.coverLeftText1 ?? "-",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: Theme.of(context).textTheme.display4.fontSize),
-              ),
+                style: Theme.of(context).textTheme.overline.copyWith(color: Colors.white),
+              )
             ],
           )
         : text != null
             ? Text(
                 text ?? "-",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: Theme.of(context).textTheme.display4.fontSize),
+                style: Theme.of(context).textTheme.overline.copyWith(color: Colors.white),
               )
             : SizedBox.shrink();
   }
@@ -196,7 +192,6 @@ class BBFeaturedListItemMultipleColumView extends StatelessWidget {
           ? (media.adInfo?.creativeContent?.title ?? "")
           : media.title ?? "",
       maxLines: 2,
-      style: Theme.of(context).textTheme.title,
     );
   }
 
@@ -217,7 +212,7 @@ class BBFeaturedListItemMultipleColumView extends StatelessWidget {
                   ? media.adInfo?.creativeContent?.description ?? ""
                   : media.descButton?.text ?? "",
               maxLines: 1,
-              style: Theme.of(context).textTheme.subtitle),
+              style: Theme.of(context).textTheme.caption),
         ),
         SizedBox(
           width: defaultMargin.left / 2,

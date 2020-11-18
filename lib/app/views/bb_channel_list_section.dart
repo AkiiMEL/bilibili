@@ -12,7 +12,6 @@ class BBChannelListSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextTheme textTheme = Theme.of(context).textTheme;
     return Padding(
       padding: defaultMargin,
       child: Column(
@@ -27,10 +26,10 @@ class BBChannelListSection extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       channel.title ?? channel.name ?? "",
-                      style: textTheme.headline,
+                      style: Theme.of(context).textTheme.headline6,
                       maxLines: 1,
                     ),
-                    Text(channel.desc1 ?? "", style: textTheme.display4),
+                    Text(channel.desc1 ?? "", style: Theme.of(context).textTheme.caption),
                   ],
                 ),
               ),
@@ -49,7 +48,7 @@ class BBChannelListSection extends StatelessWidget {
                         child: Center(
                           child: Text(
                             channel.descButton.text,
-                            style: textTheme.subtitle
+                            style: Theme.of(context).textTheme.button
                                 .copyWith(color: Theme.of(context).accentColor),
                           ),
                         ),
@@ -93,7 +92,6 @@ class BBChannelListSection extends StatelessWidget {
                   Expanded(
                     child: Text(
                       media.title ?? "",
-                      style: textTheme.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -106,7 +104,7 @@ class BBChannelListSection extends StatelessWidget {
           channel.descButton2?.text != null
               ? Text(
                   channel.descButton2.text,
-                  style: textTheme.display4,
+                  style: Theme.of(context).textTheme.button,
                 )
               : SizedBox.shrink(),
         ],

@@ -34,10 +34,7 @@ class _BBPopularListItemIdolRelativeMediaViewState
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      "data",
-                      style: Theme.of(context).textTheme.title,
-                    ),
+                    Text("data"),
                     BBMediaTagView(
                       textAttributes: TextAttributes(),
                     ),
@@ -59,7 +56,7 @@ class _BBPopularListItemIdolRelativeMediaViewState
                     "+ 关注",
                     style: Theme.of(context)
                         .textTheme
-                        .title
+                        .button
                         .copyWith(color: Theme.of(context).accentColor),
                   ),
                 ),

@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:collection';
+import 'package:bilibili/app/blocs/bb_bangumi_home_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:tuple/tuple.dart';
 
@@ -22,10 +24,10 @@ class BBBangumiHomeView extends StatefulWidget {
 
 class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
     with AutomaticKeepAliveClientMixin {
-  List<Module<BangumiListItem>> _modules;
   RefreshController _refreshController;
   StreamController<BangumiListItem> _timeline = StreamController.broadcast();
   ScrollController _scrollController;
+  BBBangumiHomeBLoC _bLoC;
 
   @override
   bool get wantKeepAlive => true;
@@ -33,10 +35,9 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
   @override
   void initState() {
     super.initState();
-    _modules = [];
     _refreshController = RefreshController();
     _scrollController = ScrollController();
-    _onRefresh();
+    _bLoC = BBBangumiHomeBLoC()..add(Load(path: widget.path));
   }
 
   @override
@@ -50,21 +51,34 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return SafeArea(
-      bottom: false,
-      child: SmartRefresher(
-        controller: _refreshController,
-        onRefresh: _onRefresh,
-        child: CustomScrollView(
-          slivers: _modules.isEmpty ? <Widget>[] : _buildSlivers(),
-        ),
-      ),
+    return BlocBuilder(
+      bloc: _bLoC,
+      builder: (BuildContext context, LoadState state) {
+        Widget subview;
+        if (state is Loading) {
+          subview = BBLoadingView();
+        } else if (state is Success) {
+          _refreshController.refreshCompleted();
+          subview =
+              SmartRefresher(
+                controller: _refreshController,
+                onRefresh: () => _bLoC.add(Load()),
+                child: CustomScrollView(
+                  slivers: _buildSlivers(state.value),
+                ),
+              );
+        } else {
+          _refreshController.refreshCompleted();
+          subview = Container();
+        }
+        return SafeArea(bottom: false, child: subview);
+      },
     );
   }
 
-  List<Widget> _buildSlivers() {
+  List<Widget> _buildSlivers(List<Module<BangumiListItem>> modules) {
     List<Module<BangumiListItem>> modulesCopy =
-        _modules.where((e) => e.items?.isNotEmpty ?? false).toList();
+        modules.where((e) => e.items?.isNotEmpty ?? false).toList();
 
     int index = modulesCopy.indexWhere((e) => e.style == ModuleStyle.TIP);
     if (index != -1) {
@@ -766,17 +780,5 @@ class _BBBangumiHomeViewState extends State<BBBangumiHomeView>
       ),
       sliverToBoxAdapter(child: Divider()),
     ];
-  }
-
-  void _onRefresh() async {
-    print(widget.path);
-    HttpBody<BangumiHomeBody> httpBody =
-        await BBApi.requestAllBangumi(path: widget.path);
-
-    _refreshController.refreshCompleted();
-
-    setState(() {
-      _modules = httpBody?.result?.modules?.toList() ?? [];
-    });
   }
 }

@@ -25,10 +25,7 @@ class BBNotFoundView extends StatelessWidget {
                     SizedBox(
                       height: 20.0,
                     ),
-                    Text(
-                      "您访问的页面不见了/(ToT)/~~",
-                      style: Theme.of(context).textTheme.subtitle,
-                    ),
+                    Text("您访问的页面不见了/(ToT)/~~"),
                   ],
                 ),
               ),

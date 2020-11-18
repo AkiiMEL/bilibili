@@ -22,7 +22,7 @@ class _BBPopularListItemViewState extends State<BBPopularListItemView> {
 
   Widget _getPreviewAndDescriptionView(BuildContext context) {
     return Container(
-      height: 90.0,
+      height: 94.0,
       margin: defaultMargin.copyWith(left: 0, right: 0),
       child: Row(
         children: <Widget>[
@@ -49,7 +49,6 @@ class _BBPopularListItemViewState extends State<BBPopularListItemView> {
               children: <Widget>[
                 Text(
                   "看好了这才是体术与剑术的极致巅峰！",
-                  style: Theme.of(context).textTheme.title,
                   maxLines: 2,
                 ),
                 Column(
@@ -67,14 +66,14 @@ class _BBPopularListItemViewState extends State<BBPopularListItemView> {
                     ),
                     Text(
                       "努力的小青",
-                      style: Theme.of(context).textTheme.subtitle,
+                      style: Theme.of(context).textTheme.caption,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
                           "7.9万观看•01-12",
-                          style: Theme.of(context).textTheme.subtitle,
+                          style: Theme.of(context).textTheme.caption,
                         ),
                         Image.asset(
                             "assets/images/pegasus_card_vertical_more16x16.png"),

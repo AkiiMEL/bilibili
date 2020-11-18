@@ -42,7 +42,6 @@ class BBChannelListEntryItemView extends StatelessWidget {
         ),
         Text(
           channel.title ?? "",
-          style: Theme.of(context).textTheme.subtitle,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),

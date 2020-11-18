@@ -273,10 +273,7 @@ class _BBChannelListViewState extends State<BBChannelListView> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Text(
-                                channel.title ?? "",
-                                style: Theme.of(context).textTheme.headline,
-                              ),
+                              Text(channel.title ?? ""),
                               SizedBox(height: defaultMargin.bottom / 2),
                               Text(
                                 channel.desc ?? "",
@@ -307,7 +304,7 @@ class _BBChannelListViewState extends State<BBChannelListView> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(e.label ?? "", style: Theme.of(context).textTheme.title),
+            Text(e.label ?? "", style: Theme.of(context).textTheme.headline6),
             accessoryView ?? SizedBox.shrink(),
           ],
         ),
@@ -320,7 +317,7 @@ class _BBChannelListViewState extends State<BBChannelListView> {
       child: Row(
         children: <Widget>[
           Text("换一换",
-              style: Theme.of(context).textTheme.title.copyWith(color: color)),
+              style: Theme.of(context).textTheme.button.copyWith(color: color)),
           SizedBox(width: defaultMargin.left / 2),
           Image.asset(Images.exchange, color: color),
         ],
@@ -332,7 +329,7 @@ class _BBChannelListViewState extends State<BBChannelListView> {
     return GestureDetector(
       child: Row(
         children: <Widget>[
-          Text(e.descButton.text, style: Theme.of(context).textTheme.title),
+          Text(e.descButton.text, style: Theme.of(context).textTheme.button),
           Image.asset(Images.rightArrow),
         ],
       ),

@@ -177,7 +177,7 @@ class BBMineHeaderView extends StatelessWidget {
                 mine?.vipSectionV2?.title ?? "",
                 style: Theme.of(context)
                     .textTheme
-                    .headline
+                    .subtitle1
                     .copyWith(color: Theme.of(context).accentColor),
               ),
               SizedBox(width: defaultMargin.left / 2),
